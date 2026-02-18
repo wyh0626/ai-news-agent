@@ -146,7 +146,7 @@ async def _extract_one(llm: ChatOpenAI, item: CleanedItem) -> ExtractedItem:
             importance_score=float(parsed.get("importance_score", 5)),
         )
     except Exception as e:
-        logger.error(f"LLM 提取失败 [{item.id}]: {e}")
+        logger.error(f"LLM 提取失败 [{item.id}]: {type(e).__name__}: {e}")
         return _fallback_extract(item)
 
 
@@ -157,7 +157,12 @@ async def extractor_node(state: PipelineState) -> dict:
         logger.warning("没有去重后的数据需要提取")
         return {"extracted_items": []}
 
-    logger.info(f"开始提取 {len(deduped)} 条新闻的结构化信息 ...")
+    logger.info(
+        f"开始提取 {len(deduped)} 条新闻的结构化信息 ... "
+        f"API_KEY={'SET' if settings.openai_api_key else 'EMPTY'} "
+        f"MODEL={settings.openai_model} "
+        f"BASE_URL={settings.openai_base_url or 'default'}"
+    )
 
     # 检查 API key 是否配置
     if not settings.openai_api_key:
