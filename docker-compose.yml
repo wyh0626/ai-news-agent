@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  # PostgreSQL + pgvector (长期记忆 + 语义检索)
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ainews
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Agent 主服务 - 单次运行 Pipeline
+  agent:
+    build: .
+    env_file: .env
+    environment:
+      POSTGRES_URL: postgresql://postgres:postgres@postgres:5432/ainews
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./output:/app/output
+    command: python scripts/run_pipeline.py
+
+volumes:
+  pgdata:

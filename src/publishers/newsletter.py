@@ -1,0 +1,109 @@
+"""Newsletter 邮件发布器（v0.5）- 通过 SMTP 发送 HTML 邮件"""
+
+import logging
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from typing import Optional
+
+import markdown as md
+
+from src.config import settings
+
+logger = logging.getLogger(__name__)
+
+
+class NewsletterPublisher:
+    """通过 SMTP 发送 AI 日报邮件"""
+
+    def __init__(
+        self,
+        smtp_host: str = "",
+        smtp_port: int = 587,
+        smtp_user: str = "",
+        smtp_password: str = "",
+        from_addr: str = "",
+        to_addrs: list[str] | None = None,
+    ):
+        self.smtp_host = smtp_host or getattr(settings, "smtp_host", "")
+        self.smtp_port = smtp_port
+        self.smtp_user = smtp_user or getattr(settings, "smtp_user", "")
+        self.smtp_password = smtp_password or getattr(settings, "smtp_password", "")
+        self.from_addr = from_addr or getattr(settings, "smtp_from", "")
+        self.to_addrs = to_addrs or getattr(settings, "newsletter_recipients", "").split(",")
+
+    @property
+    def available(self) -> bool:
+        return bool(self.smtp_host and self.smtp_user and self.smtp_password)
+
+    def _markdown_to_html(self, markdown_content: str) -> str:
+        """将 Markdown 转换为 HTML 邮件"""
+        try:
+            html_body = md.markdown(
+                markdown_content,
+                extensions=["tables", "fenced_code", "nl2br"],
+            )
+        except ImportError:
+            # markdown 库未安装时的降级
+            html_body = f"<pre>{markdown_content}</pre>"
+
+        return f"""<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+    body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+           max-width: 700px; margin: 0 auto; padding: 20px; color: #333; }}
+    h1 {{ color: #1a1a2e; border-bottom: 2px solid #e94560; padding-bottom: 10px; }}
+    h2 {{ color: #16213e; margin-top: 30px; }}
+    a {{ color: #e94560; text-decoration: none; }}
+    a:hover {{ text-decoration: underline; }}
+    li {{ margin-bottom: 8px; line-height: 1.6; }}
+    blockquote {{ border-left: 3px solid #e94560; padding-left: 15px; color: #666; }}
+    hr {{ border: none; border-top: 1px solid #eee; margin: 30px 0; }}
+    .footer {{ color: #999; font-size: 12px; margin-top: 40px; }}
+</style>
+</head>
+<body>
+{html_body}
+<div class="footer">
+    <p>本邮件由 AI News Agent 自动生成并发送</p>
+    <p>如需退订，请回复 "unsubscribe"</p>
+</div>
+</body>
+</html>"""
+
+    def send(self, subject: str, markdown_content: str) -> bool:
+        """发送邮件"""
+        if not self.available:
+            logger.warning("SMTP 未配置，跳过邮件发送")
+            return False
+
+        valid_recipients = [addr.strip() for addr in self.to_addrs if addr.strip()]
+        if not valid_recipients:
+            logger.warning("没有有效的收件人地址")
+            return False
+
+        try:
+            msg = MIMEMultipart("alternative")
+            msg["Subject"] = subject
+            msg["From"] = self.from_addr
+            msg["To"] = ", ".join(valid_recipients)
+
+            # 纯文本版本
+            msg.attach(MIMEText(markdown_content, "plain", "utf-8"))
+            # HTML 版本
+            html = self._markdown_to_html(markdown_content)
+            msg.attach(MIMEText(html, "html", "utf-8"))
+
+            with smtplib.SMTP(self.smtp_host, self.smtp_port) as server:
+                server.starttls()
+                server.login(self.smtp_user, self.smtp_password)
+                server.sendmail(self.from_addr, valid_recipients, msg.as_string())
+
+            logger.info(f"邮件发送成功: {subject} → {len(valid_recipients)} 位收件人")
+            return True
+
+        except Exception as e:
+            logger.error(f"邮件发送失败: {e}")
+            return False

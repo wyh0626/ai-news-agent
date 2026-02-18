@@ -1,0 +1,93 @@
+---
+import { Badge } from "@/components/ui/badge";
+import { formatDate } from "@/lib/utils";
+import type { CollectionEntry } from "astro:content";
+
+type Props = CollectionEntry<"blog">;
+
+const post = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+// JetBrains 风格配色方案，基于日期轮换
+const palettes = [
+  { bg: '#1a1a2e', c1: '#e94560', c2: '#0f3460', c3: '#533483', c4: '#e94560' },
+  { bg: '#0d1b2a', c1: '#1b9aaa', c2: '#06d6a0', c3: '#118ab2', c4: '#073b4c' },
+  { bg: '#1b0a2e', c1: '#7b2ff7', c2: '#c471ed', c3: '#f64f59', c4: '#12c2e9' },
+  { bg: '#0a192f', c1: '#64ffda', c2: '#7928ca', c3: '#ff0080', c4: '#00d2ff' },
+  { bg: '#141e30', c1: '#f7971e', c2: '#ffd200', c3: '#e44d26', c4: '#f16529' },
+  { bg: '#0c0c1d', c1: '#667eea', c2: '#764ba2', c3: '#f093fb', c4: '#4facfe' },
+  { bg: '#1a0a2e', c1: '#fc466b', c2: '#3f5efb', c3: '#a855f7', c4: '#6366f1' },
+];
+const day = post.data.pubDate.getDate();
+const p = palettes[day % palettes.length];
+const dateStr = post.data.pubDate.toLocaleDateString('zh-CN', { month: '2-digit', day: '2-digit' });
+
+// 基于日期生成不同的几何形状位置
+const seed = day * 17 + post.data.pubDate.getMonth() * 31;
+const x1 = 15 + (seed % 30);
+const y1 = 10 + (seed * 3 % 40);
+const x2 = 55 + (seed * 7 % 35);
+const y2 = 30 + (seed * 11 % 50);
+const r1 = 25 + (seed * 5 % 20);
+const r2 = 30 + (seed * 13 % 25);
+const rot = seed % 360;
+---
+
+<article class="group space-y-4">
+  <a
+    href={`${base}blog/${post.slug}/`}
+    class="flex h-52 group-hover:-translate-y-2 group-hover:shadow-xl transition duration-300"
+  >
+    <div
+      class="jb-cover relative w-full h-full rounded-xl overflow-hidden"
+      style={`background: ${p.bg}`}
+      transition:name={`img-${post.slug}`}
+    >
+      {/* 几何渐变层 */}
+      <div class="absolute inset-0" style={`background:
+        radial-gradient(ellipse ${r1}% ${r1 + 15}% at ${x1}% ${y1}%, ${p.c1}88, transparent),
+        radial-gradient(ellipse ${r2}% ${r2 + 10}% at ${x2}% ${y2}%, ${p.c2}66, transparent),
+        radial-gradient(circle at ${100 - x1}% ${100 - y1}%, ${p.c3}44, transparent 60%),
+        linear-gradient(${rot}deg, ${p.c4}22 0%, transparent 50%)
+      `}></div>
+      {/* 几何装饰线条 */}
+      <svg class="absolute inset-0 w-full h-full opacity-[0.15]" viewBox="0 0 720 360" fill="none">
+        <line x1={x1 * 7.2} y1="0" x2={x2 * 7.2} y2="360" stroke="white" stroke-width="1"/>
+        <line x1="0" y1={y1 * 3.6} x2="720" y2={y2 * 3.6} stroke="white" stroke-width="0.5"/>
+        <circle cx={x2 * 7.2} cy={y1 * 3.6} r={r1 * 1.5} stroke="white" stroke-width="0.8" opacity="0.6"/>
+        <rect x={x1 * 4} y={y2 * 2} width={r2 * 4} height={r2 * 4} rx="2" stroke="white" stroke-width="0.6" opacity="0.4" transform={`rotate(${rot % 45} ${x1 * 4 + r2 * 2} ${y2 * 2 + r2 * 2})`}/>
+      </svg>
+      {/* 日期标签 */}
+      <div class="absolute inset-0 flex flex-col items-start justify-end p-5">
+        <span class="text-[10px] font-medium tracking-[0.2em] uppercase text-white/50 mb-0.5">AI Daily</span>
+        <span class="text-2xl font-heading font-bold text-white/90 leading-none">{dateStr}</span>
+      </div>
+    </div>
+  </a>
+
+  <div class="flex items-center justify-between">
+    <Badge radius="md" className="capitalize">
+      {post.data.category}
+    </Badge>
+    <span
+      class="font-medium text-muted-foreground"
+      transition:name={"date-" + post.slug}
+    >
+      {formatDate(post.data.pubDate)}
+    </span>
+  </div>
+
+  <div>
+    <a href={`${base}blog/${post.slug}/`} class="group-hover:underline">
+      <h2
+        class="font-heading text-xl md:text-2xl leading-snug line-clamp-3"
+        transition:name={"title-" + post.slug}
+      >
+        {post.data.title}
+      </h2>
+    </a>
+    {post.data.description && (
+      <p class="mt-1.5 text-sm text-muted-foreground line-clamp-2">{post.data.description}</p>
+    )}
+  </div>
+</article>

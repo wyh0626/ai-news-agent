@@ -1,0 +1,36 @@
+---
+import MainLayout from "@/layouts/main-layout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<MainLayout title="关于" description="关于 AI Daily">
+  <section class="container max-w-screen-md py-16 sm:py-20 lg:py-28">
+    <h1 class="text-4xl font-heading text-foreground mb-4">AI Daily</h1>
+    <p class="text-lg text-muted-foreground mb-8">
+      每日精选 AI 领域最新动态、研究论文、开源项目与行业趋势
+    </p>
+
+    <div class="prose dark:prose-invert max-w-none">
+      <h2>数据来源</h2>
+      <ul>
+        <li><strong>Hacker News</strong> — AI 相关热帖与讨论</li>
+        <li><strong>Reddit</strong> — r/LocalLLaMA、r/MachineLearning 等社区</li>
+        <li><strong>ArXiv</strong> — cs.AI / cs.LG / cs.CL 最新论文</li>
+        <li><strong>GitHub Trending</strong> — AI 开源项目趋势</li>
+      </ul>
+
+      <h2>工作原理</h2>
+      <p>
+        Pipeline 自动聚合多个来源的内容，通过 LLM 进行智能分类过滤，
+        筛选出与 AI 密切相关的高质量条目，最终由 LLM 生成结构化的中文日报。
+      </p>
+
+      <h2>技术栈</h2>
+      <ul>
+        <li><strong>后端</strong> — Python + LangChain + OpenAI API</li>
+        <li><strong>前端</strong> — Astro + shadcn/ui + Tailwind CSS</li>
+        <li><strong>部署</strong> — GitHub Pages</li>
+      </ul>
+    </div>
+  </section>
+</MainLayout>

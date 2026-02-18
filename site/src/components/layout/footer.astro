@@ -1,0 +1,58 @@
+---
+import { ThemeToggle } from "@/components/theme-toggle";
+import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
+import { Icon } from "astro-icon/components";
+
+type Props = {
+  className?: string;
+};
+
+const { className } = Astro.props;
+---
+
+<footer class={cn("border-t", className)}>
+  <div
+    class="container grid grid-cols-1 gap-6 py-14 sm:grid-cols-2 md:grid-cols-5"
+  >
+    <div>
+      <span class="text-sm font-medium text-foreground">AI Daily</span>
+      <p class="mt-2 text-sm text-muted-foreground">每日精选 AI 领域最新动态</p>
+    </div>
+    <div>
+      <span class="text-sm font-medium text-foreground">链接</span>
+      <ul class="mt-4 list-inside space-y-3">
+        <li><a href={`${import.meta.env.BASE_URL}`} class="text-sm text-muted-foreground hover:text-primary">首页</a></li>
+        <li><a href={`${import.meta.env.BASE_URL}about/`} class="text-sm text-muted-foreground hover:text-primary">关于</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t py-4">
+    <div class="container flex items-center justify-between">
+      <p class="text-left text-sm text-muted-foreground">
+        AI Daily &copy; {new Date().getFullYear()}. Powered by{" "}
+        <a
+          href="https://astro.build"
+          target="_blank"
+          rel="noreferrer"
+          class="font-medium underline underline-offset-4"
+        >
+          Astro
+        </a>.
+      </p>
+
+      <div class="flex items-center gap-3">
+        <a
+          href={siteConfig.links.github}
+          target="_blank"
+          rel="noreferrer"
+          class="font-medium underline underline-offset-4"
+        >
+          <Icon name="github" class="size-5" />
+        </a>
+        <ThemeToggle client:load />
+      </div>
+    </div>
+  </div>
+</footer>

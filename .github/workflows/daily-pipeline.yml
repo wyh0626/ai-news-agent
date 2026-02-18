@@ -1,0 +1,85 @@
+name: AI News Pipeline
+
+on:
+  schedule:
+    # 每天 UTC 00:00 (北京时间 08:00) 运行
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: '数据源 (空=默认全部)'
+        required: false
+        default: ''
+      report_mode:
+        description: '报告模式'
+        required: false
+        default: 'daily'
+        type: choice
+        options:
+          - daily
+          - weekly
+
+permissions:
+  contents: write
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -e ".[prod]"
+
+      - name: Run pipeline
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          TWITTER_LIST_URL: ${{ secrets.TWITTER_LIST_URL }}
+          NITTER_MIRROR_URL: ${{ secrets.NITTER_MIRROR_URL }}
+          POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
+          REPORT_MODE: ${{ github.event.inputs.report_mode || 'daily' }}
+        run: |
+          SOURCES="${{ github.event.inputs.sources }}"
+          if [ -n "$SOURCES" ]; then
+            python scripts/run_pipeline.py $SOURCES
+          else
+            python scripts/run_pipeline.py
+          fi
+
+      - name: Sync content to site
+        working-directory: site
+        run: npm run sync 2>/dev/null || node scripts/sync-content.mjs --source ../output
+
+      - name: Commit & push output
+        run: |
+          git config user.name "AI Daily Bot"
+          git config user.email "bot@ai-daily.dev"
+          git add output/ site/src/content/blog/
+          # 只在有变更时提交
+          if git diff --cached --quiet; then
+            echo "No new content to commit"
+          else
+            DATE=$(date -u +%Y-%m-%d)
+            git commit -m "📰 AI Daily $DATE"
+            git push
+          fi
+
+  deploy-site:
+    needs: run-pipeline
+    uses: ./.github/workflows/deploy-site.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
