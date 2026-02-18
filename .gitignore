@@ -12,7 +12,6 @@ build/
 venv/
 env/
 
-output/
 *.log
 
 .pytest_cache/

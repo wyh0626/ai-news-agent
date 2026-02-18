@@ -1,17 +1,19 @@
 # 🤖 AI News Agent
 
-基于 LangGraph 的多 Agent AI 新闻聚合系统。自动从多个数据源采集、清洗、语义去重、LLM 提取结构化信息，生成中英文双语 AI 新闻简报（日报 / 周报），支持多渠道发布。
+[中文文档](./README.zh-CN.md)
 
-**特点：**
-- 5 大数据源：Reddit、Hacker News、ArXiv、GitHub Trending、Twitter/X
-- LLM 驱动：AI 相关性过滤、结构化提取、中文标题生成、英文翻译
-- 智能去重：标题去重 + pgvector 语义去重 + 事件级合并
-- 零成本部署：GitHub Actions 定时运行 + Neon 免费 PostgreSQL + GitHub Pages
-- 多模型支持：OpenAI / Kimi (Moonshot) / DeepSeek / 任何 OpenAI 兼容 API
+A multi-agent AI news aggregation system built on LangGraph. Automatically collects, cleans, deduplicates, extracts structured information via LLM, and generates bilingual (Chinese & English) AI news briefings (daily / weekly) with multi-channel publishing.
 
-## 快速开始
+**Features:**
+- **5 data sources**: Reddit, Hacker News, ArXiv, GitHub Trending, Twitter/X
+- **LLM-powered**: AI relevance filtering, structured extraction, Chinese title generation, English translation
+- **Smart dedup**: Title matching + pgvector semantic dedup + event-level merging
+- **Zero-cost deploy**: GitHub Actions cron + Neon free PostgreSQL + GitHub Pages
+- **Multi-model**: OpenAI / Kimi (Moonshot) / DeepSeek / any OpenAI-compatible API
 
-### 1. 克隆 & 安装
+## Quick Start
+
+### 1. Clone & Install
 
 ```bash
 git clone https://github.com/wyh0626/ai-news-agent.git
@@ -22,131 +24,132 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -e ".[prod]"
 ```
 
-### 2. 配置
+### 2. Configure
 
 ```bash
 cp .env.example .env
 ```
 
-**最小配置**（只需一个 LLM API Key 即可运行）：
+**Minimal config** (only need one LLM API Key):
 
 ```bash
 OPENAI_API_KEY=sk-your-api-key
 OPENAI_MODEL=gpt-4o-mini
 ```
 
-**使用 Kimi (Moonshot)**：
+**Using Kimi (Moonshot)**:
 
 ```bash
 OPENAI_API_KEY=sk-your-moonshot-key
 OPENAI_BASE_URL=https://api.moonshot.cn/v1
 OPENAI_MODEL=moonshot-v1-auto
-# Kimi 不提供 Embedding，需要单独配置（用于语义去重）
+# Kimi doesn't provide Embedding API, configure separately for semantic dedup
 EMBEDDING_API_KEY=sk-your-openai-key
 EMBEDDING_BASE_URL=https://api.openai.com/v1
 ```
 
-**启用语义去重**（推荐，避免重复报道）：
+**Enable semantic dedup** (recommended):
 
 ```bash
-# 方式一：本地 Docker
+# Option 1: Local Docker
 docker compose up -d postgres
 
-# 方式二：Neon 免费云数据库（推荐，自带 pgvector）
+# Option 2: Neon free cloud database (recommended, pgvector built-in)
 POSTGRES_URL=postgresql://user:pass@xxx.neon.tech/neondb?sslmode=require
 ```
 
-### 3. 运行
+### 3. Run
 
 ```bash
-# 采集全部数据源，生成日报
+# Collect from all sources, generate daily report
 python scripts/run_pipeline.py
 
-# 指定数据源
+# Specify sources
 python scripts/run_pipeline.py reddit hackernews
 
-# 只采集 Twitter
+# Twitter only
 python scripts/run_pipeline.py twitter
 ```
 
-### 4. 查看输出
+### 4. Output
 
 ```
 output/
-├── ai-daily-2026-02-18.md       # 中文日报
-├── ai-daily-2026-02-18-en.md    # 英文日报
+├── ai-daily-2026-02-18.md       # Chinese report
+├── ai-daily-2026-02-18-en.md    # English report
 ```
 
-## 架构
+## Architecture
 
 ```
 Collector → Cleaner → Dedup → Extractor → Reviewer → Writer → Translator → Publisher → Memory
-   采集       清洗    规则+语义   LLM提取   事件合并    LLM撰稿   中→英翻译    多渠道      长期记忆
+  Fetch      Clean   Rule+Semantic  LLM      Event     LLM      ZH→EN      Multi-ch   Long-term
+                                   Extract   Merge    Compose   Translate   Publish    Memory
 ```
 
-| Agent | 职责 | 实现 |
-|-------|------|------|
-| **Collector** | 并行采集 5 大数据源 | feedparser + httpx + Firecrawl |
-| **Cleaner** | 格式标准化、去噪 | 规则引擎 |
-| **Dedup** | 标题去重 + 语义去重 | 标题匹配 + pgvector |
-| **Extractor** | 主题分类、摘要、中文标题 | LLM 并发批处理 |
-| **Reviewer** | 事件级去重合并 | LLM 识别同一事件 |
-| **Writer** | 编排简报（今日焦点 + 重点 + 快讯） | LLM + 模板降级 |
-| **Translator** | 中文日报 → 英文版 | LLM 翻译 |
-| **Publisher** | 保存 Markdown + 邮件 + Webhook | 多渠道 |
+| Agent | Role | Implementation |
+|-------|------|----------------|
+| **Collector** | Parallel multi-source fetching | feedparser + httpx + Firecrawl |
+| **Cleaner** | Normalize format, remove noise | Rule engine |
+| **Dedup** | Title dedup + semantic dedup | Title matching + pgvector |
+| **Extractor** | Topic classification, summary, Chinese titles | LLM concurrent batch |
+| **Reviewer** | Event-level dedup & merge | LLM identifies same events |
+| **Writer** | Compose briefing (Top Stories + Featured + Quick Bites) | LLM + template fallback |
+| **Translator** | Chinese report → English version | LLM translation |
+| **Publisher** | Save Markdown + Email + Webhook | Multi-channel |
 
-## 部署
+## Deployment
 
-### 方案一：GitHub Actions（推荐，零服务器成本）
+### Option 1: GitHub Actions (Recommended, zero server cost)
 
-项目已配置好 `.github/workflows/daily-pipeline.yml`：
+Pre-configured in `.github/workflows/daily-pipeline.yml`:
 
-1. Fork 本仓库
-2. 在 **Settings → Secrets → Actions** 中添加：
+1. Fork this repo
+2. Go to **Settings → Secrets → Actions**, add:
 
-| Secret | 必填 | 说明 |
-|--------|------|------|
+| Secret | Required | Description |
+|--------|----------|-------------|
 | `OPENAI_API_KEY` | ✅ | LLM API Key |
-| `OPENAI_BASE_URL` | | API 地址（默认 OpenAI） |
-| `OPENAI_MODEL` | | 模型名（默认 gpt-4o-mini） |
-| `POSTGRES_URL` | | Neon 数据库 URL（启用语义去重） |
-| `FIRECRAWL_API_KEY` | | Firecrawl Key（启用 Twitter） |
+| `OPENAI_BASE_URL` | | API endpoint (default: OpenAI) |
+| `OPENAI_MODEL` | | Model name (default: gpt-4o-mini) |
+| `POSTGRES_URL` | | Neon database URL (enables semantic dedup) |
+| `FIRECRAWL_API_KEY` | | Firecrawl Key (enables Twitter) |
 | `TWITTER_LIST_URL` | | Twitter List URL |
-| `NITTER_MIRROR_URL` | | Nitter 镜像地址 |
+| `NITTER_MIRROR_URL` | | Nitter mirror URL |
 
-3. 在 **Settings → Pages** 中启用 GitHub Pages（Source: GitHub Actions）
-4. Pipeline 每天 UTC 00:00 自动运行，也可手动触发（支持选择日报/周报模式）
+3. Go to **Settings → Pages**, set Source to **GitHub Actions**
+4. Pipeline runs daily at UTC 00:00. Manual trigger also supported (daily/weekly mode).
 
-### 方案二：Docker 本地/VPS
+### Option 2: Docker (Local / VPS)
 
 ```bash
-docker compose up -d    # 启动 PostgreSQL + 运行 Pipeline
+docker compose up -d    # Start PostgreSQL + run pipeline
 ```
 
-## 多渠道发布
+## Multi-channel Publishing
 
-在 `.env` 中配置即自动启用：
+Configure in `.env` to auto-enable:
 
 ```bash
-# Slack / Discord / 飞书
+# Slack / Discord / Feishu (Lark)
 SLACK_WEBHOOK_URL=https://hooks.slack.com/services/...
 FEISHU_WEBHOOK_URL=https://open.feishu.cn/open-apis/bot/v2/hook/...
 
-# 邮件
+# Email newsletter
 SMTP_HOST=smtp.gmail.com
 SMTP_USER=your@email.com
 NEWSLETTER_RECIPIENTS=reader1@email.com,reader2@email.com
 ```
 
-## 技术栈
+## Tech Stack
 
-| 层次 | 技术 |
-|------|------|
-| Agent 框架 | LangGraph (StateGraph) |
-| LLM | OpenAI / Kimi / DeepSeek（兼容 API） |
+| Layer | Technology |
+|-------|-----------|
+| Agent Framework | LangGraph (StateGraph) |
+| LLM | OpenAI / Kimi / DeepSeek (compatible API) |
 | Embedding | text-embedding-3-small + pgvector |
-| 数据库 | PostgreSQL + pgvector（Neon 免费层） |
-| 静态站 | Astro + TailwindCSS |
+| Database | PostgreSQL + pgvector (Neon free tier) |
+| Static Site | Astro + TailwindCSS |
 | CI/CD | GitHub Actions + GitHub Pages |
 
 ## License

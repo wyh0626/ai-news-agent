@@ -2,16 +2,16 @@ name: AI News Pipeline
 
 on:
   schedule:
-    # 每天 UTC 00:00 (北京时间 08:00) 运行
+    # Runs daily at UTC 00:00 (08:00 CST)
     - cron: '0 0 * * *'
   workflow_dispatch:
     inputs:
       sources:
-        description: '数据源 (空=默认全部)'
+        description: 'Data sources (empty=all)'
         required: false
         default: ''
       report_mode:
-        description: '报告模式'
+        description: 'Report mode'
         required: false
         default: 'daily'
         type: choice
@@ -67,7 +67,7 @@ jobs:
           git config user.name "AI Daily Bot"
           git config user.email "bot@ai-daily.dev"
           git add output/ site/src/content/blog/
-          # 只在有变更时提交
+          # Only commit if there are changes
           if git diff --cached --quiet; then
             echo "No new content to commit"
           else
