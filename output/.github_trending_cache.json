@@ -1,13 +1,4 @@
 {
-  "2026-02-14": [
-    "SynkraAI/aios-core",
-    "THUDM/slime",
-    "google-deepmind/superhuman",
-    "danielmiessler/Personal_AI_Infrastructure",
-    "HandsOnLLM/Hands-On-Large-Language-Models",
-    "patchy631/ai-engineering-hub",
-    "cheahjs/free-llm-api-resources"
-  ],
   "2026-02-15": [
     "tambo-ai/tambo",
     "letta-ai/letta-code",
@@ -33,5 +24,8 @@
     "rowboatlabs/rowboat",
     "SynkraAI/aios-core",
     "ruvnet/wifi-densepose"
+  ],
+  "2026-02-18": [
+    "SynkraAI/aios-core"
   ]
 }
