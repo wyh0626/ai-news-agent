@@ -43,7 +43,7 @@ MERGE_PROMPT = """你是一个 AI 新闻编辑。以下是今日采集到的新�
 def _build_llm() -> ChatOpenAI:
     kwargs = {
         "model": settings.openai_model,
-        "max_completion_tokens": 4096,
+        "max_tokens": 4096,
     }
     if settings.openai_api_key:
         kwargs["api_key"] = settings.openai_api_key

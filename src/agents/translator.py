@@ -33,7 +33,7 @@ Rules:
 def _build_llm() -> ChatOpenAI:
     kwargs = {
         "model": settings.openai_model,
-        "max_completion_tokens": 32768,
+        "max_tokens": 32768,
     }
     if settings.openai_api_key:
         kwargs["api_key"] = settings.openai_api_key

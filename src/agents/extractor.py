@@ -46,7 +46,7 @@ def _build_llm() -> ChatOpenAI:
     """构建 LLM 实例"""
     kwargs = {
         "model": settings.openai_model,
-        "max_completion_tokens": 4096,
+        "max_tokens": 4096,
     }
     if settings.openai_api_key:
         kwargs["api_key"] = settings.openai_api_key

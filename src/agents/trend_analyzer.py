@@ -45,7 +45,7 @@ DEEPDIVE_PROMPT = """你是一位专业的 AI 行业分析师。请围绕话题�
 
 
 def _build_llm() -> ChatOpenAI:
-    kwargs = {"model": settings.openai_model, "max_completion_tokens": 16384}
+    kwargs = {"model": settings.openai_model, "max_tokens": 16384}
     if settings.openai_api_key:
         kwargs["api_key"] = settings.openai_api_key
     if settings.openai_base_url:

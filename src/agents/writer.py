@@ -75,7 +75,7 @@ WRITER_PROMPT = """你是一位专业的 AI 领域新闻编辑。请根据以下
 def _build_llm() -> ChatOpenAI:
     kwargs = {
         "model": settings.openai_model,
-        "max_completion_tokens": 32768,
+        "max_tokens": 32768,
     }
     if settings.openai_api_key:
         kwargs["api_key"] = settings.openai_api_key

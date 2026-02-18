@@ -45,10 +45,16 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          EMBEDDING_API_KEY: ${{ secrets.EMBEDDING_API_KEY }}
+          EMBEDDING_BASE_URL: ${{ secrets.EMBEDDING_BASE_URL }}
+          EMBEDDING_MODEL: ${{ secrets.EMBEDDING_MODEL }}
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
           TWITTER_LIST_URL: ${{ secrets.TWITTER_LIST_URL }}
           NITTER_MIRROR_URL: ${{ secrets.NITTER_MIRROR_URL }}
           POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
+          REDDIT_SUBREDDITS: ${{ secrets.REDDIT_SUBREDDITS }}
+          HN_MIN_SCORE: ${{ secrets.HN_MIN_SCORE }}
+          MAX_ITEMS_PER_RUN: ${{ secrets.MAX_ITEMS_PER_RUN }}
           REPORT_MODE: ${{ github.event.inputs.report_mode || 'daily' }}
         run: |
           SOURCES="${{ github.event.inputs.sources }}"
