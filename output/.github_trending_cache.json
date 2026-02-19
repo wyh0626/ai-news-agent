@@ -1,14 +1,4 @@
 {
-  "2026-02-15": [
-    "tambo-ai/tambo",
-    "letta-ai/letta-code",
-    "SynkraAI/aios-core",
-    "rowboatlabs/rowboat",
-    "alibaba/zvec",
-    "ChromeDevTools/chrome-devtools-mcp",
-    "ruvnet/wifi-densepose",
-    "Zipstack/unstract"
-  ],
   "2026-02-16": [
     "rowboatlabs/rowboat",
     "openclaw/openclaw",
@@ -26,6 +16,9 @@
     "ruvnet/wifi-densepose"
   ],
   "2026-02-18": [
+    "SynkraAI/aios-core"
+  ],
+  "2026-02-19": [
     "SynkraAI/aios-core"
   ]
 }
