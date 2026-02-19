@@ -1,35 +1,14 @@
 version: "3.9"
 
 services:
-  # PostgreSQL + pgvector（长期记忆 + 语义去重）
-  postgres:
-    image: pgvector/pgvector:pg16
-    restart: unless-stopped
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: ainews
-    ports:
-      - "127.0.0.1:5432:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-
   # Pipeline 服务（定时运行，每天 08:00 CST = 00:00 UTC）
+  # 数据库使用外部 Neon PostgreSQL，无需本地 postgres
   agent:
     build: .
     restart: unless-stopped
     env_file: .env
     environment:
-      POSTGRES_URL: postgresql://postgres:postgres@postgres:5432/ainews
       OUTPUT_DIR: /app/output
-    depends_on:
-      postgres:
-        condition: service_healthy
     volumes:
       # 输出目录（持久化）
       - ./output:/app/output
@@ -37,13 +16,10 @@ services:
       - ./site/src/content/blog:/app/site/src/content/blog
       # git 仓库（用于 push）
       - ./.git:/app/.git
-      # SSH key（用于 git push，见部署文档）
+      # SSH key（用于 git push）
       - ${SSH_KEY_PATH:-~/.ssh/id_ed25519}:/root/.ssh/id_ed25519:ro
     command: >
       bash -c "
         echo '0 0 * * * cd /app && bash scripts/run_and_push.sh >> /app/output/pipeline.log 2>&1' | crontab - &&
         cron -f
       "
-
-volumes:
-  pgdata:
