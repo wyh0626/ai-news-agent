@@ -83,8 +83,20 @@ class PostgresStorage:
         try:
             import psycopg_pool
 
+            # keepalives 防止 Neon 等云数据库长时间运行后 SSL 连接断开
+            connect_kwargs = {
+                "keepalives": 1,
+                "keepalives_idle": 30,
+                "keepalives_interval": 10,
+                "keepalives_count": 5,
+            }
             self._pool = psycopg_pool.AsyncConnectionPool(
-                self.postgres_url, min_size=2, max_size=10, open=False
+                self.postgres_url,
+                min_size=1,
+                max_size=5,
+                open=False,
+                kwargs=connect_kwargs,
+                reconnect_timeout=30,
             )
             await self._pool.open()
             logger.info("PostgreSQL 连接成功")
@@ -290,4 +302,5 @@ async def get_postgres() -> PostgresStorage:
     if _pg is None:
         _pg = PostgresStorage()
         await _pg.connect()
+        await _pg.init_tables()
     return _pg

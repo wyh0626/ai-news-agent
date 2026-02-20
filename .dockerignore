@@ -1,0 +1,37 @@
+# 私密文件 - 绝对不能打包进镜像
+.env
+.env.*
+!.env.example
+
+# SSH keys
+.ssh/
+*.pem
+*.key
+
+# Git
+.git/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# 输出文件（运行时挂载）
+output/
+
+# 测试
+tests/
+.pytest_cache/
+.ruff_cache/
+
+# IDE
+.idea/
+.vscode/
+.DS_Store
+
+# 文档
+README*.md

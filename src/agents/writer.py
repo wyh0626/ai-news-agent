@@ -179,21 +179,27 @@ def _normalize_source_links(markdown: str) -> str:
     return re.sub(r'\[([^\]]*)\]\((https?://[^\)]+)\)', replacer, markdown)
 
 
-def _items_to_json(items: list[ExtractedItem]) -> str:
-    """将新闻条目转为 JSON 字符串"""
+def _items_to_json(items: list[ExtractedItem], brief: bool = False) -> str:
+    """将新闻条目转为 JSON 字符串；brief=True 时只保留必要字段以节省 token"""
     import json
 
     data = []
     for item in items:
-        data.append({
-            "title": item.title,
-            "summary": item.summary,
-            "topics": item.topics,
-            "entities": item.entities,
-            "importance_score": item.importance_score,
-            "source": item.source_type.value,
-            "url": item.url,
-        })
+        if brief:
+            data.append({
+                "title": item.title,
+                "source": item.source_type.value,
+                "url": item.url,
+            })
+        else:
+            data.append({
+                "title": item.title,
+                "summary": item.summary,
+                "topics": item.topics,
+                "importance_score": item.importance_score,
+                "source": item.source_type.value,
+                "url": item.url,
+            })
     return json.dumps(data, ensure_ascii=False, indent=2)
 
 
@@ -242,7 +248,7 @@ async def writer_node(state: PipelineState) -> dict:
                 brief_count=len(brief),
                 threshold=threshold,
                 featured_json=_items_to_json(featured),
-                brief_json=_items_to_json(brief),
+                brief_json=_items_to_json(brief, brief=True),
             )
             resp = await llm.ainvoke(prompt)
             markdown = resp.content

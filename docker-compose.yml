@@ -4,7 +4,7 @@ services:
   # Pipeline 服务（定时运行，每天 08:00 CST = 00:00 UTC）
   # 数据库使用外部 Neon PostgreSQL，无需本地 postgres
   agent:
-    build: .
+    image: ${AGENT_IMAGE:-wyh0626/ai-news-agent:latest}
     restart: unless-stopped
     env_file: .env
     environment:

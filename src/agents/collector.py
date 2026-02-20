@@ -81,11 +81,13 @@ def _smart_select(items_by_source: dict[str, list[RawItem]]) -> list[RawItem]:
     for src_id, items in items_by_source.items():
         # 源内按 score 降序
         items.sort(key=lambda x: x.score, reverse=True)
+        # ArXiv 单独上限，避免论文占比过高
+        src_max = settings.arxiv_max_items if src_id == "arxiv" else max_per_src
         # 保底配额
-        guaranteed = items[:min(min_per_src, max_per_src, len(items))]
+        guaranteed = items[:min(min_per_src, src_max, len(items))]
         selected.extend(guaranteed)
         source_counts[src_id] = len(guaranteed)
-        # 剩余进入竞争池
+        # 剩余进入竞争池（受 src_max 约束）
         remaining_pool.extend(items[len(guaranteed):])
 
     # 竞争剩余名额
@@ -93,9 +95,10 @@ def _smart_select(items_by_source: dict[str, list[RawItem]]) -> list[RawItem]:
     for item in remaining_pool:
         if len(selected) >= max_total:
             break
-        # 检查该源是否已达上限
+        # 检查该源是否已达上限（arxiv 用单独上限）
         src_key = item.source_type.value
-        if source_counts.get(src_key, 0) >= max_per_src:
+        src_ceil = settings.arxiv_max_items if src_key == "arxiv" else max_per_src
+        if source_counts.get(src_key, 0) >= src_ceil:
             continue
         selected.append(item)
         source_counts[src_key] = source_counts.get(src_key, 0) + 1

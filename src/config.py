@@ -64,6 +64,7 @@ class Settings(BaseSettings):
     report_mode: str = "daily"  # daily / weekly
     max_items_per_run: int = 50
     max_items_per_source: int = 15
+    arxiv_max_items: int = 5  # ArXiv 单独限制，避免论文占比过高
     min_items_per_source: int = 3
     top_k_featured: int = 10
     min_items_to_write: int = 5
