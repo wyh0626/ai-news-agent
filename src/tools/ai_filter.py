@@ -7,6 +7,7 @@
 - LLM 不可用时降级为核心关键词匹配
 """
 
+import asyncio
 import json
 import logging
 import re
@@ -49,7 +50,7 @@ FILTER_PROMPT = """你是一个 AI 领域资讯分类专家。
 def _build_llm() -> ChatOpenAI:
     kwargs = {
         "model": settings.openai_model,
-        "max_completion_tokens": 4096,
+        "max_tokens": 512,
     }
     if settings.openai_api_key:
         kwargs["api_key"] = settings.openai_api_key
@@ -98,6 +99,7 @@ def _fallback_filter(titles: Sequence[str]) -> list[int]:
 
 
 BATCH_SIZE = 25  # 每批最多 25 条，避免 prompt 过长导致 LLM 空响应
+MAX_CONCURRENT = 8  # 最大并发批次数，避免触发限流
 
 
 async def _filter_one_batch(
@@ -160,21 +162,26 @@ async def batch_filter_ai(
 
     try:
         llm = _build_llm()
-        all_indices: list[int] = []
+        semaphore = asyncio.Semaphore(MAX_CONCURRENT)
 
-        # 分批处理
-        for start in range(0, len(titles_list), BATCH_SIZE):
+        async def _limited_batch(start: int) -> list[int]:
             end = min(start + BATCH_SIZE, len(titles_list))
             batch_titles = titles_list[start:end]
             batch_descs = descs_list[start:end] if descs_list else None
-            batch_indices = await _filter_one_batch(
-                llm, batch_titles, batch_descs, offset=start
-            )
-            all_indices.extend(batch_indices)
+            async with semaphore:
+                return await _filter_one_batch(llm, batch_titles, batch_descs, offset=start)
+
+        # 并行执行所有批次
+        starts = list(range(0, len(titles_list), BATCH_SIZE))
+        results = await asyncio.gather(*[_limited_batch(s) for s in starts])
+        all_indices: list[int] = []
+        for batch_result in results:
+            all_indices.extend(batch_result)
+        all_indices.sort()
 
         logger.info(
             f"LLM AI 过滤: {len(titles_list)} 条标题 → {len(all_indices)} 条 AI 相关"
-            + (f" ({len(range(0, len(titles_list), BATCH_SIZE))} 批次)" if len(titles_list) > BATCH_SIZE else "")
+            + (f" ({len(starts)} 批次)" if len(starts) > 1 else "")
         )
         return all_indices
     except Exception as e:

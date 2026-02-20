@@ -17,12 +17,14 @@ async def update_memory_node(state: PipelineState) -> dict:
     if not extracted:
         return {}
 
-    # 尝试连接数据库
+    # 尝试连接数据库（memory_updater 在 pipeline 末尾运行，连接可能已超时，强制重建）
     pg = None
     mongo = None
     try:
-        from src.storage.postgres import get_postgres
-        pg = await get_postgres()
+        from src.storage import postgres as _pg_mod
+        # 重置单例，避免使用 pipeline 开始时建立的已超时连接
+        _pg_mod._pg = None
+        pg = await _pg_mod.get_postgres()
     except Exception:
         pass
     try:

@@ -81,8 +81,16 @@ def _parse_extraction(raw: str) -> Optional[dict]:
     start = text.find("{")
     end = text.rfind("}")
     if start != -1 and end != -1 and end > start:
+        chunk = text[start:end + 1]
         try:
-            return json.loads(text[start:end + 1])
+            return json.loads(chunk)
+        except json.JSONDecodeError:
+            pass
+        # 4. 容错：去掉行内注释、尾部逗号后再试
+        try:
+            cleaned = re.sub(r'//[^\n]*', '', chunk)          # 去 // 注释
+            cleaned = re.sub(r',\s*([}\]])', r'\1', cleaned)  # 去尾部逗号
+            return json.loads(cleaned)
         except json.JSONDecodeError:
             pass
 

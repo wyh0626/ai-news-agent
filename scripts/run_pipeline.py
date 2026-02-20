@@ -43,7 +43,7 @@ async def main(sources: list[str] | None = None):
         "article": None,
         "run_id": "",
         "run_started_at": "",
-        "sources_config": sources or ["reddit", "hackernews", "arxiv", "github", "twitter"],
+        "sources_config": sources or ["reddit", "hackernews", "github", "twitter"],
         "errors": [],
         "messages": [],
     }

@@ -16,6 +16,7 @@ dependencies = [
     "python-dotenv>=1.0",
     "rich>=13.0",
     "markdown>=3.5",
+    "firecrawl-py>=1.0",
 ]
 
 [project.optional-dependencies]
@@ -27,8 +28,6 @@ dev = [
 prod = [
     "psycopg[binary]>=3.1",
     "psycopg-pool>=3.1",
-    "redis>=5.0",
-    "motor>=3.3",
     "langgraph-checkpoint-postgres>=2.0",
     "apscheduler>=3.10",
 ]
