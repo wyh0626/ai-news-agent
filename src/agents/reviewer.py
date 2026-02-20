@@ -25,16 +25,14 @@ MERGE_PROMPT = """你是一个 AI 新闻编辑。以下是今日采集到的新�
 不算重复的情况：
 - 仅话题相似但讨论不同具体内容的（如两篇不同的 AI 安全论文）
 
-请以 JSON 数组返回需要合并的分组，每组包含应合并条目的序号（0-indexed），以及合并后建议保留哪条（keep）：
+请以 JSON 对象返回，格式如下：
 
-```json
-[
+{{"groups": [
   {{"group": [0, 3, 7], "keep": 0, "reason": "都是关于 Qwen3.5 发布"}},
   {{"group": [2, 5], "keep": 2, "reason": "同一个 GitHub 项目"}}
-]
-```
+]}}
 
-如果没有需要合并的，返回空数组 `[]`。只返回 JSON，不要其他内容。
+如果没有需要合并的，返回 {{"groups": []}}。只返回 JSON 对象，不要其他内容。
 
 --- 新闻列表 ---
 {items_text}"""
@@ -43,7 +41,8 @@ MERGE_PROMPT = """你是一个 AI 新闻编辑。以下是今日采集到的新�
 def _build_llm() -> ChatOpenAI:
     kwargs = {
         "model": settings.openai_model,
-        "max_tokens": 4096,
+        "max_tokens": 2048,
+        "model_kwargs": {"response_format": {"type": "json_object"}},
     }
     if settings.openai_api_key:
         kwargs["api_key"] = settings.openai_api_key
@@ -53,12 +52,22 @@ def _build_llm() -> ChatOpenAI:
 
 
 def _parse_merge_groups(raw: str) -> list[dict]:
-    """解析 LLM 返回的合并分组 JSON"""
+    """解析 LLM 返回的合并分组 JSON，支持 {"groups":[...]} 和 [...] 两种格式"""
     text = raw.strip()
+
+    def _extract_groups(obj) -> list[dict] | None:
+        """从解析结果中提取 groups 列表"""
+        if isinstance(obj, list):
+            return obj
+        if isinstance(obj, dict) and "groups" in obj:
+            return obj["groups"]
+        return None
 
     # 直接解析
     try:
-        return json.loads(text)
+        result = _extract_groups(json.loads(text))
+        if result is not None:
+            return result
     except json.JSONDecodeError:
         pass
 
@@ -70,22 +79,25 @@ def _parse_merge_groups(raw: str) -> list[dict]:
             if part.startswith("json"):
                 part = part[4:].strip()
             try:
-                result = json.loads(part)
-                if isinstance(result, list):
+                result = _extract_groups(json.loads(part))
+                if result is not None:
                     return result
             except json.JSONDecodeError:
                 continue
 
-    # 提取 [ ... ]
-    start = text.find("[")
-    end = text.rfind("]")
-    if start != -1 and end != -1 and end > start:
-        try:
-            return json.loads(text[start:end + 1])
-        except json.JSONDecodeError:
-            pass
+    # 提取 { ... } 或 [ ... ]
+    for open_c, close_c in [("{", "}"), ("[", "]")]:
+        start = text.find(open_c)
+        end = text.rfind(close_c)
+        if start != -1 and end != -1 and end > start:
+            try:
+                result = _extract_groups(json.loads(text[start:end + 1]))
+                if result is not None:
+                    return result
+            except json.JSONDecodeError:
+                pass
 
-    logger.warning(f"合并分组 JSON 解析失败: {text[:200]}...")
+    logger.warning(f"合并分组 JSON 解析失败，LLM 原始响应:\n{text}")
     return []
 
 

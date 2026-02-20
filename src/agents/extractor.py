@@ -43,10 +43,11 @@ URL: {url}
 
 
 def _build_llm() -> ChatOpenAI:
-    """构建 LLM 实例"""
+    """构建 LLM 实例，强制 JSON 输出"""
     kwargs = {
         "model": settings.openai_model,
-        "max_tokens": 4096,
+        "max_tokens": 1024,
+        "model_kwargs": {"response_format": {"type": "json_object"}},
     }
     if settings.openai_api_key:
         kwargs["api_key"] = settings.openai_api_key
@@ -94,7 +95,7 @@ def _parse_extraction(raw: str) -> Optional[dict]:
         except json.JSONDecodeError:
             pass
 
-    logger.warning(f"JSON 解析失败: {raw[:200]}...")
+    logger.warning(f"JSON 解析失败，LLM 原始响应:\n{raw}")
     return None
 
 
