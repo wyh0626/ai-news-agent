@@ -81,7 +81,7 @@
 @layer base {
   @font-face {
     font-family: 'CalSans Semibold';
-    src: url('/ai-daily-new/fonts/calsans-semibold.woff2') format('woff2');
+    src: url('/ai-news-agent/fonts/calsans-semibold.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

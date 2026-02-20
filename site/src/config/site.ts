@@ -4,11 +4,11 @@ export const siteConfig: SiteConfig = {
   name: "AI Daily",
   description:
     "每日精选 AI 领域最新动态、研究论文、开源项目与行业趋势",
-  url: "https://your-username.github.io/ai-daily-new",
+  url: "https://wyh0626.github.io/ai-news-agent",
   ogImage: "",
   links: {
     twitter: "",
-    github: "https://github.com/your-username/ai-daily-new",
+    github: "https://github.com/wyh0626/ai-news-agent",
   },
 };
 
