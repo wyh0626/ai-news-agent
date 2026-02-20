@@ -117,6 +117,19 @@ function extractMeta(content, fileName) {
 
 let synced = 0;
 
+// 区分中文和英文文件
+const zhFiles = files.filter(f => !f.endsWith('-en.md'));
+const enFiles = files.filter(f => f.endsWith('-en.md'));
+
+// 建立英文→中文的映射
+const enToZhMap = new Map();
+for (const enFile of enFiles) {
+  const zhFile = enFile.replace('-en.md', '.md');
+  if (zhFiles.includes(zhFile)) {
+    enToZhMap.set(enFile, zhFile);
+  }
+}
+
 for (const file of files) {
   const raw = readFileSync(join(sourceDir, file), 'utf-8');
 
@@ -127,15 +140,32 @@ for (const file of files) {
     if (endIdx > 0) content = raw.slice(endIdx + 3).trim();
   }
 
+  const isEn = file.endsWith('-en.md');
   const meta = extractMeta(content, file);
-  console.log(`✅ ${file} → ${meta.description}`);
 
-  const frontmatter = `---
+  // 计算配对 slug
+  let pairSlug = '';
+  if (isEn) {
+    const zhFile = enToZhMap.get(file);
+    if (zhFile) pairSlug = zhFile.replace('.md', '');
+  } else {
+    const enFile = file.replace('.md', '-en.md');
+    if (enFiles.includes(enFile)) pairSlug = enFile.replace('.md', '');
+  }
+
+  const lang = isEn ? 'en' : 'zh';
+  if (isEn) meta.title = meta.title.replace('AI 日报', 'AI Daily');
+
+  console.log(`✅ ${file} [${lang}] → ${meta.description}`);
+
+  let frontmatter = `---
 title: "${meta.title}"
 description: "${meta.description.replace(/"/g, '\\"')}"
 pubDate: "${meta.date}"
 category: "daily"
----`;
+lang: "${lang}"`;
+  if (pairSlug) frontmatter += `\npairSlug: "${pairSlug}"`;
+  frontmatter += `\n---`;
 
   writeFileSync(join(targetDir, file), frontmatter + '\n\n' + meta.body);
   synced++;

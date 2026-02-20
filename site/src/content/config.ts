@@ -6,6 +6,8 @@ const blog = defineCollection({
     description: z.string().default(""),
     cover: z.string().optional(),
     category: z.string().default("daily"),
+    lang: z.string().default("zh"),
+    pairSlug: z.string().optional(),
     pubDate: z
       .string()
       .or(z.date())

@@ -2,17 +2,19 @@ import { getCollection } from "astro:content";
 
 export async function getCategories() {
   const posts = await getCollection("blog");
-  const categories = [
-    ...new Set(posts.map((post) => post.data.category).flat()),
-  ];
+  const categories = Array.from(
+    new Set(posts.map((post) => post.data.category).flat())
+  );
 
   return categories;
 }
 
 export async function getPosts() {
-  const posts = (await getCollection("blog")).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-  );
+  const posts = (await getCollection("blog"))
+    .filter((post) => (post.data as any).lang !== "en")
+    .sort(
+      (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    );
 
   return posts;
 }

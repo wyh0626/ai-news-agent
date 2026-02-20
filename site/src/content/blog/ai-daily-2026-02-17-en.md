@@ -1,8 +1,10 @@
 ---
-title: "AI 日报 — 2026-02-17"
+title: "AI Daily — 2026-02-17"
 description: "LLM 技术进展 · 开源模型与工具链 · 多语言与多模态"
 pubDate: "2026-02-17"
 category: "daily"
+lang: "en"
+pairSlug: "ai-daily-2026-02-17"
 ---
 
 > A total of 16 AI-related news items were collected
