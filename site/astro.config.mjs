@@ -6,8 +6,8 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://wyh0626.github.io",
-  base: "/ai-news-agent/",
+  site: "https://ainewslog.com",
+  base: "/",
   output: "static",
   integrations: [
     mdx({
