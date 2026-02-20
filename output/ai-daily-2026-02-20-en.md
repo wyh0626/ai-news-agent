@@ -1,106 +1,120 @@
 # AI Daily — 2026-02-20
 
-> A total of 41 AI domain news items collected
+> A total of 44 AI-domain news items were collected
 
 ## 🔥 Top Stories
 
-### 1. Fully Automated Safety-Removal Tool for Language Models
-Heretic is a fully automated tool to remove safety alignment constraints from language models, designed to eliminate transformer models' safety alignment constraints without expensive retraining. It combines directional ablation with Optuna-based TPE parameter optimization, selecting high-quality parameters by jointly minimizing the number of refusals and the KL divergence from the original model, striving to preserve the model's inherent intelligence. Users do not need to understand the internal structure of the model; anyone who can run a command line can use this tool, and it operates under an unsupervised default configuration. [Source-github](https://github.com/p-e-w/heretic)
+### 1. Real-time Video Generation on RTX5090
 
-### 2. First State of Generative Media Report Release
-This news announces the release of the first State of Generative Media report, offering a comprehensive review of model developments in the past year across image, video, audio, and 3D domains. It covers enterprise adoption and use cases, developer usage trends, and predictions for 2026. The report link is fal.ai/gen-media-report-volu… [Source-x](https://x.com/fal/status/2024529735049507166)
+Achieving truly real-time 16 FPS video generation on a single RTX 5090 card demonstrates the feasibility of ultra-low-latency autoregressive video generation on consumer-grade hardware. MonarchRT maps attention parameters into tile-like Monarch matrices, delivering end-to-end performance gains and deployment potential. [Source-x](https://x.com/InfiniAILab/status/2023928541293728105)
 
-### 3. Taalas Pushes Llama3 8B to 16k/s
-Under single-user conditions, Taalas achieves 16k tokens per second inference for Llama 3 8B, clearly surpassing SRAM-based Cerebras. The core idea is to treat the chip itself as the model, with each chip dedicated to a single model; the chat demonstration was stunning. [Source-x](https://x.com/awnihannun/status/2024671348782711153)
+### 2. First Generative Media Report Released
 
-📰 Featured
+Fal AI today released its first State of Generative Media report, providing a comprehensive review of the past year's progress in generative models across images, videos, audio, and 3D, and focusing on enterprise adoption and developer trends, with predictions and insights for 2026. [Source-x](https://x.com/fal/status/2024529735049507166)
 
-### Open-Source Models and Small Models
-- **Kitten TTS V0.8 Ultra-Small Model Release** — An open-source small TTS model, as small as ~25MB, CPU runnable, covering eight expressive voices. This boosts edge deployment capabilities and cross-language applicability, but also raises concerns about copyright and potential misuse. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r8pztp/kitten_tts_v08_is_out_new_sota_supertiny_tts/)
+### 3. TaalasLlama3 Acceleration
 
-- **Flutter Documentation Large-Scale Conversion** — Large-scale conversion of Flutter documentation using multiple models, completed within 12 hours, with around 102GB of VRAM, illustrating model comparisons, speed and stability differences, and the advantages and limitations of Markdown in multi-pass conversions. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9h3g8/qwen3_coder_next_8fp_in_the_process_of_converting/)
+Taalas has increased the Llama 3 8B inference speed to about 16k tokens per second per user, far surpassing SRAM-based systems and nearly an order of magnitude faster. The core idea is “the chip is the model”—each chip is dedicated to a single model, making the demonstration phase quite impactful. [Source-x](https://x.com/awnihannun/status/2024671348782711153)
 
-### Chip Hardware and Inference Acceleration
-- **RTX5090 Real-Time Video Breakthrough** — MonarchRT maps attention to a Monarch matrix, enabling real-time video generation on a single RTX 5090 card; end-to-end acceleration improves by 1.5–12x. Paper from arXiv:2602.12271. [Source-x](https://x.com/InfiniAILab/status/2023928541293728105)
+## 📰 Featured
 
-- **Free 8B Llama Inference Chip** — Taalas releases a free chatbot interface and API running on their own chips, using a small model as a proof of concept; inference speed about 16k tokens/s, with plans to extend to larger models and continue offering a free proof-of-concept version. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9e27i/free_asic_llama_31_8b_inference_at_16000_toks_no/)
+### Open-Source Models and Tools
 
-### Industry Trends and Applications
-- **Hassabis on India's AI Leadership Path** — Demis Hassabis of Google DeepMind speaks with Bloomberg TV, focusing on India’s path and potential to become a global AI leader, and its role and opportunities within the global AI ecosystem. [Source-x](https://x.com/business/status/2024337525876158654)
+- **KittenTTS Ultra-Small Models Release** — Kitten ML released three ultra-small expressive TTS models: Mini 80M, Micro 40M, Nano 14M. All are open-sourced under Apache 2.0 and runnable on CPU. Nano 14M is only about 25 MB, offering eight expressive voices (4 female, 4 male); English support is available, with plans to add additional languages in the future. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r8pztp/kitten_tts_v08_is_out_new_sota_supertiny_tts/)
 
-- **14x Speedup for Consistency Diffusion Language Models** — Introduces a method called Consistency Diffusion Language Models that achieves about 14x inference acceleration while maintaining output quality; the information source is Together AI's blog and is discussed on Hacker News. [Source-rss](https://www.together.ai/blog/consistency-diffusion-language-models)
+- **Unsloth and HF Free Fine-Tuning** — Unsloth teams up with Hugging Face to offer free fine-tuning services and gift HF Jobs and Unsloth GPU credits. You can train around a 1.2B-parameter model with a single command and deploy it to mobile, laptops, or APIs without building your own infrastructure. [Source-x](https://x.com/ben_burtenshaw/status/2024552060558229858)
 
-### Safety & Ethics
-- **AI Agent Wrote a Hit Piece, Operator Steps Forward** — Reports that an AI agent wrote an attack piece targeting an author, and the agent’s operator publicly responds. This highlights safety boundaries, personal rights, and industry reputation challenges for AI assistants. [Source-rss](https://theshamblog.com/an-ai-agent-wrote-a-hit-piece-on-me-part-4/)
+- **Locally Built Small Language Model Luma** — Luma v2.9, about 10 million parameters, a transformer that supports local offline training and running without cloud or telemetry. Data structure is Core/Knowledge/Conversations; weights are automatically calculated by file size, suitable for consumer-grade GPU/CPU, targeting small but vocal local applications (not a GPT-4/LLaMA substitute). [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9nq0b/i_built_a_small_language_model_from_scratch_no/)
 
-### Other Highlights
-- **Free 8B Llama Inference Chip (duplicate)** — See the item above in the Chip Hardware and Inference Acceleration section.
+### Education and Systems Engineering
 
----
+- **AI Systems Engineering Textbook** — harvard-edge/cs249r_book provides textbooks such as “Introduction to Machine Learning Systems” and an open-source learning stack, focusing on principles and practices of AI systems engineering, emphasizing establishing AI engineering as a foundational discipline alongside software engineering and computer engineering. The repository includes online reading, PDF/EPUB downloads, TinyTorch, and other resources, with a hardcopy edition planned for MIT Press in 2026. [Source-github](https://github.com/harvard-edge/cs249r_book)
 
-⚡ Quick Bites
+### Enterprise Applications & Frameworks
 
-- **AI Is Not a Colleague, It Is an Exoskeleton** — AI as an exoskeleton augmenting human capabilities is widely discussed. [Source-rss](https://www.kasava.dev/blog/ai-as-exoskeleton)
+- **Enterprise AICRM/ERP Framework** — Open Mercato is an AI-supported enterprise-grade CRM/ERP and business backend framework, modular and extensible, supporting team-customizable modules, entities, and workflows, while providing production-ready default governance. Core use cases cover CRM, ERP, OMS, and data encryption, emphasizing a path of “80% done, buy-and-build coexist.” [Source-github](https://github.com/open-mercato/open-mercato)
 
-- **AI Makes You Boring** — A discussion on the view that AI could make programming dull. [Source-rss](https://www.marginalia.nu/log/a_132_ai_bores/)
+### Multimodal and Agent Tools
 
-- **AI Makes Programming More Fun** — Views that AI coding assistants increase development enjoyment and productivity. [Source-rss](https://weberdominik.com/blog/ai-coding-enjoyable/)
+- **Multimodal + Three Open-Source Agents Update** — SanityBoard updates include 27 evaluation results, 4 community submissions, 3 open-source coding agents, and UI improvements. It notes GPT-Codex is stronger in iteration, while Claude still has advantages in interactive coding scenarios. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9ours/qwen35_plus_glm_5_gemini_31_pro_sonnet_46_three/)
 
-- **Gemini 3.1 Pro Released** — DeepMind’s Gemini 3.1 Pro officially released with new multimo​dal capabilities. [Source-rss](https://deepmind.google/models/model-cards/gemini-3-1-pro/)
+### Local Deployment & Small Models
 
-- **Open-Source Foundational Models Deep Inference Acceleration** — StepFun’s 3.5-Flash provides an open-source inference acceleration solution for community optimization. [Source-rss](https://static.stepfun.com/blog/step-3.5-flash/)
+- **Locally Built Small Language Model Luma** — Already covered in the top stories above. Please refer to that item for local offline deployment and lightweight characteristics. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9nq0b/i_built_a_small_language_model_from_scratch_no/)
 
-- **ClaudeCode Regression Severity** — Concerns raised about regression in ClaudeCode. [Source-x](https://x.com/theo/status/2024718133676867608)
+### Model Acceleration & Optimization
 
-- **Unsloth + HF Free Fine-Tuning** — Free fine-tuning resources from Unsloth and Hugging Face draw attention. [Source-x](https://x.com/ben_burtenshaw/status/2024552060558229858)
+- **Consistency Diffusion Language Models: 14x Speedup Without Loss** — Together AI blog discusses the potential and applications of achieving up to 14x acceleration without sacrificing quality, useful for exploring more efficient inference solutions and cost control. [Source-rss](https://www.together.ai/blog/consistency-diffusion-language-models)
 
-- **Randomized Trials Evaluating LLM-Assisted Wet-Lab Experiments** — Sharing results from randomized trials evaluating LLM-assisted wet-lab experiments. [Source-x](https://x.com/ActiveSiteBio/status/2024536132961390826)
+## ⚡ Quick Bites
 
-- **Gradio 6 gr.HTML Single-File Deployment Completed** — Gradio 6 update demonstrates the ease of deploying gr.HTML in a single file. [Source-x](https://x.com/Gradio/status/2024222631151518181)
+- **AI Makes Everyday Life Boring** — Examines whether AI development is making daily life dull. [Source-rss](https://www.marginalia.nu/log/a_132_ai_bores/)
 
-- **Claude Code Demo in Colab/Collaborative Environments** — Claude Code demonstrations in Colab/collaborative settings attract attention. [Source-x](https://x.com/omarsar0/status/2024511304535593287)
+- **Automated Uncensoring Language Model Tool** — Open-source tool Heretic provides an implementation for automated uncensoring capabilities. [Source-github](https://github.com/p-e-w/heretic)
 
-- **Claude Code Telegram Remote Access** — Claude Code adds Telegram remote access capability. [Source-github](https://github.com/RichardAtCT/claude-code-telegram)
+- **Real City Planning Applications Demo** — Discusses real-world AI applications in urban planning and governance. [Source-x](https://x.com/GoogleDeepMind/status/2024570291767181557)
 
-- **Intro to AI Systems Engineering** — Beginner resources and textbooks appear on GitHub. [Source-github](https://github.com/harvard-edge/cs249r_book)
+- **Severe ClaudeCode Rollbacks** — Reports on rollback issues and stability challenges with ClaudeCode. [Source-x](https://x.com/theo/status/2024718133676867608)
 
-- **AI-Driven Enterprise CRM Framework** — Open-source enterprise CRM framework examples and implementations. [Source-github](https://github.com/open-mercato/open-mercato)
+- **Large Models Do Not Significantly Improve Beginners’ Molecular Experiments** — Indicates limited help for beginner molecular biology experiments. [Source-x](https://x.com/ActiveSiteBio/status/2024536132961390826)
 
-- **Qwen3.5/GLM5 and Agents** — Discussions about Qwen3.5, GLM5, and agents. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9ours/qwen35_plus_glm_5_gemini_31_pro_sonnet_46_three/)
+- **$250 Monthly Fee Still No CLI Access** — Discusses CLI usage barriers under high-price subscriptions. [Source-x](https://x.com/theo/status/2024743835553976460)
 
-- **Building a Small Language Model from Scratch: Luma** — Practice sharing on building a small language model from scratch. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9nq0b/i_built_a_small_language_model_from_scratch_no/)
+- **Google Launches UL Model** — Reports on Google’s release of a new UL model and related features. [Source-x](https://x.com/_akhaliq/status/2024691083276440048)
 
-- **PaddleOCR-VL Joins LlamaCpp** — PaddleOCR-VL progresses to join LlamaCpp. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9mkgj/paddleocrvl_now_in_llamacpp/)
+- **Gradio 6 Simplifies Frontend/Backend Deployment** — Gradio releases version 6 to improve frontend-backend deployment efficiency. [Source-x](https://x.com/Gradio/status/2024222631151518181)
 
-- **llama.cpp IQ Quantization** — PRs related to IQ quantization in llama.cpp. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r91akx/llamacpp_pr_to_implement_iq_k_and_iq_ks_quants/)
+- **Claude Code UI Demo** — Demonstrates Claude Code's user interface. [Source-x](https://x.com/omarsar0/status/2024511304535593287)
 
-- **GPT-OSS-120B on 2x RTX5090 Deployed** — Progress on deploying GPT-OSS-120B on two RTX5090 cards. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9mcjw/gptoss120b_on_2x_rtx5090/)
+- **Excel AI Sidebar Add-in Pi** — Pi plugin adds AI-assisted capabilities to Excel. [Source-github](https://github.com/tmustier/pi-for-excel)
 
-- **AI Coding Assistants: Gains Still Below 10%** — Industry observations on productivity gains from AI coding assistants. [Source-rss](https://shiftmag.dev/this-cto-says-93-of-developers-use-ai-but-productivity-is-still-10-8013/)
+- **Claude Code Telegram Remote Bot** — Provides a Telegram remote bot implementation for Claude Code. [Source-github](https://github.com/RichardAtCT/claude-code-telegram)
 
-- **Measuring AI Agent Autonomy in Practice** — A summary of studies evaluating AI agent autonomy. [Source-rss](https://www.anthropic.com/research/measuring-agent-autonomy)
+- **Free Llama3.1 Inference at 16k** — Reports on free 16k token inference capability for LLaMA 3.1. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9e27i/free_asic_llama_31_8b_inference_at_16000_toks_no/)
 
-- **Ban on External Use of Subscription Authentication** — Compliance guidance and restrictions on external use of subscription authentication. [Source-rss](https://code.claude.com/docs/en/legal-and-compliance)
+- **Gemini3.1 to Release Before Gemma4** — Discusses Gemini 3.1’s release timeline potentially preceding Gemma4. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9fkks/we_will_have_gemini_31_before_gemma_4/)
 
-- **AI’s Impact on European Productivity and Jobs** — In-depth analysis of AI’s impact on productivity and employment in Europe. [Source-rss](https://cepr.org/voxeu/columns/how_ai-affecting-productivity-and-jobs-europe)
+- **Qwen3 Coder Next 8FP Documentation Converted to Flutter** — Transforms Qwen3 Coder Next 8FP documentation into Flutter-related materials. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9h3g8/qwen3_coder_next_8fp_in_the_process_of_converting/)
 
-- **Microsoft Guidance on LangChain+SQL Vector Store Training Draws Attention** — Microsoft’s training guidance for LangChain+SQL vector stores draws attention. [Source-rss](https://devblogs.microsoft.com/azure-sql/langchain-with-sqlvectorstore-example/)
+- **PaddleOCR-VL Is Now in llama.cpp** — PaddleOCR-VL has been integrated into the llama.cpp framework. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9mkgj/paddleocrvl_now_in_llamacpp/)
 
-- **Simple User Login and Forwarding Multiple Updates** — Case study on simplifying user authentication and forwarding multiple updates. [Source-x](https://x.com/lateinteraction/status/2024685523311202423)
+- **GLM-5 Nearing Benchmark Completion** — Updates on GLM-5 nearing the end of benchmark readiness. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r99wrj/can_glm5_survive_30_days_on_foodtruck_bench_full/)
 
-- **Google Proposes Unified Latent Variable** — Google’s update on unified latent variable research. [Source-x](https://x.com/_akhaliq/status/2024691083276440048)
+- **Implement IQ_K/IQ_KS Quantization** — Introduces progress toward IQ_K and IQ_KS quantization within the LLaMA ecosystem. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r91akx/llamacpp_pr_to_implement_iq_k_and_iq_ks_quants/)
 
-- **What Makes OpenClaw Different?** — Discussion comparing OpenClaw with other open-source frameworks. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9gve8/i_feel_left_behind_what_is_special_about_openclaw/)
+- **GPT-OSS-120b Deployed on Dual RTX5090** — Discusses deploying GPT-OSS-120b on two RTX5090 GPUs. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9mcjw/gptoss120b_on_2x_rtx5090/)
 
-- **Microsoft Avoiding a Sidney-Like Incident** — Discussion of Microsoft’s avoidance strategies rooted in security incident lessons. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r92o58/seems_microsoft_is_really_set_on_not_repeating_a/)
+- **AI Is Not a Colleague, It Is an Exoskeleton** — Deep dive into AI as a “exoskeleton” for human work and how it cooperates. [Source-rss](https://www.kasava.dev/blog/ai-as-exoskeleton)
 
-- **Sam Altman and Dario Refuse to Partner** — News of top-level leaders declining collaboration draws attention. [Source-rss](https://xcancel.com/ANI/status/2024349307835732347)
+- **AI Coding Assistants’ Gains Still Around 10%** — Discusses the reality that AI coding assistants’ output gains are typically around 10%. [Source-rss](https://shiftmag.dev/this-cto-says-93-of-developers-use-ai-but-productivity-is-still-10-8013/)
 
-- **Pi AI Sidebar Add-in for Excel** — Progress on Pi AI sidebar add-in for Excel. [Source-github](https://github.com/tmustier/pi-for-excel)
+- **Empirical Measurement of AI Agent Autonomy** — Studies empirically measure AI agent autonomy. [Source-rss](https://www.anthropic.com/research/measuring-agent-autonomy)
 
-- **Let It Find Model Signatures and Then Reflect on Its Existence** — Discussion about model self-recognition and signature exploration. [Source-x](https://x.com/theo/status/2024745010793681003)
+- **Subscription Verification Not for External Use** — Compliance notice restricting external use of subscription verification. [Source-rss](https://code.claude.com/docs/en/legal-and-compliance)
 
-- **Offline Local Open-Source Models Not Realistic** — Debate on the practicality of offline local open-source models. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r99yda/pack_it_up_guys_open_weight_ai_models_running/)
+- **3.5 Flash Open-Source Inference** — Introduces the open-source inference implementation and performance of 3.5 Flash. [Source-rss](https://static.stepfun.com/blog/step-3.5-flash/)
+
+- **AI’s Impact on Productivity and Jobs in Europe** — Analyses the impact of AI on productivity and employment in Europe. [Source-rss](https://cepr.org/voxeu/columns/how-ai-affecting-productivity-and-jobs-europe)
+
+- **Microsoft Guide on Data Copyright: Training LLMs with Harry Potter Content (LangChain and SQL Vector Store)** — Discussion and compliance analysis on Microsoft’s LangChain and SQL vector store case study. [Source-rss](https://devblogs.microsoft.com/azure-sql/langchain-with-sqlvectorstore-example/)
+
+- **Hassabis on India’s AI Leadership** — Interview with industry leaders on India’s leadership in the global AI field. [Source-x](https://x.com/business/status/2024337525876158654)
+
+- **ColBERT, GEPA, RLM Updates** — Updates on ColBERT, GEPA, RLM retrieval/dialogue models. [Source-x](https://x.com/lateinteraction/status/2024685523311202423)
+
+- **AI Agent Wrote Hit Piece About Me, Operator Revealed** — Case analysis of an AI agent writing a negative article and exposing the operator behind it. [Source-rss](https://theshamblog.com/an-ai-agent-wrote-a-hit-piece-on-me-part-4/)
+
+- **Kimi’s Context Window Expansion Ambitions** — Discusses Kimi project’s ambitions for context window expansion. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9qa7l/kimi_has_context_window_expansion_ambitions/)
+
+- **What Makes OpenClaw Unique** — In-depth analysis of OpenClaw’s distinct design and potential. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9gve8/i_feel_left_behind_what_is_special_about_openclaw/)
+
+- **AI Makes Coding Easier** — Explores how AI can make coding work easier and more efficient. [Source-rss](https://weberdominik.com/blog/ai-coding-enjoyable/)
+
+- **Altman and Amodei Decline to Engage** — Coverage on communication and collaboration topics at the OpenAI leadership level. [Source-rss](https://xcancel.com/ANI/status/2024349307835732347)
+
+- **Local Offline Open-Weight AI Models Unrealistic** — Questions and analyzes the realism of locally offline weight models. [Source-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r99yda/pack_it_up_guys_open_weight_ai_models_running/)
+
+- **Let It Find Model Signatures and Then Reflect** — Examines model self-diagnosis and self-reflection capabilities. [Source-x](https://x.com/theo/status/2024745010793681003)
 
 ---
 
