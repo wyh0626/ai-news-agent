@@ -21,7 +21,14 @@ fi
 
 # ---- 1. 运行 pipeline ----
 cd "$REPO_DIR"
-python scripts/run_pipeline.py
+# 自动激活虚拟环境（如果存在）
+if [ -f "$REPO_DIR/.venv/bin/activate" ]; then
+    source "$REPO_DIR/.venv/bin/activate"
+elif [ -f "$REPO_DIR/venv/bin/activate" ]; then
+    source "$REPO_DIR/venv/bin/activate"
+fi
+PYTHON=$(command -v python || command -v python3)
+$PYTHON scripts/run_pipeline.py
 PIPELINE_EXIT=$?
 
 if [ $PIPELINE_EXIT -ne 0 ]; then
