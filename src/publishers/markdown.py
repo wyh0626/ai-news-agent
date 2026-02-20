@@ -11,11 +11,17 @@ logger = logging.getLogger(__name__)
 
 
 def _save_markdown(article: GeneratedArticle, output_dir: Path) -> Path:
-    """将文章保存为 Markdown 文件"""
+    """将文章保存为 Markdown 文件（带 frontmatter）"""
     filename = f"ai-daily-{article.date}.md"
     filepath = output_dir / filename
 
-    filepath.write_text(article.markdown_content, encoding="utf-8")
+    content = article.markdown_content
+    if article.description:
+        desc_escaped = article.description.replace('"', '\\"')
+        frontmatter = f'---\ndescription: "{desc_escaped}"\n---\n\n'
+        content = frontmatter + content
+
+    filepath.write_text(content, encoding="utf-8")
     logger.info(f"文章已保存: {filepath}")
     return filepath
 
@@ -68,12 +74,12 @@ async def publish_node(state: PipelineState) -> dict:
     output_dir = settings.output_path
     filepath = _save_markdown(article, output_dir)
 
-    # 1.5 保存英文版（如果有）
-    if article.markdown_content_en:
-        en_filename = f"ai-daily-{article.date}-en.md"
-        en_filepath = output_dir / en_filename
-        en_filepath.write_text(article.markdown_content_en, encoding="utf-8")
-        logger.info(f"英文版已保存: {en_filepath}")
+    # 1.5 保存中文翻译版（如果有）
+    if article.markdown_content_zh:
+        zh_filename = f"ai-daily-{article.date}-zh.md"
+        zh_filepath = output_dir / zh_filename
+        zh_filepath.write_text(article.markdown_content_zh, encoding="utf-8")
+        logger.info(f"中文版已保存: {zh_filepath}")
 
     # 2. 尝试发送邮件
     await _publish_newsletter(article)

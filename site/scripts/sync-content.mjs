@@ -37,54 +37,41 @@ function extractMeta(content, fileName) {
   const dateMatch = fileName.match(/(\d{4}-\d{2}-\d{2})/);
   const date = dateMatch ? dateMatch[1] : new Date().toISOString().slice(0, 10);
 
-  // ── 提取简短中文热点摘要（从「今日焦点」的每个条目取第一句中文）──
+  // ── 优先读取 frontmatter 里的 description（pipeline 写入的高质量摘要）──
+  let frontmatterDescription = '';
+  if (content.startsWith('---')) {
+    const endIdx = content.indexOf('---', 3);
+    if (endIdx > 0) {
+      const fm = content.slice(3, endIdx);
+      const descMatch = fm.match(/^description:\s*["']?(.+?)["']?\s*$/m);
+      if (descMatch) frontmatterDescription = descMatch[1].trim();
+    }
+  }
+
+  // ── 降级：从 Top Stories / 今日焦点 提取编号标题作为摘要 ──
   const hotTopics = [];
   let inFocus = false;
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-    if (line.startsWith('## ') && line.includes('今日焦点')) { inFocus = true; continue; }
+    if (line.startsWith('## ') && (line.includes('Top Stories') || line.includes('今日焦点'))) {
+      inFocus = true; continue;
+    }
     if (inFocus && line.startsWith('## ')) break;
-    // 匹配编号标题行 "### 1. ..." 或列表项 "- ..."
-    if (inFocus && (/^###\s+\d/.test(line) || /^-\s+/.test(line))) {
-      // 向后找中文描述段落（可能在同一行或下一行）
-      let text = '';
-      // 如果是 "- Title — 中文描述" 格式
-      const dashMatch = line.match(/—\s*(.+)/);
-      if (dashMatch) {
-        text = dashMatch[1];
-      } else {
-        // 下一行是中文段落
-        for (let j = i + 1; j < lines.length && j <= i + 3; j++) {
-          if (lines[j] && !lines[j].startsWith('#') && !lines[j].startsWith('-') && /[\u4e00-\u9fff]/.test(lines[j])) {
-            text = lines[j]; break;
-          }
-        }
-      }
-      if (text) {
-        let snippet = text
-          .replace(/\[.*?\]\(.*?\)/g, '')       // 去 markdown 链接
-          .replace(/\*\*/g, '')                  // 去加粗
-          .replace(/[\uff08\(][^)\uff09]*[\uff09\)]/g, '') // 去括号注释
-          .replace(/\s{2,}/g, ' ')
-          .split(/[\u3002\uff1b]/)[0]            // 取第一句
-          .trim();
-        // 如果太长，在中文逗号处截断
-        if (snippet.length > 28) {
-          const parts = snippet.split(/\uff0c/);
-          snippet = parts[0];
-        }
-        if (snippet.length > 28) snippet = snippet.slice(0, 26) + '...';
-        if (snippet && /[\u4e00-\u9fff]/.test(snippet)) hotTopics.push(snippet);
-      }
+    // 匹配编号标题行 "### 1. ..."
+    if (inFocus && /^###\s+\d/.test(line)) {
+      const title = line.replace(/^###\s+\d+\.\s*/, '').trim();
+      if (title.length >= 3) hotTopics.push(title);
     }
     if (hotTopics.length >= 3) break;
   }
 
-  // 降级：从重点报道取话题名
+  // 降级：从 Featured / 重点报道 取话题名
   if (hotTopics.length === 0) {
     let inReport = false;
     for (const line of lines) {
-      if (line.startsWith('## ') && line.includes('重点报道')) { inReport = true; continue; }
+      if (line.startsWith('## ') && (line.includes('Featured') || line.includes('重点报道'))) {
+        inReport = true; continue;
+      }
       if (inReport && line.startsWith('## ')) break;
       if (inReport && /^###\s+(?!\d)/.test(line)) {
         hotTopics.push(line.replace(/^###\s+/, '').trim());
@@ -101,8 +88,11 @@ function extractMeta(content, fileName) {
     }
   }
 
-  let description = hotTopics.slice(0, 3).join(' · ');
-  if (description.length > 100) description = description.slice(0, 97) + '...';
+  let description = frontmatterDescription;
+  if (!description) {
+    description = hotTopics.slice(0, 3).join(' · ');
+    if (description.length > 100) description = description.slice(0, 97) + '...';
+  }
   if (!description) description = `${date} AI 领域最新动态`;
 
   const title = `AI 日报 — ${date}`;
@@ -117,16 +107,16 @@ function extractMeta(content, fileName) {
 
 let synced = 0;
 
-// 区分中文和英文文件
-const zhFiles = files.filter(f => !f.endsWith('-en.md'));
-const enFiles = files.filter(f => f.endsWith('-en.md'));
+// 区分英文（主文件）和中文翻译文件
+const enFiles = files.filter(f => !f.endsWith('-zh.md'));
+const zhFiles = files.filter(f => f.endsWith('-zh.md'));
 
-// 建立英文→中文的映射
-const enToZhMap = new Map();
-for (const enFile of enFiles) {
-  const zhFile = enFile.replace('-en.md', '.md');
-  if (zhFiles.includes(zhFile)) {
-    enToZhMap.set(enFile, zhFile);
+// 建立中文→英文的映射
+const zhToEnMap = new Map();
+for (const zhFile of zhFiles) {
+  const enFile = zhFile.replace('-zh.md', '.md');
+  if (enFiles.includes(enFile)) {
+    zhToEnMap.set(zhFile, enFile);
   }
 }
 
@@ -140,21 +130,21 @@ for (const file of files) {
     if (endIdx > 0) content = raw.slice(endIdx + 3).trim();
   }
 
-  const isEn = file.endsWith('-en.md');
+  const isZh = file.endsWith('-zh.md');
   const meta = extractMeta(content, file);
 
   // 计算配对 slug
   let pairSlug = '';
-  if (isEn) {
-    const zhFile = enToZhMap.get(file);
-    if (zhFile) pairSlug = zhFile.replace('.md', '');
+  if (isZh) {
+    const enFile = zhToEnMap.get(file);
+    if (enFile) pairSlug = enFile.replace('.md', '');
   } else {
-    const enFile = file.replace('.md', '-en.md');
-    if (enFiles.includes(enFile)) pairSlug = enFile.replace('.md', '');
+    const zhFile = file.replace('.md', '-zh.md');
+    if (zhFiles.includes(zhFile)) pairSlug = zhFile.replace('.md', '');
   }
 
-  const lang = isEn ? 'en' : 'zh';
-  if (isEn) meta.title = meta.title.replace('AI 日报', 'AI Daily');
+  const lang = isZh ? 'zh' : 'en';
+  if (isZh) meta.title = meta.title.replace('AI Daily', 'AI 日报');
 
   console.log(`✅ ${file} [${lang}] → ${meta.description}`);
 

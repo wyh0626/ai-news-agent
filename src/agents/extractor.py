@@ -13,40 +13,42 @@ from src.models import CleanedItem, ExtractedItem, Sentiment
 
 logger = logging.getLogger(__name__)
 
-EXTRACTION_PROMPT = """你是一个 AI 新闻分析师。请从以下新闻条目中提取结构化信息。
+EXTRACTION_PROMPT = """You are an AI news analyst. Extract structured information from the following news item.
 
-新闻标题: {title}
-新闻内容: {content}
-来源: {source_type}
+Title: {title}
+Content: {content}
+Source: {source_type}
 URL: {url}
+Platform Score: {platform_score}
 
-请以 JSON 格式返回以下字段:
+Return a JSON object with these fields:
 {{
-    "title_zh": "精准的中文标题（15字以内，概括核心内容，如：'RTX 5090 上 0.6B 模型推理速度测试'）",
-    "summary": "2-3句话的核心摘要（中文）",
-    "topics": ["主题分类标签列表，如: LLM, 开源模型, 多模态, RL, 具身智能, 行业应用, 数据集, 芯片硬件, AI安全, 工具框架"],
-    "entities": ["关键实体列表: 公司名、人物、模型名、产品名"],
+    "title_en": "Concise English headline (max 12 words, capture the core news, e.g. 'RTX 5090 Achieves 16 FPS Real-Time Video Generation')",
+    "summary": "2-3 sentence summary in English",
+    "topics": ["topic tags, e.g.: LLM, Open Source, Multimodal, RL, Embodied AI, Industry, Dataset, Hardware, AI Safety, Tools"],
+    "entities": ["key entities: company names, people, model names, product names"],
     "sentiment": "positive/neutral/negative",
-    "importance_score": 1到10的重要性评分（10最重要）
+    "importance_score": 1-10 importance rating (10 = most important)
 }}
 
-注意事项:
-- title_zh 和 summary 必须准确区分"人物"和"产品/项目"：如某人加入某公司，主语是人不是产品（如"OpenClaw 作者加入 OpenAI"而非"ClawdBot 入职 OpenAI"）
-- 不要臆测未提及的细节，忠实于原文内容
+Importance scoring rules (be consistent):
+- 9-10: Major product launch by top lab (OpenAI/Google/Anthropic/Meta), breakthrough SOTA result, critical industry event
+- 7-8: Notable open-source model release, significant funding/acquisition, important benchmark result, viral demo
+- 5-6: Interesting project/tool, meaningful update to existing product, good tutorial/analysis
+- 3-4: Routine discussion, minor update, niche topic
+- 1-2: Low-signal content, spam, off-topic
 
-评分标准:
-- 8-10: 重大发布、突破性研究、行业重大事件
-- 5-7: 值得关注的更新、有趣的项目
-- 1-4: 常规讨论、小更新
+Also consider platform score as a signal: high upvotes/stars = likely more important.
 
-只返回 JSON，不要返回其他内容。"""
+Return JSON only, no other text."""
 
 
 def _build_llm() -> ChatOpenAI:
-    """构建 LLM 实例，强制 JSON 输出"""
+    """构建 LLM 实例，强制 JSON 输出，temperature=0 保证评分稳定"""
     kwargs = {
         "model": settings.openai_model,
         "max_tokens": 16384,
+        "temperature": 0,
         "model_kwargs": {"response_format": {"type": "json_object"}},
     }
     if settings.openai_api_key:
@@ -124,6 +126,7 @@ async def _extract_one(llm: ChatOpenAI, item: CleanedItem) -> ExtractedItem:
         content=item.content[:1000],  # 截断避免上下文过长
         source_type=item.source_type.value,
         url=item.url,
+        platform_score=item.quality_score if hasattr(item, 'quality_score') else 0,
     )
 
     try:
@@ -138,12 +141,12 @@ async def _extract_one(llm: ChatOpenAI, item: CleanedItem) -> ExtractedItem:
             "negative": Sentiment.NEGATIVE,
         }
 
-        # 优先使用 LLM 生成的中文标题
-        title_zh = parsed.get("title_zh", "").strip()
+        # 优先使用 LLM 生成的英文标题
+        title_en = parsed.get("title_en", "").strip()
         return ExtractedItem(
             id=item.id,
             source_type=item.source_type,
-            title=title_zh if title_zh else item.title,
+            title=title_en if title_en else item.title,
             content=item.content,
             url=item.url,
             author=item.author,

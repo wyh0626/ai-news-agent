@@ -15,26 +15,26 @@ from src.models import ExtractedItem
 
 logger = logging.getLogger(__name__)
 
-MERGE_PROMPT = """你是一个 AI 新闻编辑。以下是今日采集到的新闻列表，请找出**报道同一事件或同一主题**的重复/高度相似条目。
+MERGE_PROMPT = """You are an AI news editor. Review the following news list and identify **duplicate or highly similar items** that cover the same event or topic.
 
-判断标准：
-- 讨论同一个产品发布、同一篇论文、同一个项目、同一条新闻事件
-- 同一个 GitHub 仓库的不同讨论帖
-- 同一模型发布的不同角度报道（如 "Qwen3.5发布" 和 "Qwen3.5 权重已上线"）
+Merge criteria:
+- Same product launch, same paper, same project, same news event
+- Different discussion threads about the same GitHub repository
+- Different angles on the same model release (e.g. "Qwen3.5 released" and "Qwen3.5 weights now available")
 
-不算重复的情况：
-- 仅话题相似但讨论不同具体内容的（如两篇不同的 AI 安全论文）
+NOT duplicates:
+- Similar topic but different specific content (e.g. two different AI safety papers)
 
-请以 JSON 对象返回，格式如下：
+Return a JSON object in this format:
 
 {{"groups": [
-  {{"group": [0, 3, 7], "keep": 0, "reason": "都是关于 Qwen3.5 发布"}},
-  {{"group": [2, 5], "keep": 2, "reason": "同一个 GitHub 项目"}}
+  {{"group": [0, 3, 7], "keep": 0, "reason": "All about Qwen3.5 release"}},
+  {{"group": [2, 5], "keep": 2, "reason": "Same GitHub project"}}
 ]}}
 
-如果没有需要合并的，返回 {{"groups": []}}。只返回 JSON 对象，不要其他内容。
+If no merges needed, return {{"groups": []}}. Return JSON only, no other text.
 
---- 新闻列表 ---
+--- News List ---
 {items_text}"""
 
 
@@ -106,9 +106,9 @@ def _items_to_text(items: list[ExtractedItem]) -> str:
     lines = []
     for i, item in enumerate(items):
         lines.append(
-            f"[{i}] 标题: {item.title}\n"
-            f"    来源: {item.source_type.value} | URL: {item.url}\n"
-            f"    摘要: {item.summary[:100]}"
+            f"[{i}] Title: {item.title}\n"
+            f"    Source: {item.source_type.value} | URL: {item.url}\n"
+            f"    Summary: {item.summary[:100]}"
         )
     return "\n".join(lines)
 

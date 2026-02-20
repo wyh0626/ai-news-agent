@@ -30,6 +30,9 @@ class Settings(BaseSettings):
     twitter_list_url: str = "https://x.com/i/lists/1585430245762441216"
     nitter_mirror_url: str = "https://nitter.net"
 
+    # 自定义 RSS 源（格式: name1=url1,name2=url2）
+    rss_feeds: str = ""
+
     # GitHub 趋势去重缓存天数
     github_trending_dedup_days: int = 3
 
@@ -79,6 +82,17 @@ class Settings(BaseSettings):
     @property
     def subreddit_list(self) -> list[str]:
         return [s.strip() for s in self.reddit_subreddits.split(",") if s.strip()]
+
+    @property
+    def rss_feed_list(self) -> list[tuple[str, str]]:
+        """解析 rss_feeds 配置，返回 [(name, url), ...]"""
+        result = []
+        for item in self.rss_feeds.split(","):
+            item = item.strip()
+            if "=" in item:
+                name, url = item.split("=", 1)
+                result.append((name.strip(), url.strip()))
+        return result
 
 
 

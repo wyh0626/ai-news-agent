@@ -28,24 +28,31 @@ pip install -e ".[prod]"
 
 ```bash
 cp .env.example .env
+# Edit .env with your API keys
 ```
 
-**Minimal config** (only need one LLM API Key):
+**Minimal config** (only one LLM API Key required):
 
 ```bash
 OPENAI_API_KEY=sk-your-api-key
 OPENAI_MODEL=gpt-4o-mini
 ```
 
-**Using Kimi (Moonshot)**:
+**Using Kimi (Moonshot) / DeepSeek**:
 
 ```bash
+# Kimi
 OPENAI_API_KEY=sk-your-moonshot-key
 OPENAI_BASE_URL=https://api.moonshot.cn/v1
 OPENAI_MODEL=moonshot-v1-auto
-# Kimi doesn't provide Embedding API, configure separately for semantic dedup
+# Kimi has no Embedding API — configure separately for semantic dedup
 EMBEDDING_API_KEY=sk-your-openai-key
 EMBEDDING_BASE_URL=https://api.openai.com/v1
+
+# DeepSeek
+OPENAI_API_KEY=sk-your-deepseek-key
+OPENAI_BASE_URL=https://api.deepseek.com/v1
+OPENAI_MODEL=deepseek-chat
 ```
 
 **Enable semantic dedup** (recommended):
@@ -61,15 +68,17 @@ POSTGRES_URL=postgresql://user:pass@xxx.neon.tech/neondb?sslmode=require
 ### 3. Run
 
 ```bash
-# Collect from all sources, generate daily report
+# Run all sources (reddit + hackernews + arxiv + github + rss)
 python scripts/run_pipeline.py
 
 # Specify sources
-python scripts/run_pipeline.py reddit hackernews
+python scripts/run_pipeline.py reddit hackernews rss
 
-# Twitter only
+# Single source
 python scripts/run_pipeline.py twitter
 ```
+
+Available sources: `reddit` `hackernews` `arxiv` `github` `rss` `twitter`
 
 ### 4. Output
 
@@ -77,6 +86,24 @@ python scripts/run_pipeline.py twitter
 output/
 ├── ai-daily-2026-02-18.md       # Chinese report
 ├── ai-daily-2026-02-18-en.md    # English report
+```
+
+## Data Sources
+
+| Source | Default | Config |
+|--------|---------|--------|
+| Reddit | `LocalLLaMA,MachineLearning,artificial` | `REDDIT_SUBREDDITS` |
+| Hacker News | min score 50 | `HN_MIN_SCORE` |
+| ArXiv | cs.AI/LG/CL | built-in |
+| GitHub Trending | daily | built-in |
+| RSS | OpenAI/DeepMind/HuggingFace/PyTorch/Ollama blogs | `RSS_FEEDS` |
+| Twitter/X | requires Firecrawl API | `FIRECRAWL_API_KEY` + `TWITTER_LIST_URL` |
+
+**Custom RSS feeds** — add any RSS/Atom feed via `.env`:
+
+```bash
+# Format: name1=url1,name2=url2
+RSS_FEEDS=anthropic=https://www.anthropic.com/rss.xml,mistral=https://mistral.ai/feed
 ```
 
 ## Architecture

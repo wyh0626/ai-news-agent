@@ -11,6 +11,7 @@ from src.sources.arxiv import ArxivSource
 from src.sources.github import GitHubTrendingSource
 from src.sources.hackernews import HackerNewsSource
 from src.sources.reddit import RedditRSSSource
+from src.sources.rss_generic import GenericRSSSource, get_ai_blog_sources
 from src.sources.twitter import TwitterSource
 from src.sources.twitter_firecrawl import TwitterFirecrawlSource
 
@@ -22,6 +23,10 @@ SOURCE_REGISTRY = {
     "hackernews": lambda: [HackerNewsSource(min_score=settings.hn_min_score)],
     "arxiv": lambda: [ArxivSource()],
     "github": lambda: [GitHubTrendingSource()],
+    "rss": lambda: (
+        get_ai_blog_sources()
+        + [GenericRSSSource(name, url) for name, url in settings.rss_feed_list]
+    ),
     "twitter": lambda: (
         # 优先使用 Firecrawl 爬取 Twitter List
         [TwitterFirecrawlSource(

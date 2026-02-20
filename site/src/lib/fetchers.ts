@@ -11,7 +11,7 @@ export async function getCategories() {
 
 export async function getPosts() {
   const posts = (await getCollection("blog"))
-    .filter((post) => (post.data as any).lang !== "en")
+    .filter((post) => (post.data as any).lang !== "zh")
     .sort(
       (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
     );
