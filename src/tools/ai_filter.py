@@ -50,7 +50,7 @@ FILTER_PROMPT = """你是一个 AI 领域资讯分类专家。
 def _build_llm() -> ChatOpenAI:
     kwargs = {
         "model": settings.openai_model,
-        "max_tokens": 512,
+        "max_tokens": 4096,
     }
     if settings.openai_api_key:
         kwargs["api_key"] = settings.openai_api_key

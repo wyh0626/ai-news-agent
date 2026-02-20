@@ -46,7 +46,7 @@ def _build_llm() -> ChatOpenAI:
     """构建 LLM 实例，强制 JSON 输出"""
     kwargs = {
         "model": settings.openai_model,
-        "max_tokens": 1024,
+        "max_tokens": 4096,
         "model_kwargs": {"response_format": {"type": "json_object"}},
     }
     if settings.openai_api_key:
