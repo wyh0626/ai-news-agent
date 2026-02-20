@@ -6,9 +6,9 @@ export const navMenuConfig: NavMenuConfig = {
       title: "Pages",
       items: [
         {
-          title: "关于",
+          title: "About",
           href: "/about",
-          description: "关于 AI Daily",
+          description: "About AI Daily",
           image: "/images/examples/about.jpg",
         },
       ],

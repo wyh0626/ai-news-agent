@@ -3,7 +3,7 @@ import type { SidebarNavItem, SiteConfig } from "@/types";
 export const siteConfig: SiteConfig = {
   name: "AI Daily",
   description:
-    "每日精选 AI 领域最新动态、研究论文、开源项目与行业趋势",
+    "Daily curated AI news, research papers, open-source projects and industry trends",
   url: "https://ainewslog.com",
   ogImage: "",
   links: {

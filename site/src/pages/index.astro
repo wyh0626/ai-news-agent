@@ -8,24 +8,24 @@ const base = import.meta.env.BASE_URL;
 // 按月分组
 const grouped = new Map<string, typeof posts>();
 for (const post of posts) {
-  const key = post.data.pubDate.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long' });
+  const key = post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
   if (!grouped.has(key)) grouped.set(key, []);
   grouped.get(key)!.push(post);
 }
 ---
 
-<MainLayout title="AI Daily — 每日 AI 资讯">
+<MainLayout title="AI Daily — Daily AI News">
   <section class="container max-w-screen-xl py-10">
     {/* Header */}
     <div class="mb-10">
       <h1 class="font-heading text-3xl md:text-4xl font-bold">AI Daily</h1>
-      <p class="mt-2 text-muted-foreground">每日精选 AI 领域最新动态、研究论文、开源项目与行业趋势</p>
+      <p class="mt-2 text-muted-foreground">Daily curated AI news, research papers, open-source projects and industry trends</p>
     </div>
 
     {/* Timeline */}
     {posts.length === 0 ? (
       <div class="text-center py-20">
-        <p class="text-muted-foreground">尚无日报，运行 Pipeline 生成第一期后将在此展示。</p>
+        <p class="text-muted-foreground">No posts yet. Run the pipeline to generate the first issue.</p>
       </div>
     ) : (
       <div class="space-y-8">
@@ -35,7 +35,7 @@ for (const post of posts) {
             <div class="border-l-2 border-border pl-0 space-y-0">
               {monthPosts.map((post) => {
                 const day = post.data.pubDate.getDate();
-                const weekday = post.data.pubDate.toLocaleDateString('zh-CN', { weekday: 'short' });
+                const weekday = post.data.pubDate.toLocaleDateString('en-US', { weekday: 'short' });
                 return (
                   <a
                     href={`${base}blog/${post.slug}/`}
