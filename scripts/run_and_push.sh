@@ -4,10 +4,20 @@
 
 set -e
 
-REPO_DIR="/app"
+# 自动检测项目目录（支持 Docker /app 和服务器直接运行）
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+REPO_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 LOG_PREFIX="[run_and_push]"
 
 echo "$LOG_PREFIX ===== AI News Pipeline Start $(date -u '+%Y-%m-%d %H:%M UTC') ====="
+echo "$LOG_PREFIX 项目目录: $REPO_DIR"
+
+# 加载 .env 文件（服务器上需要）
+if [ -f "$REPO_DIR/.env" ]; then
+    set -a
+    source "$REPO_DIR/.env"
+    set +a
+fi
 
 # ---- 1. 运行 pipeline ----
 cd "$REPO_DIR"
@@ -39,15 +49,23 @@ echo "$LOG_PREFIX 推送到 GitHub..."
 git config user.name "AI Daily Bot"
 git config user.email "bot@ai-daily.dev"
 
-# 配置 SSH（挂载方式）
-if [ -f "/root/.ssh/id_ed25519" ]; then
-    chmod 600 /root/.ssh/id_ed25519
-    ssh-keyscan github.com >> /root/.ssh/known_hosts 2>/dev/null
-    GIT_SSH_COMMAND="ssh -i /root/.ssh/id_ed25519 -o StrictHostKeyChecking=no"
-    export GIT_SSH_COMMAND
-# 配置 Token 方式（HTTPS）
-elif [ -n "$GIT_TOKEN" ] && [ -n "$GIT_REPO" ]; then
+# 配置推送方式
+if [ -n "$GIT_TOKEN" ] && [ -n "$GIT_REPO" ]; then
+    # HTTPS Token 方式
     git remote set-url origin "https://x-access-token:${GIT_TOKEN}@github.com/${GIT_REPO}.git"
+    echo "$LOG_PREFIX 使用 HTTPS Token 推送"
+elif [ -f "$HOME/.ssh/id_ed25519" ] || [ -f "/root/.ssh/id_ed25519" ]; then
+    # SSH Key 方式
+    SSH_KEY="${HOME}/.ssh/id_ed25519"
+    [ -f "/root/.ssh/id_ed25519" ] && SSH_KEY="/root/.ssh/id_ed25519"
+    chmod 600 "$SSH_KEY"
+    ssh-keyscan github.com >> "$HOME/.ssh/known_hosts" 2>/dev/null
+    GIT_SSH_COMMAND="ssh -i $SSH_KEY -o StrictHostKeyChecking=no"
+    export GIT_SSH_COMMAND
+    echo "$LOG_PREFIX 使用 SSH Key 推送"
+else
+    echo "$LOG_PREFIX ⚠️ 未配置 GIT_TOKEN 或 SSH Key，无法推送"
+    exit 1
 fi
 
 git add output/ site/src/content/blog/ 2>/dev/null || git add output/
