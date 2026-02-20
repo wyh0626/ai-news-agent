@@ -2,7 +2,7 @@
 
 import logging
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 from langchain_openai import ChatOpenAI
 
@@ -220,17 +220,17 @@ async def writer_node(state: PipelineState) -> dict:
     """Writer 节点：生成每日新闻简报（重点展开 + 快讯速览）"""
     extracted = state.get("extracted_items", [])
     if not extracted:
-        logger.warning("没有提取数据，跳过撰稿")
+        logger.warning("No extracted items, skipping writing")
         return {"article": None}
 
-    today = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d")
+    today = (datetime.now(tz=timezone.utc) - timedelta(days=1)).strftime("%Y-%m-%d")
     featured, brief = _split_featured_brief(extracted)
     threshold = featured[-1].importance_score if featured else 0
 
     logger.info(
-        f"开始撰写 {today} 日报: "
-        f"重点 {len(featured)} 条 + 快讯 {len(brief)} 条 "
-        f"(分界线 importance ≥ {threshold:.1f})"
+        f"Writing {today} newsletter: "
+        f"featured {len(featured)} + brief {len(brief)} "
+        f"(cutoff importance ≥ {threshold:.1f})"
     )
 
     groups = _group_by_topic(extracted)
