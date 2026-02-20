@@ -80,7 +80,7 @@ git add output/ site/src/content/blog/ 2>/dev/null || git add output/
 if git diff --cached --quiet; then
     echo "$LOG_PREFIX 没有新内容，跳过 push"
 else
-    DATE=$(date -u +%Y-%m-%d)
+    DATE=$(date -u -d 'yesterday' +%Y-%m-%d 2>/dev/null || date -u -v-1d +%Y-%m-%d)
     git commit -m "📰 AI Daily $DATE"
     git push origin main
     echo "$LOG_PREFIX ✅ Push 成功"
