@@ -17,6 +17,22 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <MainLayout title={title} description={description}>
+  {/* 浏览器语言自动检测：首次访问自动跳转，手动切换后记住偏好 */}
+  {pairSlug && (
+    <script is:inline define:vars={{ lang, pairSlug, base }}>
+      (function() {
+        const userChoice = localStorage.getItem('ai-daily-lang');
+        if (userChoice) return; // 用户已手动选择过，不自动跳
+        const browserLang = navigator.language || navigator.userLanguage || '';
+        const isChinese = /^zh/i.test(browserLang);
+        if (lang === 'zh' && !isChinese) {
+          window.location.replace(base + 'blog/' + pairSlug + '/');
+        } else if (lang === 'en' && isChinese) {
+          window.location.replace(base + 'blog/' + pairSlug + '/');
+        }
+      })();
+    </script>
+  )}
   <div class="relative container max-w-screen-md py-10">
     <button
       onclick="history.back()"
@@ -58,6 +74,7 @@ const base = import.meta.env.BASE_URL;
           <a
             href={`${base}blog/${pairSlug}/`}
             class="px-2 py-0.5 rounded text-xs font-medium bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+            onclick="localStorage.setItem('ai-daily-lang', this.textContent.trim() === 'English' ? 'en' : 'zh')"
           >
             {lang === "zh" ? "English" : "中文"}
           </a>
