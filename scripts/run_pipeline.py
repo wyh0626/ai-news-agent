@@ -54,16 +54,16 @@ async def main(sources: list[str] | None = None):
     # 输出结果
     article = result.get("article")
     if article:
-        logger.info(f"✅ 文章生成成功: {article.title}")
-        logger.info(f"   包含 {article.item_count} 条新闻")
-        logger.info(f"   输出目录: {settings.output_path}")
+        logger.info(f"✅ Article generated: {article.title}")
+        logger.info(f"   Contains {article.item_count} news items")
+        logger.info(f"   Output dir: {settings.output_path}")
     else:
         extracted = result.get("extracted_items", [])
-        logger.info(f"⏸️  本次未生成文章 (仅 {len(extracted)} 条新闻)")
+        logger.info(f"⏸️  No article generated (only {len(extracted)} items)")
 
     errors = result.get("errors", [])
     if errors:
-        logger.warning(f"⚠️  运行过程中有 {len(errors)} 个错误:")
+        logger.warning(f"⚠️  {len(errors)} errors during run:")
         for err in errors:
             logger.warning(f"   - {err}")
 

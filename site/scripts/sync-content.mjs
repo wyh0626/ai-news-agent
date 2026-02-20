@@ -7,23 +7,27 @@
  */
 
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'fs';
-import { join } from 'path';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const siteRoot = join(__dirname, '..');
 
 const args = process.argv.slice(2);
 const sourceIdx = args.indexOf('--source');
 const sourceDir = sourceIdx !== -1 ? args[sourceIdx + 1] : join('..', 'output');
-const targetDir = join('src', 'content', 'blog');
+const targetDir = join(siteRoot, 'src', 'content', 'blog');
 
 mkdirSync(targetDir, { recursive: true });
 
 if (!existsSync(sourceDir)) {
-  console.log(`源目录不存在: ${sourceDir}`);
+  console.log(`Source directory not found: ${sourceDir}`);
   process.exit(0);
 }
 
 const files = readdirSync(sourceDir).filter(f => f.endsWith('.md'));
 if (files.length === 0) {
-  console.log('未找到 markdown 文件');
+  console.log('No markdown files found');
   process.exit(0);
 }
 
@@ -93,9 +97,9 @@ function extractMeta(content, fileName) {
     description = hotTopics.slice(0, 3).join(' · ');
     if (description.length > 100) description = description.slice(0, 97) + '...';
   }
-  if (!description) description = `${date} AI 领域最新动态`;
+  if (!description) description = `${date} AI news highlights`;
 
-  const title = `AI 日报 — ${date}`;
+  const title = `AI Daily — ${date}`;
 
   // 去掉原始 H1
   const h1Idx = lines.findIndex(l => l.startsWith('# '));
@@ -144,7 +148,7 @@ for (const file of files) {
   }
 
   const lang = isZh ? 'zh' : 'en';
-  if (isZh) meta.title = meta.title.replace('AI Daily', 'AI 日报');
+  if (isZh) meta.title = meta.title.replace('AI Daily', 'AI \u65E5\u62A5');
 
   console.log(`✅ ${file} [${lang}] → ${meta.description}`);
 
@@ -161,4 +165,4 @@ lang: "${lang}"`;
   synced++;
 }
 
-console.log(`✅ 同步完成: ${synced} 个文件 → ${targetDir}`);
+console.log(`✅ Synced: ${synced} files → ${targetDir}`);
