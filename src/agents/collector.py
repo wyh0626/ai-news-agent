@@ -54,7 +54,7 @@ def _build_sources(source_ids: list[str]):
         if factory:
             sources.extend(factory())
         else:
-            logger.warning(f"未知数据源: {sid}")
+            logger.warning(f"Unknown source: {sid}")
     return sources
 
 
@@ -63,7 +63,7 @@ async def _fetch_one(source, since: datetime | None) -> list[RawItem]:
     try:
         return await source.fetch(since=since)
     except Exception as e:
-        logger.error(f"{source.source_id} 采集失败: {e}")
+        logger.error(f"{source.source_id} fetch failed: {e}")
         return []
 
 
@@ -110,7 +110,7 @@ def _smart_select(items_by_source: dict[str, list[RawItem]]) -> list[RawItem]:
 
     # 日志：各源入选数量
     for src_id, count in sorted(source_counts.items()):
-        logger.info(f"  {src_id}: {count} 条入选")
+        logger.info(f"  {src_id}: {count} selected")
 
     return selected
 
@@ -121,10 +121,10 @@ async def collector_node(state: PipelineState) -> dict:
     sources = _build_sources(source_ids)
 
     if not sources:
-        logger.warning("没有配置任何数据源")
-        return {"raw_items": [], "errors": ["没有配置任何数据源"]}
+        logger.warning("No data sources configured")
+        return {"raw_items": [], "errors": ["No data sources configured"]}
 
-    logger.info(f"开始采集, 数据源: {[s.source_id for s in sources]}")
+    logger.info(f"Collecting from sources: {[s.source_id for s in sources]}")
 
     # 并行采集
     tasks = [_fetch_one(s, since=None) for s in sources]
@@ -138,10 +138,10 @@ async def collector_node(state: PipelineState) -> dict:
         items_by_source.setdefault(src_key, []).extend(items)
         total_fetched += len(items)
 
-    logger.info(f"采集原始数据 {total_fetched} 条, 来自 {len(items_by_source)} 类数据源")
+    logger.info(f"Fetched {total_fetched} raw items from {len(items_by_source)} source types")
 
     # 智能选择
     selected = _smart_select(items_by_source)
 
-    logger.info(f"智能筛选完成: {total_fetched} → {len(selected)} 条")
+    logger.info(f"Smart selection: {total_fetched} → {len(selected)} items")
     return {"raw_items": selected}

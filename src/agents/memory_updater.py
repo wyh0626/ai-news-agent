@@ -45,7 +45,7 @@ async def update_memory_node(state: PipelineState) -> dict:
                 "markdown_content": article.markdown_content,
                 "created_at": datetime.now(tz=timezone.utc).isoformat(),
             })
-        logger.info(f"MongoDB: 保存 {len(extracted)} 条提取数据")
+        logger.info(f"MongoDB: saved {len(extracted)} extracted items")
 
     # ── 更新 PostgreSQL 长期记忆 ─────────────────────────
     if pg and pg.available:
@@ -71,9 +71,9 @@ async def update_memory_node(state: PipelineState) -> dict:
                 )
                 saved_count += 1
 
-            logger.info(f"PostgreSQL: 索引 {saved_count} 篇文章")
+            logger.info(f"PostgreSQL: indexed {saved_count} articles")
         except Exception as e:
-            logger.warning(f"文章索引更新失败: {e}")
+            logger.warning(f"Article index update failed: {e}")
 
         # 2. 更新话题热度
         try:
@@ -83,9 +83,9 @@ async def update_memory_node(state: PipelineState) -> dict:
                     topic_counts[topic] = topic_counts.get(topic, 0) + 1
             for topic, count in topic_counts.items():
                 await pg.update_topic_trend(topic, count)
-            logger.info(f"PostgreSQL: 更新 {len(topic_counts)} 个话题热度")
+            logger.info(f"PostgreSQL: updated {len(topic_counts)} topic trends")
         except Exception as e:
-            logger.warning(f"话题热度更新失败: {e}")
+            logger.warning(f"Topic trend update failed: {e}")
 
         # 3. 更新数据源元数据
         try:
@@ -96,6 +96,6 @@ async def update_memory_node(state: PipelineState) -> dict:
             for source_id, count in source_counts.items():
                 await pg.update_source_metadata(source_id, count)
         except Exception as e:
-            logger.warning(f"数据源元数据更新失败: {e}")
+            logger.warning(f"Source metadata update failed: {e}")
 
     return {}

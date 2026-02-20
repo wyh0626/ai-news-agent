@@ -31,12 +31,12 @@ class MongoStorage:
             await self._db.cleaned_items.create_index("id", unique=True)
             await self._db.extracted_items.create_index("id", unique=True)
             await self._db.extracted_items.create_index("published_at")
-            logger.info("MongoDB 连接成功")
+            logger.info("MongoDB connected")
         except ImportError:
-            logger.warning("motor 未安装，MongoDB 存储不可用。pip install motor")
+            logger.warning("motor not installed, MongoDB unavailable. pip install motor")
             self._db = None
         except Exception as e:
-            logger.error(f"MongoDB 连接失败: {e}")
+            logger.error(f"MongoDB connection failed: {e}")
             self._db = None
 
     async def close(self):
@@ -64,8 +64,8 @@ class MongoStorage:
                 )
                 saved += 1
             except Exception as e:
-                logger.debug(f"保存 raw_item 失败: {e}")
-        logger.info(f"MongoDB: 保存 {saved}/{len(items)} 条原始数据")
+                logger.debug(f"Save raw_item failed: {e}")
+        logger.info(f"MongoDB: saved {saved}/{len(items)} raw items")
         return saved
 
     async def get_recent_source_ids(self, source_type: str, limit: int = 200) -> set[str]:
@@ -92,7 +92,7 @@ class MongoStorage:
                 )
                 saved += 1
             except Exception as e:
-                logger.debug(f"保存 cleaned_item 失败: {e}")
+                logger.debug(f"Save cleaned_item failed: {e}")
         return saved
 
     # ── Extracted Items ──────────────────────────────────
@@ -109,7 +109,7 @@ class MongoStorage:
                 )
                 saved += 1
             except Exception as e:
-                logger.debug(f"保存 extracted_item 失败: {e}")
+                logger.debug(f"Save extracted_item failed: {e}")
         return saved
 
     async def get_extracted_items_by_date(
@@ -136,7 +136,7 @@ class MongoStorage:
             )
             return True
         except Exception as e:
-            logger.error(f"保存文章失败: {e}")
+            logger.error(f"Save article failed: {e}")
             return False
 
 

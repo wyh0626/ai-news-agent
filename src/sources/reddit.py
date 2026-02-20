@@ -27,7 +27,7 @@ class RedditRSSSource(BaseSource):
         return f"reddit:{self.subreddit}"
 
     async def fetch(self, since: datetime | None = None) -> list[RawItem]:
-        logger.info(f"采集 Reddit r/{self.subreddit} ...")
+        logger.info(f"Fetching Reddit r/{self.subreddit} ...")
         try:
             async with httpx.AsyncClient(
                 timeout=30,
@@ -38,11 +38,11 @@ class RedditRSSSource(BaseSource):
                 resp.raise_for_status()
             feed = feedparser.parse(resp.text)
         except Exception as e:
-            logger.error(f"采集 r/{self.subreddit} 失败: {e}")
+            logger.error(f"Fetch r/{self.subreddit} failed: {e}")
             return []
 
         if feed.bozo and not feed.entries:
-            logger.warning(f"RSS 解析异常: {feed.bozo_exception}")
+            logger.warning(f"RSS parse error: {feed.bozo_exception}")
             return []
 
         items: list[RawItem] = []
@@ -68,7 +68,7 @@ class RedditRSSSource(BaseSource):
             )
             items.append(item)
 
-        logger.info(f"r/{self.subreddit}: 获取 {len(items)} 条新内容")
+        logger.info(f"r/{self.subreddit}: fetched {len(items)} items")
         return items
 
     @staticmethod

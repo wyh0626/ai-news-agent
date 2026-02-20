@@ -45,10 +45,10 @@ class TwitterSource(BaseSource):
 
     async def fetch(self, since: datetime | None = None) -> list[RawItem]:
         if not self.api_key:
-            logger.warning("未配置 Twitter API Key，跳过采集")
+            logger.warning("Twitter API Key not configured, skipping")
             return []
 
-        logger.info(f"采集 Twitter, KOL 数: {len(self.kol_usernames)}")
+        logger.info(f"Fetching Twitter, KOL count: {len(self.kol_usernames)}")
         all_items: list[RawItem] = []
 
         async with httpx.AsyncClient(timeout=30, headers=self.headers) as client:
@@ -56,7 +56,7 @@ class TwitterSource(BaseSource):
                 items = await self._fetch_user_tweets(client, username, since)
                 all_items.extend(items)
 
-        logger.info(f"Twitter: 获取 {len(all_items)} 条推文")
+        logger.info(f"Twitter: fetched {len(all_items)} tweets")
         return all_items
 
     async def _fetch_user_tweets(
@@ -71,7 +71,7 @@ class TwitterSource(BaseSource):
             resp.raise_for_status()
             data = resp.json()
         except Exception as e:
-            logger.error(f"采集 @{username} 失败: {e}")
+            logger.error(f"Fetch @{username} failed: {e}")
             return []
 
         tweets = data.get("tweets", [])

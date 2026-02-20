@@ -256,17 +256,17 @@ async def writer_node(state: PipelineState) -> dict:
             required_sections = ["Top Stories", "Quick Bites"]
             missing = [s for s in required_sections if s not in markdown]
             if missing:
-                logger.warning(f"LLM 输出不完整，缺少章节: {missing}，降级为模板生成")
+                logger.warning(f"LLM output incomplete, missing sections: {missing}, falling back to template")
                 markdown = _build_fallback_markdown(extracted, today)
             else:
-                # LLM 输出的链接标签可能不统一，用后处理修正
+                # LLM output link labels may not be uniform, use post-processing to correct
                 markdown = _normalize_source_links(markdown)
-                logger.info("LLM 撰稿完成")
+                logger.info("LLM writing complete")
         except Exception as e:
-            logger.error(f"LLM 撰稿失败，降级为模板生成: {e}")
+            logger.error(f"LLM writing failed, falling back to template: {e}")
             markdown = _build_fallback_markdown(extracted, today)
     else:
-        logger.info("未配置 LLM，使用模板生成")
+        logger.info("LLM not configured, using template")
         markdown = _build_fallback_markdown(extracted, today)
 
     # 从 Top Stories（importance 最高的前3条）提取 description
@@ -285,5 +285,5 @@ async def writer_node(state: PipelineState) -> dict:
         item_count=len(extracted),
     )
 
-    logger.info(f"撰稿完成: {article.title}, {article.item_count} 条新闻")
+    logger.info(f"Writing done: {article.title}, {article.item_count} items")
     return {"article": article}

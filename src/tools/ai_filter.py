@@ -122,10 +122,10 @@ async def _filter_one_batch(
     prompt = FILTER_PROMPT.format(titles=titles_text)
     resp = await llm.ainvoke(prompt)
     raw_resp = (resp.content or "").strip()
-    logger.debug(f"LLM AI 过滤批次响应 (offset={offset}): {raw_resp[:300]}")
+    logger.debug(f"LLM AI filter batch response (offset={offset}): {raw_resp[:300]}")
 
     if not raw_resp:
-        logger.warning(f"LLM 返回空响应 (offset={offset})，该批次降级为关键词过滤")
+        logger.warning(f"LLM returned empty response (offset={offset}), falling back to keyword filter")
         local = _fallback_filter(titles)
         return [idx + offset for idx in local]
 
@@ -157,7 +157,7 @@ async def batch_filter_ai(
 
     # LLM 不可用时降级
     if not settings.openai_api_key:
-        logger.info("未配置 LLM，使用降级关键词过滤")
+        logger.info("LLM not configured, using fallback keyword filter")
         return _fallback_filter(titles_list)
 
     try:
@@ -180,10 +180,10 @@ async def batch_filter_ai(
         all_indices.sort()
 
         logger.info(
-            f"LLM AI 过滤: {len(titles_list)} 条标题 → {len(all_indices)} 条 AI 相关"
-            + (f" ({len(starts)} 批次)" if len(starts) > 1 else "")
+            f"LLM AI filter: {len(titles_list)} titles → {len(all_indices)} AI-related"
+            + (f" ({len(starts)} batches)" if len(starts) > 1 else "")
         )
         return all_indices
     except Exception as e:
-        logger.warning(f"LLM AI 过滤失败，降级为关键词过滤: {e}")
+        logger.warning(f"LLM AI filter failed, falling back to keyword filter: {e}")
         return _fallback_filter(titles_list)

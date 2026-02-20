@@ -30,7 +30,7 @@ async def load_schedule_node(state: PipelineState) -> dict:
     run_id = state.get("run_id") or str(uuid4())[:8]
     started = datetime.now(tz=timezone.utc).isoformat()
 
-    logger.info(f"Pipeline 启动 [run_id={run_id}], 数据源: {sources}")
+    logger.info(f"Pipeline start [run_id={run_id}], sources: {sources}")
     return {
         "run_id": run_id,
         "run_started_at": started,
@@ -42,7 +42,7 @@ async def load_schedule_node(state: PipelineState) -> dict:
 async def save_and_wait_node(state: PipelineState) -> dict:
     """新闻不足时保存状态等待下次运行"""
     extracted = state.get("extracted_items", [])
-    logger.info(f"新闻数量不足 ({len(extracted)} 条)，保存状态等待下次运行")
+    logger.info(f"Not enough items ({len(extracted)}), saving state and waiting for next run")
     return {}
 
 

@@ -40,7 +40,7 @@ class GenericRSSSource(BaseSource):
         return 3600  # 1 hour
 
     async def fetch(self, since: datetime | None = None) -> list[RawItem]:
-        logger.info(f"采集 RSS [{self.name}] ...")
+        logger.info(f"Fetching RSS [{self.name}] ...")
         try:
             async with httpx.AsyncClient(
                 timeout=30,
@@ -51,11 +51,11 @@ class GenericRSSSource(BaseSource):
                 resp.raise_for_status()
             feed = feedparser.parse(resp.text)
         except Exception as e:
-            logger.error(f"采集 [{self.name}] 失败: {e}")
+            logger.error(f"Fetch [{self.name}] failed: {e}")
             return []
 
         if feed.bozo and not feed.entries:
-            logger.warning(f"RSS [{self.name}] 解析异常: {feed.bozo_exception}")
+            logger.warning(f"RSS [{self.name}] parse error: {feed.bozo_exception}")
             return []
 
         items: list[RawItem] = []
@@ -88,7 +88,7 @@ class GenericRSSSource(BaseSource):
             )
             items.append(item)
 
-        logger.info(f"RSS [{self.name}]: 获取 {len(items)} 条内容")
+        logger.info(f"RSS [{self.name}]: fetched {len(items)} items")
         return items
 
     @staticmethod

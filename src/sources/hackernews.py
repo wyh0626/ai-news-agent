@@ -51,7 +51,7 @@ class HackerNewsSource(BaseSource):
         return 1800  # 30 min
 
     async def fetch(self, since: datetime | None = None) -> list[RawItem]:
-        logger.info("采集 Hacker News (AI 过滤) ...")
+        logger.info("Fetching Hacker News (AI filtered) ...")
         try:
             async with httpx.AsyncClient(
                 timeout=30,
@@ -62,7 +62,7 @@ class HackerNewsSource(BaseSource):
                 resp.raise_for_status()
             feed = feedparser.parse(resp.text)
         except Exception as e:
-            logger.error(f"采集 HN 失败: {e}")
+            logger.error(f"Fetch HN failed: {e}")
             return []
 
         # 先收集所有候选条目
@@ -74,7 +74,7 @@ class HackerNewsSource(BaseSource):
             candidates.append((entry, published))
 
         if not candidates:
-            logger.info("HN: 无新内容")
+            logger.info("HN: no new items")
             return []
 
         # LLM 批量判断标题是否 AI 相关
@@ -106,9 +106,9 @@ class HackerNewsSource(BaseSource):
             items.append(item)
 
         logger.info(
-            f"HN: {len(items)} 条 AI 资讯 "
+            f"HN: {len(items)} AI items "
             f"(>={self.min_score} points, "
-            f"LLM 过滤 {len(candidates)} → {len(items)})"
+            f"LLM filtered {len(candidates)} → {len(items)})"
         )
         return items
 

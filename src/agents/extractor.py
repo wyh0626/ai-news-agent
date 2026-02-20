@@ -158,7 +158,7 @@ async def _extract_one(llm: ChatOpenAI, item: CleanedItem) -> ExtractedItem:
             importance_score=float(parsed.get("importance_score", 5)),
         )
     except Exception as e:
-        logger.error(f"LLM 提取失败 [{item.id}]: {type(e).__name__}: {e}")
+        logger.error(f"LLM extraction failed [{item.id}]: {type(e).__name__}: {e}")
         return _fallback_extract(item)
 
 
@@ -166,11 +166,11 @@ async def extractor_node(state: PipelineState) -> dict:
     """Extractor 节点：批量提取结构化信息"""
     deduped = state.get("deduped_items", [])
     if not deduped:
-        logger.warning("没有去重后的数据需要提取")
+        logger.warning("No deduped items to extract")
         return {"extracted_items": []}
 
     logger.info(
-        f"开始提取 {len(deduped)} 条新闻的结构化信息 ... "
+        f"Extracting structured info from {len(deduped)} items ... "
         f"API_KEY={'SET' if settings.openai_api_key else 'EMPTY'} "
         f"MODEL={settings.openai_model} "
         f"BASE_URL={settings.openai_base_url or 'default'}"
@@ -178,7 +178,7 @@ async def extractor_node(state: PipelineState) -> dict:
 
     # 检查 API key 是否配置
     if not settings.openai_api_key:
-        logger.warning("未配置 OPENAI_API_KEY，使用降级方案提取")
+        logger.warning("OPENAI_API_KEY not set, using fallback extraction")
         extracted = [_fallback_extract(item) for item in deduped]
     else:
         llm = _build_llm()
@@ -187,7 +187,7 @@ async def extractor_node(state: PipelineState) -> dict:
         extracted = []
         for i in range(0, len(deduped), BATCH_SIZE):
             batch = deduped[i : i + BATCH_SIZE]
-            logger.info(f"  提取进度: {i+1}-{min(i+len(batch), len(deduped))}/{len(deduped)}")
+            logger.info(f"  Extracting: {i+1}-{min(i+len(batch), len(deduped))}/{len(deduped)}")
             results = await asyncio.gather(*[_extract_one(llm, item) for item in batch])
             extracted.extend(results)
 
@@ -199,8 +199,8 @@ async def extractor_node(state: PipelineState) -> dict:
     brief = extracted[top_k:]
 
     logger.info(
-        f"提取完成: {len(extracted)} 条 "
-        f"(重点 {len(featured)} 条, 简要 {len(brief)} 条, "
-        f"分界线 importance ≥ {featured[-1].importance_score if featured else 0:.1f})"
+        f"Extraction done: {len(extracted)} items "
+        f"(featured: {len(featured)}, brief: {len(brief)}, "
+        f"cutoff importance ≥ {featured[-1].importance_score if featured else 0:.1f})"
     )
     return {"extracted_items": extracted}

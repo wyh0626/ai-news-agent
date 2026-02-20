@@ -26,7 +26,7 @@ async def generate_embedding(text: str) -> list[float] | None:
         )
         return resp.data[0].embedding
     except Exception as e:
-        logger.warning(f"Embedding 生成失败: {e}")
+        logger.warning(f"Embedding generation failed: {e}")
         return None
 
 
@@ -51,7 +51,7 @@ async def batch_generate_embeddings(texts: list[str]) -> list[list[float] | None
                 results.append(item.embedding)
         return results
     except Exception as e:
-        logger.warning(f"批量 Embedding 生成失败: {e}")
+        logger.warning(f"Batch embedding generation failed: {e}")
         return [None] * len(texts)
 
 
@@ -81,8 +81,8 @@ async def semantic_dedup(new_item, pg_storage=None):
     if similar:
         best = similar[0]
         logger.info(
-            f"语义去重: '{new_item.title[:50]}...' 与 {best['id']} "
-            f"相似度 {best['similarity']:.3f}"
+            f"Semantic dedup: '{new_item.title[:50]}...' matches {best['id']} "
+            f"similarity {best['similarity']:.3f}"
         )
         new_item.is_duplicate = True
         new_item.duplicate_of = best["id"]

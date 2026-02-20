@@ -22,7 +22,7 @@ def _save_markdown(article: GeneratedArticle, output_dir: Path) -> Path:
         content = frontmatter + content
 
     filepath.write_text(content, encoding="utf-8")
-    logger.info(f"文章已保存: {filepath}")
+    logger.info(f"Article saved: {filepath}")
     return filepath
 
 
@@ -38,7 +38,7 @@ async def _publish_newsletter(article: GeneratedArticle):
                 markdown_content=article.markdown_content,
             )
     except Exception as e:
-        logger.debug(f"Newsletter 发布跳过: {e}")
+        logger.debug(f"Newsletter publish skipped: {e}")
 
 
 async def _publish_webhooks(article: GeneratedArticle):
@@ -60,14 +60,14 @@ async def _publish_webhooks(article: GeneratedArticle):
                 content=article.markdown_content[:3000],
             )
         except Exception as e:
-            logger.debug(f"Webhook [{platform}] 推送跳过: {e}")
+            logger.debug(f"Webhook [{platform}] push skipped: {e}")
 
 
 async def publish_node(state: PipelineState) -> dict:
     """Publish 节点：多渠道发布文章"""
     article = state.get("article")
     if not article or not article.markdown_content:
-        logger.warning("没有文章需要发布")
+        logger.warning("No article to publish")
         return {}
 
     # 1. 始终保存 Markdown 文件
@@ -79,7 +79,7 @@ async def publish_node(state: PipelineState) -> dict:
         zh_filename = f"ai-daily-{article.date}-zh.md"
         zh_filepath = output_dir / zh_filename
         zh_filepath.write_text(article.markdown_content_zh, encoding="utf-8")
-        logger.info(f"中文版已保存: {zh_filepath}")
+        logger.info(f"Chinese version saved: {zh_filepath}")
 
     # 2. 尝试发送邮件
     await _publish_newsletter(article)
@@ -87,5 +87,5 @@ async def publish_node(state: PipelineState) -> dict:
     # 3. 尝试推送 Webhook
     await _publish_webhooks(article)
 
-    logger.info(f"发布完成: {filepath}")
+    logger.info(f"Publish complete: {filepath}")
     return {}

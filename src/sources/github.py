@@ -82,7 +82,7 @@ class GitHubTrendingSource(BaseSource):
         return match.group(1) if match else ""
 
     async def fetch(self, since: datetime | None = None) -> list[RawItem]:
-        logger.info(f"采集 GitHub Trending (RSS: {self.rss_url}) ...")
+        logger.info(f"Fetching GitHub Trending (RSS: {self.rss_url}) ...")
 
         try:
             async with httpx.AsyncClient(
@@ -94,12 +94,12 @@ class GitHubTrendingSource(BaseSource):
                 resp.raise_for_status()
             feed = feedparser.parse(resp.text)
         except Exception as e:
-            logger.error(f"采集 GitHub Trending RSS 失败: {e}")
+            logger.error(f"Fetch GitHub Trending RSS failed: {e}")
             return []
 
         entries = feed.entries[:50]
         if not entries:
-            logger.info("GitHub Trending: RSS 无数据")
+            logger.info("GitHub Trending: no RSS entries")
             return []
 
         # 构建候选列表
@@ -119,7 +119,7 @@ class GitHubTrendingSource(BaseSource):
             })
 
         if not candidates:
-            logger.info("GitHub Trending: 无有效仓库条目")
+            logger.info("GitHub Trending: no valid repo entries")
             return []
 
         # LLM 批量判断项目是否 AI 相关
@@ -169,8 +169,8 @@ class GitHubTrendingSource(BaseSource):
         self._save_cache(cache)
 
         logger.info(
-            f"GitHub Trending: {len(items)} 个 AI 项目 "
-            f"(LLM 过滤 {len(candidates)} → {len(ai_indices)} 个 AI, "
-            f"跨天去重 {deduped_count} 个连续上榜)"
+            f"GitHub Trending: {len(items)} AI projects "
+            f"(LLM filtered {len(candidates)} → {len(ai_indices)} AI, "
+            f"cross-day dedup: {deduped_count} repeated)"
         )
         return items

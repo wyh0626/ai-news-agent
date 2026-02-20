@@ -38,7 +38,7 @@ class ArxivSource(BaseSource):
         return 21600  # 6 hours
 
     async def fetch(self, since: datetime | None = None) -> list[RawItem]:
-        logger.info(f"采集 ArXiv {self.categories} ...")
+        logger.info(f"Fetching ArXiv {self.categories} ...")
         # 第一步：从各分类 RSS 收集候选论文
         candidates: list[dict] = []  # {entry, arxiv_id, title, abstract, published}
         seen_ids: set[str] = set()
@@ -54,7 +54,7 @@ class ArxivSource(BaseSource):
                     resp.raise_for_status()
                 feed = feedparser.parse(resp.text)
             except Exception as e:
-                logger.error(f"采集 {url} 失败: {e}")
+                logger.error(f"Fetch {url} failed: {e}")
                 continue
 
             for entry in feed.entries:
@@ -76,7 +76,7 @@ class ArxivSource(BaseSource):
                 })
 
         if not candidates:
-            logger.info("ArXiv: 无新论文")
+            logger.info("ArXiv: no new papers")
             return []
 
         # 第二步：LLM 批量判断是否实用 AI 论文
@@ -106,8 +106,8 @@ class ArxivSource(BaseSource):
             all_items.append(item)
 
         logger.info(
-            f"ArXiv: {len(all_items)} 篇 AI 相关论文 "
-            f"(LLM 过滤 {len(candidates)} → {len(all_items)})"
+            f"ArXiv: {len(all_items)} AI-related papers "
+            f"(LLM filtered {len(candidates)} → {len(all_items)})"
         )
         return all_items
 

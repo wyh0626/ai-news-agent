@@ -30,7 +30,7 @@ async def dedup_node(state: PipelineState) -> dict:
 
         pg = await get_postgres()
         if pg.available:
-            logger.info("启用语义去重 (pgvector) ...")
+            logger.info("Semantic dedup enabled (pgvector) ...")
             checked = []
             for item in candidates:
                 result = await semantic_dedup(item, pg_storage=pg)
@@ -40,10 +40,10 @@ async def dedup_node(state: PipelineState) -> dict:
                     checked.append(result)
             candidates = checked
     except Exception as e:
-        logger.debug(f"语义去重不可用，跳过: {e}")
+        logger.debug(f"Semantic dedup unavailable, skipping: {e}")
 
     logger.info(
-        f"去重完成: {len(cleaned)} → {len(candidates)} 条 "
-        f"(标题重复 {title_dupes}, 语义重复 {semantic_dupes})"
+        f"Dedup done: {len(cleaned)} → {len(candidates)} items "
+        f"(title dupes: {title_dupes}, semantic dupes: {semantic_dupes})"
     )
     return {"deduped_items": candidates}

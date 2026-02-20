@@ -88,7 +88,7 @@ def _simple_dedup(items: list[CleanedItem]) -> list[CleanedItem]:
         if norm_title in seen_titles:
             item.is_duplicate = True
             item.duplicate_of = seen_titles[norm_title]
-            logger.debug(f"重复: {item.title[:50]}...")
+            logger.debug(f"Duplicate title: {item.title[:50]}...")
         else:
             seen_titles[norm_title] = item.id
         result.append(item)
@@ -100,10 +100,10 @@ async def cleaner_node(state: PipelineState) -> dict:
     """Cleaner 节点：批量清洗原始数据"""
     raw_items = state.get("raw_items", [])
     if not raw_items:
-        logger.warning("没有原始数据需要清洗")
+        logger.warning("No raw items to clean")
         return {"cleaned_items": []}
 
-    logger.info(f"开始清洗 {len(raw_items)} 条原始数据 ...")
+    logger.info(f"Cleaning {len(raw_items)} raw items ...")
 
     # 清洗
     cleaned = [_clean_one(item) for item in raw_items]
@@ -115,6 +115,6 @@ async def cleaner_node(state: PipelineState) -> dict:
     cleaned = _simple_dedup(cleaned)
 
     valid_count = sum(1 for c in cleaned if not c.is_duplicate)
-    logger.info(f"清洗完成: {len(cleaned)} 条, 有效 {valid_count} 条, 重复 {len(cleaned) - valid_count} 条")
+    logger.info(f"Cleaning done: {len(cleaned)} items, {valid_count} valid, {len(cleaned) - valid_count} duplicates")
 
     return {"cleaned_items": cleaned}

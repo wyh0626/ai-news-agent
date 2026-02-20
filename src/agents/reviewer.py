@@ -97,7 +97,7 @@ def _parse_merge_groups(raw: str) -> list[dict]:
             except json.JSONDecodeError:
                 pass
 
-    logger.warning(f"合并分组 JSON 解析失败，LLM 原始响应:\n{text}")
+    logger.warning(f"Failed to parse merge groups JSON, raw LLM response:\n{text}")
     return []
 
 
@@ -128,7 +128,7 @@ def _merge_items(items: list[ExtractedItem], groups: list[dict]) -> list[Extract
         # 验证索引合法性
         valid = all(0 <= idx < len(items) for idx in indices)
         if not valid:
-            logger.warning(f"合并分组索引越界: {indices}, 跳过")
+            logger.warning(f"Merge group index out of range: {indices}, skipping")
             continue
 
         # keep 条目吸收其他条目的信息
@@ -145,8 +145,8 @@ def _merge_items(items: list[ExtractedItem], groups: list[dict]) -> list[Extract
                     keep_item.importance_score = other.importance_score
 
         logger.info(
-            f"合并 {len(indices)} 条 → 保留 [{keep_idx}] '{keep_item.title}' "
-            f"(原因: {reason})"
+            f"Merged {len(indices)} items → keep [{keep_idx}] '{keep_item.title}' "
+            f"(reason: {reason})"
         )
 
     result = [item for i, item in enumerate(items) if i not in to_remove]
@@ -157,10 +157,10 @@ async def reviewer_node(state: PipelineState) -> dict:
     """Reviewer 节点：写前审稿，合并同一事件的重复新闻"""
     extracted = state.get("extracted_items", [])
     if len(extracted) <= 5:
-        logger.info(f"新闻条目较少 ({len(extracted)} 条)，跳过审稿合并")
+        logger.info(f"Too few items ({len(extracted)}), skipping merge review")
         return {}
 
-    logger.info(f"审稿开始: {len(extracted)} 条新闻，检查重复事件 ...")
+    logger.info(f"Review start: {len(extracted)} items, checking for duplicate events ...")
 
     # URL 精确去重（同一 URL 直接去掉）
     seen_urls: dict[str, int] = {}
@@ -168,17 +168,17 @@ async def reviewer_node(state: PipelineState) -> dict:
     for i, item in enumerate(extracted):
         if item.url in seen_urls:
             url_dupes.add(i)
-            logger.info(f"URL 重复: [{i}] '{item.title}' 与 [{seen_urls[item.url]}] 相同 URL")
+            logger.info(f"Duplicate URL: [{i}] '{item.title}' same as [{seen_urls[item.url]}]")
         else:
             seen_urls[item.url] = i
 
     if url_dupes:
         extracted = [item for i, item in enumerate(extracted) if i not in url_dupes]
-        logger.info(f"URL 去重: 移除 {len(url_dupes)} 条，剩余 {len(extracted)} 条")
+        logger.info(f"URL dedup: removed {len(url_dupes)}, remaining {len(extracted)}")
 
     # LLM 事件级合并
     if not settings.openai_api_key:
-        logger.info("未配置 LLM，跳过事件级合并")
+        logger.info("LLM not configured, skipping event-level merge")
         return {"extracted_items": extracted}
 
     try:
@@ -191,12 +191,12 @@ async def reviewer_node(state: PipelineState) -> dict:
         if groups:
             before = len(extracted)
             extracted = _merge_items(extracted, groups)
-            logger.info(f"事件合并: {before} → {len(extracted)} 条 (合并 {len(groups)} 组)")
+            logger.info(f"Event merge: {before} → {len(extracted)} items ({len(groups)} groups merged)")
         else:
-            logger.info("未发现需要合并的重复事件")
+            logger.info("No duplicate events found")
 
     except Exception as e:
-        logger.warning(f"LLM 审稿失败，跳过合并: {e}")
+        logger.warning(f"LLM review failed, skipping merge: {e}")
 
-    logger.info(f"审稿完成: 最终 {len(extracted)} 条新闻")
+    logger.info(f"Review done: {len(extracted)} items remaining")
     return {"extracted_items": extracted}

@@ -14,7 +14,7 @@ async def cleanup_expired_memories(store=None, days: int = 30):
 
     v0.1: 暂不实现
     """
-    logger.debug(f"记忆清理暂未实现 (v0.3), 保留天数={days}")
+    logger.debug(f"Memory cleanup not yet implemented (v0.3), retention_days={days}")
 
 
 async def compress_topic_trends(store=None):
@@ -22,4 +22,4 @@ async def compress_topic_trends(store=None):
 
     v0.1: 暂不实现
     """
-    logger.debug("话题趋势压缩暂未实现 (v0.3)")
+    logger.debug("Topic trend compression not yet implemented (v0.3)")

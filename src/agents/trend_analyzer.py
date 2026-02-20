@@ -60,13 +60,13 @@ async def generate_trend_report(days: int = 7) -> str | None:
 
         pg = await get_postgres()
         if not pg.available:
-            logger.warning("PostgreSQL 不可用，无法生成趋势报告")
+            logger.warning("PostgreSQL unavailable, cannot generate trend report")
             return None
 
         # 获取话题热度数据
         trending = await pg.get_trending_topics(days=days, limit=20)
         if not trending:
-            logger.info("没有足够的话题数据生成趋势报告")
+            logger.info("Not enough topic data to generate trend report")
             return None
 
         topics_json = json.dumps(trending, ensure_ascii=False, indent=2, default=str)
@@ -101,7 +101,7 @@ async def generate_trend_report(days: int = 7) -> str | None:
         return resp.content
 
     except Exception as e:
-        logger.error(f"趋势报告生成失败: {e}")
+        logger.error(f"Trend report generation failed: {e}")
         return None
 
 
@@ -137,7 +137,7 @@ async def generate_deepdive_report(topic: str) -> str | None:
         articles_json = json.dumps(articles, ensure_ascii=False, indent=2, default=str)
 
         if not settings.openai_api_key:
-            return f"# 专题: {topic}\n\n共 {len(articles)} 篇相关文章。需要 LLM 生成深度分析。"
+            return f"# Topic: {topic}\n\n{len(articles)} related articles found. LLM required for deep analysis."
 
         llm = _build_llm()
         prompt = DEEPDIVE_PROMPT.format(topic=topic, articles_json=articles_json)
@@ -145,28 +145,28 @@ async def generate_deepdive_report(topic: str) -> str | None:
         return resp.content
 
     except Exception as e:
-        logger.error(f"专题报告生成失败: {e}")
+        logger.error(f"Deep dive report generation failed: {e}")
         return None
 
 
 def _fallback_trend_report(trending: list, articles: list, days: int) -> str:
-    """LLM 不可用时的降级趋势报告"""
+    """Fallback trend report when LLM is unavailable"""
     lines = [
-        f"# 📊 AI 行业趋势周报",
+        f"# 📊 AI Trend Report",
         f"",
-        f"> 过去 {days} 天的话题热度分析",
+        f"> Topic trend analysis for the past {days} days",
         "",
-        "## 热门话题 Top 10",
+        "## Top 10 Trending Topics",
         "",
     ]
     for i, t in enumerate(trending[:10], 1):
-        lines.append(f"{i}. **{t['topic']}** — 出现 {t['count']} 次，活跃 {t['active_days']} 天")
+        lines.append(f"{i}. **{t['topic']}** — {t['count']} mentions, {t['active_days']} active days")
     lines.append("")
-    lines.append("## 重要新闻")
+    lines.append("## Notable Articles")
     lines.append("")
     for a in articles[:10]:
         lines.append(f"- [{a['title']}]({a.get('url', '')})")
     lines.append("")
     lines.append("---")
-    lines.append(f"*需要配置 LLM 以获取深度分析*")
+    lines.append(f"*Configure LLM for deep analysis*")
     return "\n".join(lines)

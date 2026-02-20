@@ -35,29 +35,29 @@ class TwitterFirecrawlSource(BaseSource):
 
     async def fetch(self, since: datetime | None = None) -> list[RawItem]:
         if not self.api_key:
-            logger.warning("未配置 Firecrawl API Key，跳过 Twitter 采集")
+            logger.warning("Firecrawl API Key not configured, skipping Twitter fetch")
             return []
 
-        logger.info(f"通过 Firecrawl + Nitter 采集: {self.list_url}")
+        logger.info(f"Fetching via Firecrawl + Nitter: {self.list_url}")
 
         try:
             from firecrawl import Firecrawl
         except ImportError:
-            logger.error("firecrawl-py 未安装，请运行: pip install firecrawl-py")
+            logger.error("firecrawl-py not installed, run: pip install firecrawl-py")
             return []
 
         try:
             firecrawl = Firecrawl(api_key=self.api_key)
             doc = firecrawl.scrape(self.list_url, formats=["markdown"])
         except Exception as e:
-            logger.error(f"Firecrawl 采集失败: {e}")
+            logger.error(f"Firecrawl fetch failed: {e}")
             return []
 
         if not doc or not doc.markdown:
-            logger.warning("Firecrawl 未返回有效内容")
+            logger.warning("Firecrawl returned no valid content")
             return []
 
-        logger.info(f"Firecrawl 返回 {len(doc.markdown)} 字符")
+        logger.info(f"Firecrawl returned {len(doc.markdown)} chars")
 
         items = self._parse_nitter_markdown(doc.markdown, since)
         if not items:
@@ -71,12 +71,12 @@ class TwitterFirecrawlSource(BaseSource):
             ai_indices = set(await batch_filter_ai(titles, descs))
             filtered = [it for idx, it in enumerate(items) if idx in ai_indices]
             logger.info(
-                f"Twitter (Firecrawl): {len(items)} 条推文, "
-                f"LLM 过滤 → {len(filtered)} 条 AI 相关"
+                f"Twitter (Firecrawl): {len(items)} tweets, "
+                f"LLM filtered → {len(filtered)} AI-related"
             )
             return filtered
         except Exception as e:
-            logger.warning(f"Twitter AI 过滤失败，返回全部: {e}")
+            logger.warning(f"Twitter AI filter failed, returning all: {e}")
             return items
 
     def _parse_nitter_markdown(self, markdown: str, since: datetime | None) -> list[RawItem]:
@@ -101,7 +101,7 @@ class TwitterFirecrawlSource(BaseSource):
         ))
 
         if not tweet_anchors:
-            logger.warning("未找到推文锚点")
+            logger.warning("No tweet anchors found")
             return []
 
         for idx, match in enumerate(tweet_anchors):

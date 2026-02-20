@@ -45,7 +45,7 @@ def _build_llm() -> ChatOpenAI:
 async def translate_to_chinese(markdown_en: str) -> str | None:
     """将英文日报 markdown 翻译为中文"""
     if not settings.openai_api_key:
-        logger.info("未配置 LLM，跳过中文翻译")
+        logger.info("LLM not configured, skipping Chinese translation")
         return None
 
     try:
@@ -56,13 +56,13 @@ async def translate_to_chinese(markdown_en: str) -> str | None:
 
         # 基本校验
         if "##" not in content or len(content) < 200:
-            logger.warning("中文翻译输出不完整，跳过")
+            logger.warning("Chinese translation output incomplete, skipping")
             return None
 
-        logger.info("中文日报翻译完成")
+        logger.info("Chinese newsletter translation complete")
         return content
     except Exception as e:
-        logger.warning(f"中文翻译失败: {e}")
+        logger.warning(f"Chinese translation failed: {e}")
         return None
 
 
@@ -72,7 +72,7 @@ async def translator_node(state: PipelineState) -> dict:
     if not article or not article.markdown_content:
         return {}
 
-    logger.info("开始翻译中文版日报 ...")
+    logger.info("Translating newsletter to Chinese ...")
     zh_markdown = await translate_to_chinese(article.markdown_content)
 
     if zh_markdown:
