@@ -99,12 +99,12 @@ class PostgresStorage:
                 reconnect_timeout=30,
             )
             await self._pool.open()
-            logger.info("PostgreSQL 连接成功")
+            logger.debug("PostgreSQL connected")
         except ImportError:
-            logger.warning("psycopg 未安装，PostgreSQL 存储不可用。pip install 'psycopg[binary]' psycopg-pool")
+            logger.warning("psycopg not installed, PostgreSQL unavailable. pip install 'psycopg[binary]' psycopg-pool")
             self._pool = None
         except Exception as e:
-            logger.error(f"PostgreSQL 连接失败: {e}")
+            logger.error(f"PostgreSQL connection failed: {e}")
             self._pool = None
 
     async def close(self):
@@ -132,11 +132,11 @@ class PostgresStorage:
                     await conn.execute(stmt)
                 except Exception as e:
                     if "ivfflat" in stmt.lower() and "does not exist" in str(e):
-                        logger.debug(f"跳过 ivfflat 索引 (数据量不足): {e}")
+                        logger.debug(f"Skipping ivfflat index (not enough data): {e}")
                     else:
-                        logger.warning(f"SQL 执行警告: {e}")
+                        logger.warning(f"SQL execution warning: {e}")
             await conn.commit()
-        logger.info("PostgreSQL 表初始化完成")
+        logger.debug("PostgreSQL tables initialized")
 
     # ── 文章索引 (长期记忆) ────────────────────────────────
 

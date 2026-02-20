@@ -82,6 +82,7 @@ if git diff --cached --quiet; then
 else
     DATE=$(date -u -d 'yesterday' +%Y-%m-%d 2>/dev/null || date -u -v-1d +%Y-%m-%d)
     git commit -m "📰 AI Daily $DATE"
+    git pull --rebase origin main || true
     git push origin main
     echo "$LOG_PREFIX ✅ Push success"
 
