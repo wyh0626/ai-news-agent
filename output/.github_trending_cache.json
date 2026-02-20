@@ -1,12 +1,4 @@
 {
-  "2026-02-16": [
-    "rowboatlabs/rowboat",
-    "openclaw/openclaw",
-    "alibaba/zvec",
-    "moonshine-ai/moonshine",
-    "ruvnet/wifi-densepose",
-    "SynkraAI/aios-core"
-  ],
   "2026-02-17": [
     "letta-ai/letta-code",
     "openclaw/openclaw",
@@ -20,5 +12,12 @@
   ],
   "2026-02-19": [
     "SynkraAI/aios-core"
+  ],
+  "2026-02-20": [
+    "RichardAtCT/claude-code-telegram",
+    "harvard-edge/cs249r_book",
+    "open-mercato/open-mercato",
+    "openclaw/openclaw",
+    "p-e-w/heretic"
   ]
 }
