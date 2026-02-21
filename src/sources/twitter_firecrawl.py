@@ -121,9 +121,9 @@ class TwitterFirecrawlSource(BaseSource):
             logger.warning(f"Twitter AI filter failed, returning all: {e}")
             filtered = all_items
 
-        # 按 score 降序取 top 10
+        # 按 score 降序取 top 20
         filtered.sort(key=lambda x: x.score, reverse=True)
-        result = filtered[:10]
+        result = filtered[:20]
         logger.info(f"Twitter final selection: top {len(result)} AI tweets by score")
         return result
 
