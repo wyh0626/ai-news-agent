@@ -94,16 +94,26 @@ class TwitterFirecrawlSource(BaseSource):
         if not all_items:
             return []
 
-        # LLM 批量过滤非 AI 相关推文
+        # 高分推文（>=10k）直接保留，不走 LLM 过滤（避免误杀）
+        must_keep = [it for it in all_items if it.score >= 10000]
+        to_filter = [it for it in all_items if it.score < 10000]
+
+        pre_high = sorted(all_items, key=lambda x: x.score, reverse=True)[:5]
+        logger.info("Twitter top-5 scores:")
+        for it in pre_high:
+            logger.info(f"  score={it.score:6d} @{it.author}: {it.title[:60]}")
+
+        # LLM 批量过滤低分推文中非 AI 相关的
         try:
             from src.tools.ai_filter import batch_filter_ai
-            titles = [it.title for it in all_items]
-            descs = [it.content[:80] for it in all_items]
+            titles = [it.title for it in to_filter]
+            descs = [it.content[:80] for it in to_filter]
             ai_indices = set(await batch_filter_ai(titles, descs))
-            filtered = [it for idx, it in enumerate(all_items) if idx in ai_indices]
+            filtered_rest = [it for idx, it in enumerate(to_filter) if idx in ai_indices]
+            filtered = must_keep + filtered_rest
             logger.info(
                 f"Twitter (Firecrawl): {len(all_items)} tweets, "
-                f"LLM filtered → {len(filtered)} AI-related"
+                f"{len(must_keep)} high-score kept + LLM filtered {len(to_filter)} → {len(filtered_rest)} AI-related"
             )
         except Exception as e:
             logger.warning(f"Twitter AI filter failed, returning all: {e}")
