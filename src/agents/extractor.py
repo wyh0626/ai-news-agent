@@ -31,14 +31,17 @@ Return a JSON object with these fields:
     "importance_score": 1-10 importance rating (10 = most important)
 }}
 
-Importance scoring rules (be consistent):
-- 9-10: Major product launch by top lab (OpenAI/Google/Anthropic/Meta), breakthrough SOTA result, critical industry event
-- 7-8: Notable open-source model release, significant funding/acquisition, important benchmark result, viral demo
-- 5-6: Interesting project/tool, meaningful update to existing product, good tutorial/analysis
-- 3-4: Routine discussion, minor update, niche topic
-- 1-2: Low-signal content, spam, off-topic
+CRITICAL: This is an **AI-focused newsletter**. Importance score MUST reflect AI relevance first, then impact.
 
-Also consider platform score as a signal: high upvotes/stars = likely more important.
+Importance scoring rules (be consistent):
+- 9-10: Major AI product launch by top lab (OpenAI/Google/Anthropic/Meta), breakthrough SOTA result, critical AI industry event
+- 7-8: Notable open-source AI model release, significant AI funding/acquisition, important benchmark result, viral AI demo
+- 5-6: Interesting AI project/tool, meaningful AI product update, good AI tutorial/analysis
+- 3-4: Tangentially AI-related, routine discussion, minor update, niche topic
+- 1-2: NOT AI-related content (politics, general news, sports, etc.) — score 1-2 regardless of platform popularity
+
+Non-AI content MUST receive score 1-2, even if it has very high upvotes/engagement.
+Platform score (upvotes/stars) is a secondary signal — only matters AFTER confirming AI relevance.
 
 Return JSON only, no other text."""
 
