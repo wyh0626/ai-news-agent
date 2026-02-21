@@ -33,7 +33,8 @@ class TwitterFirecrawlSource(BaseSource):
     def default_interval(self) -> int:
         return 900
 
-    MAX_PAGES = 5
+    MAX_PAGES = 20  # 安全上限，实际由时间窗口控制停止
+    WINDOW_HOURS = 24  # 采集时间窗口（小时）
 
     async def fetch(self, since: datetime | None = None) -> list[RawItem]:
         if not self.api_key:
@@ -45,6 +46,12 @@ class TwitterFirecrawlSource(BaseSource):
         except ImportError:
             logger.error("firecrawl-py not installed, run: pip install firecrawl-py")
             return []
+
+        # since=None 时默认取 24 小时内的推文
+        from datetime import timedelta
+        if since is None:
+            since = datetime.now(tz=timezone.utc) - timedelta(hours=self.WINDOW_HOURS)
+            logger.info(f"Twitter: no since provided, using {self.WINDOW_HOURS}h window (since={since.strftime('%Y-%m-%d %H:%M UTC')})")
 
         firecrawl = Firecrawl(api_key=self.api_key)
         # tweet_id -> RawItem，跨页去重并取最大互动数据
@@ -75,9 +82,9 @@ class TwitterFirecrawlSource(BaseSource):
                 if tid not in best_items or item.score > best_items[tid].score:
                     best_items[tid] = item
 
-            # Stop if oldest tweet on this page is older than since
-            if since and oldest_time and oldest_time <= since:
-                logger.info(f"Reached tweets older than {since}, stopping pagination")
+            # 当前页最旧推文已超出时间窗口，停止翻页
+            if oldest_time and oldest_time <= since:
+                logger.info(f"Reached tweets older than {since.strftime('%Y-%m-%d %H:%M UTC')}, stopping pagination")
                 break
 
             # Extract cursor for next page

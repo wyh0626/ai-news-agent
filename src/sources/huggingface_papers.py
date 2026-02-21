@@ -20,8 +20,9 @@ class HuggingFacePapersSource(BaseSource):
     社区投票 upvotes 代表真实热度，全部为 AI 相关，无需 LLM 过滤。
     """
 
-    def __init__(self, min_upvotes: int = 5):
+    def __init__(self, min_upvotes: int = 5, max_results: int = 5):
         self.min_upvotes = min_upvotes
+        self.max_results = max_results
 
     @property
     def source_id(self) -> str:
@@ -98,5 +99,9 @@ class HuggingFacePapersSource(BaseSource):
             )
             items.append(item)
 
-        logger.info(f"HuggingFace Papers: {len(items)} papers (>={self.min_upvotes} upvotes)")
+        # 按 upvotes 降序取 top N
+        items.sort(key=lambda x: x.score, reverse=True)
+        if self.max_results > 0:
+            items = items[:self.max_results]
+        logger.info(f"HuggingFace Papers: {len(items)} papers (>={self.min_upvotes} upvotes, top {self.max_results})")
         return items
