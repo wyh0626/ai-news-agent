@@ -67,8 +67,7 @@ class HuggingFacePapersSource(BaseSource):
                     published = datetime.fromisoformat(published_str.replace("Z", "+00:00"))
                 except ValueError:
                     pass
-            if since and published and published <= since:
-                continue
+            # HF Papers 是每日批次数据，不做 since 过滤（避免因时区/延迟漏掉当日论文）
 
             paper_id = paper_info.get("id", "")
             # title/summary 在顶层（更完整），fallback 到 paper 子对象

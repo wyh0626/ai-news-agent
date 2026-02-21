@@ -14,10 +14,11 @@ logger = logging.getLogger(__name__)
 USER_AGENT = "AI-News-Agent/1.0"
 GRAPHQL_URL = "https://api.producthunt.com/v2/api/graphql"
 
-# 查询今日热门产品（无需 API key，使用公开端点）
-QUERY = """
+def _build_query(posted_after: str) -> str:
+    """构建 GraphQL 查询，只拉 postedAfter 之后发布的产品"""
+    return """
 {
-  posts(order: VOTES, first: 30) {
+  posts(order: VOTES, first: 50, postedAfter: "%s") {
     edges {
       node {
         id
@@ -38,7 +39,7 @@ QUERY = """
     }
   }
 }
-"""
+""" % posted_after
 
 
 class ProductHuntSource(BaseSource):
@@ -62,7 +63,10 @@ class ProductHuntSource(BaseSource):
         return 3600  # 1 hour
 
     async def fetch(self, since: datetime | None = None) -> list[RawItem]:
-        logger.info(f"Fetching Product Hunt (min_votes={self.min_votes}) ...")
+        # 默认取最近 24 小时内发布的产品
+        cutoff = since or (datetime.now(tz=timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0))
+        posted_after = cutoff.strftime("%Y-%m-%dT%H:%M:%SZ")
+        logger.info(f"Fetching Product Hunt (min_votes={self.min_votes}, postedAfter={posted_after}) ...")
 
         headers = {
             "User-Agent": USER_AGENT,
@@ -76,7 +80,7 @@ class ProductHuntSource(BaseSource):
             async with httpx.AsyncClient(timeout=30, headers=headers) as client:
                 resp = await client.post(
                     GRAPHQL_URL,
-                    json={"query": QUERY},
+                    json={"query": _build_query(posted_after)},
                 )
                 resp.raise_for_status()
             data = resp.json()
@@ -103,8 +107,7 @@ class ProductHuntSource(BaseSource):
                     published = datetime.fromisoformat(created_str.replace("Z", "+00:00"))
                 except ValueError:
                     pass
-            if since and published and published <= since:
-                continue
+            # Product Hunt 是每日批次数据，不做 since 过滤
             candidates.append((node, published))
 
         if not candidates:
