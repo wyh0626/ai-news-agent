@@ -101,16 +101,18 @@ function extractMeta(content, fileName) {
 
   const title = `AI Daily — ${date}`;
 
-  // 封面图：取 markdown 里第一张 ![...](url) 图片
+  // 封面图：取 markdown 里第一张 ![...](url) 图片，并记录其行号
   let cover = '';
-  for (const line of lines) {
-    const imgMatch = line.match(/!\[[^\]]*\]\(([^)]+)\)/);
-    if (imgMatch) { cover = imgMatch[1]; break; }
+  let coverLineIdx = -1;
+  for (let i = 0; i < lines.length; i++) {
+    const imgMatch = lines[i].match(/!\[[^\]]*\]\(([^)]+)\)/);
+    if (imgMatch) { cover = imgMatch[1]; coverLineIdx = i; break; }
   }
 
-  // 去掉原始 H1
+  // 去掉原始 H1 和封面图行（避免在 body 里重复显示）
   const h1Idx = lines.findIndex(l => l.startsWith('# '));
-  const bodyLines = h1Idx >= 0 ? lines.filter((_, i) => i !== h1Idx) : lines;
+  const skipIdx = new Set([h1Idx, coverLineIdx].filter(i => i >= 0));
+  const bodyLines = lines.filter((_, i) => !skipIdx.has(i));
   const body = bodyLines.join('\n').replace(/^\n+/, '');
 
   return { date, title, description, cover, body };
