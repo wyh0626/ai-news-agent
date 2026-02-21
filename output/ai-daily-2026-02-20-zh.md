@@ -1,117 +1,73 @@
 # AI 日报 — 2026-02-20
 
-![封面](https://nitter.net/pic/orig/media%2FHBopKGfXMAA29nQ.jpg)
-
-> 覆盖 39 条 AI 新闻
+> 覆盖 43 条 AI 新闻
 
 ## 🔥 今日焦点
 
-### 1. Nvidia 与 OpenAI 放弃千亿美元交易，转而推动约 300 亿美元的投资安排
+### 1. BC 省学校枪手的 ChatGPT 消息由 12 名 OpenAI 员工审阅
+自动标志触发了人工审核，据报道有 12 名 OpenAI 员工在评估并就消息展开讨论后再采取行动。此事件凸显了大型 AI 实验室中安全审查的运作方式，以及在干预时间点上可能存在的内部分歧。背景关注点包括升级阈值、评审指南以及对用户生成内容的政策影响。[来源-x](https://x.com/AricToler/status/2024976260749820067)
 
-据报道，Nvidia 与 OpenAI 已从未完成的 mega-deal 中撤出，转而追求一项规模较小的投资安排，金额约为 300 亿美元，这一举动在市场动态变化中显示出双方合作策略的再校准。此举可能重塑 AI 生态系统中的资金模式、共同开发时间表以及软硬件集成的投资逻辑。 [来源-rss](https://www.ft.com/content/dea24046-0a73-40b2-8246-5ac7b7a54323)
+### 2. 伊朗部队为隐藏性虐待而移除抗议者子宫
+据 trib.al 引用《纽约邮报》指控，对女性抗议者的严重人权侵害包括为隐瞒性暴力而移除子宫。该说法尚未得到独立媒体证实，属于正在发展且存在争议的报道，具有严重的人道主义影响。更广泛的关注在于此类指控将如何影响国际审查与政策回应。[来源-x](https://x.com/nypost/status/2025040970060808229)
 
-### 2. Consistency Diffusion LMs: 14x Faster, No Quality Loss
-
-Together AI 公布了面向语言模型的一致性扩散（consistency diffusion），声称通过在各步骤强制扩散约束，生成速度最高可提升至 14 倍，且质量无下降。若在大规模实际应用中可行，该方法可能显著降低企业级 LLM 部署的推理成本与延迟。 [来源-rss](https://www.together.ai/blog/consistency-diffusion-language-models)
-
-### 3. 顶级 OpenRouter 模型：本周中文模型处于领先地位
-
-OpenRouter 的活跃度显示中文开源模型本周吞吐量达到新记录，多款模型在一周内超过万亿标记，且有多款模型达到万亿标记。领导格局的变化凸显开源 AI 能力的全球化进程，以及对开源基准测试和生态系统动态的潜在影响。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9zt8m/the_top_3_models_on_openrouter_this_week_chinese/)
+### 3. GUI-Owl-1.5 在各设备上推出多平台 GUI 代理
+GUI-Owl-1.5 针对从 2B 到 235B 的规模推出原生 GUI 代理模型，支持桌面、移动端和浏览器平台，用于云端-边缘协作与实时交互。该方法在 GUI 基准测试中声称达到行业前沿的结果，并标志着跨设备代理生态系统的进展。潜在影响包括提升 GUI 自动化速度与实现更无缝的边缘-云协调。[来源-huggingface](https://huggingface.co/papers/2602.16855)
 
 ## 📰 重点报道
 
-### LLM
-
-- **Taalas Runs Llama 3 8B at 16k Tokens/s** — 展示了以每个用户 16k tokens/s 的速率运行 Llama 3 8B，声称相比基于 SRAM 的系统快一个数量级；该架构以针对特定模型的硬件芯片为核心，实质上让芯片就是模型。带有 HLS 回放的聊天演示突显了该方法的潜力。 [来源-x](https://x.com/awnihannun/status/2024671348782711153)
-
-- **Anthropic launches official Claude Code Plugins directory** — Anthropic 发布 Claude Code Plugins 的官方目录，展示内部与外部插件，同时提醒关于信任第三方组件的风险；插件可通过 Claude Code 的插件系统安装，由 Anthropic 治理，外部插件由合作伙伴与社区提供。 [来源-github](https://github.com/anthropics/claude-plugins-official)
-
 ### AI 安全
+- **Karpathy 在 Mac mini 上试用 Claws，警告安全风险** —— 指出关于 OpenClaw（RCE、暴露的实例、供应链风险）的安全隐患，并强调在叠加 LLM 代理时需谨慎。[来源-x](https://x.com/karpathy/status/2024987174077432126)
 
-- **Frontier Labs: AGI and Superintelligence Near Takeoff** — 前沿实验室的观点认为 AGI 与超智能接近起飞，强调内部加速的快速推进与 ASI 的临近，同时强调对模型增长轨迹的监控。 [来源-x](https://x.com/kimmonismus/status/2024898716365455459)
+### 政治与安全
+- **Gottheimer 与 Lawler 就 Iran War Powers Resolution 发布联合声明** —— 表明两党在明确国会权力及对涉及伊朗军事行动的问责方面的共识。[来源-x](https://x.com/RepMikeLawler/status/2024869722466951449)
 
-- **Cord Coordinates Trees of AI Agents** — Cord 提出基于树的框架，用于协调多个 AI 代理以提升可扩展性和协作性，吸引 Hacker News 关注在组织 AI 安全模式方面的讨论。 [来源-rss](https://www.june.kim/cord)
+### 开源与工具
+- **Claude Code for Desktop：预览应用、审查代码、管理 CI/PRs** —— Claude Code 桌面版能够在后台预览正在运行的应用、审查代码、处理 CI 失败与 PR，并启用 HLS 回放。[来源-x](https://x.com/claudeai/status/2024937960572104707)
 
-### 行业
-
-- **AI 助手让每位开发者都成为广告公司** — 该文章指出，AI 助手通过广告与数据驱动的收入来变现用户互动，将 AI 助手重新定位为广告平台，并引发隐私与商业模式方面的担忧。 [来源-rss](https://juno-labs.com/blogs/every-company-building-your-ai-assistant-is-an-ad-company)
-
-- **BC 学校枪击案：ChatGPT 消息经 OpenAI 员工审阅** — 华尔街日报报道，被标记的 ChatGPT 消息不仅被自动化筛选器检测到，还被约 12 名 OpenAI 员工审阅与讨论，凸显“人类在环”的安全工作流与相关决策问题。 [来源-x](https://x.com/AricToler/status/2024976260749820067)
-
-- **Stellan Skarsgård 警示 AI 在资本集中背景下对电影行业的增长风险** — 该演员讨论 AI 在电影中的扩展作用，提及采用与抵制并存，并指向资本集中与科技精英控制的更广泛担忧。 [来源-x](https://x.com/Variety/status/2024983345499963815)
-
-- **Anthropic 发布官方 Claude Code 插件目录** —（见 LLM）该目录旨在围绕信任与验证就 Claude Code 扩展的插件进行治理性筛选。 [来源-github](https://github.com/anthropics/claude-plugins-official)
-
-### 开源 / 工具
-
-- **Frontier Labs: AGI and Superintelligence Near Takeoff** —（见 AI 安全）强调在能力加速的背景下，近阶段的治理需求及潜在风险。 [来源-x](https://x.com/kimmonismus/status/2024898716365455459)
-
-- **Cord Coordinates Trees of AI Agents** —（见 AI 安全）提出可扩展的多代理协调模式，以提升安全性与协作性。 [来源-rss](https://www.june.kim/cord)
+### 具身化 AI
+- **RynnBrain Opens Embodied AI Foundation Model** —— 开源的具身化 AI 基础模型，旨在在真实世界的时空动态中统一感知、推理与规划。[来源-huggingface](https://huggingface.co/papers/2602.14979)
+- **HERO Advances Humanoid End-Effector Control for Open-Vocabulary Manipulation** —— 提出一种健壮的末端执行器范式，用于开放词汇感知的物体定位与操作，以降低模仿学习的数据需求。[来源-huggingface](https://huggingface.co/papers/2602.16705)
 
 ### AI 研究
+- **Unified Latents: Training Latents via Diffusion Regularization** —— 提出一个框架，将编码器噪声与扩散先验联系起来，在训练 FLOPs 更低的情况下实现与 ImageNet-512 相当的结果。[来源-huggingface](https://huggingface.co/papers/2602.17270)
 
-- **Consistency Diffusion LMs: 14x Faster, No Quality Loss** —（见 AI 安全）讨论在一致性约束下的扩散推断，以在不牺牲质量的前提下提升生成速度。 [来源-rss](https://www.together.ai/blog/consistency-diffusion-language-models)
-
-## ⚡ 快讯速览
-
-- **Hugging Face 收购 GGML.AI** — HF 在本地模型工具领域扩张，通过收购推动轻量级模型生态的整合。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9vywq/ggmlai_has_got_acquired_by_huggingface/)
-
-- **字节跳动的 Ouro-2.6B-Thinking 实现首次可用推理** — Ouro-2.6B-Thinking 实现初步推理能力，标志着 Ouro 家族的一项里程碑。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1ramir9/release_ouro26bthinking_first_working_inference/)
-
-- **Phil Spencer 退出 Microsoft，AI 高管接任 Xbox 职务** — 领导层发生变动，AI 负责人将担任 Xbox 的关键游戏部门角色。 [来源-rss](https://www.neowin.net/news/phil-spencer-is-exiting-microsoft-as-ai-executive-takes-over-xbox/)
-
-- **实现每秒 17k Token 的普及型 AI 路径** — 概述了更快、更易获取的 AI 推理路径，突出效率里程碑。 [来源-rss](https://taalas.com/the-path-to-ubiquitous-ai/)
-
-- **AI 不是同事，而是外骨骼** — 这一观点将 AI 重新定位为工作场所的增强，而非替代。 [来源-rss](https://www.kasava.dev/blog/ai-as-exoskeleton)
-
-- **Google TimesFM 发布 Time-Series Foundation Model 2.5** — Google Research 发布了更新的时序基础模型产品。 [来源-github](https://github.com/google-research/timesfm)
-
-- **roboflow/trackers：即插即用的多对象跟踪库** — 新的跟踪库实现了即插即用的多对象跟踪能力。 [来源-github](https://github.com/roboflow/trackers)
-
-- **OpenAI 报告所有团队普遍取得积极进展** — 内部更新显示跨产品线的跨团队势头。 [来源-x](https://x.com/gdb/status/2024985187579560366)
-
-- **2026年2月最佳音频模型 Megathread** — 社区对 2026 年 2 月领先的音频专注模型进行汇总。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r7bsfd/best_audio_models_feb_2026/)
-
-- **映射澳大利亚最高法院每个案件及引文** — 致力于将澳大利亚判例及引文映射以供参考工具使用。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1ram2ov/how_i_mapped_every_high_court_of_australia_case/)
-
-- **Meta 的 AI 部署正在扼杀我们的代理机构** — 对 Meta AI 部署对营销代理机构影响的批评性分析。 [来源-rss](https://mojodojo.io/blog/meta-is-systematically-killing-our-agency/)
-
-- **PentAGI：用于渗透测试的自治 AI 代理** — 开源项目展示了用于安全测试的自治代理。 [来源-github](https://github.com/vxcontrol/pentagi)
-
-- **Hugging Face Skills Define AI Tasks Interoperable with Major Tools** — HF Skills 框架旨在实现跨工具任务互操作性。 [来源-github](https://github.com/huggingface/skills)
-
-- **GLM 5 Appears to Take on Claude Persona** — GLM-5 在演示中展现出类似 Claude 的人格特征。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1raf3dm/glm_5_seems_to_have_a_claude_personality/)
-
-- **Strix Halo Benchmarks: Step 3.5 and MiniMax M2.5** — 社区对 Strix Halo 模型的基准测试。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1rabcyp/a_few_strix_halo_benchmarks_minimax_m25_step_35/)
-
-- **Qwen3 Coder Next Outperforms 30B Models with Aggressive Quantization** — Qwen3 Coder 在激进量化下表现出色，超过多款 30B 模型。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1rabg6o/qwen3_coder_next_oddly_usable_at_aggressive/)
-
-- **Vellium v0.3.5: Writing Mode Overhaul, Native KoboldCpp, OpenAI TTS** — Vellium 0.3.5 带来写作模式的重大改进、原生 KoboldCpp 支持以及 OpenAI TTS 支持。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1rafo5b/update_vellium_v035_massive_writing_mode_upgrade/)
-
-- **Critique: AI Side Projects Spark Backlash** — 讨论公众对 AI 边缘项目的反对情绪及治理方面的担忧。 [来源-rss](https://dylancastillo.co/posts/ai-side-projects.html)
-
-- **AI Uncovers Insiders and Alpha on Polymarket** — 关于 AI 驱动的市场洞察以及 Polymarket 上内部人士活动的信号。 [来源-x](https://twitter.com/peterjliu/status/2024901585806225723)
-
-- **AI Agent Wrote Hit Piece, Operator Came Forward** — 关于由 AI 生成的打击性文章及随后的人工披露的叙事。 [来源-rss](https://theshamblog.com/an-ai-agent-wrote-a-hit-piece-on-me-part-4/)
-
-- **Pi for Excel: AI Sidebar Add-In** — 通过侧边栏插件为 Excel 增添 AI 辅助功能。 [来源-github](https://github.com/tmustier/pi-for-excel)
-
-- **Databricks AI Dev Kit for Coding Agents Released** — Databricks 发布用于构建编码代理的 AI 开发工具包。 [来源-github](https://github.com/databricks-solutions/ai-dev-kit)
-
-- **AI Singularity Takes Off** — 关于 AI 能力快速提升的早期讨论。 [来源-x](https://x.com/scaling01/status/2024925692853395618)
-
-- **StepFun AI to Host AMA on LocalLLaMA** — StepFun AI 宣布将在 LocalLLaMA 上举办 AMA 活动。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r8snay/ama_with_stepfun_ai_ask_us_anything/)
-
-- **TeichAI GLM-4.7, Claude, Opus-4.5 Distill on GGUF** — 将 GLM-4.7、Claude 与 Opus-4.5 提炼为 GGUF 格式。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1ranako/teichaiglm47flashclaudeopus45highreasoningdistillg/)
-
-- **New Jersey Residents Defeat AI Data Center** — 新泽西州居民对 AI 数据中心的本地反对行动。 [来源-rss](https://www.commondreams.org/news/new-brunswick-ai-data-center)
-
-- **Gemma to release a new version soon** — 关于 Gemma 即将发布新版本的更新。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1ra8omf/gemma_which_we_will_be_releasing_a_new_version_of/)
-
-- **Reddit thread on Deepseek and Gemma** — 关于 Deepseek 与 Gemma 的社区讨论。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9uuc6/deepseek_and_gemma/)
-
-- **What are your favorite lesser-known Hugging Face models?** — 关于被低估的 HF 模型的社区投票。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1rajez2/what_are_your_favorite_lesser_known_models_on/)
+### 政治与产业
+- **Trump vows to cut off all trade, destroy the country** —— 片段显示其对单边禁运权力的立场，引发关于政策含义与行政权力的讨论。[来源-x](https://x.com/BulwarkOnline/status/2024915268854563311)
 
 ---
 
-*由 AI 新闻代理生成 | 2026-02-20*
+## ⚡ 快讯速览
+
+- Frontier AI Risk Framework v1.5 详细列出五大前沿风险 — 概述版本 1.5 风险框架中的五大前沿风险。[来源-huggingface](https://huggingface.co/papers/2602.14457)
+- MAEB：大规模音频基准测试评估 50+ 模型 — 对 50 多个模型在音频任务上的基准测试。[来源-huggingface](https://huggingface.co/papers/2602.16008)
+- 朝着 AI 代理可靠性科学迈进 — 提出衡量与提升 AI 代理可靠性的方法。[来源-huggingface](https://huggingface.co/papers/2602.16666)
+- Meta 部署 AI，正在扼杀我们的自主性 — 对 Meta 的 AI 驱动自动化及其对人类自主性的影响的批判性观点。[来源-rss](https://mojodojo.io/blog/meta-is-systematically-killing-our-agency/)
+- AI 旁路项目为何令人反感 — 关于 AI 边线项目缺陷的观点文章。[来源-rss](https://dylancastillo.co/posts/ai-side-projects.html)
+- Phil Spencer 离开微软；AI 高管接任 Xbox 负责人 — 微软的领导层变动，AI 监督职责移至 Xbox。[来源-rss](https://www.neowin.net/news/phil-spencer-is-exiting-microsoft-as-ai-executive-takes-over-xbox/)
+- 负责打造你的 AI 助手的每一家公司都是广告公司 — 观点认为 AI 助手通过广告实现货币化。[来源-rss](https://juno-labs.com/blogs/every-company-building-your-ai-assistant-is-an-ad-company)
+- Ggml.ai 与 Hugging Face 携手推动本地 AI — 通过 HF 集成推进开源本地 AI。[来源-github](https://github.com/ggml-org/llama.cpp/discussions/19759)
+- Nvidia 与 OpenAI 放弃价值 1000 亿美元的交易，改为 300 亿美元的投资 — 据报道这是 AI 行业中的一项重大交易重组。[来源-rss](https://www.ft.com/content/dea24046-0a73-40b2-8246-5ac7b7a54323)
+- 面向普及 AI 的路径达成每秒 1.7 万个令牌的吞吐量突破 — 朝着普及 AI 的吞吐量突破。[来源-rss](https://taalas.com/the-path-to-ubiquitous-ai/)
+- 一致性扩散语言模型：提升至最高 14 倍速度且不损失质量 — 在扩散语言模型流程中的加速。[来源-rss](https://www.together.ai/blog/consistency-diffusion-language-models)
+- AI 代理撰写打击性文章；运行者回应 — AI 生成内容的真实案例及人类监督的回应。[来源-rss](https://theshamblog.com/an-ai-agent-wrote-a-hit-piece-on-me-part-4/)
+- AI 不是同事，而是外骨骼 — 将 AI 视为增强层的观点。[来源-rss](https://www.kasava.dev/blog/ai-as-exoskeleton)
+- TimesFM 2.5 推出 200M 参数的时间序列模型 — TimesFM 系列中的新时间序列模型。[来源-github](https://github.com/google-research/timesfm)
+- Grok Goal 概述追求真理、审美、仁爱、科技的目标 — 埃隆·马斯克对广义 AI 目标的看法。[来源-x](https://x.com/elonmusk/status/2024799518181700017)
+- Stellen Skarsgård 警告称，电影中的 AI 兴起与资本集中有关 — 对电影行业中 AI 的评论及资本动力。[来源-x](https://x.com/Variety/status/2024983345499963815)
+- SLA2 Introduces Learnable Routing for Sparse-Linear Attention — 稀疏注意力路由的新进展。[来源-huggingface](https://huggingface.co/papers/2602.12675)
+- AutoWebWorld 通过 FSM 创建可验证的 Web 环境 — 基于 FSM 的可验证 Web 环境。[来源-huggingface](https://huggingface.co/papers/2602.14296)
+- CADEvolve：通过程序进化实现现实感 CAD 的生成 — 通过程序进化实现现实感 CAD 的生成。[来源-huggingface](https://huggingface.co/papers/2602.16317)
+- Trajectory-Based Safety Audit Evaluates Clawdbot OpenClaw — 对 OpenClaw 实现进行轨迹安全审计。[来源-huggingface](https://huggingface.co/papers/2602.14364)
+- 新框架将 LLM 的事实性分离：存储事实与可访问事实的区分 — 区分事实性的存储与检索路径。[来源-huggingface](https://huggingface.co/papers/2602.14080)
+- In-context Co-player Inference Enables Multi-Agent Cooperation — 通过上下文中的共同玩家推理实现多智能体协作。[来源-huggingface](https://huggingface.co/papers/2602.16301)
+- In-Car Agentic LLM Feedback Shapes Multi-Step Tasks — 车载场景中的代理性 LL M 反馈塑造多步骤任务。[来源-huggingface](https://huggingface.co/papers/2602.15569)
+- Cord Introduces Coordinating Trees of AI Agents — AI 代理的协调框架。[来源-rss](https://www.june.kim/cord)
+- PentAGI Launches Autonomous AI Penetration Testing Agents — 用于渗透测试的自主 AI 代理。[来源-github](https://github.com/vxcontrol/pentagi)
+- AI Reveals Insiders and Alpha on Polymarket — 关于内部人士与市场阿尔法 的信号。[来源-x](https://twitter.com/peterjliu/status/2024901585806225723)
+- Pi for Excel Adds AI Sidebar Add-In — Excel 的 AI 侧边栏插件。[来源-github](https://github.com/tmustier/pi-for-excel)
+- Roboflow Trackers：开源模块化多目标跟踪工具包 — 开源的多目标跟踪工具包。[来源-github](https://github.com/roboflow/trackers)
+- obra unveils Superpowers: agentic coding framework and workflow — obra 发布 Superpowers：具身代理编码框架与工作流。[来源-github](https://github.com/obra/superpowers)
+- Hugging Face Skills Define Self-Contained AI Task Packs — 通过 HF Skills 定义自包含 AI 任务包。[来源-github](https://github.com/huggingface/skills)
+- Databricks AI Dev Kit for Coding Agents — 面向编码代理的 AI 开发工具包。[来源-github](https://github.com/databricks-solutions/ai-dev-kit)
+- @SECWAR Reunites With Rakkasans for Morning PT — 朝晨体能训练中的军事备战更新。[来源-x](https://x.com/DOWResponse/status/2024858678537634206)
+- New Jersey Residents Defeat AI Data Center — 当地居民反对 AI 数据中心建设。[来源-rss](https://www.commondreams.org/news/new-brunswick-ai-data-center)
