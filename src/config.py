@@ -36,6 +36,13 @@ class Settings(BaseSettings):
     # GitHub 趋势去重缓存天数
     github_trending_dedup_days: int = 3
 
+    # HuggingFace Papers
+    hf_papers_min_upvotes: int = 5
+
+    # Product Hunt
+    producthunt_api_token: str = ""
+    producthunt_min_votes: int = 50
+
     # 数据库
     postgres_url: str = "postgresql://postgres:postgres@localhost:5432/ainews"
 

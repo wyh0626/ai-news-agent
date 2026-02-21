@@ -14,6 +14,8 @@ class SourceType(str, Enum):
     GITHUB = "github"
     TWITTER = "twitter"
     RSS = "rss"
+    HUGGINGFACE = "huggingface"
+    PRODUCTHUNT = "producthunt"
 
 
 class Sentiment(str, Enum):

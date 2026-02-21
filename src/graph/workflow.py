@@ -25,7 +25,8 @@ async def load_schedule_node(state: PipelineState) -> dict:
     """加载调度配置，决定本次运行采集哪些数据源"""
     sources = state.get("sources_config")
     if not sources:
-        sources = ["reddit", "hackernews"]
+        sources = ["reddit", "hackernews", "huggingface"]
+        # 配置 PRODUCTHUNT_API_TOKEN 后可加入: sources.append("producthunt")
 
     run_id = state.get("run_id") or str(uuid4())[:8]
     started = datetime.now(tz=timezone.utc).isoformat()

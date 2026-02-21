@@ -10,6 +10,8 @@ from src.models import RawItem
 from src.sources.arxiv import ArxivSource
 from src.sources.github import GitHubTrendingSource
 from src.sources.hackernews import HackerNewsSource
+from src.sources.huggingface_papers import HuggingFacePapersSource
+from src.sources.producthunt import ProductHuntSource
 from src.sources.reddit import RedditRSSSource
 from src.sources.rss_generic import GenericRSSSource, get_ai_blog_sources
 from src.sources.twitter import TwitterSource
@@ -23,6 +25,11 @@ SOURCE_REGISTRY = {
     "hackernews": lambda: [HackerNewsSource(min_score=settings.hn_min_score)],
     "arxiv": lambda: [ArxivSource()],
     "github": lambda: [GitHubTrendingSource()],
+    "huggingface": lambda: [HuggingFacePapersSource(min_upvotes=settings.hf_papers_min_upvotes)],
+    "producthunt": lambda: [ProductHuntSource(
+        min_votes=settings.producthunt_min_votes,
+        api_token=settings.producthunt_api_token or None,
+    )],
     "rss": lambda: (
         get_ai_blog_sources()
         + [GenericRSSSource(name, url) for name, url in settings.rss_feed_list]
