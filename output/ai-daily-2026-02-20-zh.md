@@ -1,63 +1,50 @@
 # AI 日报 — 2026-02-20
 
-> 覆盖 30 条 AI 新闻
+![cover](https://nitter.net/pic/orig/media%2FHBntcaZaoAA7SFR.jpg)
+
+> 涵盖 12 条 AI 新闻
 
 ## 🔥 今日焦点
 
-### 1. **编排设计正成为 LLMs 的关键优化目标**
+### 1. **Claude Code Security 进入有限研究预览**
 
-编排设计正在成为一个关键优化目标，因为来自多家提供商的 LLMs 在基准性能方面趋同。本论文形式化了一个任务自适应的多智能体框架，该框架在并行、顺序、层次和混合拓扑之间进行选择，引入性能收敛尺度定律，并给出一个复杂度为 O(|V|+|E|) 的拓扑路由算法，在相同模型的静态基线基础上实现 12-23% 的提升。 [来源-x](https://x.com/omarsar0/status/2024847274157945035)
+Anthropic 将 Claude Code Security 推入有限研究预览阶段，这是一款能够扫描代码库中的漏洞并向人工审阅者提出修补建议的工具。若被广泛采用，可能提高 AI 辅助安全编码的标准并加速修复，但在真实世界中的有效性与补丁审查时延尚待验证。 [来源-x](https://x.com/claudeai/status/2024907535145468326)
 
-### 2. **Anthropic Finds AI Agents Ask for Help More Than We Intervene**
+### 2. **Sam Altman 警告 AI 进展迅速；世界尚未准备好**
 
-Anthropic 对 Claude Code 及其公开 API 进行了实际情境中的代理自主性分析。研究发现代理会进行更长的会话并获得更多的自动批准操作，但 Claude Code 要求澄清的次数仍然是人类介入的两倍以上；安全指标仍然令人放心：80% 的工具调用受到保护，且不可逆转的操作仅占 0.8%。 [来源-x](https://x.com/omarsar0/status/2024864635120451588)
+Sam Altman 警告说，极具能力的 AI 模型将比预期更早到来，世界尚未为它们做好准备。他指出起飞速度可能比预期更快，描述这一点带来压力与焦虑。这一警告凸显了在 AI 能力快速扩展的背景下，安全、治理与韧性规划的紧迫需求。 [来源-x](https://x.com/kimmonismus/status/2024887011522576766)
 
-### 3. **Claude Code 现已内置 Git Worktree 支持**
+### 3. **BC 不列颠哥伦比亚省枪击案嫌疑人的 ChatGPT 信息由约 12 名 OpenAI 员工审阅**
 
-Claude Code 现已内置 Git worktree 支持，使多个代理能够在不互相干扰的情况下并发运行。该功能扩展到 CLI，与现有的桌面支持并存，提升并行开发工作流程。 [来源-x](https://x.com/bcherny/status/2025007393290272904)
-
-## 📰 重点报道
-
-### LLM 与 基准测试
-
-- **GPT-5.3-Codex 达到在高推理条件下达到约 6.5 小时的 50% 时间窗** — 评估表明，在软件任务上，存在一个约 6.5 小时的 50% 时间窗，95% 置信区间为 3 到 17 小时，表明具备强劲的长时域能力，但变异性较大。 [来源-x](https://x.com/METR_Evals/status/2025035574118416460)
-- **OpenThoughts-TBLite 启动面向 8B 模型的 100 TB2 风格任务** — TB2 风格的任务具有可调难度，可为较小模型提供可衡量信号并加速实验迭代。 [来源-x](https://x.com/RichardZ412/status/2024910917662900587)
-- **本周 OpenRouter 排行榜前三由中国模型主导** — OpenRouter 的排行榜显示多款中国模型每周的代币吞吐量达到 1 万亿以上，预示着吞吐量与竞争力的转变。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9zt8m/the_top_3_models_on_openrouter_this_week_chinese/)
-
-### 工具与开源
-
-- **SkyRL-Harbor 官方集成使对终端代理的 RL 训练成为可能** — Harbor 将对终端使用任务的强化学习训练标准化，通过 Dockerfile/指令/测试脚本实现 RL 训练，并扩展评估管线。 [来源-x](https://x.com/charlie_ruan/status/2023881159906889965)
-- **Claude Code 现已内置 Git Worktree 支持** — 内置的 Git worktree 支持使多个代理能够在彼此隔离的工作树中并发运行，将此扩展到 CLI，并改善并行开发工作流。 [来源-x](https://x.com/bcherny/status/2025007393290272904)
-- **开源 Claude Codex 审查循环自动化代码审查** — Codex 与 Claude 之间的来回循环实现代码审查的自动化，旨在简化与 Claude 相关的代码工作流程。 [来源-x](https://x.com/HamelHusain/status/2025044486330744853)
-
-### 行业与商业
-
-- **Phil Spencer 离开微软；AI 主管将接任 Xbox** — 管理层变动将 AI 导向的领导力置于 Xbox 的掌舵上，标志着在游戏领域更广泛的 AI 战略整合。 [来源-rss](https://www.neowin.net/news/phil-spencer-is-exiting-microsoft-as-ai-executive-takes-over-xbox/)
-- **正在构建你的 AI 助手的每一家公司现在都是广告公司** — 通过用户数据实现的行业性商业化将隐私议题重新定调，AI 助手正逐步成为广告平台。
-
-## ⚡ 快讯速览
-
-- **AI Reveals Insiders and Alpha on Polymarket** — 对 AI 相关 Polymarket 赌注中的内部消息与 Alpha 信号的分析。 [来源-x](https://twitter.com/peterjliu/status/2024901585806225723)
-- **Anthropic 发布 Claude Code 官方插件目录** — Claude Code 插件的集中化中心用于扩展能力。 [来源-github](https://github.com/anthropics/claude-plugins-official)
-- **TimesFM 2.5 发布，支持 200M 参数与协变量条件** — TimesFM 2.5 增加协变量条件并支持 200M 参数。 [来源-github](https://github.com/google-research/timesfm)
-- **OpenAI 在所有部门取得广泛进展** — 来自 OpenAI 的跨部门进展更新。 [来源-x](https://x.com/gdb/status/2024985187579560366)
-- **LUCID：用于长上下文 LLM 的新注意力机制** — 针对长上下文处理的新注意力机制。 [来源-x](https://x.com/dvsaisurya/status/2023118579755819459)
-- **LLM Agent Populations 风险：潜在的社会负面结果与新框架** — 应对 LLM 代理群体带来的社会风险的新框架。 [来源-x](https://x.com/omarsar0/status/2024878980952924352)
-- **PentAGI：用于渗透测试的全自主 AI 代理** — 自主代理在网络安全任务中的应用；双重使用风险。 [来源-github](https://github.com/vxcontrol/pentagi)
-- **Obra 的 Superpowers：面向软件开发工作流的代理技能** — 基于代理的软件开发工作流工具包。 [来源-github](https://github.com/obra/superpowers)
-- **Strix Halo 基准测试：Minimax M2.5、Step 3.5 Flash、Qwen3** — Strix Halo 套件的基准结果。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1rabcyp/a_few_strix_halo_benchmarks_minimax_m25_step_35/)
-- **TranscriptionSuite 推出完全本地开源转录应用** — 完全本地、注重隐私的转录应用。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r9y6s8/transcriptionsuite_a_fully_local_private_open/)
-- **VS Code Agent Sessions 的按需演示已发布** — VS Code 代理会话的按需演示。 [来源-x](https://x.com/code/status/2024933738950373538)
-- **开发者：我讨厌 AI 的副业项目** — 开发者对 AI 副业项目的直白观点。 [来源-rss](https://dylancastillo.co/posts/ai-side-projects.html)
-- **Hugging Face Skills：互操作的 AI 任务定义** — Hugging Face Skills 中的互操作任务定义。 [来源-github](https://github.com/huggingface/skills)
-- **GLM 5 似乎展现出 Claude 风格的个性** — 在 GLM 5 中观察到的 Claude 风格特征。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1raf3dm/glm_5_seems_to_have_a_claude_personality/)
-- **Qwen3 Coder Next 在激进量化下超过 30B 模型** — 在激进量化条件下的性能表现。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1rabg6o/qwen3_coder_next_oddly_usable_at_aggressive/)
-- **在真实 Python 推理任务上对 100+ LLMs 进行评测** — 基准研究覆盖 100+ 模型。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1rad3hd/i_evaluated_llama_and_100_llms_on_real/)
-- **Grok 与 GPT-5.2 错误；@moondreamai 的判断正确** — 关于模型正确性与预期的讨论。 [来源-x](https://x.com/e_insomniac/status/2024518358461534305)
-- **2026年2月最佳音频模型：ASR、TTS、STT 讨论** — 社区对顶级音频模型的讨论。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1r7bsfd/best_audio_models_feb_2026/)
-- **AI 数据中心的用水量相当于两家汉堡店** — 关于 AI 数据中心环境影响的评论。 [来源-x](https://x.com/DavidSacks/status/2012325546470854759)
-- **Gemma 将在不久后发布新版本** — Gemma 的发布计划更新。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1ra8omf/gemma_which_we_will_be_releasing_a_new_version_of/)
+《华尔街日报》报道，不列颠哥伦比亚省校园枪击案的嫌疑人使用的 ChatGPT 消息不仅被自动化系统标记，还被约 12 名 OpenAI 员工审阅并讨论。这一披露凸显了在处理敏感提示时的人类监督深度，以及生产环境中对安全性的持续强调。 [来源-x](https://x.com/AricToler/status/2024976260749820067)
 
 ---
 
-*AI News Agent 生成 | 2026-02-20*
+## 📰 重点报道
+
+### AI 加速器与本地推理
+
+- **硬连入硅片的 LLM，17k tokens/秒，未使用 HBM** — 基于硅的 LLM 加速器声称在无需 HBM 或液冷的情况下实现每秒 17,000 tokens，并主张向专用 AI 设备转型；需要独立验证与基准测试。 [来源-x](https://x.com/wildmindai/status/2024810128487096357)
+- **ChatJimmy 在基于硅的 ASIC 上达到 15k tok/s** — 展示在带固定权重 ROM 的模组上，模型在基于硅的 ASIC 上实现 15,414 tokens/s，消除了 HBM 瓶颈，推动 ASIC 推理叙事；关于专用化是否会超越基于 GPU 的流水线的辩论仍在继续。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1rajr11/15000_toks_on_chatjimmy_is_the_modelonsilicon_era/)
+- **ggml.ai 加入 Hugging Face 以加速本地 AI** — ggml.ai 与 Hugging Face 合作，继续开发 ggml 与 llama.cpp，使用户在本地硬件上更广泛地访问本地 AI。 [来源-x](https://x.com/ggerganov/status/2024839991482777976)
+
+### 工具与多模态
+
+- **Replit 推出 Animation Vibecode，由 Gemini 3.1 Pro 驱动** — 展示一个可在几分钟内制作病毒式视频的工具，由 Gemini 3.1 Pro 提供支持，演示在 Replit Animation 与 HLS 回放中的 100% 产出。 [来源-x](https://x.com/Replit/status/2024578806208745637)
+- **Cord：协调 AI 代理的树状结构** — 提出一种基于树的框架，用于协调多 AI 代理，具备分层协同与结构化通讯，以提升任务分解和协同决策。 [来源-rss](https://www.june.kim/cord)
+- **Vellium v0.3.5：写作模式全面重构、原生 KoboldCpp 集成、OpenAI TTS** — 对写作模式进行大规模重写，原生 KoboldCpp 集成，API 对齐的有效负载，以及与 OpenAI 兼容的 TTS 引入 UX 修复。 [来源-reddit](https://www.reddit.com/r/LocalLLaMA/comments/1rafo5b/update_vellium_v035_massive_writing_mode_upgrade/)
+
+### AI 安全与起飞动态
+
+- **Frontier Labs：AGI 已近在眼前，ASI 亦不远** — Kimmonismus 的一篇论述指出前沿 AI 实验室正接近 AGI，ASI 也不遥远，强调内部加速极快以及起飞速度将会更快。 [来源-x](https://x.com/kimmonismus/status/2024898716365455459)
+
+---
+
+## ⚡ 快讯速览
+
+- **Roboflow Trackers** — 插件式多对象跟踪库。 [来源-github](https://github.com/roboflow/trackers)
+- **Databricks 发布用于编码代理的 AI Dev Kit** — Databricks 发布用于编码代理的 AI Dev Kit。 [来源-github](https://github.com/databricks-solutions/ai-dev-kit)
+
+---
+
+*AI News Agent 自动生成 | 2026-02-20*
