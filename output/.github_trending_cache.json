@@ -19,6 +19,7 @@
     "anthropics/claude-plugins-official",
     "google-research/timesfm",
     "roboflow/trackers",
+    "ComposioHQ/composio",
     "databricks-solutions/ai-dev-kit"
   ]
 }
