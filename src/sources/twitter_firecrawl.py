@@ -33,12 +33,12 @@ class TwitterFirecrawlSource(BaseSource):
     def default_interval(self) -> int:
         return 900
 
+    MAX_PAGES = 5
+
     async def fetch(self, since: datetime | None = None) -> list[RawItem]:
         if not self.api_key:
             logger.warning("Firecrawl API Key not configured, skipping Twitter fetch")
             return []
-
-        logger.info(f"Fetching via Firecrawl + Nitter: {self.list_url}")
 
         try:
             from firecrawl import Firecrawl
@@ -46,50 +46,90 @@ class TwitterFirecrawlSource(BaseSource):
             logger.error("firecrawl-py not installed, run: pip install firecrawl-py")
             return []
 
-        try:
-            firecrawl = Firecrawl(api_key=self.api_key)
-            doc = firecrawl.scrape(self.list_url, formats=["markdown"])
-        except Exception as e:
-            logger.error(f"Firecrawl fetch failed: {e}")
-            return []
+        firecrawl = Firecrawl(api_key=self.api_key)
+        # tweet_id -> RawItem，跨页去重并取最大互动数据
+        best_items: dict[str, RawItem] = {}
+        url = self.list_url
 
-        if not doc or not doc.markdown:
-            logger.warning("Firecrawl returned no valid content")
-            return []
+        for page in range(1, self.MAX_PAGES + 1):
+            logger.info(f"Fetching via Firecrawl + Nitter (page {page}): {url}")
+            try:
+                doc = firecrawl.scrape(url, formats=["markdown"])
+            except Exception as e:
+                logger.error(f"Firecrawl fetch failed: {e}")
+                break
 
-        logger.info(f"Firecrawl returned {len(doc.markdown)} chars")
+            if not doc or not doc.markdown:
+                logger.warning("Firecrawl returned no valid content")
+                break
 
-        items = self._parse_nitter_markdown(doc.markdown, since)
-        if not items:
+            logger.info(f"Firecrawl page {page}: {len(doc.markdown)} chars")
+
+            page_items, oldest_time = self._parse_nitter_markdown(
+                doc.markdown, since
+            )
+
+            # 同一推文取最大 score（互动数据最准确的那次）
+            for item in page_items:
+                tid = item.source_id
+                if tid not in best_items or item.score > best_items[tid].score:
+                    best_items[tid] = item
+
+            # Stop if oldest tweet on this page is older than since
+            if since and oldest_time and oldest_time <= since:
+                logger.info(f"Reached tweets older than {since}, stopping pagination")
+                break
+
+            # Extract cursor for next page
+            cursor = self._extract_cursor(doc.markdown)
+            if not cursor:
+                logger.info("No more pages (no cursor found)")
+                break
+
+            url = f"{self.list_url}?cursor={cursor}"
+
+        all_items = list(best_items.values())
+        logger.info(f"Total tweets fetched across {page} page(s): {len(all_items)}")
+
+        if not all_items:
             return []
 
         # LLM 批量过滤非 AI 相关推文
         try:
             from src.tools.ai_filter import batch_filter_ai
-            titles = [it.title for it in items]
-            descs = [it.content[:80] for it in items]
+            titles = [it.title for it in all_items]
+            descs = [it.content[:80] for it in all_items]
             ai_indices = set(await batch_filter_ai(titles, descs))
-            filtered = [it for idx, it in enumerate(items) if idx in ai_indices]
+            filtered = [it for idx, it in enumerate(all_items) if idx in ai_indices]
             logger.info(
-                f"Twitter (Firecrawl): {len(items)} tweets, "
+                f"Twitter (Firecrawl): {len(all_items)} tweets, "
                 f"LLM filtered → {len(filtered)} AI-related"
             )
-            return filtered
         except Exception as e:
             logger.warning(f"Twitter AI filter failed, returning all: {e}")
-            return items
+            filtered = all_items
 
-    def _parse_nitter_markdown(self, markdown: str, since: datetime | None) -> list[RawItem]:
+        # 按 score 降序：score >= 10000 全部保留，其余取 top 10
+        filtered.sort(key=lambda x: x.score, reverse=True)
+        high = [it for it in filtered if it.score >= 10000]
+        rest = [it for it in filtered if it.score < 10000]
+        result = high + rest[:max(0, 10 - len(high))]
+        logger.info(
+            f"Twitter final selection: {len(high)} high-score (>=10k) "
+            f"+ {len(result) - len(high)} top tweets = {len(result)} total"
+        )
+        return result
+
+    def _parse_nitter_markdown(
+        self, markdown: str, since: datetime | None
+    ) -> tuple[list[RawItem], datetime | None]:
         """解析 Nitter 返回的 markdown，提取推文
 
-        Nitter markdown 中每条推文的结构：
-          [@username](...)     ← 用户名
-          [时间](nitter.net/user/status/ID#m "日期")  ← 时间戳+链接
-          推文正文...          ← 正文（可能多行）
-          数字 数字 数字       ← 互动数据（回复/转发/点赞）
+        Returns (items, oldest_published_time)
         """
         items: list[RawItem] = []
         seen_ids: set[str] = set()
+        oldest_time: datetime | None = None
 
         # 用正则找到所有推文时间戳行，它们是推文的锚点
         # 格式: [3m](https://nitter.net/user/status/ID#m "Feb 14, 2026 · 4:23 PM UTC")
@@ -109,6 +149,7 @@ class TwitterFirecrawlSource(BaseSource):
             tweet_id = match.group(2)
             date_str = match.group(3)
 
+            # 同一页内去重（跨页去重在 fetch() 层用 best_items 处理）
             if tweet_id in seen_ids:
                 continue
             seen_ids.add(tweet_id)
@@ -155,7 +196,11 @@ class TwitterFirecrawlSource(BaseSource):
                 url=f"https://x.com/{username}/status/{tweet_id}",
                 author=username,
                 published_at=published,
-                score=engagement.get("likes", 0) + engagement.get("retweets", 0) * 2,
+                score=(
+                    engagement.get("likes", 0)
+                    + engagement.get("retweets", 0) * 3
+                    + engagement.get("replies", 0)
+                ),
                 metadata={
                     "via": "firecrawl+nitter",
                     **engagement,
@@ -163,7 +208,11 @@ class TwitterFirecrawlSource(BaseSource):
             )
             items.append(item)
 
-        return items
+            # Track oldest tweet time for pagination
+            if published and (oldest_time is None or published < oldest_time):
+                oldest_time = published
+
+        return items, oldest_time
 
     @staticmethod
     def _parse_nitter_date(date_str: str) -> datetime | None:
@@ -184,16 +233,28 @@ class TwitterFirecrawlSource(BaseSource):
                 return None
 
     @staticmethod
+    def _extract_cursor(markdown: str) -> str | None:
+        """Extract pagination cursor from Nitter 'Load more' link"""
+        m = re.search(r'\[Load more\]\([^)]*[?&]cursor=([^&)\s]+)', markdown)
+        return m.group(1) if m else None
+
+    @staticmethod
     def _extract_engagement(raw: str) -> dict:
-        """从推文末尾提取互动数字（Nitter 格式：换行分隔的纯数字）"""
+        """从推文末尾提取互动数字（Nitter 格式：空行分隔的纯数字）"""
         lines = raw.strip().split('\n')
-        # 末尾连续的纯数字行就是互动数据
+        # Collect trailing number lines, skipping empty lines and 'xxx retweeted' lines
         nums = []
         for line in reversed(lines):
-            line = line.strip().replace(',', '')
-            if re.match(r'^\d+$', line):
-                nums.insert(0, int(line))
+            stripped = line.strip().replace(',', '')
+            if not stripped:
+                continue
+            if re.match(r'^\d+$', stripped):
+                nums.insert(0, int(stripped))
             elif nums:
+                break
+            elif re.match(r'.+retweeted$', stripped, re.IGNORECASE):
+                continue
+            else:
                 break
 
         result = {}
@@ -218,10 +279,14 @@ class TwitterFirecrawlSource(BaseSource):
         text = re.sub(r'\n[^\n]+\n@\w{1,15}\n', '\n', text)
         # 去掉独立的 @username 引用行（通常是 Nitter 的 "@user" 格式）
         text = re.sub(r'^\s*@\w{1,15}"?\s*$', '', text, flags=re.MULTILINE)
-        # 去掉末尾的纯数字行（互动数据）
+        # 去掉末尾的纯数字行和 retweeted 行（互动数据）
         lines = text.split('\n')
-        while lines and re.match(r'^\s*\d[\d,]*\s*$', lines[-1]):
-            lines.pop()
+        while lines:
+            tail = lines[-1].strip()
+            if not tail or re.match(r'^\d[\d,]*$', tail) or re.match(r'.+retweeted$', tail, re.IGNORECASE):
+                lines.pop()
+            else:
+                break
         # 去掉空行过多
         text = '\n'.join(lines)
         text = re.sub(r'\n{3,}', '\n\n', text)
