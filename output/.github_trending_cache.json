@@ -14,12 +14,10 @@
   ],
   "2026-02-21": [
     "vxcontrol/pentagi",
-    "obra/superpowers",
     "huggingface/skills",
     "anthropics/claude-plugins-official",
     "google-research/timesfm",
     "roboflow/trackers",
-    "ComposioHQ/composio",
     "databricks-solutions/ai-dev-kit"
   ]
 }
