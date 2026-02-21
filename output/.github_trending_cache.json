@@ -1,12 +1,4 @@
 {
-  "2026-02-17": [
-    "letta-ai/letta-code",
-    "openclaw/openclaw",
-    "alibaba/zvec",
-    "rowboatlabs/rowboat",
-    "SynkraAI/aios-core",
-    "ruvnet/wifi-densepose"
-  ],
   "2026-02-18": [
     "SynkraAI/aios-core"
   ],
@@ -19,5 +11,14 @@
     "open-mercato/open-mercato",
     "openclaw/openclaw",
     "p-e-w/heretic"
+  ],
+  "2026-02-21": [
+    "vxcontrol/pentagi",
+    "obra/superpowers",
+    "huggingface/skills",
+    "anthropics/claude-plugins-official",
+    "google-research/timesfm",
+    "roboflow/trackers",
+    "databricks-solutions/ai-dev-kit"
   ]
 }
