@@ -1,8 +1,11 @@
 """Twitter/X 数据源适配器 - 通过 Firecrawl + Nitter 镜像采集 Twitter List"""
 
+import json
 import logging
+import os
 import re
 from datetime import datetime, timezone
+from pathlib import Path
 
 from src.config import settings
 from src.models import RawItem, SourceType
@@ -72,6 +75,9 @@ class TwitterFirecrawlSource(BaseSource):
 
             logger.info(f"Firecrawl page {page}: {len(doc.markdown)} chars")
 
+            # 导出每页原始 markdown 供调试
+            self._dump_page(page, doc.markdown)
+
             page_items, newest_time = self._parse_nitter_markdown(
                 doc.markdown, since
             )
@@ -97,6 +103,9 @@ class TwitterFirecrawlSource(BaseSource):
 
         all_items = list(best_items.values())
         logger.info(f"Total tweets fetched across {page} page(s): {len(all_items)}")
+
+        # 导出解析后的全部推文 JSON 供调试
+        self._dump_parsed_items(all_items)
 
         if not all_items:
             return []
@@ -127,6 +136,41 @@ class TwitterFirecrawlSource(BaseSource):
         logger.info(f"Twitter final selection: top {len(result)} AI tweets by score")
         return result
 
+    DUMP_DIR = Path("output/twitter_debug")
+
+    def _dump_page(self, page: int, markdown: str) -> None:
+        """导出每页原始 markdown 供调试"""
+        try:
+            self.DUMP_DIR.mkdir(parents=True, exist_ok=True)
+            ts = datetime.now(tz=timezone.utc).strftime("%Y%m%d_%H%M%S")
+            path = self.DUMP_DIR / f"{ts}_page{page}.md"
+            path.write_text(markdown, encoding="utf-8")
+            logger.info(f"Dumped raw markdown → {path} ({len(markdown)} chars)")
+        except Exception as e:
+            logger.warning(f"Failed to dump page {page} markdown: {e}")
+
+    def _dump_parsed_items(self, items: list) -> None:
+        """导出解析后的全部推文为 JSON 供调试"""
+        try:
+            self.DUMP_DIR.mkdir(parents=True, exist_ok=True)
+            ts = datetime.now(tz=timezone.utc).strftime("%Y%m%d_%H%M%S")
+            path = self.DUMP_DIR / f"{ts}_parsed_all.json"
+            data = []
+            for it in sorted(items, key=lambda x: x.score, reverse=True):
+                data.append({
+                    "score": it.score,
+                    "author": it.author,
+                    "title": it.title,
+                    "url": it.url,
+                    "published_at": it.published_at.isoformat() if it.published_at else None,
+                    "content": it.content[:200],
+                    "metadata": it.metadata,
+                })
+            path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+            logger.info(f"Dumped {len(data)} parsed tweets → {path}")
+        except Exception as e:
+            logger.warning(f"Failed to dump parsed items: {e}")
+
     def _parse_nitter_markdown(
         self, markdown: str, since: datetime | None
     ) -> tuple[list[RawItem], datetime | None]:
@@ -149,9 +193,23 @@ class TwitterFirecrawlSource(BaseSource):
 
         if not tweet_anchors:
             logger.warning("No tweet anchors found")
-            return []
+            return [], None
+
+        # 检测引用推文中嵌入的原推锚点（通过 _mini 头像识别）
+        # 引用推文的头像用 _mini（非链接），转推/原推的头像用 _bigger（链接）
+        embedded_indices: set[int] = set()
+        for idx in range(1, len(tweet_anchors)):
+            between = markdown[tweet_anchors[idx - 1].end():tweet_anchors[idx].start()]
+            if re.search(r'!\[\]\([^)]*profile_images[^)]*_mini', between):
+                embedded_indices.add(idx)
+        if embedded_indices:
+            logger.info(f"Detected {len(embedded_indices)} embedded/quoted tweet anchors, skipping")
 
         for idx, match in enumerate(tweet_anchors):
+            # 跳过引用推文中嵌入的原推锚点，避免互动数据错误归因
+            if idx in embedded_indices:
+                continue
+
             username = match.group(1)
             tweet_id = match.group(2)
             date_str = match.group(3)
@@ -173,9 +231,13 @@ class TwitterFirecrawlSource(BaseSource):
 
             # 提取推文正文：从时间戳行之后到下一条推文的用户头像之前
             content_start = match.end()
-            if idx + 1 < len(tweet_anchors):
+            # 查找下一个非嵌入的锚点作为内容边界
+            next_tl_idx = idx + 1
+            while next_tl_idx < len(tweet_anchors) and next_tl_idx in embedded_indices:
+                next_tl_idx += 1
+            if next_tl_idx < len(tweet_anchors):
                 # 下一个锚点前约 200 字符开始就是下一条推文的头像/用户名区域
-                next_anchor_start = tweet_anchors[idx + 1].start()
+                next_anchor_start = tweet_anchors[next_tl_idx].start()
                 # 往回找到用户头像区域（以 [![ 开头的行）
                 search_region = markdown[content_start:next_anchor_start]
                 # 找最后一个头像 markdown 标记作为分界
