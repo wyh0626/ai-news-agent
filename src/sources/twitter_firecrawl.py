@@ -72,7 +72,7 @@ class TwitterFirecrawlSource(BaseSource):
 
             logger.info(f"Firecrawl page {page}: {len(doc.markdown)} chars")
 
-            page_items, oldest_time = self._parse_nitter_markdown(
+            page_items, newest_time = self._parse_nitter_markdown(
                 doc.markdown, since
             )
 
@@ -82,9 +82,9 @@ class TwitterFirecrawlSource(BaseSource):
                 if tid not in best_items or item.score > best_items[tid].score:
                     best_items[tid] = item
 
-            # 当前页最旧推文已超出时间窗口，停止翻页
-            if oldest_time and oldest_time <= since:
-                logger.info(f"Reached tweets older than {since.strftime('%Y-%m-%d %H:%M UTC')}, stopping pagination")
+            # 当页最新推文也超出时间窗口，说明后续页更旧，停止翻页
+            if newest_time is None or newest_time <= since:
+                logger.info(f"Page {page} has no tweets within 24h window, stopping pagination")
                 break
 
             # Extract cursor for next page
@@ -132,11 +132,11 @@ class TwitterFirecrawlSource(BaseSource):
     ) -> tuple[list[RawItem], datetime | None]:
         """解析 Nitter 返回的 markdown，提取推文
 
-        Returns (items, oldest_published_time)
+        Returns (items, newest_published_time) — 该页最新推文时间，用于分页停止判断
         """
         items: list[RawItem] = []
         seen_ids: set[str] = set()
-        oldest_time: datetime | None = None
+        newest_time: datetime | None = None
 
         # 用正则找到所有推文时间戳行，它们是推文的锚点
         # 格式: [3m](https://nitter.net/user/status/ID#m "Feb 14, 2026 · 4:23 PM UTC")
@@ -164,9 +164,9 @@ class TwitterFirecrawlSource(BaseSource):
             # 解析发布时间
             published = self._parse_nitter_date(date_str)
 
-            # 无论是否过滤，都更新 oldest_time（用于分页停止判断）
-            if published and (oldest_time is None or published < oldest_time):
-                oldest_time = published
+            # 记录该页最新推文时间（用于分页停止判断，忽略转推的旧内容）
+            if published and (newest_time is None or published > newest_time):
+                newest_time = published
 
             if since and published and published <= since:
                 continue
@@ -232,7 +232,7 @@ class TwitterFirecrawlSource(BaseSource):
             )
             items.append(item)
 
-        return items, oldest_time
+        return items, newest_time
 
     @staticmethod
     def _parse_nitter_date(date_str: str) -> datetime | None:
