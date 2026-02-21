@@ -163,6 +163,11 @@ class TwitterFirecrawlSource(BaseSource):
 
             # 解析发布时间
             published = self._parse_nitter_date(date_str)
+
+            # 无论是否过滤，都更新 oldest_time（用于分页停止判断）
+            if published and (oldest_time is None or published < oldest_time):
+                oldest_time = published
+
             if since and published and published <= since:
                 continue
 
@@ -227,17 +232,35 @@ class TwitterFirecrawlSource(BaseSource):
             )
             items.append(item)
 
-            # Track oldest tweet time for pagination
-            if published and (oldest_time is None or published < oldest_time):
-                oldest_time = published
-
         return items, oldest_time
 
     @staticmethod
     def _parse_nitter_date(date_str: str) -> datetime | None:
-        """解析 Nitter 日期格式: 'Feb 14, 2026 · 4:23 PM UTC'"""
+        """解析 Nitter 日期格式
+
+        支持：
+        - 绝对时间: 'Feb 14, 2026 · 4:23 PM UTC'
+        - 相对时间: '3m', '2h', '1d'（转换为近似绝对时间）
+        """
         if not date_str:
             return None
+
+        from datetime import timedelta
+        now = datetime.now(tz=timezone.utc)
+
+        # 相对时间格式: 数字 + s/m/h/d
+        rel_match = re.match(r'^(\d+)([smhd])$', date_str.strip())
+        if rel_match:
+            value = int(rel_match.group(1))
+            unit = rel_match.group(2)
+            delta = {
+                's': timedelta(seconds=value),
+                'm': timedelta(minutes=value),
+                'h': timedelta(hours=value),
+                'd': timedelta(days=value),
+            }[unit]
+            return now - delta
+
         try:
             clean = date_str.replace('\u00b7', '·').strip()
             # "Feb 14, 2026 · 4:23 PM UTC"
