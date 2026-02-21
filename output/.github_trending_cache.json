@@ -14,6 +14,7 @@
   ],
   "2026-02-21": [
     "vxcontrol/pentagi",
+    "obra/superpowers",
     "huggingface/skills",
     "anthropics/claude-plugins-official",
     "google-research/timesfm",
