@@ -116,6 +116,7 @@ def _fallback_extract(item: CleanedItem) -> ExtractedItem:
         entities=[],
         sentiment=Sentiment.NEUTRAL,
         importance_score=5.0,
+        metadata=getattr(item, 'metadata', {}),
     )
 
 
@@ -156,6 +157,7 @@ async def _extract_one(llm: ChatOpenAI, item: CleanedItem) -> ExtractedItem:
             entities=parsed.get("entities", []),
             sentiment=sentiment_map.get(parsed.get("sentiment", "neutral"), Sentiment.NEUTRAL),
             importance_score=float(parsed.get("importance_score", 5)),
+            metadata=getattr(item, 'metadata', {}),
         )
     except Exception as e:
         logger.error(f"LLM extraction failed [{item.id}]: {type(e).__name__}: {e}")

@@ -269,6 +269,23 @@ async def writer_node(state: PipelineState) -> dict:
         logger.info("LLM not configured, using template")
         markdown = _build_fallback_markdown(extracted, today)
 
+    # 封面图：取 importance_score 最高且有图片的推文，插入到标题行之后
+    cover_item = next(
+        (it for it in sorted(extracted, key=lambda x: x.importance_score, reverse=True)
+         if it.metadata.get("image")),
+        None,
+    )
+    if cover_item:
+        img_md = f"\n![cover]({cover_item.metadata['image']})\n"
+        # 插入到第一个 h1 标题行之后
+        lines = markdown.split("\n")
+        for i, line in enumerate(lines):
+            if line.startswith("# "):
+                lines.insert(i + 1, img_md)
+                break
+        markdown = "\n".join(lines)
+        logger.info(f"Cover image added from @{cover_item.author}: {cover_item.metadata['image']}")
+
     # 从 Top Stories（importance 最高的前3条）提取 description
     top3 = sorted(extracted, key=lambda x: x.importance_score, reverse=True)[:3]
     description = " · ".join(

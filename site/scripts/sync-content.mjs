@@ -101,12 +101,19 @@ function extractMeta(content, fileName) {
 
   const title = `AI Daily — ${date}`;
 
+  // 封面图：取 markdown 里第一张 ![...](url) 图片
+  let cover = '';
+  for (const line of lines) {
+    const imgMatch = line.match(/!\[[^\]]*\]\(([^)]+)\)/);
+    if (imgMatch) { cover = imgMatch[1]; break; }
+  }
+
   // 去掉原始 H1
   const h1Idx = lines.findIndex(l => l.startsWith('# '));
   const bodyLines = h1Idx >= 0 ? lines.filter((_, i) => i !== h1Idx) : lines;
   const body = bodyLines.join('\n').replace(/^\n+/, '');
 
-  return { date, title, description, body };
+  return { date, title, description, cover, body };
 }
 
 let synced = 0;
@@ -158,6 +165,7 @@ description: "${meta.description.replace(/"/g, '\\"')}"
 pubDate: "${meta.date}"
 category: "daily"
 lang: "${lang}"`;
+  if (meta.cover) frontmatter += `\ncover: "${meta.cover}"`;
   if (pairSlug) frontmatter += `\npairSlug: "${pairSlug}"`;
   frontmatter += `\n---`;
 

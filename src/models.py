@@ -57,6 +57,7 @@ class CleanedItem(BaseModel):
     quality_score: float = Field(default=0.0, ge=0, le=1, description="质量评分 0-1")
     is_duplicate: bool = False
     duplicate_of: Optional[str] = None
+    metadata: dict = Field(default_factory=dict, description="平台特有的额外字段（图片等）")
 
 
 # ── Stage 3: Extractor 输出 ──────────────────────────────────────────
@@ -80,6 +81,7 @@ class ExtractedItem(BaseModel):
     sentiment: Sentiment = Sentiment.NEUTRAL
     importance_score: float = Field(default=5.0, ge=1, le=10, description="重要性评分 1-10")
     related_ids: list[str] = Field(default_factory=list, description="关联的历史新闻 ID")
+    metadata: dict = Field(default_factory=dict, description="平台特有的额外字段（图片等）")
 
 
 # ── Stage 4: Writer 输出 ─────────────────────────────────────────────

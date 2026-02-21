@@ -74,6 +74,7 @@ def _clean_one(item: RawItem) -> CleanedItem:
         published_at=item.published_at,
         language="en",  # v0.1 暂不做语言检测
         quality_score=_compute_quality_score(item),
+        metadata=item.metadata,
     )
 
 

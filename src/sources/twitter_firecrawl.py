@@ -184,9 +184,24 @@ class TwitterFirecrawlSource(BaseSource):
             # 提取互动数据（推文末尾的数字行）
             engagement = self._extract_engagement(raw_content)
 
+            # 提取第一张媒体图片（排除头像）
+            image_url = None
+            img_match = re.search(
+                r'!\[\]\((https://nitter\.net/pic/media[^)]+)\)', raw_content
+            )
+            if img_match:
+                # 转为原图 URL（去掉 small/webp 参数）
+                nitter_img = img_match.group(1)
+                orig = re.sub(r'%3Fname%3D\w+%26format%3D\w+', '', nitter_img)
+                image_url = orig.replace('/pic/media', '/pic/orig/media')
+
             title = text[:100].replace('\n', ' ').strip()
             if len(text) > 100:
                 title += "..."
+
+            meta: dict = {"via": "firecrawl+nitter", **engagement}
+            if image_url:
+                meta["image"] = image_url
 
             item = RawItem(
                 source_type=SourceType.TWITTER,
@@ -201,10 +216,7 @@ class TwitterFirecrawlSource(BaseSource):
                     + engagement.get("retweets", 0) * 3
                     + engagement.get("replies", 0)
                 ),
-                metadata={
-                    "via": "firecrawl+nitter",
-                    **engagement,
-                },
+                metadata=meta,
             )
             items.append(item)
 

@@ -66,6 +66,9 @@ const base = import.meta.env.BASE_URL;
       <h1 class="font-heading text-4xl my-4" transition:name={`title-${slug}`}>
         {title}
       </h1>
+      {cover && (
+        <img src={cover} alt={title} class="w-full rounded-lg my-4 object-cover max-h-96" />
+      )}
       {pairSlug && (
         <div class="flex items-center gap-2 my-3 not-prose">
           <span class={cn("px-2 py-0.5 rounded text-xs font-medium", lang === "zh" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground")}>
