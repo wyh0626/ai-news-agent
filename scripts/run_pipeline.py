@@ -12,6 +12,18 @@ from src.config import settings
 from src.graph.workflow import compile_graph
 
 
+def _default_sources() -> list[str]:
+    """根据配置动态决定启用哪些数据源"""
+    sources = ["reddit", "hackernews", "github", "huggingface"]
+    # Twitter：有 Firecrawl 或 Twitter API key 才启用
+    if settings.firecrawl_api_key or settings.twitter_api_key:
+        sources.append("twitter")
+    # Product Hunt：有 API token 才启用
+    if settings.producthunt_api_token:
+        sources.append("producthunt")
+    return sources
+
+
 def setup_logging():
     logging.basicConfig(
         level=getattr(logging, settings.log_level.upper(), logging.INFO),
@@ -43,7 +55,7 @@ async def main(sources: list[str] | None = None):
         "article": None,
         "run_id": "",
         "run_started_at": "",
-        "sources_config": sources or ["reddit", "hackernews", "github", "twitter"],
+        "sources_config": sources or _default_sources(),
         "errors": [],
         "messages": [],
     }

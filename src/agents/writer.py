@@ -216,6 +216,37 @@ def _split_featured_brief(
     return featured, brief
 
 
+async def _generate_description(top3: list[ExtractedItem], date: str) -> str:
+    """用 LLM 生成一句话日报摘要，降级时拼接标题"""
+    if not settings.openai_api_key or not top3:
+        titles = " · ".join(
+            (it.title[:40] + "...") if len(it.title) > 40 else it.title
+            for it in top3
+        )
+        return titles
+
+    headlines = "\n".join(f"- {it.title}" for it in top3)
+    prompt = (
+        f"Based on these top AI news headlines from {date}, write ONE concise sentence "
+        f"(max 25 words) that captures the day's most important AI developments. "
+        f"Be specific, not generic. Output only the sentence, no quotes.\n\n"
+        f"{headlines}"
+    )
+    try:
+        llm = _build_llm()
+        resp = await llm.ainvoke(prompt)
+        desc = resp.content.strip().strip('"').strip("'")
+        if len(desc) > 150:
+            desc = desc[:147] + "..."
+        return desc
+    except Exception as e:
+        logger.warning(f"Description generation failed, falling back: {e}")
+        return " · ".join(
+            (it.title[:40] + "...") if len(it.title) > 40 else it.title
+            for it in top3
+        )
+
+
 async def writer_node(state: PipelineState) -> dict:
     """Writer 节点：生成每日新闻简报（重点展开 + 快讯速览）"""
     extracted = state.get("extracted_items", [])
@@ -286,12 +317,9 @@ async def writer_node(state: PipelineState) -> dict:
         markdown = "\n".join(lines)
         logger.info(f"Cover image added from @{cover_item.author}: {cover_item.metadata['image']}")
 
-    # 从 Top Stories（importance 最高的前3条）提取 description
+    # 用 LLM 生成一句话 description（双语）
     top3 = sorted(extracted, key=lambda x: x.importance_score, reverse=True)[:3]
-    description = " · ".join(
-        (item.title[:40] + "...") if len(item.title) > 40 else item.title
-        for item in top3
-    )
+    description = await _generate_description(top3, today)
 
     article = GeneratedArticle(
         title=f"AI Daily — {today}",
