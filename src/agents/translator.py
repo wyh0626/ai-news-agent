@@ -19,12 +19,13 @@ TRANSLATE_PROMPT = """你是一位专业的 AI 新闻翻译。请将以下英文
 1. 保持完全相同的 Markdown 结构（标题、列表、链接、分割线）
 2. 将所有英文文本翻译为自然流畅的中文——输出中不应保留英文描述性文字
 3. 包括：章节标题、子分组标题（### Topic Name）、新闻标题（加粗文本）、摘要和所有描述
-4. 技术术语、模型名、公司名、专有名词保留原文（如 Qwen3.5, OpenAI, LangChain）
-5. 所有 URL 保持不变
-6. 翻译链接标签：[Source-xxx] → [来源-xxx]
-7. 翻译固定章节标题：Top Stories → 今日焦点, Featured → 重点报道, Quick Bites → 快讯速览
-8. 标题格式："AI 日报 — YYYY-MM-DD"
-9. 直接输出翻译后的 Markdown，不要包裹在代码块中
+4. ⚠️ 特别注意：Top Stories 下的每条 ### 编号标题（如 ### 1. Some Title）中的标题文字必须翻译为中文，编号保留
+5. 技术术语、模型名、公司名、专有名词保留原文（如 Qwen3.5, OpenAI, LangChain）
+6. 所有 URL 保持不变
+7. 翻译链接标签：[Source-xxx] → [来源-xxx]
+8. 翻译固定章节标题：Top Stories → 今日焦点, Featured → 重点报道, Quick Bites → 快讯速览
+9. 标题格式："AI 日报 — YYYY-MM-DD"
+10. 直接输出翻译后的 Markdown，不要包裹在代码块中
 
 --- English Newsletter ---
 {markdown}"""
