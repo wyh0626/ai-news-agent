@@ -1,7 +1,4 @@
 {
-  "2026-02-18": [
-    "SynkraAI/aios-core"
-  ],
   "2026-02-19": [
     "SynkraAI/aios-core"
   ],
@@ -20,5 +17,15 @@
     "google-research/timesfm",
     "roboflow/trackers",
     "databricks-solutions/ai-dev-kit"
+  ],
+  "2026-02-22": [
+    "anthropics/claude-code",
+    "cloudflare/agents",
+    "abhigyanpatwari/GitNexus",
+    "vxcontrol/pentagi",
+    "RichardAtCT/claude-code-telegram",
+    "HandsOnLLM/Hands-On-Large-Language-Models",
+    "ggml-org/ggml",
+    "huggingface/skills"
   ]
 }
