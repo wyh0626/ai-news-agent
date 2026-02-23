@@ -1,7 +1,4 @@
 {
-  "2026-02-19": [
-    "SynkraAI/aios-core"
-  ],
   "2026-02-20": [
     "RichardAtCT/claude-code-telegram",
     "harvard-edge/cs249r_book",
@@ -19,6 +16,16 @@
     "databricks-solutions/ai-dev-kit"
   ],
   "2026-02-22": [
+    "anthropics/claude-code",
+    "cloudflare/agents",
+    "abhigyanpatwari/GitNexus",
+    "vxcontrol/pentagi",
+    "RichardAtCT/claude-code-telegram",
+    "HandsOnLLM/Hands-On-Large-Language-Models",
+    "ggml-org/ggml",
+    "huggingface/skills"
+  ],
+  "2026-02-23": [
     "anthropics/claude-code",
     "cloudflare/agents",
     "abhigyanpatwari/GitNexus",
