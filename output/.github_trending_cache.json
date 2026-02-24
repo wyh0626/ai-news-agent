@@ -1,11 +1,4 @@
 {
-  "2026-02-20": [
-    "RichardAtCT/claude-code-telegram",
-    "harvard-edge/cs249r_book",
-    "open-mercato/open-mercato",
-    "openclaw/openclaw",
-    "p-e-w/heretic"
-  ],
   "2026-02-21": [
     "vxcontrol/pentagi",
     "obra/superpowers",
@@ -34,5 +27,14 @@
     "HandsOnLLM/Hands-On-Large-Language-Models",
     "ggml-org/ggml",
     "huggingface/skills"
+  ],
+  "2026-02-24": [
+    "OpenBB-finance/OpenBB",
+    "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "anthropics/claude-code",
+    "huggingface/skills",
+    "abhigyanpatwari/GitNexus",
+    "cloudflare/agents",
+    "vxcontrol/pentagi"
   ]
 }
