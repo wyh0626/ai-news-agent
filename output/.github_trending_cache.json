@@ -1,13 +1,4 @@
 {
-  "2026-02-21": [
-    "vxcontrol/pentagi",
-    "obra/superpowers",
-    "huggingface/skills",
-    "anthropics/claude-plugins-official",
-    "google-research/timesfm",
-    "roboflow/trackers",
-    "databricks-solutions/ai-dev-kit"
-  ],
   "2026-02-22": [
     "anthropics/claude-code",
     "cloudflare/agents",
@@ -36,5 +27,18 @@
     "abhigyanpatwari/GitNexus",
     "cloudflare/agents",
     "vxcontrol/pentagi"
+  ],
+  "2026-02-25": [
+    "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "NevaMind-AI/memU",
+    "f/prompts.chat",
+    "cloudflare/agents",
+    "muratcankoylan/Agent-Skills-for-Context-Engineering",
+    "abhigyanpatwari/GitNexus",
+    "CompVis/stable-diffusion",
+    "OpenBB-finance/OpenBB",
+    "huggingface/skills",
+    "VectifyAI/PageIndex",
+    "siteboon/claudecodeui"
   ]
 }
