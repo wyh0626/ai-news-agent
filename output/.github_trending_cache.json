@@ -1,14 +1,4 @@
 {
-  "2026-02-22": [
-    "anthropics/claude-code",
-    "cloudflare/agents",
-    "abhigyanpatwari/GitNexus",
-    "vxcontrol/pentagi",
-    "RichardAtCT/claude-code-telegram",
-    "HandsOnLLM/Hands-On-Large-Language-Models",
-    "ggml-org/ggml",
-    "huggingface/skills"
-  ],
   "2026-02-23": [
     "anthropics/claude-code",
     "cloudflare/agents",
@@ -40,5 +30,14 @@
     "huggingface/skills",
     "VectifyAI/PageIndex",
     "siteboon/claudecodeui"
+  ],
+  "2026-02-26": [
+    "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "VectifyAI/PageIndex",
+    "GVCLab/PersonaLive",
+    "muratcankoylan/Agent-Skills-for-Context-Engineering",
+    "huggingface/skills",
+    "ruvnet/ruvector",
+    "OpenBB-finance/OpenBB"
   ]
 }
