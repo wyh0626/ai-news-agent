@@ -1,13 +1,4 @@
 {
-  "2026-02-24": [
-    "OpenBB-finance/OpenBB",
-    "x1xhlol/system-prompts-and-models-of-ai-tools",
-    "anthropics/claude-code",
-    "huggingface/skills",
-    "abhigyanpatwari/GitNexus",
-    "cloudflare/agents",
-    "vxcontrol/pentagi"
-  ],
   "2026-02-25": [
     "x1xhlol/system-prompts-and-models-of-ai-tools",
     "NevaMind-AI/memU",
@@ -46,5 +37,15 @@
     "NVIDIA/Megatron-LM",
     "NevaMind-AI/memU",
     "ruvnet/ruvector"
+  ],
+  "2026-02-28": [
+    "bytedance/deer-flow",
+    "muratcankoylan/Agent-Skills-for-Context-Engineering",
+    "moonshine-ai/moonshine",
+    "huggingface/skills",
+    "farion1231/cc-switch",
+    "ruvnet/ruvector",
+    "ruvnet/claude-flow",
+    "obra/superpowers"
   ]
 }
