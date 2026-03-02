@@ -78,8 +78,31 @@ async def publish_node(state: PipelineState) -> dict:
     if article.markdown_content_zh:
         zh_filename = f"ai-daily-{article.date}-zh.md"
         zh_filepath = output_dir / zh_filename
-        zh_filepath.write_text(article.markdown_content_zh, encoding="utf-8")
+        en_slug = f"ai-daily-{article.date}"
+        zh_slug = f"ai-daily-{article.date}-zh"
+        zh_desc = article.description_zh or article.description
+        zh_desc_escaped = zh_desc.replace('"', '\\"')
+        en_desc_escaped = article.description.replace('"', '\\"')
+        zh_frontmatter = (
+            f'---\n'
+            f'title: "AI 日报 — {article.date}"\n'
+            f'description: "{zh_desc_escaped}"\n'
+            f'lang: "zh"\n'
+            f'pairSlug: "{en_slug}"\n'
+            f'---\n\n'
+        )
+        zh_filepath.write_text(zh_frontmatter + article.markdown_content_zh, encoding="utf-8")
         logger.info(f"Chinese version saved: {zh_filepath}")
+
+        # 同步给英文版 frontmatter 补上 pairSlug（回写）
+        en_content = filepath.read_text(encoding="utf-8")
+        if "pairSlug" not in en_content:
+            if en_content.startswith("---\n"):
+                en_content = en_content.replace("---\n", f'---\nlang: "en"\npairSlug: "{zh_slug}"\n', 1)
+            else:
+                en_fm = f'---\nlang: "en"\npairSlug: "{zh_slug}"\ndescription: "{en_desc_escaped}"\n---\n\n'
+                en_content = en_fm + en_content
+            filepath.write_text(en_content, encoding="utf-8")
 
     # 2. 尝试发送邮件
     await _publish_newsletter(article)

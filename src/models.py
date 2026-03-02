@@ -102,6 +102,7 @@ class GeneratedArticle(BaseModel):
     title: str
     date: str
     description: str = Field(default="", description="文章摘要，用于网站列表展示")
+    description_zh: str = Field(default="", description="中文摘要，用于中文版网站列表展示")
     sections: list[ArticleSection] = Field(default_factory=list)
     markdown_content: str = ""
     markdown_content_zh: str = ""

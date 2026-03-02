@@ -19,6 +19,16 @@ export async function getPosts() {
   return posts;
 }
 
+export async function getZhPosts() {
+  const posts = (await getCollection("blog"))
+    .filter((post) => (post.data as any).lang === "zh")
+    .sort(
+      (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    );
+
+  return posts;
+}
+
 export async function getPostsByCategory(category: string) {
   const posts = (await getCollection("blog"))
     .filter((post) => post.data.category.includes(category))

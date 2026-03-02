@@ -1,34 +1,27 @@
 ---
 import MainLayout from "@/layouts/main-layout.astro";
-import { getPosts } from "@/lib/fetchers";
+import { getZhPosts, getPosts } from "@/lib/fetchers";
 
-const posts = await getPosts();
+const zhPosts = await getZhPosts();
+const enPosts = await getPosts();
 const base = import.meta.env.BASE_URL;
+
+// 优先展示中文文章，没有中文版的降级展示英文
+const posts = zhPosts.length > 0 ? zhPosts : enPosts;
 
 // 按月分组
 const grouped = new Map<string, typeof posts>();
 for (const post of posts) {
-  const key = post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+  const key = post.data.pubDate.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long' });
   if (!grouped.has(key)) grouped.set(key, []);
   grouped.get(key)!.push(post);
 }
 ---
 
-<MainLayout title="AI Daily — Daily AI News">
-  {/* 浏览器语言检测：中文用户自动跳转到 /zh/，手动切换后记住偏好 */}
-  <script is:inline define:vars={{ base }}>
-    (function() {
-      const userChoice = localStorage.getItem('ai-daily-lang');
-      if (userChoice === 'en') return;
-      if (userChoice === 'zh') {
-        window.location.replace(base + 'zh/');
-        return;
-      }
-      const browserLang = navigator.language || '';
-      if (/^zh/i.test(browserLang)) {
-        window.location.replace(base + 'zh/');
-      }
-    })();
+<MainLayout title="AI Daily — 每日 AI 资讯">
+  {/* 语言偏好记录：用户访问中文页即视为选择了中文 */}
+  <script is:inline>
+    localStorage.setItem('ai-daily-lang', 'zh');
   </script>
 
   <section class="container max-w-screen-xl py-10">
@@ -36,21 +29,21 @@ for (const post of posts) {
     <div class="mb-10 flex items-start justify-between">
       <div>
         <h1 class="font-heading text-3xl md:text-4xl font-bold">AI Daily</h1>
-        <p class="mt-2 text-muted-foreground">Daily curated AI news, research papers, open-source projects and industry trends</p>
+        <p class="mt-2 text-muted-foreground">每日精选 AI 资讯、研究论文、开源项目与行业动态</p>
       </div>
       <a
-        href={`${base}zh/`}
-        onclick="localStorage.setItem('ai-daily-lang', 'zh')"
+        href={base}
+        onclick="localStorage.setItem('ai-daily-lang', 'en')"
         class="mt-1 px-3 py-1 rounded text-xs font-medium bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors whitespace-nowrap"
       >
-        中文
+        English
       </a>
     </div>
 
     {/* Timeline */}
     {posts.length === 0 ? (
       <div class="text-center py-20">
-        <p class="text-muted-foreground">No posts yet. Run the pipeline to generate the first issue.</p>
+        <p class="text-muted-foreground">暂无文章，请先运行 pipeline 生成第一期日报。</p>
       </div>
     ) : (
       <div class="space-y-8">
@@ -60,7 +53,7 @@ for (const post of posts) {
             <div class="border-l-2 border-border pl-0 space-y-0">
               {monthPosts.map((post) => {
                 const day = post.data.pubDate.getDate();
-                const weekday = post.data.pubDate.toLocaleDateString('en-US', { weekday: 'short' });
+                const weekday = post.data.pubDate.toLocaleDateString('zh-CN', { weekday: 'short' });
                 return (
                   <a
                     href={`${base}blog/${post.slug}/`}

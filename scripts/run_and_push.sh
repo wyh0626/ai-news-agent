@@ -52,6 +52,12 @@ fi
 # ---- 3. git push ----
 echo "$LOG_PREFIX Pushing to GitHub..."
 
+# 清理 twitter_debug 目录中的 md 文件
+if [ -d "$REPO_DIR/output/twitter_debug" ]; then
+    echo "$LOG_PREFIX Cleaning twitter_debug/*.md files..."
+    rm -f "$REPO_DIR/output/twitter_debug"/*.md
+fi
+
 # 配置 git
 git config user.name "AI Daily Bot"
 git config user.email "bot@ai-daily.dev"

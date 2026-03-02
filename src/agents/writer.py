@@ -216,35 +216,35 @@ def _split_featured_brief(
     return featured, brief
 
 
-async def _generate_description(top3: list[ExtractedItem], date: str) -> str:
-    """用 LLM 生成一句话日报摘要，降级时拼接标题"""
+async def _generate_description(top3: list[ExtractedItem], date: str) -> tuple[str, str]:
+    """用 LLM 生成一句话日报摘要（英文+中文），降级时拼接标题"""
+    fallback = " · ".join(
+        (it.title[:40] + "...") if len(it.title) > 40 else it.title
+        for it in top3
+    )
     if not settings.openai_api_key or not top3:
-        titles = " · ".join(
-            (it.title[:40] + "...") if len(it.title) > 40 else it.title
-            for it in top3
-        )
-        return titles
+        return fallback, fallback
 
     headlines = "\n".join(f"- {it.title}" for it in top3)
     prompt = (
-        f"Based on these top AI news headlines from {date}, write ONE concise sentence "
-        f"(max 25 words) that captures the day's most important AI developments. "
-        f"Be specific, not generic. Output only the sentence, no quotes.\n\n"
+        f"Based on these top AI news headlines from {date}, write TWO concise summary sentences:\n"
+        f"1. ONE English sentence (max 25 words) capturing the day's most important AI developments.\n"
+        f"2. ONE Chinese sentence (max 40 characters) translating/adapting the above.\n\n"
+        f"Output ONLY two lines, no labels, no quotes:\n"
+        f"Line 1: <English sentence>\n"
+        f"Line 2: <Chinese sentence>\n\n"
         f"{headlines}"
     )
     try:
         llm = _build_llm()
         resp = await llm.ainvoke(prompt)
-        desc = resp.content.strip().strip('"').strip("'")
-        if len(desc) > 150:
-            desc = desc[:147] + "..."
-        return desc
+        lines = [l.strip().strip('"').strip("'") for l in resp.content.strip().splitlines() if l.strip()]
+        desc_en = lines[0][:150] if lines else fallback
+        desc_zh = lines[1][:150] if len(lines) > 1 else desc_en
+        return desc_en, desc_zh
     except Exception as e:
         logger.warning(f"Description generation failed, falling back: {e}")
-        return " · ".join(
-            (it.title[:40] + "...") if len(it.title) > 40 else it.title
-            for it in top3
-        )
+        return fallback, fallback
 
 
 async def writer_node(state: PipelineState) -> dict:
@@ -252,6 +252,20 @@ async def writer_node(state: PipelineState) -> dict:
     extracted = state.get("extracted_items", [])
     if not extracted:
         logger.warning("No extracted items, skipping writing")
+        return {"article": None}
+
+    # 过滤低分非新闻条目
+    min_score = settings.min_importance_score
+    before_count = len(extracted)
+    extracted = [item for item in extracted if item.importance_score >= min_score]
+    if before_count > len(extracted):
+        logger.info(
+            f"Filtered {before_count - len(extracted)} items below "
+            f"importance_score {min_score}"
+        )
+
+    if not extracted:
+        logger.warning("No items above min_importance_score, skipping writing")
         return {"article": None}
 
     today = (datetime.now(tz=timezone.utc) - timedelta(days=1)).strftime("%Y-%m-%d")
@@ -302,12 +316,13 @@ async def writer_node(state: PipelineState) -> dict:
 
     # 用 LLM 生成一句话 description（双语）
     top3 = sorted(extracted, key=lambda x: x.importance_score, reverse=True)[:3]
-    description = await _generate_description(top3, today)
+    description, description_zh = await _generate_description(top3, today)
 
     article = GeneratedArticle(
         title=f"AI Daily — {today}",
         date=today,
         description=description,
+        description_zh=description_zh,
         sections=sections,
         markdown_content=markdown,
         item_count=len(extracted),
