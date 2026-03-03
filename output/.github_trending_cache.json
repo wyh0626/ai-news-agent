@@ -1,21 +1,4 @@
 {
-  "2026-02-27": [
-    "liyupi/ai-guide",
-    "datawhalechina/hello-agents",
-    "bytedance/deer-flow",
-    "abhigyanpatwari/GitNexus",
-    "shareAI-lab/learn-claude-code",
-    "obra/superpowers",
-    "x1xhlol/system-prompts-and-models-of-ai-tools",
-    "huggingface/skills",
-    "katanemo/plano",
-    "siteboon/claudecodeui",
-    "muratcankoylan/Agent-Skills-for-Context-Engineering",
-    "VectifyAI/PageIndex",
-    "NVIDIA/Megatron-LM",
-    "NevaMind-AI/memU",
-    "ruvnet/ruvector"
-  ],
   "2026-02-28": [
     "bytedance/deer-flow",
     "muratcankoylan/Agent-Skills-for-Context-Engineering",
@@ -58,5 +41,18 @@
     "datagouv/datagouv-mcp",
     "alibaba/OpenSandbox",
     "PaddlePaddle/Paddle"
+  ],
+  "2026-03-03": [
+    "bytedance/deer-flow",
+    "moeru-ai/airi",
+    "Shubhamsaboo/awesome-llm-apps",
+    "K-Dense-AI/claude-scientific-skills",
+    "superset-sh/superset",
+    "datawhalechina/hello-agents",
+    "ruvnet/wifi-densepose",
+    "NevaMind-AI/memU",
+    "ruvnet/ruflo",
+    "X-PLUG/MobileAgent",
+    "alibaba/OpenSandbox"
   ]
 }
