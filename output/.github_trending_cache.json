@@ -1,20 +1,4 @@
 {
-  "2026-03-01": [
-    "steipete/CodexBar",
-    "muratcankoylan/Agent-Skills-for-Context-Engineering",
-    "alibaba/OpenSandbox",
-    "moeru-ai/airi",
-    "obra/superpowers",
-    "ruvnet/wifi-densepose",
-    "moonshine-ai/moonshine",
-    "ruvnet/ruvector",
-    "bytedance/deer-flow",
-    "anthropics/claude-code",
-    "Wei-Shaw/claude-relay-service",
-    "abhigyanpatwari/GitNexus",
-    "datawhalechina/hello-agents",
-    "ruvnet/ruflo"
-  ],
   "2026-03-02": [
     "moeru-ai/airi",
     "anthropics/claude-code",
@@ -53,5 +37,16 @@
     "K-Dense-AI/claude-scientific-skills",
     "superset-sh/superset",
     "ruvnet/ruflo"
+  ],
+  "2026-03-05": [
+    "K-Dense-AI/claude-scientific-skills",
+    "CodebuffAI/codebuff",
+    "alibaba/OpenSandbox",
+    "agentscope-ai/ReMe",
+    "moeru-ai/airi",
+    "ruvnet/RuView",
+    "LMCache/LMCache",
+    "agentscope-ai/agentscope",
+    "superset-sh/superset"
   ]
 }
