@@ -1,21 +1,4 @@
 {
-  "2026-03-02": [
-    "moeru-ai/airi",
-    "anthropics/claude-code",
-    "Shubhamsaboo/awesome-llm-apps",
-    "X-PLUG/MobileAgent",
-    "NousResearch/hermes-agent",
-    "superset-sh/superset",
-    "moonshine-ai/moonshine",
-    "Wei-Shaw/claude-relay-service",
-    "Wei-Shaw/sub2api",
-    "ruvnet/wifi-densepose",
-    "obra/superpowers",
-    "ruvnet/ruflo",
-    "datagouv/datagouv-mcp",
-    "alibaba/OpenSandbox",
-    "PaddlePaddle/Paddle"
-  ],
   "2026-03-03": [
     "bytedance/deer-flow",
     "moeru-ai/airi",
@@ -48,5 +31,17 @@
     "LMCache/LMCache",
     "agentscope-ai/agentscope",
     "superset-sh/superset"
+  ],
+  "2026-03-06": [
+    "alibaba/OpenSandbox",
+    "K-Dense-AI/claude-scientific-skills",
+    "FlowiseAI/Flowise",
+    "agentscope-ai/agentscope",
+    "ItzCrazyKns/Perplexica",
+    "msitarzewski/agency-agents",
+    "moeru-ai/airi",
+    "KeygraphHQ/shannon",
+    "agentscope-ai/ReMe",
+    "CodebuffAI/codebuff"
   ]
 }
