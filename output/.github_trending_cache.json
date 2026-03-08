@@ -1,13 +1,4 @@
 {
-  "2026-03-04": [
-    "anthropics/prompt-eng-interactive-tutorial",
-    "ruvnet/wifi-densepose",
-    "moeru-ai/airi",
-    "alibaba/OpenSandbox",
-    "K-Dense-AI/claude-scientific-skills",
-    "superset-sh/superset",
-    "ruvnet/ruflo"
-  ],
   "2026-03-05": [
     "K-Dense-AI/claude-scientific-skills",
     "CodebuffAI/codebuff",
@@ -39,5 +30,17 @@
     "CodebuffAI/codebuff",
     "inclusionAI/AReaL",
     "TheCraigHewitt/seomachine"
+  ],
+  "2026-03-08": [
+    "lingfengQAQ/webnovel-writer",
+    "QwenLM/Qwen-Agent",
+    "aidenybai/react-grab",
+    "virattt/ai-hedge-fund",
+    "openai/skills",
+    "inclusionAI/AReaL",
+    "msitarzewski/agency-agents",
+    "Ed1s0nZ/CyberStrikeAI",
+    "TheCraigHewitt/seomachine",
+    "moeru-ai/airi"
   ]
 }
