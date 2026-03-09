@@ -1,15 +1,4 @@
 {
-  "2026-03-05": [
-    "K-Dense-AI/claude-scientific-skills",
-    "CodebuffAI/codebuff",
-    "alibaba/OpenSandbox",
-    "agentscope-ai/ReMe",
-    "moeru-ai/airi",
-    "ruvnet/RuView",
-    "LMCache/LMCache",
-    "agentscope-ai/agentscope",
-    "superset-sh/superset"
-  ],
   "2026-03-06": [
     "alibaba/OpenSandbox",
     "K-Dense-AI/claude-scientific-skills",
@@ -42,5 +31,14 @@
     "Ed1s0nZ/CyberStrikeAI",
     "TheCraigHewitt/seomachine",
     "moeru-ai/airi"
+  ],
+  "2026-03-09": [
+    "GoogleCloudPlatform/generative-ai",
+    "666ghj/MiroFish",
+    "virattt/ai-hedge-fund",
+    "openai/skills",
+    "QwenLM/Qwen-Agent",
+    "agentjido/jido",
+    "msitarzewski/agency-agents"
   ]
 }
