@@ -1,16 +1,4 @@
 {
-  "2026-03-06": [
-    "alibaba/OpenSandbox",
-    "K-Dense-AI/claude-scientific-skills",
-    "FlowiseAI/Flowise",
-    "agentscope-ai/agentscope",
-    "ItzCrazyKns/Perplexica",
-    "msitarzewski/agency-agents",
-    "moeru-ai/airi",
-    "KeygraphHQ/shannon",
-    "agentscope-ai/ReMe",
-    "CodebuffAI/codebuff"
-  ],
   "2026-03-07": [
     "msitarzewski/agency-agents",
     "KeygraphHQ/shannon",
@@ -40,5 +28,16 @@
     "QwenLM/Qwen-Agent",
     "agentjido/jido",
     "msitarzewski/agency-agents"
+  ],
+  "2026-03-10": [
+    "666ghj/MiroFish",
+    "GoogleCloudPlatform/generative-ai",
+    "virattt/ai-hedge-fund",
+    "shareAI-lab/learn-claude-code",
+    "pbakaus/impeccable",
+    "teng-lin/notebooklm-py",
+    "openai/skills",
+    "Ed1s0nZ/CyberStrikeAI",
+    "openclaw/openclaw"
   ]
 }
