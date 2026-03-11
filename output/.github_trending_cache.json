@@ -1,13 +1,4 @@
 {
-  "2026-03-07": [
-    "msitarzewski/agency-agents",
-    "KeygraphHQ/shannon",
-    "moeru-ai/airi",
-    "agentscope-ai/ReMe",
-    "CodebuffAI/codebuff",
-    "inclusionAI/AReaL",
-    "TheCraigHewitt/seomachine"
-  ],
   "2026-03-08": [
     "lingfengQAQ/webnovel-writer",
     "QwenLM/Qwen-Agent",
@@ -38,6 +29,18 @@
     "teng-lin/notebooklm-py",
     "openai/skills",
     "Ed1s0nZ/CyberStrikeAI",
+    "openclaw/openclaw"
+  ],
+  "2026-03-11": [
+    "666ghj/BettaFish",
+    "karpathy/nanochat",
+    "666ghj/MiroFish",
+    "GoogleCloudPlatform/generative-ai",
+    "teng-lin/notebooklm-py",
+    "pbakaus/impeccable",
+    "alirezarezvani/claude-skills",
+    "msitarzewski/agency-agents",
+    "NousResearch/hermes-agent",
     "openclaw/openclaw"
   ]
 }
