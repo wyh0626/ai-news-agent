@@ -1,16 +1,4 @@
 {
-  "2026-03-08": [
-    "lingfengQAQ/webnovel-writer",
-    "QwenLM/Qwen-Agent",
-    "aidenybai/react-grab",
-    "virattt/ai-hedge-fund",
-    "openai/skills",
-    "inclusionAI/AReaL",
-    "msitarzewski/agency-agents",
-    "Ed1s0nZ/CyberStrikeAI",
-    "TheCraigHewitt/seomachine",
-    "moeru-ai/airi"
-  ],
   "2026-03-09": [
     "GoogleCloudPlatform/generative-ai",
     "666ghj/MiroFish",
@@ -42,5 +30,18 @@
     "msitarzewski/agency-agents",
     "NousResearch/hermes-agent",
     "openclaw/openclaw"
+  ],
+  "2026-03-12": [
+    "msitarzewski/agency-agents",
+    "NousResearch/hermes-agent",
+    "karpathy/nanochat",
+    "virattt/ai-hedge-fund",
+    "promptfoo/promptfoo",
+    "GoogleCloudPlatform/generative-ai",
+    "666ghj/MiroFish",
+    "bytedance/deer-flow",
+    "openclaw/openclaw",
+    "obra/superpowers",
+    "pbakaus/impeccable"
   ]
 }
