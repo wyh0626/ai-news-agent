@@ -1,13 +1,4 @@
 {
-  "2026-03-09": [
-    "GoogleCloudPlatform/generative-ai",
-    "666ghj/MiroFish",
-    "virattt/ai-hedge-fund",
-    "openai/skills",
-    "QwenLM/Qwen-Agent",
-    "agentjido/jido",
-    "msitarzewski/agency-agents"
-  ],
   "2026-03-10": [
     "666ghj/MiroFish",
     "GoogleCloudPlatform/generative-ai",
@@ -43,5 +34,15 @@
     "openclaw/openclaw",
     "obra/superpowers",
     "pbakaus/impeccable"
+  ],
+  "2026-03-13": [
+    "promptfoo/promptfoo",
+    "666ghj/MiroFish",
+    "fishaudio/fish-speech",
+    "virattt/ai-hedge-fund",
+    "msitarzewski/agency-agents",
+    "NousResearch/hermes-agent",
+    "obra/superpowers",
+    "AstrBotDevs/AstrBot"
   ]
 }
