@@ -1,15 +1,4 @@
 {
-  "2026-03-10": [
-    "666ghj/MiroFish",
-    "GoogleCloudPlatform/generative-ai",
-    "virattt/ai-hedge-fund",
-    "shareAI-lab/learn-claude-code",
-    "pbakaus/impeccable",
-    "teng-lin/notebooklm-py",
-    "openai/skills",
-    "Ed1s0nZ/CyberStrikeAI",
-    "openclaw/openclaw"
-  ],
   "2026-03-11": [
     "666ghj/BettaFish",
     "karpathy/nanochat",
@@ -44,5 +33,18 @@
     "NousResearch/hermes-agent",
     "obra/superpowers",
     "AstrBotDevs/AstrBot"
+  ],
+  "2026-03-14": [
+    "NousResearch/hermes-agent",
+    "anthropics/claude-plugins-official",
+    "obra/superpowers",
+    "666ghj/MiroFish",
+    "langflow-ai/openrag",
+    "microsoft/BitNet",
+    "google-ai-edge/LiteRT",
+    "msitarzewski/agency-agents",
+    "fishaudio/fish-speech",
+    "vectorize-io/hindsight",
+    "google/A2UI"
   ]
 }
