@@ -1,17 +1,4 @@
 {
-  "2026-03-12": [
-    "msitarzewski/agency-agents",
-    "NousResearch/hermes-agent",
-    "karpathy/nanochat",
-    "virattt/ai-hedge-fund",
-    "promptfoo/promptfoo",
-    "GoogleCloudPlatform/generative-ai",
-    "666ghj/MiroFish",
-    "bytedance/deer-flow",
-    "openclaw/openclaw",
-    "obra/superpowers",
-    "pbakaus/impeccable"
-  ],
   "2026-03-13": [
     "promptfoo/promptfoo",
     "666ghj/MiroFish",
@@ -49,5 +36,14 @@
     "microsoft/BitNet",
     "msitarzewski/agency-agents",
     "InsForge/InsForge"
+  ],
+  "2026-03-16": [
+    "msitarzewski/agency-agents",
+    "lightpanda-io/browser",
+    "anthropics/claude-plugins-official",
+    "p-e-w/heretic",
+    "obra/superpowers",
+    "langflow-ai/openrag",
+    "fishaudio/fish-speech"
   ]
 }
