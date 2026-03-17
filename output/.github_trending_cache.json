@@ -1,14 +1,4 @@
 {
-  "2026-03-13": [
-    "promptfoo/promptfoo",
-    "666ghj/MiroFish",
-    "fishaudio/fish-speech",
-    "virattt/ai-hedge-fund",
-    "msitarzewski/agency-agents",
-    "NousResearch/hermes-agent",
-    "obra/superpowers",
-    "AstrBotDevs/AstrBot"
-  ],
   "2026-03-14": [
     "NousResearch/hermes-agent",
     "anthropics/claude-plugins-official",
@@ -45,5 +35,17 @@
     "obra/superpowers",
     "langflow-ai/openrag",
     "fishaudio/fish-speech"
+  ],
+  "2026-03-17": [
+    "666ghj/MiroFish",
+    "obra/superpowers",
+    "abhigyanpatwari/GitNexus",
+    "anthropics/claude-plugins-official",
+    "lightpanda-io/browser",
+    "p-e-w/heretic",
+    "topoteretes/cognee",
+    "volcengine/OpenViking",
+    "shareAI-lab/learn-claude-code",
+    "shanraisshan/claude-code-best-practice"
   ]
 }
