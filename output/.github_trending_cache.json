@@ -1,17 +1,4 @@
 {
-  "2026-03-14": [
-    "NousResearch/hermes-agent",
-    "anthropics/claude-plugins-official",
-    "obra/superpowers",
-    "666ghj/MiroFish",
-    "langflow-ai/openrag",
-    "microsoft/BitNet",
-    "google-ai-edge/LiteRT",
-    "msitarzewski/agency-agents",
-    "fishaudio/fish-speech",
-    "vectorize-io/hindsight",
-    "google/A2UI"
-  ],
   "2026-03-15": [
     "fishaudio/fish-speech",
     "google/A2UI",
@@ -47,5 +34,16 @@
     "volcengine/OpenViking",
     "shareAI-lab/learn-claude-code",
     "shanraisshan/claude-code-best-practice"
+  ],
+  "2026-03-18": [
+    "langchain-ai/deepagents",
+    "abhigyanpatwari/GitNexus",
+    "p-e-w/heretic",
+    "lightpanda-io/browser",
+    "thedotmack/claude-mem",
+    "shareAI-lab/learn-claude-code",
+    "YishenTu/claudian",
+    "volcengine/OpenViking",
+    "666ghj/MiroFish"
   ]
 }
