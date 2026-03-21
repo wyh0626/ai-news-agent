@@ -1,16 +1,4 @@
 {
-  "2026-03-17": [
-    "666ghj/MiroFish",
-    "obra/superpowers",
-    "abhigyanpatwari/GitNexus",
-    "anthropics/claude-plugins-official",
-    "lightpanda-io/browser",
-    "p-e-w/heretic",
-    "topoteretes/cognee",
-    "volcengine/OpenViking",
-    "shareAI-lab/learn-claude-code",
-    "shanraisshan/claude-code-best-practice"
-  ],
   "2026-03-18": [
     "langchain-ai/deepagents",
     "abhigyanpatwari/GitNexus",
@@ -30,5 +18,14 @@
     "langchain-ai/open-swe",
     "jarrodwatts/claude-hud",
     "unslothai/unsloth"
+  ],
+  "2026-03-21": [
+    "jarrodwatts/claude-hud",
+    "gsd-build/get-shit-done",
+    "langchain-ai/open-swe",
+    "obra/superpowers",
+    "shareAI-lab/learn-claude-code",
+    "unslothai/unsloth",
+    "opendataloader-project/opendataloader-pdf"
   ]
 }
