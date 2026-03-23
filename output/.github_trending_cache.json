@@ -1,8 +1,4 @@
 {
-  "2026-03-19": [
-    "jarrodwatts/claude-hud",
-    "langchain-ai/deepagents"
-  ],
   "2026-03-20": [
     "langchain-ai/open-swe",
     "jarrodwatts/claude-hud",
@@ -23,5 +19,10 @@
     "opendataloader-project/opendataloader-pdf",
     "vas3k/TaxHacker",
     "TauricResearch/TradingAgents"
+  ],
+  "2026-03-23": [
+    "jarrodwatts/claude-hud",
+    "vllm-project/vllm-omni",
+    "opendataloader-project/opendataloader-pdf"
   ]
 }
