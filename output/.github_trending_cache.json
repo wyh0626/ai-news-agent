@@ -1,13 +1,4 @@
 {
-  "2026-03-21": [
-    "jarrodwatts/claude-hud",
-    "gsd-build/get-shit-done",
-    "langchain-ai/open-swe",
-    "obra/superpowers",
-    "shareAI-lab/learn-claude-code",
-    "unslothai/unsloth",
-    "opendataloader-project/opendataloader-pdf"
-  ],
   "2026-03-22": [
     "jarrodwatts/claude-hud",
     "langchain-ai/open-swe",
@@ -31,5 +22,18 @@
     "HKUDS/LightRAG",
     "vxcontrol/pentagi",
     "jarrodwatts/claude-hud"
+  ],
+  "2026-03-25": [
+    "TauricResearch/TradingAgents",
+    "hsliuping/TradingAgents-CN",
+    "bytedance/deer-flow",
+    "browser-use/browser-use",
+    "NousResearch/hermes-agent",
+    "tinygrad/tinygrad",
+    "jingyaogong/minimind",
+    "vxcontrol/pentagi",
+    "hesreallyhim/awesome-claude-code",
+    "affaan-m/everything-claude-code",
+    "czlonkowski/n8n-mcp"
   ]
 }
