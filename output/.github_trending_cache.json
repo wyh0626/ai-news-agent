@@ -1,11 +1,4 @@
 {
-  "2026-03-22": [
-    "jarrodwatts/claude-hud",
-    "langchain-ai/open-swe",
-    "opendataloader-project/opendataloader-pdf",
-    "vas3k/TaxHacker",
-    "TauricResearch/TradingAgents"
-  ],
   "2026-03-23": [
     "jarrodwatts/claude-hud",
     "vllm-project/vllm-omni",
@@ -35,5 +28,17 @@
     "hesreallyhim/awesome-claude-code",
     "affaan-m/everything-claude-code",
     "czlonkowski/n8n-mcp"
+  ],
+  "2026-03-26": [
+    "TauricResearch/TradingAgents",
+    "harry0703/MoneyPrinterTurbo",
+    "hsliuping/TradingAgents-CN",
+    "bytedance/deer-flow",
+    "hesreallyhim/awesome-claude-code",
+    "NousResearch/hermes-agent",
+    "supermemoryai/supermemory",
+    "ruvnet/RuView",
+    "mvanhorn/last30days-skill",
+    "ruvnet/ruflo"
   ]
 }
