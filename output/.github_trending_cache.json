@@ -1,9 +1,4 @@
 {
-  "2026-03-23": [
-    "jarrodwatts/claude-hud",
-    "vllm-project/vllm-omni",
-    "opendataloader-project/opendataloader-pdf"
-  ],
   "2026-03-24": [
     "harry0703/MoneyPrinterTurbo",
     "hsliuping/TradingAgents-CN",
@@ -39,6 +34,16 @@
     "supermemoryai/supermemory",
     "ruvnet/RuView",
     "mvanhorn/last30days-skill",
+    "ruvnet/ruflo"
+  ],
+  "2026-03-27": [
+    "mvanhorn/last30days-skill",
+    "bytedance/deer-flow",
+    "letta-ai/claude-subconscious",
+    "usestrix/strix",
+    "BerriAI/litellm",
+    "hsliuping/TradingAgents-CN",
+    "ruvnet/RuView",
     "ruvnet/ruflo"
   ]
 }
