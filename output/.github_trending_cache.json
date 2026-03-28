@@ -1,16 +1,4 @@
 {
-  "2026-03-24": [
-    "harry0703/MoneyPrinterTurbo",
-    "hsliuping/TradingAgents-CN",
-    "bytedance/deer-flow",
-    "browser-use/browser-use",
-    "jamwithai/production-agentic-rag-course",
-    "affaan-m/everything-claude-code",
-    "TauricResearch/TradingAgents",
-    "HKUDS/LightRAG",
-    "vxcontrol/pentagi",
-    "jarrodwatts/claude-hud"
-  ],
   "2026-03-25": [
     "TauricResearch/TradingAgents",
     "hsliuping/TradingAgents-CN",
@@ -45,5 +33,15 @@
     "hsliuping/TradingAgents-CN",
     "ruvnet/RuView",
     "ruvnet/ruflo"
+  ],
+  "2026-03-28": [
+    "agentscope-ai/agentscope",
+    "bytedance/deer-flow",
+    "Vaibhavs10/insanely-fast-whisper",
+    "Yeachan-Heo/oh-my-claudecode",
+    "virattt/dexter",
+    "mvanhorn/last30days-skill",
+    "datalab-to/chandra",
+    "ruvnet/RuView"
   ]
 }
