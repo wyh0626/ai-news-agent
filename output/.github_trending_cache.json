@@ -1,14 +1,4 @@
 {
-  "2026-03-27": [
-    "mvanhorn/last30days-skill",
-    "bytedance/deer-flow",
-    "letta-ai/claude-subconscious",
-    "usestrix/strix",
-    "BerriAI/litellm",
-    "hsliuping/TradingAgents-CN",
-    "ruvnet/RuView",
-    "ruvnet/ruflo"
-  ],
   "2026-03-28": [
     "agentscope-ai/agentscope",
     "bytedance/deer-flow",
@@ -39,5 +29,14 @@
     "SakanaAI/AI-Scientist-v2",
     "onyx-dot-app/onyx",
     "obra/superpowers"
+  ],
+  "2026-03-31": [
+    "microsoft/VibeVoice",
+    "luongnv89/claude-howto",
+    "Yeachan-Heo/oh-my-claudecode",
+    "shanraisshan/claude-code-best-practice",
+    "hacksider/Deep-Live-Cam",
+    "OpenBB-finance/OpenBB",
+    "NousResearch/hermes-agent"
   ]
 }
