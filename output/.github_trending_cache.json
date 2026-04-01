@@ -1,14 +1,4 @@
 {
-  "2026-03-28": [
-    "agentscope-ai/agentscope",
-    "bytedance/deer-flow",
-    "Vaibhavs10/insanely-fast-whisper",
-    "Yeachan-Heo/oh-my-claudecode",
-    "virattt/dexter",
-    "mvanhorn/last30days-skill",
-    "datalab-to/chandra",
-    "ruvnet/RuView"
-  ],
   "2026-03-29": [
     "Yeachan-Heo/oh-my-claudecode",
     "hacksider/Deep-Live-Cam",
@@ -34,6 +24,14 @@
     "microsoft/VibeVoice",
     "luongnv89/claude-howto",
     "Yeachan-Heo/oh-my-claudecode",
+    "shanraisshan/claude-code-best-practice",
+    "hacksider/Deep-Live-Cam",
+    "OpenBB-finance/OpenBB",
+    "NousResearch/hermes-agent"
+  ],
+  "2026-04-01": [
+    "microsoft/VibeVoice",
+    "luongnv89/claude-howto",
     "shanraisshan/claude-code-best-practice",
     "hacksider/Deep-Live-Cam",
     "OpenBB-finance/OpenBB",
