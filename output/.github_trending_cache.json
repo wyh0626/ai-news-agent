@@ -1,16 +1,4 @@
 {
-  "2026-03-29": [
-    "Yeachan-Heo/oh-my-claudecode",
-    "hacksider/Deep-Live-Cam",
-    "virattt/dexter",
-    "SakanaAI/AI-Scientist-v2",
-    "mvanhorn/last30days-skill",
-    "Vaibhavs10/insanely-fast-whisper",
-    "onyx-dot-app/onyx",
-    "obra/superpowers",
-    "microsoft/VibeVoice",
-    "datalab-to/chandra"
-  ],
   "2026-03-30": [
     "virattt/dexter",
     "agentscope-ai/agentscope",
@@ -36,5 +24,18 @@
     "hacksider/Deep-Live-Cam",
     "OpenBB-finance/OpenBB",
     "NousResearch/hermes-agent"
+  ],
+  "2026-04-02": [
+    "luongnv89/claude-howto",
+    "microsoft/VibeVoice",
+    "Yeachan-Heo/oh-my-claudecode",
+    "shanraisshan/claude-code-best-practice",
+    "NousResearch/hermes-agent",
+    "obra/superpowers",
+    "microsoft/agent-lightning",
+    "PaddlePaddle/PaddleOCR",
+    "Dimillian/Skills",
+    "vas3k/TaxHacker",
+    "OpenBMB/ChatDev"
   ]
 }
