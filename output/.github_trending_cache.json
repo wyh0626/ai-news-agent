@@ -1,13 +1,4 @@
 {
-  "2026-03-30": [
-    "virattt/dexter",
-    "agentscope-ai/agentscope",
-    "hacksider/Deep-Live-Cam",
-    "datalab-to/chandra",
-    "SakanaAI/AI-Scientist-v2",
-    "onyx-dot-app/onyx",
-    "obra/superpowers"
-  ],
   "2026-03-31": [
     "microsoft/VibeVoice",
     "luongnv89/claude-howto",
@@ -37,5 +28,13 @@
     "Dimillian/Skills",
     "vas3k/TaxHacker",
     "OpenBMB/ChatDev"
+  ],
+  "2026-04-03": [
+    "anthropics/claude-code",
+    "microsoft/VibeVoice",
+    "google-research/timesfm",
+    "luongnv89/claude-howto",
+    "openai/codex",
+    "f/prompts.chat"
   ]
 }
