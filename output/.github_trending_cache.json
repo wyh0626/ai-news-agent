@@ -1,12 +1,4 @@
 {
-  "2026-04-01": [
-    "microsoft/VibeVoice",
-    "luongnv89/claude-howto",
-    "shanraisshan/claude-code-best-practice",
-    "hacksider/Deep-Live-Cam",
-    "OpenBB-finance/OpenBB",
-    "NousResearch/hermes-agent"
-  ],
   "2026-04-02": [
     "luongnv89/claude-howto",
     "microsoft/VibeVoice",
@@ -31,5 +23,11 @@
   "2026-04-04": [
     "Yeachan-Heo/oh-my-codex",
     "asgeirtj/system_prompts_leaks"
+  ],
+  "2026-04-05": [
+    "Yeachan-Heo/oh-my-codex",
+    "onyx-dot-app/onyx",
+    "google-research/timesfm",
+    "f/prompts.chat"
   ]
 }
