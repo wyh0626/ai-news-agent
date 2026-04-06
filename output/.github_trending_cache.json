@@ -1,17 +1,4 @@
 {
-  "2026-04-02": [
-    "luongnv89/claude-howto",
-    "microsoft/VibeVoice",
-    "Yeachan-Heo/oh-my-claudecode",
-    "shanraisshan/claude-code-best-practice",
-    "NousResearch/hermes-agent",
-    "obra/superpowers",
-    "microsoft/agent-lightning",
-    "PaddlePaddle/PaddleOCR",
-    "Dimillian/Skills",
-    "vas3k/TaxHacker",
-    "OpenBMB/ChatDev"
-  ],
   "2026-04-03": [
     "anthropics/claude-code",
     "microsoft/VibeVoice",
@@ -29,5 +16,12 @@
     "onyx-dot-app/onyx",
     "google-research/timesfm",
     "f/prompts.chat"
+  ],
+  "2026-04-06": [
+    "Blaizzy/mlx-vlm",
+    "onyx-dot-app/onyx",
+    "Yeachan-Heo/oh-my-codex",
+    "block/goose",
+    "microsoft/agent-framework"
   ]
 }
