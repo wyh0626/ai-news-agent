@@ -1,12 +1,4 @@
 {
-  "2026-04-03": [
-    "anthropics/claude-code",
-    "microsoft/VibeVoice",
-    "google-research/timesfm",
-    "luongnv89/claude-howto",
-    "openai/codex",
-    "f/prompts.chat"
-  ],
   "2026-04-04": [
     "Yeachan-Heo/oh-my-codex",
     "asgeirtj/system_prompts_leaks"
@@ -23,5 +15,14 @@
     "Yeachan-Heo/oh-my-codex",
     "block/goose",
     "microsoft/agent-framework"
+  ],
+  "2026-04-07": [
+    "google-ai-edge/gallery",
+    "Blaizzy/mlx-vlm",
+    "block/goose",
+    "onyx-dot-app/onyx",
+    "badlogic/pi-mono",
+    "dmtrKovalenko/fff.nvim",
+    "google-ai-edge/LiteRT-LM"
   ]
 }
