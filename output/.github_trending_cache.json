@@ -1,8 +1,4 @@
 {
-  "2026-04-04": [
-    "Yeachan-Heo/oh-my-codex",
-    "asgeirtj/system_prompts_leaks"
-  ],
   "2026-04-05": [
     "Yeachan-Heo/oh-my-codex",
     "onyx-dot-app/onyx",
@@ -24,5 +20,15 @@
     "badlogic/pi-mono",
     "dmtrKovalenko/fff.nvim",
     "google-ai-edge/LiteRT-LM"
+  ],
+  "2026-04-08": [
+    "google-ai-edge/gallery",
+    "google-ai-edge/LiteRT-LM",
+    "KeygraphHQ/shannon",
+    "NousResearch/hermes-agent",
+    "kepano/obsidian-skills",
+    "ollama/ollama",
+    "ggml-org/llama.cpp",
+    "NVIDIA/personaplex"
   ]
 }
