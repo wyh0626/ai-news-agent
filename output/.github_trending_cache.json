@@ -1,10 +1,4 @@
 {
-  "2026-04-05": [
-    "Yeachan-Heo/oh-my-codex",
-    "onyx-dot-app/onyx",
-    "google-research/timesfm",
-    "f/prompts.chat"
-  ],
   "2026-04-06": [
     "Blaizzy/mlx-vlm",
     "onyx-dot-app/onyx",
@@ -30,5 +24,14 @@
     "ollama/ollama",
     "ggml-org/llama.cpp",
     "NVIDIA/personaplex"
+  ],
+  "2026-04-09": [
+    "google-ai-edge/gallery",
+    "google-ai-edge/LiteRT-LM",
+    "NVIDIA/personaplex",
+    "abhigyanpatwari/GitNexus",
+    "forrestchang/andrej-karpathy-skills",
+    "HKUDS/DeepTutor",
+    "TheCraigHewitt/seomachine"
   ]
 }
