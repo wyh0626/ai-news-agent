@@ -1,13 +1,4 @@
 {
-  "2026-04-07": [
-    "google-ai-edge/gallery",
-    "Blaizzy/mlx-vlm",
-    "block/goose",
-    "onyx-dot-app/onyx",
-    "badlogic/pi-mono",
-    "dmtrKovalenko/fff.nvim",
-    "google-ai-edge/LiteRT-LM"
-  ],
   "2026-04-08": [
     "google-ai-edge/gallery",
     "google-ai-edge/LiteRT-LM",
@@ -36,5 +27,17 @@
     "obra/superpowers",
     "abhigyanpatwari/GitNexus",
     "virattt/ai-hedge-fund"
+  ],
+  "2026-04-11": [
+    "NousResearch/hermes-agent",
+    "forrestchang/andrej-karpathy-skills",
+    "HKUDS/DeepTutor",
+    "OpenBMB/VoxCPM",
+    "opendataloader-project/opendataloader-pdf",
+    "obra/superpowers",
+    "TheCraigHewitt/seomachine",
+    "coleam00/Archon",
+    "shiyu-coder/Kronos",
+    "YishenTu/claudian"
   ]
 }
