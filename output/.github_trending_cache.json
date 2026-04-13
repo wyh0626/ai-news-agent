@@ -1,23 +1,4 @@
 {
-  "2026-04-08": [
-    "google-ai-edge/gallery",
-    "google-ai-edge/LiteRT-LM",
-    "KeygraphHQ/shannon",
-    "NousResearch/hermes-agent",
-    "kepano/obsidian-skills",
-    "ollama/ollama",
-    "ggml-org/llama.cpp",
-    "NVIDIA/personaplex"
-  ],
-  "2026-04-09": [
-    "google-ai-edge/gallery",
-    "google-ai-edge/LiteRT-LM",
-    "NVIDIA/personaplex",
-    "abhigyanpatwari/GitNexus",
-    "forrestchang/andrej-karpathy-skills",
-    "HKUDS/DeepTutor",
-    "TheCraigHewitt/seomachine"
-  ],
   "2026-04-10": [
     "forrestchang/andrej-karpathy-skills",
     "TheCraigHewitt/seomachine",
@@ -39,5 +20,17 @@
     "coleam00/Archon",
     "shiyu-coder/Kronos",
     "YishenTu/claudian"
+  ],
+  "2026-04-13": [
+    "NousResearch/hermes-agent",
+    "coleam00/Archon",
+    "forrestchang/andrej-karpathy-skills",
+    "multica-ai/multica",
+    "shanraisshan/claude-code-best-practice",
+    "OpenBMB/VoxCPM",
+    "shiyu-coder/Kronos",
+    "opendataloader-project/opendataloader-pdf",
+    "HKUDS/DeepTutor",
+    "obra/superpowers"
   ]
 }
