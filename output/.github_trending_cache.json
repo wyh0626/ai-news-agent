@@ -1,16 +1,4 @@
 {
-  "2026-04-11": [
-    "NousResearch/hermes-agent",
-    "forrestchang/andrej-karpathy-skills",
-    "HKUDS/DeepTutor",
-    "OpenBMB/VoxCPM",
-    "opendataloader-project/opendataloader-pdf",
-    "obra/superpowers",
-    "TheCraigHewitt/seomachine",
-    "coleam00/Archon",
-    "shiyu-coder/Kronos",
-    "YishenTu/claudian"
-  ],
   "2026-04-13": [
     "NousResearch/hermes-agent",
     "coleam00/Archon",
@@ -34,5 +22,20 @@
     "thedotmack/claude-mem",
     "virattt/ai-hedge-fund",
     "snarktank/ralph"
+  ],
+  "2026-04-15": [
+    "forrestchang/andrej-karpathy-skills",
+    "NousResearch/hermes-agent",
+    "shiyu-coder/Kronos",
+    "thedotmack/claude-mem",
+    "multica-ai/multica",
+    "coleam00/Archon",
+    "snarktank/ralph",
+    "virattt/ai-hedge-fund",
+    "anthropics/claude-cookbooks",
+    "shanraisshan/claude-code-best-practice",
+    "jamiepine/voicebox",
+    "hacksider/Deep-Live-Cam",
+    "gsd-build/get-shit-done"
   ]
 }
