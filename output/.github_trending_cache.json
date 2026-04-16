@@ -37,5 +37,16 @@
     "jamiepine/voicebox",
     "hacksider/Deep-Live-Cam",
     "gsd-build/get-shit-done"
+  ],
+  "2026-04-16": [
+    "forrestchang/andrej-karpathy-skills",
+    "thedotmack/claude-mem",
+    "jamiepine/voicebox",
+    "obra/superpowers",
+    "virattt/ai-hedge-fund",
+    "shiyu-coder/Kronos",
+    "NousResearch/hermes-agent",
+    "anthropics/claude-cookbooks",
+    "shanraisshan/claude-code-best-practice"
   ]
 }
