@@ -1,16 +1,4 @@
 {
-  "2026-04-13": [
-    "NousResearch/hermes-agent",
-    "coleam00/Archon",
-    "forrestchang/andrej-karpathy-skills",
-    "multica-ai/multica",
-    "shanraisshan/claude-code-best-practice",
-    "OpenBMB/VoxCPM",
-    "shiyu-coder/Kronos",
-    "opendataloader-project/opendataloader-pdf",
-    "HKUDS/DeepTutor",
-    "obra/superpowers"
-  ],
   "2026-04-14": [
     "NousResearch/hermes-agent",
     "shiyu-coder/Kronos",
@@ -48,5 +36,15 @@
     "NousResearch/hermes-agent",
     "anthropics/claude-cookbooks",
     "shanraisshan/claude-code-best-practice"
+  ],
+  "2026-04-17": [
+    "forrestchang/andrej-karpathy-skills",
+    "thedotmack/claude-mem",
+    "Lordog/dive-into-llms",
+    "virattt/ai-hedge-fund",
+    "jamiepine/voicebox",
+    "lsdefine/GenericAgent",
+    "google/magika",
+    "Donchitos/Claude-Code-Game-Studios"
   ]
 }
