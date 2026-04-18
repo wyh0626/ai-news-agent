@@ -1,16 +1,4 @@
 {
-  "2026-04-14": [
-    "NousResearch/hermes-agent",
-    "shiyu-coder/Kronos",
-    "forrestchang/andrej-karpathy-skills",
-    "multica-ai/multica",
-    "coleam00/Archon",
-    "shanraisshan/claude-code-best-practice",
-    "OpenBMB/VoxCPM",
-    "thedotmack/claude-mem",
-    "virattt/ai-hedge-fund",
-    "snarktank/ralph"
-  ],
   "2026-04-15": [
     "forrestchang/andrej-karpathy-skills",
     "NousResearch/hermes-agent",
@@ -46,5 +34,20 @@
     "lsdefine/GenericAgent",
     "google/magika",
     "Donchitos/Claude-Code-Game-Studios"
+  ],
+  "2026-04-18": [
+    "forrestchang/andrej-karpathy-skills",
+    "thedotmack/claude-mem",
+    "lsdefine/GenericAgent",
+    "jamiepine/voicebox",
+    "vercel-labs/open-agents",
+    "google/magika",
+    "topoteretes/cognee",
+    "z-lab/dflash",
+    "Lordog/dive-into-llms",
+    "openai/openai-agents-python",
+    "EvoMap/evolver",
+    "SimoneAvogadro/android-reverse-engineering-skill",
+    "BasedHardware/omi"
   ]
 }
