@@ -1,19 +1,4 @@
 {
-  "2026-04-15": [
-    "forrestchang/andrej-karpathy-skills",
-    "NousResearch/hermes-agent",
-    "shiyu-coder/Kronos",
-    "thedotmack/claude-mem",
-    "multica-ai/multica",
-    "coleam00/Archon",
-    "snarktank/ralph",
-    "virattt/ai-hedge-fund",
-    "anthropics/claude-cookbooks",
-    "shanraisshan/claude-code-best-practice",
-    "jamiepine/voicebox",
-    "hacksider/Deep-Live-Cam",
-    "gsd-build/get-shit-done"
-  ],
   "2026-04-16": [
     "forrestchang/andrej-karpathy-skills",
     "thedotmack/claude-mem",
@@ -49,5 +34,21 @@
     "EvoMap/evolver",
     "SimoneAvogadro/android-reverse-engineering-skill",
     "BasedHardware/omi"
+  ],
+  "2026-04-19": [
+    "EvoMap/evolver",
+    "lsdefine/GenericAgent",
+    "BasedHardware/omi",
+    "Lordog/dive-into-llms",
+    "Donchitos/Claude-Code-Game-Studios",
+    "jamiepine/voicebox",
+    "lukilabs/craft-agents-oss",
+    "Tracer-Cloud/opensre",
+    "obra/superpowers",
+    "z-lab/dflash",
+    "openai/openai-agents-python",
+    "google/magika",
+    "pingdotgg/t3code",
+    "ChromeDevTools/chrome-devtools-mcp"
   ]
 }
