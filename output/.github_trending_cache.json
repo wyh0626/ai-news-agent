@@ -1,15 +1,4 @@
 {
-  "2026-04-16": [
-    "forrestchang/andrej-karpathy-skills",
-    "thedotmack/claude-mem",
-    "jamiepine/voicebox",
-    "obra/superpowers",
-    "virattt/ai-hedge-fund",
-    "shiyu-coder/Kronos",
-    "NousResearch/hermes-agent",
-    "anthropics/claude-cookbooks",
-    "shanraisshan/claude-code-best-practice"
-  ],
   "2026-04-17": [
     "forrestchang/andrej-karpathy-skills",
     "thedotmack/claude-mem",
@@ -50,5 +39,14 @@
     "google/magika",
     "pingdotgg/t3code",
     "ChromeDevTools/chrome-devtools-mcp"
+  ],
+  "2026-04-20": [
+    "thunderbird/thunderbolt",
+    "BasedHardware/omi",
+    "openai/openai-agents-python",
+    "EvoMap/evolver",
+    "deepseek-ai/DeepGEMM",
+    "Lordog/dive-into-llms",
+    "aaddrick/claude-desktop-debian"
   ]
 }
