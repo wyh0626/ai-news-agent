@@ -1,14 +1,4 @@
 {
-  "2026-04-17": [
-    "forrestchang/andrej-karpathy-skills",
-    "thedotmack/claude-mem",
-    "Lordog/dive-into-llms",
-    "virattt/ai-hedge-fund",
-    "jamiepine/voicebox",
-    "lsdefine/GenericAgent",
-    "google/magika",
-    "Donchitos/Claude-Code-Game-Studios"
-  ],
   "2026-04-18": [
     "forrestchang/andrej-karpathy-skills",
     "thedotmack/claude-mem",
@@ -48,5 +38,14 @@
     "deepseek-ai/DeepGEMM",
     "Lordog/dive-into-llms",
     "aaddrick/claude-desktop-debian"
+  ],
+  "2026-04-21": [
+    "thunderbird/thunderbolt",
+    "openai/openai-agents-python",
+    "pingdotgg/t3code",
+    "ruvnet/RuView",
+    "EvoMap/evolver",
+    "BasedHardware/omi",
+    "Donchitos/Claude-Code-Game-Studios"
   ]
 }
