@@ -1,20 +1,4 @@
 {
-  "2026-04-19": [
-    "EvoMap/evolver",
-    "lsdefine/GenericAgent",
-    "BasedHardware/omi",
-    "Lordog/dive-into-llms",
-    "Donchitos/Claude-Code-Game-Studios",
-    "jamiepine/voicebox",
-    "lukilabs/craft-agents-oss",
-    "Tracer-Cloud/opensre",
-    "obra/superpowers",
-    "z-lab/dflash",
-    "openai/openai-agents-python",
-    "google/magika",
-    "pingdotgg/t3code",
-    "ChromeDevTools/chrome-devtools-mcp"
-  ],
   "2026-04-20": [
     "thunderbird/thunderbolt",
     "BasedHardware/omi",
@@ -39,5 +23,13 @@
     "koala73/worldmonitor",
     "openai/openai-agents-python",
     "deepseek-ai/DeepGEMM"
+  ],
+  "2026-04-23": [
+    "thunderbird/thunderbolt",
+    "zilliztech/claude-context",
+    "ruvnet/RuView",
+    "microsoft/ai-agents-for-beginners",
+    "HKUDS/RAG-Anything",
+    "sansan0/TrendRadar"
   ]
 }
