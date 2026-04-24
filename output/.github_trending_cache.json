@@ -1,13 +1,4 @@
 {
-  "2026-04-20": [
-    "thunderbird/thunderbolt",
-    "BasedHardware/omi",
-    "openai/openai-agents-python",
-    "EvoMap/evolver",
-    "deepseek-ai/DeepGEMM",
-    "Lordog/dive-into-llms",
-    "aaddrick/claude-desktop-debian"
-  ],
   "2026-04-21": [
     "thunderbird/thunderbolt",
     "openai/openai-agents-python",
@@ -31,5 +22,15 @@
     "microsoft/ai-agents-for-beginners",
     "HKUDS/RAG-Anything",
     "sansan0/TrendRadar"
+  ],
+  "2026-04-24": [
+    "zilliztech/claude-context",
+    "koala73/worldmonitor",
+    "langfuse/langfuse",
+    "KeygraphHQ/shannon",
+    "ruvnet/RuView",
+    "HKUDS/RAG-Anything",
+    "sansan0/TrendRadar",
+    "AIDC-AI/Pixelle-Video"
   ]
 }
