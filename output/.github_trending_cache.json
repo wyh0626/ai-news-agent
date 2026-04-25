@@ -1,13 +1,4 @@
 {
-  "2026-04-21": [
-    "thunderbird/thunderbolt",
-    "openai/openai-agents-python",
-    "pingdotgg/t3code",
-    "ruvnet/RuView",
-    "EvoMap/evolver",
-    "BasedHardware/omi",
-    "Donchitos/Claude-Code-Game-Studios"
-  ],
   "2026-04-22": [
     "ruvnet/RuView",
     "thunderbird/thunderbolt",
@@ -32,5 +23,20 @@
     "HKUDS/RAG-Anything",
     "sansan0/TrendRadar",
     "AIDC-AI/Pixelle-Video"
+  ],
+  "2026-04-25": [
+    "huggingface/ml-intern",
+    "zilliztech/claude-context",
+    "HKUDS/RAG-Anything",
+    "ruvnet/RuView",
+    "Anil-matcha/Open-Generative-AI",
+    "Alishahryar1/free-claude-code",
+    "microsoft/ai-agents-for-beginners",
+    "cline/cline",
+    "microsoft/onnxruntime",
+    "mksglu/context-mode",
+    "coreyhaines31/marketingskills",
+    "chiphuyen/aie-book",
+    "VoltAgent/awesome-agent-skills"
   ]
 }
