@@ -1,11 +1,4 @@
 {
-  "2026-04-22": [
-    "ruvnet/RuView",
-    "thunderbird/thunderbolt",
-    "koala73/worldmonitor",
-    "openai/openai-agents-python",
-    "deepseek-ai/DeepGEMM"
-  ],
   "2026-04-23": [
     "thunderbird/thunderbolt",
     "zilliztech/claude-context",
@@ -38,5 +31,12 @@
     "coreyhaines31/marketingskills",
     "chiphuyen/aie-book",
     "VoltAgent/awesome-agent-skills"
+  ],
+  "2026-04-26": [
+    "Alishahryar1/free-claude-code",
+    "huggingface/ml-intern",
+    "zilliztech/claude-context",
+    "Anil-matcha/Open-Generative-AI",
+    "deepseek-ai/DeepEP"
   ]
 }
