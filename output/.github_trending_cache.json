@@ -1,12 +1,4 @@
 {
-  "2026-04-23": [
-    "thunderbird/thunderbolt",
-    "zilliztech/claude-context",
-    "ruvnet/RuView",
-    "microsoft/ai-agents-for-beginners",
-    "HKUDS/RAG-Anything",
-    "sansan0/TrendRadar"
-  ],
   "2026-04-24": [
     "zilliztech/claude-context",
     "koala73/worldmonitor",
@@ -38,5 +30,13 @@
     "zilliztech/claude-context",
     "Anil-matcha/Open-Generative-AI",
     "deepseek-ai/DeepEP"
+  ],
+  "2026-04-27": [
+    "Alishahryar1/free-claude-code",
+    "davila7/claude-code-templates",
+    "deepseek-ai/DeepEP",
+    "RooCodeInc/Roo-Code",
+    "huggingface/ml-intern",
+    "ComposioHQ/awesome-codex-skills"
   ]
 }
