@@ -1,14 +1,4 @@
 {
-  "2026-04-24": [
-    "zilliztech/claude-context",
-    "koala73/worldmonitor",
-    "langfuse/langfuse",
-    "KeygraphHQ/shannon",
-    "ruvnet/RuView",
-    "HKUDS/RAG-Anything",
-    "sansan0/TrendRadar",
-    "AIDC-AI/Pixelle-Video"
-  ],
   "2026-04-25": [
     "huggingface/ml-intern",
     "zilliztech/claude-context",
@@ -37,6 +27,15 @@
     "deepseek-ai/DeepEP",
     "RooCodeInc/Roo-Code",
     "huggingface/ml-intern",
+    "ComposioHQ/awesome-codex-skills"
+  ],
+  "2026-04-28": [
+    "mattpocock/skills",
+    "Alishahryar1/free-claude-code",
+    "abhigyanpatwari/GitNexus",
+    "trycua/cua",
+    "gastownhall/beads",
+    "openclaw/openclaw",
     "ComposioHQ/awesome-codex-skills"
   ]
 }
