@@ -1,19 +1,4 @@
 {
-  "2026-04-25": [
-    "huggingface/ml-intern",
-    "zilliztech/claude-context",
-    "HKUDS/RAG-Anything",
-    "ruvnet/RuView",
-    "Anil-matcha/Open-Generative-AI",
-    "Alishahryar1/free-claude-code",
-    "microsoft/ai-agents-for-beginners",
-    "cline/cline",
-    "microsoft/onnxruntime",
-    "mksglu/context-mode",
-    "coreyhaines31/marketingskills",
-    "chiphuyen/aie-book",
-    "VoltAgent/awesome-agent-skills"
-  ],
   "2026-04-26": [
     "Alishahryar1/free-claude-code",
     "huggingface/ml-intern",
@@ -37,5 +22,14 @@
     "gastownhall/beads",
     "openclaw/openclaw",
     "ComposioHQ/awesome-codex-skills"
+  ],
+  "2026-04-29": [
+    "ComposioHQ/awesome-codex-skills",
+    "Alishahryar1/free-claude-code",
+    "gastownhall/beads",
+    "davila7/claude-code-templates",
+    "microsoft/VibeVoice",
+    "TauricResearch/TradingAgents",
+    "deepseek-ai/DeepSeek-V3"
   ]
 }
