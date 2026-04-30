@@ -1,11 +1,4 @@
 {
-  "2026-04-26": [
-    "Alishahryar1/free-claude-code",
-    "huggingface/ml-intern",
-    "zilliztech/claude-context",
-    "Anil-matcha/Open-Generative-AI",
-    "deepseek-ai/DeepEP"
-  ],
   "2026-04-27": [
     "Alishahryar1/free-claude-code",
     "davila7/claude-code-templates",
@@ -31,5 +24,11 @@
     "microsoft/VibeVoice",
     "TauricResearch/TradingAgents",
     "deepseek-ai/DeepSeek-V3"
+  ],
+  "2026-04-30": [
+    "microsoft/VibeVoice",
+    "davila7/claude-code-templates",
+    "fspecii/ace-step-ui",
+    "Alishahryar1/free-claude-code"
   ]
 }
