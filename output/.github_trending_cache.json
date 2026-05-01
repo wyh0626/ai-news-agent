@@ -1,12 +1,4 @@
 {
-  "2026-04-27": [
-    "Alishahryar1/free-claude-code",
-    "davila7/claude-code-templates",
-    "deepseek-ai/DeepEP",
-    "RooCodeInc/Roo-Code",
-    "huggingface/ml-intern",
-    "ComposioHQ/awesome-codex-skills"
-  ],
   "2026-04-28": [
     "mattpocock/skills",
     "Alishahryar1/free-claude-code",
@@ -30,5 +22,15 @@
     "davila7/claude-code-templates",
     "fspecii/ace-step-ui",
     "Alishahryar1/free-claude-code"
+  ],
+  "2026-05-01": [
+    "warpdotdev/warp",
+    "ComposioHQ/awesome-codex-skills",
+    "1jehuang/jcode",
+    "abhigyanpatwari/GitNexus",
+    "microsoft/VibeVoice",
+    "obra/superpowers",
+    "ZhuLinsen/daily_stock_analysis",
+    "lukilabs/craft-agents-oss"
   ]
 }
