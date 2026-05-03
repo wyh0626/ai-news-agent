@@ -1,13 +1,4 @@
 {
-  "2026-04-29": [
-    "ComposioHQ/awesome-codex-skills",
-    "Alishahryar1/free-claude-code",
-    "gastownhall/beads",
-    "davila7/claude-code-templates",
-    "microsoft/VibeVoice",
-    "TauricResearch/TradingAgents",
-    "deepseek-ai/DeepSeek-V3"
-  ],
   "2026-04-30": [
     "microsoft/VibeVoice",
     "davila7/claude-code-templates",
@@ -31,5 +22,13 @@
     "lukilabs/craft-agents-oss",
     "1jehuang/jcode",
     "browserbase/skills"
+  ],
+  "2026-05-03": [
+    "TauricResearch/TradingAgents",
+    "warpdotdev/warp",
+    "1jehuang/jcode",
+    "browserbase/skills",
+    "simstudioai/sim",
+    "obra/superpowers"
   ]
 }
