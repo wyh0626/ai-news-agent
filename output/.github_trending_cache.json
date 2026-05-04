@@ -1,10 +1,4 @@
 {
-  "2026-04-30": [
-    "microsoft/VibeVoice",
-    "davila7/claude-code-templates",
-    "fspecii/ace-step-ui",
-    "Alishahryar1/free-claude-code"
-  ],
   "2026-05-01": [
     "warpdotdev/warp",
     "ComposioHQ/awesome-codex-skills",
@@ -30,5 +24,11 @@
     "browserbase/skills",
     "simstudioai/sim",
     "obra/superpowers"
+  ],
+  "2026-05-04": [
+    "TauricResearch/TradingAgents",
+    "ruvnet/ruflo",
+    "browserbase/skills",
+    "1jehuang/jcode"
   ]
 }
