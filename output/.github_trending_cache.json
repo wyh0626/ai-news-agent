@@ -1,14 +1,4 @@
 {
-  "2026-05-01": [
-    "warpdotdev/warp",
-    "ComposioHQ/awesome-codex-skills",
-    "1jehuang/jcode",
-    "abhigyanpatwari/GitNexus",
-    "microsoft/VibeVoice",
-    "obra/superpowers",
-    "ZhuLinsen/daily_stock_analysis",
-    "lukilabs/craft-agents-oss"
-  ],
   "2026-05-02": [
     "warpdotdev/warp",
     "TauricResearch/TradingAgents",
@@ -29,6 +19,15 @@
     "TauricResearch/TradingAgents",
     "ruvnet/ruflo",
     "browserbase/skills",
+    "1jehuang/jcode"
+  ],
+  "2026-05-05": [
+    "ruvnet/ruflo",
+    "TauricResearch/TradingAgents",
+    "Hmbown/DeepSeek-TUI",
+    "AIDC-AI/Pixelle-Video",
+    "browserbase/skills",
+    "czlonkowski/n8n-mcp",
     "1jehuang/jcode"
   ]
 }
