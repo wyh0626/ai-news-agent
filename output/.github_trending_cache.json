@@ -1,12 +1,4 @@
 {
-  "2026-05-02": [
-    "warpdotdev/warp",
-    "TauricResearch/TradingAgents",
-    "obra/superpowers",
-    "lukilabs/craft-agents-oss",
-    "1jehuang/jcode",
-    "browserbase/skills"
-  ],
   "2026-05-03": [
     "TauricResearch/TradingAgents",
     "warpdotdev/warp",
@@ -29,5 +21,17 @@
     "browserbase/skills",
     "czlonkowski/n8n-mcp",
     "1jehuang/jcode"
+  ],
+  "2026-05-06": [
+    "ruvnet/ruflo",
+    "TauricResearch/TradingAgents",
+    "browserbase/skills",
+    "Hmbown/DeepSeek-TUI",
+    "czlonkowski/n8n-mcp",
+    "1jehuang/jcode",
+    "msitarzewski/agency-agents",
+    "virattt/dexter",
+    "fspecii/ace-step-ui",
+    "cocoindex-io/cocoindex"
   ]
 }
