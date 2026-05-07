@@ -1,12 +1,4 @@
 {
-  "2026-05-03": [
-    "TauricResearch/TradingAgents",
-    "warpdotdev/warp",
-    "1jehuang/jcode",
-    "browserbase/skills",
-    "simstudioai/sim",
-    "obra/superpowers"
-  ],
   "2026-05-04": [
     "TauricResearch/TradingAgents",
     "ruvnet/ruflo",
@@ -33,5 +25,19 @@
     "virattt/dexter",
     "fspecii/ace-step-ui",
     "cocoindex-io/cocoindex"
+  ],
+  "2026-05-07": [
+    "Hmbown/DeepSeek-TUI",
+    "ruvnet/ruflo",
+    "virattt/dexter",
+    "mksglu/context-mode",
+    "cocoindex-io/cocoindex",
+    "msitarzewski/agency-agents",
+    "Arindam200/awesome-ai-apps",
+    "AIDC-AI/Pixelle-Video",
+    "LearningCircuit/local-deep-research",
+    "browserbase/skills",
+    "forrestchang/andrej-karpathy-skills",
+    "PriorLabs/TabPFN"
   ]
 }
