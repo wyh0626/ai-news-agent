@@ -1,10 +1,4 @@
 {
-  "2026-05-04": [
-    "TauricResearch/TradingAgents",
-    "ruvnet/ruflo",
-    "browserbase/skills",
-    "1jehuang/jcode"
-  ],
   "2026-05-05": [
     "ruvnet/ruflo",
     "TauricResearch/TradingAgents",
@@ -39,5 +33,17 @@
     "browserbase/skills",
     "forrestchang/andrej-karpathy-skills",
     "PriorLabs/TabPFN"
+  ],
+  "2026-05-08": [
+    "Hmbown/DeepSeek-TUI",
+    "addyosmani/agent-skills",
+    "PriorLabs/TabPFN",
+    "LearningCircuit/local-deep-research",
+    "virattt/dexter",
+    "anthropics/financial-services",
+    "ruvnet/ruflo",
+    "cheahjs/free-llm-api-resources",
+    "shiyu-coder/Kronos",
+    "bytedance/deer-flow"
   ]
 }
