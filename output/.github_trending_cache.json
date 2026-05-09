@@ -1,13 +1,4 @@
 {
-  "2026-05-05": [
-    "ruvnet/ruflo",
-    "TauricResearch/TradingAgents",
-    "Hmbown/DeepSeek-TUI",
-    "AIDC-AI/Pixelle-Video",
-    "browserbase/skills",
-    "czlonkowski/n8n-mcp",
-    "1jehuang/jcode"
-  ],
   "2026-05-06": [
     "ruvnet/ruflo",
     "TauricResearch/TradingAgents",
@@ -45,5 +36,17 @@
     "cheahjs/free-llm-api-resources",
     "shiyu-coder/Kronos",
     "bytedance/deer-flow"
+  ],
+  "2026-05-09": [
+    "anthropics/financial-services",
+    "Hmbown/DeepSeek-TUI",
+    "z-lab/dflash",
+    "LearningCircuit/local-deep-research",
+    "addyosmani/agent-skills",
+    "VectifyAI/PageIndex",
+    "vercel-labs/open-agents",
+    "decolua/9router",
+    "PriorLabs/TabPFN",
+    "aaif-goose/goose"
   ]
 }
