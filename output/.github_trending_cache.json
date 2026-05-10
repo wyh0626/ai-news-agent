@@ -1,16 +1,4 @@
 {
-  "2026-05-06": [
-    "ruvnet/ruflo",
-    "TauricResearch/TradingAgents",
-    "browserbase/skills",
-    "Hmbown/DeepSeek-TUI",
-    "czlonkowski/n8n-mcp",
-    "1jehuang/jcode",
-    "msitarzewski/agency-agents",
-    "virattt/dexter",
-    "fspecii/ace-step-ui",
-    "cocoindex-io/cocoindex"
-  ],
   "2026-05-07": [
     "Hmbown/DeepSeek-TUI",
     "ruvnet/ruflo",
@@ -48,5 +36,16 @@
     "decolua/9router",
     "PriorLabs/TabPFN",
     "aaif-goose/goose"
+  ],
+  "2026-05-10": [
+    "anthropics/financial-services",
+    "addyosmani/agent-skills",
+    "Hmbown/DeepSeek-TUI",
+    "z-lab/dflash",
+    "decolua/9router",
+    "awslabs/aidlc-workflows",
+    "HKUDS/AI-Trader",
+    "LearningCircuit/local-deep-research",
+    "datawhalechina/hello-agents"
   ]
 }
