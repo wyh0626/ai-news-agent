@@ -1,18 +1,4 @@
 {
-  "2026-05-07": [
-    "Hmbown/DeepSeek-TUI",
-    "ruvnet/ruflo",
-    "virattt/dexter",
-    "mksglu/context-mode",
-    "cocoindex-io/cocoindex",
-    "msitarzewski/agency-agents",
-    "Arindam200/awesome-ai-apps",
-    "AIDC-AI/Pixelle-Video",
-    "LearningCircuit/local-deep-research",
-    "browserbase/skills",
-    "forrestchang/andrej-karpathy-skills",
-    "PriorLabs/TabPFN"
-  ],
   "2026-05-08": [
     "Hmbown/DeepSeek-TUI",
     "addyosmani/agent-skills",
@@ -47,5 +33,17 @@
     "HKUDS/AI-Trader",
     "LearningCircuit/local-deep-research",
     "datawhalechina/hello-agents"
+  ],
+  "2026-05-11": [
+    "anthropics/financial-services",
+    "bytedance/UI-TARS-desktop",
+    "rohitg00/agentmemory",
+    "datawhalechina/hello-agents",
+    "rowboatlabs/rowboat",
+    "ChromeDevTools/chrome-devtools-mcp",
+    "Lordog/dive-into-llms",
+    "addyosmani/agent-skills",
+    "decolua/9router",
+    "oracle-devrel/oracle-ai-developer-hub"
   ]
 }
