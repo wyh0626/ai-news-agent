@@ -1,16 +1,4 @@
 {
-  "2026-05-08": [
-    "Hmbown/DeepSeek-TUI",
-    "addyosmani/agent-skills",
-    "PriorLabs/TabPFN",
-    "LearningCircuit/local-deep-research",
-    "virattt/dexter",
-    "anthropics/financial-services",
-    "ruvnet/ruflo",
-    "cheahjs/free-llm-api-resources",
-    "shiyu-coder/Kronos",
-    "bytedance/deer-flow"
-  ],
   "2026-05-09": [
     "anthropics/financial-services",
     "Hmbown/DeepSeek-TUI",
@@ -45,5 +33,16 @@
     "addyosmani/agent-skills",
     "decolua/9router",
     "oracle-devrel/oracle-ai-developer-hub"
+  ],
+  "2026-05-12": [
+    "bytedance/UI-TARS-desktop",
+    "anthropics/financial-services",
+    "addyosmani/agent-skills",
+    "HKUDS/AI-Trader",
+    "jundot/omlx",
+    "lsdefine/GenericAgent",
+    "decolua/9router",
+    "affaan-m/everything-claude-code",
+    "datawhalechina/hello-agents"
   ]
 }
