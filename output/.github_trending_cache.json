@@ -1,16 +1,4 @@
 {
-  "2026-05-09": [
-    "anthropics/financial-services",
-    "Hmbown/DeepSeek-TUI",
-    "z-lab/dflash",
-    "LearningCircuit/local-deep-research",
-    "addyosmani/agent-skills",
-    "VectifyAI/PageIndex",
-    "vercel-labs/open-agents",
-    "decolua/9router",
-    "PriorLabs/TabPFN",
-    "aaif-goose/goose"
-  ],
   "2026-05-10": [
     "anthropics/financial-services",
     "addyosmani/agent-skills",
@@ -44,5 +32,16 @@
     "decolua/9router",
     "affaan-m/everything-claude-code",
     "datawhalechina/hello-agents"
+  ],
+  "2026-05-13": [
+    "bytedance/UI-TARS-desktop",
+    "decolua/9router",
+    "tinyhumansai/openhuman",
+    "millionco/react-doctor",
+    "Lordog/dive-into-llms",
+    "AUTOMATIC1111/stable-diffusion-webui",
+    "rasbt/LLMs-from-scratch",
+    "NousResearch/hermes-agent",
+    "rohitg00/agentmemory"
   ]
 }
