@@ -1,15 +1,4 @@
 {
-  "2026-05-10": [
-    "anthropics/financial-services",
-    "addyosmani/agent-skills",
-    "Hmbown/DeepSeek-TUI",
-    "z-lab/dflash",
-    "decolua/9router",
-    "awslabs/aidlc-workflows",
-    "HKUDS/AI-Trader",
-    "LearningCircuit/local-deep-research",
-    "datawhalechina/hello-agents"
-  ],
   "2026-05-11": [
     "anthropics/financial-services",
     "bytedance/UI-TARS-desktop",
@@ -43,5 +32,14 @@
     "rasbt/LLMs-from-scratch",
     "NousResearch/hermes-agent",
     "rohitg00/agentmemory"
+  ],
+  "2026-05-14": [
+    "tinyhumansai/openhuman",
+    "rohitg00/agentmemory",
+    "millionco/react-doctor",
+    "rasbt/LLMs-from-scratch",
+    "datawhalechina/hello-agents",
+    "yikart/AiToEarn",
+    "HKUDS/AI-Trader"
   ]
 }
