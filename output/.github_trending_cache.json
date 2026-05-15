@@ -1,16 +1,4 @@
 {
-  "2026-05-11": [
-    "anthropics/financial-services",
-    "bytedance/UI-TARS-desktop",
-    "rohitg00/agentmemory",
-    "datawhalechina/hello-agents",
-    "rowboatlabs/rowboat",
-    "ChromeDevTools/chrome-devtools-mcp",
-    "Lordog/dive-into-llms",
-    "addyosmani/agent-skills",
-    "decolua/9router",
-    "oracle-devrel/oracle-ai-developer-hub"
-  ],
   "2026-05-12": [
     "bytedance/UI-TARS-desktop",
     "anthropics/financial-services",
@@ -41,5 +29,16 @@
     "datawhalechina/hello-agents",
     "yikart/AiToEarn",
     "HKUDS/AI-Trader"
+  ],
+  "2026-05-15": [
+    "tinyhumansai/openhuman",
+    "rohitg00/agentmemory",
+    "yikart/AiToEarn",
+    "K-Dense-AI/scientific-agent-skills",
+    "danielmiessler/Personal_AI_Infrastructure",
+    "supertone-inc/supertonic",
+    "mattpocock/skills",
+    "rasbt/LLMs-from-scratch",
+    "trycua/cua"
   ]
 }
