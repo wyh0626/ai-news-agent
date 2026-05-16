@@ -1,15 +1,4 @@
 {
-  "2026-05-12": [
-    "bytedance/UI-TARS-desktop",
-    "anthropics/financial-services",
-    "addyosmani/agent-skills",
-    "HKUDS/AI-Trader",
-    "jundot/omlx",
-    "lsdefine/GenericAgent",
-    "decolua/9router",
-    "affaan-m/everything-claude-code",
-    "datawhalechina/hello-agents"
-  ],
   "2026-05-13": [
     "bytedance/UI-TARS-desktop",
     "decolua/9router",
@@ -40,5 +29,15 @@
     "mattpocock/skills",
     "rasbt/LLMs-from-scratch",
     "trycua/cua"
+  ],
+  "2026-05-16": [
+    "tinyhumansai/openhuman",
+    "rohitg00/agentmemory",
+    "K-Dense-AI/scientific-agent-skills",
+    "shiyu-coder/Kronos",
+    "roboflow/supervision",
+    "supertone-inc/supertonic",
+    "NVIDIA-AI-Blueprints/video-search-and-summarization",
+    "garrytan/gstack"
   ]
 }
