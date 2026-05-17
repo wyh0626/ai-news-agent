@@ -1,15 +1,4 @@
 {
-  "2026-05-13": [
-    "bytedance/UI-TARS-desktop",
-    "decolua/9router",
-    "tinyhumansai/openhuman",
-    "millionco/react-doctor",
-    "Lordog/dive-into-llms",
-    "AUTOMATIC1111/stable-diffusion-webui",
-    "rasbt/LLMs-from-scratch",
-    "NousResearch/hermes-agent",
-    "rohitg00/agentmemory"
-  ],
   "2026-05-14": [
     "tinyhumansai/openhuman",
     "rohitg00/agentmemory",
@@ -39,5 +28,15 @@
     "supertone-inc/supertonic",
     "NVIDIA-AI-Blueprints/video-search-and-summarization",
     "garrytan/gstack"
+  ],
+  "2026-05-17": [
+    "tinyhumansai/openhuman",
+    "K-Dense-AI/scientific-agent-skills",
+    "supertone-inc/supertonic",
+    "anthropics/skills",
+    "czlonkowski/n8n-mcp",
+    "NVIDIA-AI-Blueprints/video-search-and-summarization",
+    "mattpocock/skills",
+    "joeseesun/qiaomu-anything-to-notebooklm"
   ]
 }
