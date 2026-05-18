@@ -1,13 +1,4 @@
 {
-  "2026-05-14": [
-    "tinyhumansai/openhuman",
-    "rohitg00/agentmemory",
-    "millionco/react-doctor",
-    "rasbt/LLMs-from-scratch",
-    "datawhalechina/hello-agents",
-    "yikart/AiToEarn",
-    "HKUDS/AI-Trader"
-  ],
   "2026-05-15": [
     "tinyhumansai/openhuman",
     "rohitg00/agentmemory",
@@ -38,5 +29,12 @@
     "NVIDIA-AI-Blueprints/video-search-and-summarization",
     "mattpocock/skills",
     "joeseesun/qiaomu-anything-to-notebooklm"
+  ],
+  "2026-05-18": [
+    "K-Dense-AI/scientific-agent-skills",
+    "Anil-matcha/Open-Generative-AI",
+    "supertone-inc/supertonic",
+    "tinyhumansai/openhuman",
+    "colbymchenry/codegraph"
   ]
 }
