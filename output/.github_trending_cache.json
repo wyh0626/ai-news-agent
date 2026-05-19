@@ -1,15 +1,4 @@
 {
-  "2026-05-15": [
-    "tinyhumansai/openhuman",
-    "rohitg00/agentmemory",
-    "yikart/AiToEarn",
-    "K-Dense-AI/scientific-agent-skills",
-    "danielmiessler/Personal_AI_Infrastructure",
-    "supertone-inc/supertonic",
-    "mattpocock/skills",
-    "rasbt/LLMs-from-scratch",
-    "trycua/cua"
-  ],
   "2026-05-16": [
     "tinyhumansai/openhuman",
     "rohitg00/agentmemory",
@@ -36,5 +25,17 @@
     "supertone-inc/supertonic",
     "tinyhumansai/openhuman",
     "colbymchenry/codegraph"
+  ],
+  "2026-05-19": [
+    "tinyhumansai/openhuman",
+    "Anil-matcha/Open-Generative-AI",
+    "tech-leads-club/agent-skills",
+    "NirDiamant/agents-towards-production",
+    "dograh-hq/dograh",
+    "K-Dense-AI/scientific-agent-skills",
+    "Light-Heart-Labs/DreamServer",
+    "KeygraphHQ/shannon",
+    "colbymchenry/codegraph",
+    "microsoft/ai-agents-for-beginners"
   ]
 }
