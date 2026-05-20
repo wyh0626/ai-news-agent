@@ -1,14 +1,4 @@
 {
-  "2026-05-16": [
-    "tinyhumansai/openhuman",
-    "rohitg00/agentmemory",
-    "K-Dense-AI/scientific-agent-skills",
-    "shiyu-coder/Kronos",
-    "roboflow/supervision",
-    "supertone-inc/supertonic",
-    "NVIDIA-AI-Blueprints/video-search-and-summarization",
-    "garrytan/gstack"
-  ],
   "2026-05-17": [
     "tinyhumansai/openhuman",
     "K-Dense-AI/scientific-agent-skills",
@@ -37,5 +27,18 @@
     "KeygraphHQ/shannon",
     "colbymchenry/codegraph",
     "microsoft/ai-agents-for-beginners"
+  ],
+  "2026-05-20": [
+    "tinyhumansai/openhuman",
+    "Imbad0202/academic-research-skills",
+    "HKUDS/CLI-Anything",
+    "K-Dense-AI/scientific-agent-skills",
+    "supertone-inc/supertonic",
+    "ggml-org/llama.cpp",
+    "tech-leads-club/agent-skills",
+    "humanlayer/12-factor-agents",
+    "NVlabs/Sana",
+    "microsoft/ai-agents-for-beginners",
+    "ZhuLinsen/daily_stock_analysis"
   ]
 }
