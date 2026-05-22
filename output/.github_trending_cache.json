@@ -1,11 +1,4 @@
 {
-  "2026-05-18": [
-    "K-Dense-AI/scientific-agent-skills",
-    "Anil-matcha/Open-Generative-AI",
-    "supertone-inc/supertonic",
-    "tinyhumansai/openhuman",
-    "colbymchenry/codegraph"
-  ],
   "2026-05-19": [
     "tinyhumansai/openhuman",
     "Anil-matcha/Open-Generative-AI",
@@ -45,6 +38,21 @@
     "humanlayer/12-factor-agents",
     "Alishahryar1/free-claude-code",
     "microsoft/ai-agents-for-beginners",
+    "HKUDS/ViMax"
+  ],
+  "2026-05-22": [
+    "colbymchenry/codegraph",
+    "Imbad0202/academic-research-skills",
+    "tinyhumansai/openhuman",
+    "multica-ai/andrej-karpathy-skills",
+    "rohitg00/ai-engineering-from-scratch",
+    "HKUDS/CLI-Anything",
+    "can1357/oh-my-pi",
+    "obra/superpowers",
+    "anthropics/claude-plugins-official",
+    "msitarzewski/agency-agents",
+    "rohitg00/agentmemory",
+    "ggml-org/llama.cpp",
     "HKUDS/ViMax"
   ]
 }
