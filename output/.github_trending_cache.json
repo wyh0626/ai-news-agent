@@ -1,16 +1,4 @@
 {
-  "2026-05-19": [
-    "tinyhumansai/openhuman",
-    "Anil-matcha/Open-Generative-AI",
-    "tech-leads-club/agent-skills",
-    "NirDiamant/agents-towards-production",
-    "dograh-hq/dograh",
-    "K-Dense-AI/scientific-agent-skills",
-    "Light-Heart-Labs/DreamServer",
-    "KeygraphHQ/shannon",
-    "colbymchenry/codegraph",
-    "microsoft/ai-agents-for-beginners"
-  ],
   "2026-05-20": [
     "tinyhumansai/openhuman",
     "Imbad0202/academic-research-skills",
@@ -54,5 +42,21 @@
     "rohitg00/agentmemory",
     "ggml-org/llama.cpp",
     "HKUDS/ViMax"
+  ],
+  "2026-05-23": [
+    "anthropics/claude-plugins-official",
+    "colbymchenry/codegraph",
+    "multica-ai/andrej-karpathy-skills",
+    "dotnet/skills",
+    "obra/superpowers",
+    "HKUDS/CLI-Anything",
+    "ChromeDevTools/chrome-devtools-mcp",
+    "rohitg00/ai-engineering-from-scratch",
+    "teng-lin/notebooklm-py",
+    "can1357/oh-my-pi",
+    "antoinezambelli/forge",
+    "multica-ai/multica",
+    "Imbad0202/academic-research-skills",
+    "msitarzewski/agency-agents"
   ]
 }
