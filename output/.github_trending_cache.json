@@ -1,17 +1,4 @@
 {
-  "2026-05-20": [
-    "tinyhumansai/openhuman",
-    "Imbad0202/academic-research-skills",
-    "HKUDS/CLI-Anything",
-    "K-Dense-AI/scientific-agent-skills",
-    "supertone-inc/supertonic",
-    "ggml-org/llama.cpp",
-    "tech-leads-club/agent-skills",
-    "humanlayer/12-factor-agents",
-    "NVlabs/Sana",
-    "microsoft/ai-agents-for-beginners",
-    "ZhuLinsen/daily_stock_analysis"
-  ],
   "2026-05-21": [
     "tinyhumansai/openhuman",
     "HKUDS/CLI-Anything",
@@ -58,5 +45,13 @@
     "multica-ai/multica",
     "Imbad0202/academic-research-skills",
     "msitarzewski/agency-agents"
+  ],
+  "2026-05-24": [
+    "anthropics/claude-plugins-official",
+    "colbymchenry/codegraph",
+    "rohitg00/ai-engineering-from-scratch",
+    "dotnet/skills",
+    "can1357/oh-my-pi",
+    "karpathy/nn-zero-to-hero"
   ]
 }
