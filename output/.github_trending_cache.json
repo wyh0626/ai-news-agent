@@ -1,20 +1,4 @@
 {
-  "2026-05-21": [
-    "tinyhumansai/openhuman",
-    "HKUDS/CLI-Anything",
-    "Imbad0202/academic-research-skills",
-    "obra/superpowers",
-    "anthropics/claude-plugins-official",
-    "rohitg00/agentmemory",
-    "rtk-ai/rtk",
-    "msitarzewski/agency-agents",
-    "colbymchenry/codegraph",
-    "multica-ai/andrej-karpathy-skills",
-    "humanlayer/12-factor-agents",
-    "Alishahryar1/free-claude-code",
-    "microsoft/ai-agents-for-beginners",
-    "HKUDS/ViMax"
-  ],
   "2026-05-22": [
     "colbymchenry/codegraph",
     "Imbad0202/academic-research-skills",
@@ -53,5 +37,17 @@
     "dotnet/skills",
     "can1357/oh-my-pi",
     "karpathy/nn-zero-to-hero"
+  ],
+  "2026-05-25": [
+    "anthropics/claude-plugins-official",
+    "colbymchenry/codegraph",
+    "rohitg00/ai-engineering-from-scratch",
+    "multica-ai/andrej-karpathy-skills",
+    "dotnet/skills",
+    "ChromeDevTools/chrome-devtools-mcp",
+    "mukul975/Anthropic-Cybersecurity-Skills",
+    "presenton/presenton",
+    "multica-ai/multica",
+    "NVlabs/LongLive"
   ]
 }
