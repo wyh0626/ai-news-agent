@@ -1,20 +1,4 @@
 {
-  "2026-05-23": [
-    "anthropics/claude-plugins-official",
-    "colbymchenry/codegraph",
-    "multica-ai/andrej-karpathy-skills",
-    "dotnet/skills",
-    "obra/superpowers",
-    "HKUDS/CLI-Anything",
-    "ChromeDevTools/chrome-devtools-mcp",
-    "rohitg00/ai-engineering-from-scratch",
-    "teng-lin/notebooklm-py",
-    "can1357/oh-my-pi",
-    "antoinezambelli/forge",
-    "multica-ai/multica",
-    "Imbad0202/academic-research-skills",
-    "msitarzewski/agency-agents"
-  ],
   "2026-05-24": [
     "anthropics/claude-plugins-official",
     "colbymchenry/codegraph",
@@ -49,5 +33,19 @@
     "dotnet/skills",
     "blakeblackshear/frigate",
     "mukul975/Anthropic-Cybersecurity-Skills"
+  ],
+  "2026-05-27": [
+    "anthropics/knowledge-work-plugins",
+    "rohitg00/ai-engineering-from-scratch",
+    "affaan-m/ECC",
+    "mukul975/Anthropic-Cybersecurity-Skills",
+    "colbymchenry/codegraph",
+    "multica-ai/andrej-karpathy-skills",
+    "anthropics/claude-cookbooks",
+    "Leonxlnx/taste-skill",
+    "moeru-ai/airi",
+    "shiyu-coder/Kronos",
+    "hardikpandya/stop-slop",
+    "garrytan/gstack"
   ]
 }
