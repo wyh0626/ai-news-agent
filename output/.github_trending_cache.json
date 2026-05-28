@@ -1,12 +1,4 @@
 {
-  "2026-05-24": [
-    "anthropics/claude-plugins-official",
-    "colbymchenry/codegraph",
-    "rohitg00/ai-engineering-from-scratch",
-    "dotnet/skills",
-    "can1357/oh-my-pi",
-    "karpathy/nn-zero-to-hero"
-  ],
   "2026-05-25": [
     "anthropics/claude-plugins-official",
     "colbymchenry/codegraph",
@@ -47,5 +39,14 @@
     "shiyu-coder/Kronos",
     "hardikpandya/stop-slop",
     "garrytan/gstack"
+  ],
+  "2026-05-28": [
+    "rohitg00/ai-engineering-from-scratch",
+    "anthropics/knowledge-work-plugins",
+    "mukul975/Anthropic-Cybersecurity-Skills",
+    "hardikpandya/stop-slop",
+    "Leonxlnx/taste-skill",
+    "twentyhq/twenty",
+    "thedotmack/claude-mem"
   ]
 }
