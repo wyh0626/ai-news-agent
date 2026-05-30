@@ -1,19 +1,4 @@
 {
-  "2026-05-26": [
-    "rohitg00/ai-engineering-from-scratch",
-    "anthropics/claude-plugins-official",
-    "anthropics/knowledge-work-plugins",
-    "multica-ai/andrej-karpathy-skills",
-    "earendil-works/pi",
-    "Alishahryar1/free-claude-code",
-    "colbymchenry/codegraph",
-    "multica-ai/multica",
-    "shiyu-coder/Kronos",
-    "666ghj/MiroFish",
-    "dotnet/skills",
-    "blakeblackshear/frigate",
-    "mukul975/Anthropic-Cybersecurity-Skills"
-  ],
   "2026-05-27": [
     "anthropics/knowledge-work-plugins",
     "rohitg00/ai-engineering-from-scratch",
@@ -49,5 +34,18 @@
     "Chachamaru127/claude-code-harness",
     "obra/superpowers",
     "moeru-ai/airi"
+  ],
+  "2026-05-30": [
+    "harry0703/MoneyPrinterTurbo",
+    "affaan-m/ECC",
+    "Leonxlnx/taste-skill",
+    "hardikpandya/stop-slop",
+    "twentyhq/twenty",
+    "obra/superpowers",
+    "revfactory/harness",
+    "unclecode/crawl4ai",
+    "OpenMOSS/MOSS-TTS",
+    "EveryInc/compound-engineering-plugin",
+    "anthropics/skills"
   ]
 }
