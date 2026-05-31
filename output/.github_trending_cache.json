@@ -1,18 +1,4 @@
 {
-  "2026-05-27": [
-    "anthropics/knowledge-work-plugins",
-    "rohitg00/ai-engineering-from-scratch",
-    "affaan-m/ECC",
-    "mukul975/Anthropic-Cybersecurity-Skills",
-    "colbymchenry/codegraph",
-    "multica-ai/andrej-karpathy-skills",
-    "anthropics/claude-cookbooks",
-    "Leonxlnx/taste-skill",
-    "moeru-ai/airi",
-    "shiyu-coder/Kronos",
-    "hardikpandya/stop-slop",
-    "garrytan/gstack"
-  ],
   "2026-05-28": [
     "rohitg00/ai-engineering-from-scratch",
     "anthropics/knowledge-work-plugins",
@@ -47,5 +33,14 @@
     "OpenMOSS/MOSS-TTS",
     "EveryInc/compound-engineering-plugin",
     "anthropics/skills"
+  ],
+  "2026-05-31": [
+    "harry0703/MoneyPrinterTurbo",
+    "EveryInc/compound-engineering-plugin",
+    "twentyhq/twenty",
+    "anthropics/claude-code",
+    "Leonxlnx/taste-skill",
+    "galilai-group/stable-worldmodel",
+    "Biohub/esm"
   ]
 }
