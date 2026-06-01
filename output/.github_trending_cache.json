@@ -1,13 +1,4 @@
 {
-  "2026-05-28": [
-    "rohitg00/ai-engineering-from-scratch",
-    "anthropics/knowledge-work-plugins",
-    "mukul975/Anthropic-Cybersecurity-Skills",
-    "hardikpandya/stop-slop",
-    "Leonxlnx/taste-skill",
-    "twentyhq/twenty",
-    "thedotmack/claude-mem"
-  ],
   "2026-05-29": [
     "harry0703/MoneyPrinterTurbo",
     "affaan-m/ECC",
@@ -42,5 +33,17 @@
     "Leonxlnx/taste-skill",
     "galilai-group/stable-worldmodel",
     "Biohub/esm"
+  ],
+  "2026-06-01": [
+    "harry0703/MoneyPrinterTurbo",
+    "anthropics/claude-code",
+    "revfactory/harness",
+    "EveryInc/compound-engineering-plugin",
+    "affaan-m/ECC",
+    "OpenBMB/VoxCPM",
+    "galilai-group/stable-worldmodel",
+    "FareedKhan-dev/train-llm-from-scratch",
+    "OpenMOSS/MOSS-TTS",
+    "anthropics/skills"
   ]
 }
