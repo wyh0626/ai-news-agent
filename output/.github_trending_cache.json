@@ -1,17 +1,4 @@
 {
-  "2026-05-29": [
-    "harry0703/MoneyPrinterTurbo",
-    "affaan-m/ECC",
-    "anthropics/knowledge-work-plugins",
-    "Leonxlnx/taste-skill",
-    "p-e-w/heretic",
-    "shiyu-coder/Kronos",
-    "mukul975/Anthropic-Cybersecurity-Skills",
-    "twentyhq/twenty",
-    "Chachamaru127/claude-code-harness",
-    "obra/superpowers",
-    "moeru-ai/airi"
-  ],
   "2026-05-30": [
     "harry0703/MoneyPrinterTurbo",
     "affaan-m/ECC",
@@ -45,5 +32,15 @@
     "FareedKhan-dev/train-llm-from-scratch",
     "OpenMOSS/MOSS-TTS",
     "anthropics/skills"
+  ],
+  "2026-06-02": [
+    "harry0703/MoneyPrinterTurbo",
+    "EveryInc/compound-engineering-plugin",
+    "OpenBMB/VoxCPM",
+    "revfactory/harness",
+    "FareedKhan-dev/train-llm-from-scratch",
+    "supermemoryai/supermemory",
+    "anthropics/claude-code",
+    "nicobailon/pi-subagents"
   ]
 }
