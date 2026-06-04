@@ -1,13 +1,4 @@
 {
-  "2026-05-31": [
-    "harry0703/MoneyPrinterTurbo",
-    "EveryInc/compound-engineering-plugin",
-    "twentyhq/twenty",
-    "anthropics/claude-code",
-    "Leonxlnx/taste-skill",
-    "galilai-group/stable-worldmodel",
-    "Biohub/esm"
-  ],
   "2026-06-01": [
     "harry0703/MoneyPrinterTurbo",
     "anthropics/claude-code",
@@ -44,5 +35,15 @@
     "FareedKhan-dev/train-llm-from-scratch",
     "stefan-jansen/machine-learning-for-trading",
     "dmtrKovalenko/fff"
+  ],
+  "2026-06-04": [
+    "chopratejas/headroom",
+    "affaan-m/ECC",
+    "nesquena/hermes-webui",
+    "OpenBMB/VoxCPM",
+    "stefan-jansen/machine-learning-for-trading",
+    "jamwithai/production-agentic-rag-course",
+    "supermemoryai/supermemory",
+    "Open-LLM-VTuber/Open-LLM-VTuber"
   ]
 }
