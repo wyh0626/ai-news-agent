@@ -1,16 +1,4 @@
 {
-  "2026-06-01": [
-    "harry0703/MoneyPrinterTurbo",
-    "anthropics/claude-code",
-    "revfactory/harness",
-    "EveryInc/compound-engineering-plugin",
-    "affaan-m/ECC",
-    "OpenBMB/VoxCPM",
-    "galilai-group/stable-worldmodel",
-    "FareedKhan-dev/train-llm-from-scratch",
-    "OpenMOSS/MOSS-TTS",
-    "anthropics/skills"
-  ],
   "2026-06-02": [
     "harry0703/MoneyPrinterTurbo",
     "EveryInc/compound-engineering-plugin",
@@ -45,5 +33,13 @@
     "jamwithai/production-agentic-rag-course",
     "supermemoryai/supermemory",
     "Open-LLM-VTuber/Open-LLM-VTuber"
+  ],
+  "2026-06-05": [
+    "NousResearch/hermes-agent",
+    "nesquena/hermes-webui",
+    "opendataloader-project/opendataloader-pdf",
+    "Open-LLM-VTuber/Open-LLM-VTuber",
+    "lyogavin/airllm",
+    "HKUDS/Vibe-Trading"
   ]
 }
