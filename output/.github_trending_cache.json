@@ -1,14 +1,4 @@
 {
-  "2026-06-02": [
-    "harry0703/MoneyPrinterTurbo",
-    "EveryInc/compound-engineering-plugin",
-    "OpenBMB/VoxCPM",
-    "revfactory/harness",
-    "FareedKhan-dev/train-llm-from-scratch",
-    "supermemoryai/supermemory",
-    "anthropics/claude-code",
-    "nicobailon/pi-subagents"
-  ],
   "2026-06-03": [
     "nesquena/hermes-webui",
     "supermemoryai/supermemory",
@@ -41,5 +31,15 @@
     "Open-LLM-VTuber/Open-LLM-VTuber",
     "lyogavin/airllm",
     "HKUDS/Vibe-Trading"
+  ],
+  "2026-06-06": [
+    "NousResearch/hermes-agent",
+    "affaan-m/ECC",
+    "PaddlePaddle/PaddleOCR",
+    "NVIDIA/cosmos",
+    "lfnovo/open-notebook",
+    "Open-LLM-VTuber/Open-LLM-VTuber",
+    "github/copilot-sdk",
+    "mvanhorn/last30days-skill"
   ]
 }
