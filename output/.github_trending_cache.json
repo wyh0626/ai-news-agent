@@ -1,14 +1,4 @@
 {
-  "2026-06-04": [
-    "chopratejas/headroom",
-    "affaan-m/ECC",
-    "nesquena/hermes-webui",
-    "OpenBMB/VoxCPM",
-    "stefan-jansen/machine-learning-for-trading",
-    "jamwithai/production-agentic-rag-course",
-    "supermemoryai/supermemory",
-    "Open-LLM-VTuber/Open-LLM-VTuber"
-  ],
   "2026-06-05": [
     "NousResearch/hermes-agent",
     "nesquena/hermes-webui",
@@ -41,5 +31,19 @@
     "MemPalace/mempalace",
     "withastro/flue",
     "github/copilot-sdk"
+  ],
+  "2026-06-08": [
+    "mvanhorn/last30days-skill",
+    "CopilotKit/CopilotKit",
+    "MemPalace/mempalace",
+    "danielmiessler/Personal_AI_Infrastructure",
+    "openai/plugins",
+    "Panniantong/Agent-Reach",
+    "lfnovo/open-notebook",
+    "obra/superpowers",
+    "santifer/career-ops",
+    "openai/whisper",
+    "PaddlePaddle/PaddleOCR",
+    "microsoft/VibeVoice"
   ]
 }
