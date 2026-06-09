@@ -1,12 +1,4 @@
 {
-  "2026-06-05": [
-    "NousResearch/hermes-agent",
-    "nesquena/hermes-webui",
-    "opendataloader-project/opendataloader-pdf",
-    "Open-LLM-VTuber/Open-LLM-VTuber",
-    "lyogavin/airllm",
-    "HKUDS/Vibe-Trading"
-  ],
   "2026-06-06": [
     "NousResearch/hermes-agent",
     "affaan-m/ECC",
@@ -45,5 +37,16 @@
     "openai/whisper",
     "PaddlePaddle/PaddleOCR",
     "microsoft/VibeVoice"
+  ],
+  "2026-06-09": [
+    "mvanhorn/last30days-skill",
+    "opencv/opencv",
+    "Leonxlnx/taste-skill",
+    "NousResearch/hermes-agent",
+    "lfnovo/open-notebook",
+    "yikart/AiToEarn",
+    "aaif-goose/goose",
+    "ggml-org/llama.cpp",
+    "openai/plugins"
   ]
 }
