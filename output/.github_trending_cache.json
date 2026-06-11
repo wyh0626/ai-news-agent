@@ -1,19 +1,4 @@
 {
-  "2026-06-07": [
-    "NousResearch/hermes-agent",
-    "CopilotKit/CopilotKit",
-    "lfnovo/open-notebook",
-    "affaan-m/ECC",
-    "Panniantong/Agent-Reach",
-    "NVIDIA/cosmos",
-    "666ghj/MiroFish",
-    "mvanhorn/last30days-skill",
-    "PaddlePaddle/PaddleOCR",
-    "openai/plugins",
-    "MemPalace/mempalace",
-    "withastro/flue",
-    "github/copilot-sdk"
-  ],
   "2026-06-08": [
     "mvanhorn/last30days-skill",
     "CopilotKit/CopilotKit",
@@ -53,5 +38,19 @@
     "CopilotKit/CopilotKit",
     "luongnv89/claude-howto",
     "aaif-goose/goose"
+  ],
+  "2026-06-11": [
+    "mvanhorn/last30days-skill",
+    "RyanCodrai/turbovec",
+    "roboflow/supervision",
+    "opencv/opencv",
+    "aaif-goose/goose",
+    "Andyyyy64/whichllm",
+    "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "yikart/AiToEarn",
+    "santifer/career-ops",
+    "openai/plugins",
+    "maziyarpanahi/openmed",
+    "addyosmani/agent-skills"
   ]
 }
