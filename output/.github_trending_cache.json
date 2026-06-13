@@ -1,15 +1,4 @@
 {
-  "2026-06-09": [
-    "mvanhorn/last30days-skill",
-    "opencv/opencv",
-    "Leonxlnx/taste-skill",
-    "NousResearch/hermes-agent",
-    "lfnovo/open-notebook",
-    "yikart/AiToEarn",
-    "aaif-goose/goose",
-    "ggml-org/llama.cpp",
-    "openai/plugins"
-  ],
   "2026-06-10": [
     "mvanhorn/last30days-skill",
     "google/skills",
@@ -52,5 +41,15 @@
     "roboflow/supervision",
     "google/skills",
     "FareedKhan-dev/train-llm-from-scratch"
+  ],
+  "2026-06-13": [
+    "addyosmani/agent-skills",
+    "maziyarpanahi/openmed",
+    "NVIDIA/SkillSpector",
+    "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "obra/superpowers",
+    "msitarzewski/agency-agents",
+    "kenn-io/agentsview",
+    "hexo-ai/sia"
   ]
 }
