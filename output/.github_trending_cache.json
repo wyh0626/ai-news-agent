@@ -1,19 +1,4 @@
 {
-  "2026-06-10": [
-    "mvanhorn/last30days-skill",
-    "google/skills",
-    "Panniantong/Agent-Reach",
-    "danielmiessler/Personal_AI_Infrastructure",
-    "santifer/career-ops",
-    "phuryn/pm-skills",
-    "openai/plugins",
-    "Andyyyy64/whichllm",
-    "MemPalace/mempalace",
-    "roboflow/supervision",
-    "CopilotKit/CopilotKit",
-    "luongnv89/claude-howto",
-    "aaif-goose/goose"
-  ],
   "2026-06-11": [
     "mvanhorn/last30days-skill",
     "RyanCodrai/turbovec",
@@ -51,5 +36,11 @@
     "msitarzewski/agency-agents",
     "kenn-io/agentsview",
     "hexo-ai/sia"
+  ],
+  "2026-06-14": [
+    "addyosmani/agent-skills",
+    "maziyarpanahi/openmed",
+    "LMCache/LMCache",
+    "msitarzewski/agency-agents"
   ]
 }
