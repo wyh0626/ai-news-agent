@@ -1,18 +1,4 @@
 {
-  "2026-06-11": [
-    "mvanhorn/last30days-skill",
-    "RyanCodrai/turbovec",
-    "roboflow/supervision",
-    "opencv/opencv",
-    "aaif-goose/goose",
-    "Andyyyy64/whichllm",
-    "x1xhlol/system-prompts-and-models-of-ai-tools",
-    "yikart/AiToEarn",
-    "santifer/career-ops",
-    "openai/plugins",
-    "maziyarpanahi/openmed",
-    "addyosmani/agent-skills"
-  ],
   "2026-06-12": [
     "addyosmani/agent-skills",
     "phuryn/pm-skills",
@@ -42,5 +28,13 @@
     "maziyarpanahi/openmed",
     "LMCache/LMCache",
     "msitarzewski/agency-agents"
+  ],
+  "2026-06-15": [
+    "addyosmani/agent-skills",
+    "kenn-io/agentsview",
+    "LMCache/LMCache",
+    "andrewyng/aisuite",
+    "NVIDIA/SkillSpector",
+    "x1xhlol/system-prompts-and-models-of-ai-tools"
   ]
 }
