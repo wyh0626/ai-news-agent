@@ -1,18 +1,4 @@
 {
-  "2026-06-12": [
-    "addyosmani/agent-skills",
-    "phuryn/pm-skills",
-    "mvanhorn/last30days-skill",
-    "x1xhlol/system-prompts-and-models-of-ai-tools",
-    "obra/superpowers",
-    "harry0703/MoneyPrinterTurbo",
-    "maziyarpanahi/openmed",
-    "luongnv89/claude-howto",
-    "activeloopai/hivemind",
-    "roboflow/supervision",
-    "google/skills",
-    "FareedKhan-dev/train-llm-from-scratch"
-  ],
   "2026-06-13": [
     "addyosmani/agent-skills",
     "maziyarpanahi/openmed",
@@ -36,5 +22,11 @@
     "andrewyng/aisuite",
     "NVIDIA/SkillSpector",
     "x1xhlol/system-prompts-and-models-of-ai-tools"
+  ],
+  "2026-06-16": [
+    "NVIDIA/SkillSpector",
+    "Introduction-to-Autonomous-Robots/Introduction-to-Autonomous-Robots",
+    "shiyu-coder/Kronos",
+    "andrewyng/aisuite"
   ]
 }
