@@ -1,10 +1,4 @@
 {
-  "2026-06-14": [
-    "addyosmani/agent-skills",
-    "maziyarpanahi/openmed",
-    "LMCache/LMCache",
-    "msitarzewski/agency-agents"
-  ],
   "2026-06-15": [
     "addyosmani/agent-skills",
     "kenn-io/agentsview",
@@ -25,5 +19,9 @@
     "Introduction-to-Autonomous-Robots/Introduction-to-Autonomous-Robots",
     "NVIDIA/SkillSpector",
     "shiyu-coder/Kronos"
+  ],
+  "2026-06-18": [
+    "OpenBMB/VoxCPM",
+    "alibaba/zvec"
   ]
 }
