@@ -1,12 +1,4 @@
 {
-  "2026-06-15": [
-    "addyosmani/agent-skills",
-    "kenn-io/agentsview",
-    "LMCache/LMCache",
-    "andrewyng/aisuite",
-    "NVIDIA/SkillSpector",
-    "x1xhlol/system-prompts-and-models-of-ai-tools"
-  ],
   "2026-06-16": [
     "NVIDIA/SkillSpector",
     "Introduction-to-Autonomous-Robots/Introduction-to-Autonomous-Robots",
@@ -23,5 +15,13 @@
   "2026-06-18": [
     "OpenBMB/VoxCPM",
     "alibaba/zvec"
+  ],
+  "2026-06-19": [
+    "Panniantong/Agent-Reach",
+    "google-research/timesfm",
+    "continuedev/continue",
+    "bytedance/UI-TARS-desktop",
+    "calesthio/OpenMontage",
+    "alexzhang13/rlm"
   ]
 }
