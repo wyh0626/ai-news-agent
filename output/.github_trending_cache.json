@@ -1,11 +1,4 @@
 {
-  "2026-06-17": [
-    "Panniantong/Agent-Reach",
-    "rohitg00/ai-engineering-from-scratch",
-    "Introduction-to-Autonomous-Robots/Introduction-to-Autonomous-Robots",
-    "NVIDIA/SkillSpector",
-    "shiyu-coder/Kronos"
-  ],
   "2026-06-18": [
     "OpenBMB/VoxCPM",
     "alibaba/zvec"
@@ -27,5 +20,16 @@
     "Kilo-Org/kilocode",
     "Lightricks/LTX-2",
     "LibreTranslate/LibreTranslate"
+  ],
+  "2026-06-21": [
+    "google-research/timesfm",
+    "palmier-io/palmier-pro",
+    "koala73/worldmonitor",
+    "aishwaryanr/awesome-generative-ai-guide",
+    "calesthio/OpenMontage",
+    "zai-org/GLM-5",
+    "withastro/flue",
+    "obra/superpowers",
+    "Lightricks/LTX-2"
   ]
 }
