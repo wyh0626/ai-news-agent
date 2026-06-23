@@ -1,12 +1,4 @@
 {
-  "2026-06-19": [
-    "Panniantong/Agent-Reach",
-    "google-research/timesfm",
-    "continuedev/continue",
-    "bytedance/UI-TARS-desktop",
-    "calesthio/OpenMontage",
-    "alexzhang13/rlm"
-  ],
   "2026-06-20": [
     "google-research/timesfm",
     "zai-org/GLM-5",
@@ -37,5 +29,16 @@
     "Kilo-Org/kilocode",
     "withastro/flue",
     "1jehuang/jcode"
+  ],
+  "2026-06-23": [
+    "palmier-io/palmier-pro",
+    "calesthio/OpenMontage",
+    "ZhuLinsen/daily_stock_analysis",
+    "koala73/worldmonitor",
+    "bytedance/deer-flow",
+    "DeusData/codebase-memory-mcp",
+    "mukul975/Anthropic-Cybersecurity-Skills",
+    "topoteretes/cognee",
+    "asgeirtj/system_prompts_leaks"
   ]
 }
