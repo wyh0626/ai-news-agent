@@ -1,14 +1,4 @@
 {
-  "2026-06-20": [
-    "google-research/timesfm",
-    "zai-org/GLM-5",
-    "yifanfeng97/Hyper-Extract",
-    "alibaba/zvec",
-    "withastro/flue",
-    "Kilo-Org/kilocode",
-    "Lightricks/LTX-2",
-    "LibreTranslate/LibreTranslate"
-  ],
   "2026-06-21": [
     "google-research/timesfm",
     "palmier-io/palmier-pro",
@@ -40,5 +30,17 @@
     "mukul975/Anthropic-Cybersecurity-Skills",
     "topoteretes/cognee",
     "asgeirtj/system_prompts_leaks"
+  ],
+  "2026-06-24": [
+    "calesthio/OpenMontage",
+    "palmier-io/palmier-pro",
+    "jamiepine/voicebox",
+    "mukul975/Anthropic-Cybersecurity-Skills",
+    "garrytan/gstack",
+    "heygen-com/hyperframes",
+    "bytedance/deer-flow",
+    "ZhuLinsen/daily_stock_analysis",
+    "JCodesMore/ai-website-cloner-template",
+    "lyogavin/airllm"
   ]
 }
