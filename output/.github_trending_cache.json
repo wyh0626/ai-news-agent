@@ -1,15 +1,4 @@
 {
-  "2026-06-21": [
-    "google-research/timesfm",
-    "palmier-io/palmier-pro",
-    "koala73/worldmonitor",
-    "aishwaryanr/awesome-generative-ai-guide",
-    "calesthio/OpenMontage",
-    "zai-org/GLM-5",
-    "withastro/flue",
-    "obra/superpowers",
-    "Lightricks/LTX-2"
-  ],
   "2026-06-22": [
     "palmier-io/palmier-pro",
     "calesthio/OpenMontage",
@@ -42,5 +31,21 @@
     "ZhuLinsen/daily_stock_analysis",
     "JCodesMore/ai-website-cloner-template",
     "lyogavin/airllm"
+  ],
+  "2026-06-25": [
+    "calesthio/OpenMontage",
+    "ZhuLinsen/daily_stock_analysis",
+    "mukul975/Anthropic-Cybersecurity-Skills",
+    "garrytan/gstack",
+    "bytedance/deer-flow",
+    "koala73/worldmonitor",
+    "palmier-io/palmier-pro",
+    "anthropics/claude-plugins-official",
+    "shanraisshan/claude-code-best-practice",
+    "revfactory/harness",
+    "jamiepine/voicebox",
+    "JCodesMore/ai-website-cloner-template",
+    "NousResearch/hermes-agent",
+    "affaan-m/ECC"
   ]
 }
