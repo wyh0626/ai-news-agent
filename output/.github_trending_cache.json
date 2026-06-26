@@ -1,14 +1,4 @@
 {
-  "2026-06-22": [
-    "palmier-io/palmier-pro",
-    "calesthio/OpenMontage",
-    "google-research/timesfm",
-    "twentyhq/twenty",
-    "jamiepine/voicebox",
-    "Kilo-Org/kilocode",
-    "withastro/flue",
-    "1jehuang/jcode"
-  ],
   "2026-06-23": [
     "palmier-io/palmier-pro",
     "calesthio/OpenMontage",
@@ -47,5 +37,14 @@
     "JCodesMore/ai-website-cloner-template",
     "NousResearch/hermes-agent",
     "affaan-m/ECC"
+  ],
+  "2026-06-26": [
+    "calesthio/OpenMontage",
+    "ZhuLinsen/daily_stock_analysis",
+    "interviewstreet/hiring-agent",
+    "JCodesMore/ai-website-cloner-template",
+    "revfactory/harness",
+    "stablyai/orca",
+    "NousResearch/hermes-agent"
   ]
 }
