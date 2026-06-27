@@ -1,15 +1,4 @@
 {
-  "2026-06-23": [
-    "palmier-io/palmier-pro",
-    "calesthio/OpenMontage",
-    "ZhuLinsen/daily_stock_analysis",
-    "koala73/worldmonitor",
-    "bytedance/deer-flow",
-    "DeusData/codebase-memory-mcp",
-    "mukul975/Anthropic-Cybersecurity-Skills",
-    "topoteretes/cognee",
-    "asgeirtj/system_prompts_leaks"
-  ],
   "2026-06-24": [
     "calesthio/OpenMontage",
     "palmier-io/palmier-pro",
@@ -46,5 +35,14 @@
     "revfactory/harness",
     "stablyai/orca",
     "NousResearch/hermes-agent"
+  ],
+  "2026-06-27": [
+    "calesthio/OpenMontage",
+    "xbtlin/ai-berkshire",
+    "JCodesMore/ai-website-cloner-template",
+    "garrytan/gstack",
+    "aws/agent-toolkit-for-aws",
+    "mukul975/Anthropic-Cybersecurity-Skills",
+    "shanraisshan/claude-code-best-practice"
   ]
 }
