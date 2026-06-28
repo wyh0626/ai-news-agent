@@ -1,16 +1,4 @@
 {
-  "2026-06-24": [
-    "calesthio/OpenMontage",
-    "palmier-io/palmier-pro",
-    "jamiepine/voicebox",
-    "mukul975/Anthropic-Cybersecurity-Skills",
-    "garrytan/gstack",
-    "heygen-com/hyperframes",
-    "bytedance/deer-flow",
-    "ZhuLinsen/daily_stock_analysis",
-    "JCodesMore/ai-website-cloner-template",
-    "lyogavin/airllm"
-  ],
   "2026-06-25": [
     "calesthio/OpenMontage",
     "ZhuLinsen/daily_stock_analysis",
@@ -44,5 +32,13 @@
     "aws/agent-toolkit-for-aws",
     "mukul975/Anthropic-Cybersecurity-Skills",
     "shanraisshan/claude-code-best-practice"
+  ],
+  "2026-06-28": [
+    "xbtlin/ai-berkshire",
+    "calesthio/OpenMontage",
+    "aws/agent-toolkit-for-aws",
+    "garrytan/gstack",
+    "JCodesMore/ai-website-cloner-template",
+    "Panniantong/Agent-Reach"
   ]
 }
