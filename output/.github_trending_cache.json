@@ -1,20 +1,4 @@
 {
-  "2026-06-25": [
-    "calesthio/OpenMontage",
-    "ZhuLinsen/daily_stock_analysis",
-    "mukul975/Anthropic-Cybersecurity-Skills",
-    "garrytan/gstack",
-    "bytedance/deer-flow",
-    "koala73/worldmonitor",
-    "palmier-io/palmier-pro",
-    "anthropics/claude-plugins-official",
-    "shanraisshan/claude-code-best-practice",
-    "revfactory/harness",
-    "jamiepine/voicebox",
-    "JCodesMore/ai-website-cloner-template",
-    "NousResearch/hermes-agent",
-    "affaan-m/ECC"
-  ],
   "2026-06-26": [
     "calesthio/OpenMontage",
     "ZhuLinsen/daily_stock_analysis",
@@ -40,5 +24,17 @@
     "garrytan/gstack",
     "JCodesMore/ai-website-cloner-template",
     "Panniantong/Agent-Reach"
+  ],
+  "2026-06-29": [
+    "xbtlin/ai-berkshire",
+    "hugohe3/ppt-master",
+    "JCodesMore/ai-website-cloner-template",
+    "garrytan/gstack",
+    "Anil-matcha/Open-Generative-AI",
+    "topoteretes/cognee",
+    "luongnv89/claude-howto",
+    "anomalyco/opencode",
+    "Fission-AI/OpenSpec",
+    "HKUDS/Vibe-Trading"
   ]
 }
