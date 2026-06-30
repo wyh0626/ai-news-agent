@@ -1,13 +1,4 @@
 {
-  "2026-06-26": [
-    "calesthio/OpenMontage",
-    "ZhuLinsen/daily_stock_analysis",
-    "interviewstreet/hiring-agent",
-    "JCodesMore/ai-website-cloner-template",
-    "revfactory/harness",
-    "stablyai/orca",
-    "NousResearch/hermes-agent"
-  ],
   "2026-06-27": [
     "calesthio/OpenMontage",
     "xbtlin/ai-berkshire",
@@ -36,5 +27,15 @@
     "anomalyco/opencode",
     "Fission-AI/OpenSpec",
     "HKUDS/Vibe-Trading"
+  ],
+  "2026-06-30": [
+    "xbtlin/ai-berkshire",
+    "Robbyant/lingbot-map",
+    "cupy/cupy",
+    "altic-dev/FluidVoice",
+    "opendatalab/MinerU",
+    "HKUDS/Vibe-Trading",
+    "usestrix/strix",
+    "browser-use/video-use"
   ]
 }
