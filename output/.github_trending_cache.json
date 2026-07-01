@@ -1,13 +1,4 @@
 {
-  "2026-06-27": [
-    "calesthio/OpenMontage",
-    "xbtlin/ai-berkshire",
-    "JCodesMore/ai-website-cloner-template",
-    "garrytan/gstack",
-    "aws/agent-toolkit-for-aws",
-    "mukul975/Anthropic-Cybersecurity-Skills",
-    "shanraisshan/claude-code-best-practice"
-  ],
   "2026-06-28": [
     "xbtlin/ai-berkshire",
     "calesthio/OpenMontage",
@@ -37,5 +28,14 @@
     "HKUDS/Vibe-Trading",
     "usestrix/strix",
     "browser-use/video-use"
+  ],
+  "2026-07-01": [
+    "msitarzewski/agency-agents",
+    "cupy/cupy",
+    "xbtlin/ai-berkshire",
+    "browser-use/video-use",
+    "Unclecheng-li/VulnClaw",
+    "0xNyk/council-of-high-intelligence",
+    "HKUDS/Vibe-Trading"
   ]
 }
