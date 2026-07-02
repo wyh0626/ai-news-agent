@@ -1,12 +1,4 @@
 {
-  "2026-06-28": [
-    "xbtlin/ai-berkshire",
-    "calesthio/OpenMontage",
-    "aws/agent-toolkit-for-aws",
-    "garrytan/gstack",
-    "JCodesMore/ai-website-cloner-template",
-    "Panniantong/Agent-Reach"
-  ],
   "2026-06-29": [
     "xbtlin/ai-berkshire",
     "hugohe3/ppt-master",
@@ -37,5 +29,19 @@
     "Unclecheng-li/VulnClaw",
     "0xNyk/council-of-high-intelligence",
     "HKUDS/Vibe-Trading"
+  ],
+  "2026-07-02": [
+    "usestrix/strix",
+    "msitarzewski/agency-agents",
+    "altic-dev/FluidVoice",
+    "diegosouzapw/OmniRoute",
+    "browser-use/video-use",
+    "xbtlin/ai-berkshire",
+    "google/agents-cli",
+    "roboflow/supervision",
+    "microsoft/AI-For-Beginners",
+    "HKUDS/Vibe-Trading",
+    "obra/superpowers",
+    "Robbyant/lingbot-map"
   ]
 }
