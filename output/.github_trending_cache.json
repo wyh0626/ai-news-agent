@@ -1,16 +1,4 @@
 {
-  "2026-06-29": [
-    "xbtlin/ai-berkshire",
-    "hugohe3/ppt-master",
-    "JCodesMore/ai-website-cloner-template",
-    "garrytan/gstack",
-    "Anil-matcha/Open-Generative-AI",
-    "topoteretes/cognee",
-    "luongnv89/claude-howto",
-    "anomalyco/opencode",
-    "Fission-AI/OpenSpec",
-    "HKUDS/Vibe-Trading"
-  ],
   "2026-06-30": [
     "xbtlin/ai-berkshire",
     "Robbyant/lingbot-map",
@@ -43,5 +31,20 @@
     "HKUDS/Vibe-Trading",
     "obra/superpowers",
     "Robbyant/lingbot-map"
+  ],
+  "2026-07-03": [
+    "msitarzewski/agency-agents",
+    "usestrix/strix",
+    "hasaneyldrm/exercises-dataset",
+    "diegosouzapw/OmniRoute",
+    "allenai/olmocr",
+    "togatoga/karukan",
+    "Unclecheng-li/VulnClaw",
+    "microsoft/AI-For-Beginners",
+    "0xNyk/council-of-high-intelligence",
+    "altic-dev/FluidVoice",
+    "TencentCloud/CubeSandbox",
+    "browser-use/video-use",
+    "yikart/AiToEarn"
   ]
 }
