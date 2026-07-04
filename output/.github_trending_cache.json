@@ -1,14 +1,4 @@
 {
-  "2026-06-30": [
-    "xbtlin/ai-berkshire",
-    "Robbyant/lingbot-map",
-    "cupy/cupy",
-    "altic-dev/FluidVoice",
-    "opendatalab/MinerU",
-    "HKUDS/Vibe-Trading",
-    "usestrix/strix",
-    "browser-use/video-use"
-  ],
   "2026-07-01": [
     "msitarzewski/agency-agents",
     "cupy/cupy",
@@ -46,5 +36,20 @@
     "TencentCloud/CubeSandbox",
     "browser-use/video-use",
     "yikart/AiToEarn"
+  ],
+  "2026-07-04": [
+    "usestrix/strix",
+    "JuliusBrussee/caveman",
+    "msitarzewski/agency-agents",
+    "santifer/career-ops",
+    "obra/superpowers",
+    "browser-use/video-use",
+    "affaan-m/ECC",
+    "HKUDS/Vibe-Trading",
+    "agentskills/agentskills",
+    "openai/codex-plugin-cc",
+    "langflow-ai/langflow",
+    "pytorch/pytorch",
+    "harvard-edge/cs249r_book"
   ]
 }
