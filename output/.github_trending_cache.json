@@ -1,13 +1,4 @@
 {
-  "2026-07-01": [
-    "msitarzewski/agency-agents",
-    "cupy/cupy",
-    "xbtlin/ai-berkshire",
-    "browser-use/video-use",
-    "Unclecheng-li/VulnClaw",
-    "0xNyk/council-of-high-intelligence",
-    "HKUDS/Vibe-Trading"
-  ],
   "2026-07-02": [
     "usestrix/strix",
     "msitarzewski/agency-agents",
@@ -51,5 +42,17 @@
     "langflow-ai/langflow",
     "pytorch/pytorch",
     "harvard-edge/cs249r_book"
+  ],
+  "2026-07-05": [
+    "usestrix/strix",
+    "openai/codex-plugin-cc",
+    "JuliusBrussee/caveman",
+    "harvard-edge/cs249r_book",
+    "pytorch/pytorch",
+    "anthropics/claude-code",
+    "obra/superpowers",
+    "agentskills/agentskills",
+    "TencentCloud/CubeSandbox",
+    "msitarzewski/agency-agents"
   ]
 }
