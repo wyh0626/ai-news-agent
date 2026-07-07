@@ -1,19 +1,4 @@
 {
-  "2026-07-03": [
-    "msitarzewski/agency-agents",
-    "usestrix/strix",
-    "hasaneyldrm/exercises-dataset",
-    "diegosouzapw/OmniRoute",
-    "allenai/olmocr",
-    "togatoga/karukan",
-    "Unclecheng-li/VulnClaw",
-    "microsoft/AI-For-Beginners",
-    "0xNyk/council-of-high-intelligence",
-    "altic-dev/FluidVoice",
-    "TencentCloud/CubeSandbox",
-    "browser-use/video-use",
-    "yikart/AiToEarn"
-  ],
   "2026-07-04": [
     "usestrix/strix",
     "JuliusBrussee/caveman",
@@ -54,5 +39,25 @@
     "CoplayDev/unity-mcp",
     "alirezarezvani/claude-skills",
     "crynta/terax-ai"
+  ],
+  "2026-07-07": [
+    "Zackriya-Solutions/meetily",
+    "openai/codex-plugin-cc",
+    "asgeirtj/system_prompts_leaks",
+    "Leonxlnx/taste-skill",
+    "alirezarezvani/claude-skills",
+    "ogulcancelik/herdr",
+    "alibaba/page-agent",
+    "harvard-edge/cs249r_book",
+    "usestrix/strix",
+    "hesreallyhim/awesome-claude-code",
+    "coreyhaines31/marketingskills",
+    "JuliusBrussee/caveman",
+    "CoplayDev/unity-mcp",
+    "gastownhall/gastown",
+    "dotnet/skills",
+    "OthmanAdi/planning-with-files",
+    "steipete/CodexBar",
+    "anthropics/claude-code"
   ]
 }
