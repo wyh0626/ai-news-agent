@@ -1,19 +1,4 @@
 {
-  "2026-07-04": [
-    "usestrix/strix",
-    "JuliusBrussee/caveman",
-    "msitarzewski/agency-agents",
-    "santifer/career-ops",
-    "obra/superpowers",
-    "browser-use/video-use",
-    "affaan-m/ECC",
-    "HKUDS/Vibe-Trading",
-    "agentskills/agentskills",
-    "openai/codex-plugin-cc",
-    "langflow-ai/langflow",
-    "pytorch/pytorch",
-    "harvard-edge/cs249r_book"
-  ],
   "2026-07-05": [
     "usestrix/strix",
     "openai/codex-plugin-cc",
@@ -59,5 +44,19 @@
     "OthmanAdi/planning-with-files",
     "steipete/CodexBar",
     "anthropics/claude-code"
+  ],
+  "2026-07-08": [
+    "asgeirtj/system_prompts_leaks",
+    "addyosmani/agent-skills",
+    "Zackriya-Solutions/meetily",
+    "Leonxlnx/taste-skill",
+    "alirezarezvani/claude-skills",
+    "openai/codex-plugin-cc",
+    "mvanhorn/last30days-skill",
+    "ogulcancelik/herdr",
+    "bradautomates/claude-video",
+    "steipete/CodexBar",
+    "alibaba/zvec",
+    "gastownhall/gastown"
   ]
 }
