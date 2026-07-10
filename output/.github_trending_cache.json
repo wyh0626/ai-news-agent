@@ -1,18 +1,4 @@
 {
-  "2026-07-06": [
-    "openai/codex-plugin-cc",
-    "JuliusBrussee/caveman",
-    "usestrix/strix",
-    "Zackriya-Solutions/meetily",
-    "asgeirtj/system_prompts_leaks",
-    "harvard-edge/cs249r_book",
-    "dotnet/skills",
-    "agentskills/agentskills",
-    "mattpocock/skills",
-    "CoplayDev/unity-mcp",
-    "alirezarezvani/claude-skills",
-    "crynta/terax-ai"
-  ],
   "2026-07-07": [
     "Zackriya-Solutions/meetily",
     "openai/codex-plugin-cc",
@@ -58,5 +44,16 @@
     "bradautomates/claude-video",
     "kyutai-labs/pocket-tts",
     "hesreallyhim/awesome-claude-code"
+  ],
+  "2026-07-10": [
+    "addyosmani/agent-skills",
+    "TencentCloud/TencentDB-Agent-Memory",
+    "mvanhorn/last30days-skill",
+    "asgeirtj/system_prompts_leaks",
+    "obra/superpowers",
+    "alibaba/zvec",
+    "wonderwhy-er/DesktopCommanderMCP",
+    "bradautomates/claude-video",
+    "TencentCloud/CubeSandbox"
   ]
 }
