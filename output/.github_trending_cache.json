@@ -1,24 +1,4 @@
 {
-  "2026-07-07": [
-    "Zackriya-Solutions/meetily",
-    "openai/codex-plugin-cc",
-    "asgeirtj/system_prompts_leaks",
-    "Leonxlnx/taste-skill",
-    "alirezarezvani/claude-skills",
-    "ogulcancelik/herdr",
-    "alibaba/page-agent",
-    "harvard-edge/cs249r_book",
-    "usestrix/strix",
-    "hesreallyhim/awesome-claude-code",
-    "coreyhaines31/marketingskills",
-    "JuliusBrussee/caveman",
-    "CoplayDev/unity-mcp",
-    "gastownhall/gastown",
-    "dotnet/skills",
-    "OthmanAdi/planning-with-files",
-    "steipete/CodexBar",
-    "anthropics/claude-code"
-  ],
   "2026-07-08": [
     "asgeirtj/system_prompts_leaks",
     "addyosmani/agent-skills",
@@ -55,5 +35,16 @@
     "wonderwhy-er/DesktopCommanderMCP",
     "bradautomates/claude-video",
     "TencentCloud/CubeSandbox"
+  ],
+  "2026-07-11": [
+    "MadsLorentzen/ai-job-search",
+    "addyosmani/agent-skills",
+    "wonderwhy-er/DesktopCommanderMCP",
+    "anthropics/claude-cookbooks",
+    "vxcontrol/pentagi",
+    "unclecode/crawl4ai",
+    "bradautomates/claude-video",
+    "kyutai-labs/pocket-tts",
+    "asgeirtj/system_prompts_leaks"
   ]
 }
