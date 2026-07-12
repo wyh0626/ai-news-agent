@@ -1,18 +1,4 @@
 {
-  "2026-07-08": [
-    "asgeirtj/system_prompts_leaks",
-    "addyosmani/agent-skills",
-    "Zackriya-Solutions/meetily",
-    "Leonxlnx/taste-skill",
-    "alirezarezvani/claude-skills",
-    "openai/codex-plugin-cc",
-    "mvanhorn/last30days-skill",
-    "ogulcancelik/herdr",
-    "bradautomates/claude-video",
-    "steipete/CodexBar",
-    "alibaba/zvec",
-    "gastownhall/gastown"
-  ],
   "2026-07-09": [
     "MadsLorentzen/ai-job-search",
     "Zackriya-Solutions/meetily",
@@ -46,5 +32,14 @@
     "bradautomates/claude-video",
     "kyutai-labs/pocket-tts",
     "asgeirtj/system_prompts_leaks"
+  ],
+  "2026-07-12": [
+    "wonderwhy-er/DesktopCommanderMCP",
+    "addyosmani/agent-skills",
+    "mattpocock/skills",
+    "obra/superpowers",
+    "TencentCloud/TencentDB-Agent-Memory",
+    "davila7/claude-code-templates",
+    "google-labs-code/stitch-skills"
   ]
 }
