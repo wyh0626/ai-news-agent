@@ -1,15 +1,4 @@
 {
-  "2026-07-10": [
-    "addyosmani/agent-skills",
-    "TencentCloud/TencentDB-Agent-Memory",
-    "mvanhorn/last30days-skill",
-    "asgeirtj/system_prompts_leaks",
-    "obra/superpowers",
-    "alibaba/zvec",
-    "wonderwhy-er/DesktopCommanderMCP",
-    "bradautomates/claude-video",
-    "TencentCloud/CubeSandbox"
-  ],
   "2026-07-11": [
     "MadsLorentzen/ai-job-search",
     "addyosmani/agent-skills",
@@ -38,5 +27,15 @@
     "DayuanJiang/next-ai-draw-io",
     "anthropics/claude-cookbooks",
     "obra/superpowers"
+  ],
+  "2026-07-14": [
+    "wonderwhy-er/DesktopCommanderMCP",
+    "HKUDS/Vibe-Trading",
+    "Shubhamsaboo/awesome-llm-apps",
+    "anthropics/claude-cookbooks",
+    "pingdotgg/t3code",
+    "virattt/ai-hedge-fund",
+    "davila7/claude-code-templates",
+    "Nutlope/hallmark"
   ]
 }
