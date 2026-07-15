@@ -1,15 +1,4 @@
 {
-  "2026-07-11": [
-    "MadsLorentzen/ai-job-search",
-    "addyosmani/agent-skills",
-    "wonderwhy-er/DesktopCommanderMCP",
-    "anthropics/claude-cookbooks",
-    "vxcontrol/pentagi",
-    "unclecode/crawl4ai",
-    "bradautomates/claude-video",
-    "kyutai-labs/pocket-tts",
-    "asgeirtj/system_prompts_leaks"
-  ],
   "2026-07-12": [
     "wonderwhy-er/DesktopCommanderMCP",
     "addyosmani/agent-skills",
@@ -37,5 +26,13 @@
     "virattt/ai-hedge-fund",
     "davila7/claude-code-templates",
     "Nutlope/hallmark"
+  ],
+  "2026-07-15": [
+    "moeru-ai/airi",
+    "Shubhamsaboo/awesome-llm-apps",
+    "Nutlope/hallmark",
+    "Graphify-Labs/graphify",
+    "hasaneyldrm/exercises-dataset",
+    "coreyhaines31/marketingskills"
   ]
 }
