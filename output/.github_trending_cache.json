@@ -1,13 +1,4 @@
 {
-  "2026-07-13": [
-    "davila7/claude-code-templates",
-    "google-labs-code/stitch-skills",
-    "openai/plugins",
-    "wonderwhy-er/DesktopCommanderMCP",
-    "DayuanJiang/next-ai-draw-io",
-    "anthropics/claude-cookbooks",
-    "obra/superpowers"
-  ],
   "2026-07-14": [
     "wonderwhy-er/DesktopCommanderMCP",
     "HKUDS/Vibe-Trading",
@@ -34,5 +25,15 @@
     "hasaneyldrm/exercises-dataset",
     "Graphify-Labs/graphify",
     "HenryNdubuaku/maths-cs-ai-compendium"
+  ],
+  "2026-07-17": [
+    "Nutlope/hallmark",
+    "moeru-ai/airi",
+    "HKUDS/Vibe-Trading",
+    "openinterpreter/openinterpreter",
+    "HKUDS/DeepTutor",
+    "HenryNdubuaku/maths-cs-ai-compendium",
+    "Shubhamsaboo/awesome-llm-apps",
+    "coreyhaines31/marketingskills"
   ]
 }
