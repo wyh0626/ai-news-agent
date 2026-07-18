@@ -1,14 +1,4 @@
 {
-  "2026-07-14": [
-    "wonderwhy-er/DesktopCommanderMCP",
-    "HKUDS/Vibe-Trading",
-    "Shubhamsaboo/awesome-llm-apps",
-    "anthropics/claude-cookbooks",
-    "pingdotgg/t3code",
-    "virattt/ai-hedge-fund",
-    "davila7/claude-code-templates",
-    "Nutlope/hallmark"
-  ],
   "2026-07-15": [
     "moeru-ai/airi",
     "Shubhamsaboo/awesome-llm-apps",
@@ -35,5 +25,16 @@
     "HenryNdubuaku/maths-cs-ai-compendium",
     "Shubhamsaboo/awesome-llm-apps",
     "coreyhaines31/marketingskills"
+  ],
+  "2026-07-18": [
+    "Nutlope/hallmark",
+    "openinterpreter/openinterpreter",
+    "PrismML-Eng/Bonsai-demo",
+    "hasaneyldrm/exercises-dataset",
+    "Shubhamsaboo/awesome-llm-apps",
+    "lobehub/lobehub",
+    "HKUDS/DeepTutor",
+    "github/copilot-sdk",
+    "Graphify-Labs/graphify"
   ]
 }
