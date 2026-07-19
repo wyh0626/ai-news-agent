@@ -1,12 +1,4 @@
 {
-  "2026-07-15": [
-    "moeru-ai/airi",
-    "Shubhamsaboo/awesome-llm-apps",
-    "Nutlope/hallmark",
-    "Graphify-Labs/graphify",
-    "hasaneyldrm/exercises-dataset",
-    "coreyhaines31/marketingskills"
-  ],
   "2026-07-16": [
     "Shubhamsaboo/awesome-llm-apps",
     "Dicklesworthstone/destructive_command_guard",
@@ -36,5 +28,15 @@
     "HKUDS/DeepTutor",
     "github/copilot-sdk",
     "Graphify-Labs/graphify"
+  ],
+  "2026-07-19": [
+    "HenryNdubuaku/maths-cs-ai-compendium",
+    "Nutlope/hallmark",
+    "github/copilot-sdk",
+    "anthropics/cwc-workshops",
+    "PrismML-Eng/Bonsai-demo",
+    "openinterpreter/openinterpreter",
+    "RyanCodrai/turbovec",
+    "HKUDS/DeepTutor"
   ]
 }
