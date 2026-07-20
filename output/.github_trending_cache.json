@@ -1,13 +1,4 @@
 {
-  "2026-07-16": [
-    "Shubhamsaboo/awesome-llm-apps",
-    "Dicklesworthstone/destructive_command_guard",
-    "virattt/ai-hedge-fund",
-    "Nutlope/hallmark",
-    "hasaneyldrm/exercises-dataset",
-    "Graphify-Labs/graphify",
-    "HenryNdubuaku/maths-cs-ai-compendium"
-  ],
   "2026-07-17": [
     "Nutlope/hallmark",
     "moeru-ai/airi",
@@ -38,5 +29,13 @@
     "openinterpreter/openinterpreter",
     "RyanCodrai/turbovec",
     "HKUDS/DeepTutor"
+  ],
+  "2026-07-20": [
+    "Robbyant/lingbot-map",
+    "rohitg00/ai-engineering-from-scratch",
+    "elder-plinius/G0DM0D3",
+    "lyogavin/airllm",
+    "KnockOutEZ/wigolo",
+    "MoonshotAI/kimi-cli"
   ]
 }
