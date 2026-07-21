@@ -1,14 +1,4 @@
 {
-  "2026-07-17": [
-    "Nutlope/hallmark",
-    "moeru-ai/airi",
-    "HKUDS/Vibe-Trading",
-    "openinterpreter/openinterpreter",
-    "HKUDS/DeepTutor",
-    "HenryNdubuaku/maths-cs-ai-compendium",
-    "Shubhamsaboo/awesome-llm-apps",
-    "coreyhaines31/marketingskills"
-  ],
   "2026-07-18": [
     "Nutlope/hallmark",
     "openinterpreter/openinterpreter",
@@ -37,5 +27,17 @@
     "lyogavin/airllm",
     "KnockOutEZ/wigolo",
     "MoonshotAI/kimi-cli"
+  ],
+  "2026-07-21": [
+    "kvcache-ai/ktransformers",
+    "rohitg00/ai-engineering-from-scratch",
+    "jamiepine/voicebox",
+    "KnockOutEZ/wigolo",
+    "github/copilot-sdk",
+    "AstrBotDevs/AstrBot",
+    "1jehuang/jcode",
+    "MoonshotAI/kimi-cli",
+    "lyogavin/airllm",
+    "Canner/WrenAI"
   ]
 }
