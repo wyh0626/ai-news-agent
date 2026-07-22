@@ -1,15 +1,4 @@
 {
-  "2026-07-18": [
-    "Nutlope/hallmark",
-    "openinterpreter/openinterpreter",
-    "PrismML-Eng/Bonsai-demo",
-    "hasaneyldrm/exercises-dataset",
-    "Shubhamsaboo/awesome-llm-apps",
-    "lobehub/lobehub",
-    "HKUDS/DeepTutor",
-    "github/copilot-sdk",
-    "Graphify-Labs/graphify"
-  ],
   "2026-07-19": [
     "HenryNdubuaku/maths-cs-ai-compendium",
     "Nutlope/hallmark",
@@ -39,5 +28,20 @@
     "MoonshotAI/kimi-cli",
     "lyogavin/airllm",
     "Canner/WrenAI"
+  ],
+  "2026-07-22": [
+    "1jehuang/jcode",
+    "diegosouzapw/OmniRoute",
+    "rohitg00/ai-engineering-from-scratch",
+    "msitarzewski/agency-agents",
+    "kvcache-ai/ktransformers",
+    "jamiepine/voicebox",
+    "topoteretes/cognee",
+    "Robbyant/lingbot-map",
+    "MoonshotAI/kimi-cli",
+    "AstrBotDevs/AstrBot",
+    "KnockOutEZ/wigolo",
+    "handy-computer/transcribe.cpp",
+    "moonshine-ai/moonshine"
   ]
 }

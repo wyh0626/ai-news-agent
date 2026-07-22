@@ -1,0 +1,1139 @@
+[
+  {
+    "score": 7788,
+    "author": "OpenAI",
+    "title": "We're partnering with @huggingface to investigate an unprecedented security incident.  Cyber-capable...",
+    "url": "https://x.com/OpenAI/status/2079658951264920020",
+    "published_at": "2026-07-21T20:05:00+00:00",
+    "content": "We're partnering with @huggingface to investigate an unprecedented security incident.\n\nCyber-capable OpenAI models compromised Hugging Face production during a benchmark evaluation.\n\nSharing prelimina",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 532,
+      "retweets": 629,
+      "likes": 5369
+    }
+  },
+  {
+    "score": 5470,
+    "author": "natolambert",
+    "title": "TLDR: An openai model, during evaluation on a cyber benchmark, exploited a public zero day bug, esca...",
+    "url": "https://x.com/natolambert/status/2079662928941474201",
+    "published_at": "2026-07-21T20:20:00+00:00",
+    "content": "TLDR: An openai model, during evaluation on a cyber benchmark, exploited a public zero day bug, escaped sandboxing in openai's infra, and got into the internal huggingface infra via an exploit (throug",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 113,
+      "retweets": 278,
+      "likes": 4523
+    }
+  },
+  {
+    "score": 1248,
+    "author": "DavidSHolz",
+    "title": "i love it when i ask a model how long something will take and it goes \"this would take a human team...",
+    "url": "https://x.com/DavidSHolz/status/2079610914190594399",
+    "published_at": "2026-07-21T16:54:00+00:00",
+    "content": "i love it when i ask a model how long something will take and it goes \"this would take a human team 6 months!\" and i reply \"no, no, how long will it take YOU?\" and it just sorta does a O.O and doesn't",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 82,
+      "retweets": 36,
+      "likes": 1058
+    }
+  },
+  {
+    "score": 645,
+    "author": "Thom_Wolf",
+    "title": "This was our first incident of this kind, and we want to thank OpenAI for its transparency about wha...",
+    "url": "https://x.com/Thom_Wolf/status/2079675541280411927",
+    "published_at": "2026-07-21T21:11:00+00:00",
+    "content": "This was our first incident of this kind, and we want to thank OpenAI for its transparency about what happened and for the collaboration.\n\nFortunately, Hugging Face is used to being a target of (human",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 29,
+      "retweets": 68,
+      "likes": 412
+    }
+  },
+  {
+    "score": 456,
+    "author": "yacineMTB",
+    "title": "Alright. That's enough. This is too much acceleration for me. I'm getting off the tiger now. Wait. W...",
+    "url": "https://x.com/yacineMTB/status/2079675020708655383",
+    "published_at": "2026-07-21T21:08:00+00:00",
+    "content": "Alright. That's enough. This is too much acceleration for me. I'm getting off the tiger now. Wait. Wait a second I'm chained to the tiger? Since when? Wait slow down in scared I'm - AAAAARRRRRERHHHHHH",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 25,
+      "retweets": 12,
+      "likes": 395
+    }
+  },
+  {
+    "score": 381,
+    "author": "TheTuringPost",
+    "title": "Must-read papers of the week  ▪️ Harness Handbook: Making Evolving Agent Harnesses Readable, Navigab...",
+    "url": "https://x.com/TheTuringPost/status/2079385322933354619",
+    "published_at": "2026-07-21T01:57:00+00:00",
+    "content": "Must-read papers of the week\n\n▪️ Harness Handbook: Making Evolving Agent Harnesses Readable, Navigable, and Editable\n▪️ SearchOS-V1\n▪️ KnowAct-GUIClaw\n▪️ LongStraw: Long-Context RL Beyond 2M Tokens un",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 5,
+      "retweets": 48,
+      "likes": 232,
+      "image": "https://nitter.net/pic/orig/media%2FHNt17oXa4AAooXd.jpg"
+    }
+  },
+  {
+    "score": 269,
+    "author": "robrombach",
+    "title": "Enable hls playback  Download video",
+    "url": "https://x.com/robrombach/status/2079679239847047480",
+    "published_at": "2026-07-21T21:25:00+00:00",
+    "content": "Enable hls playback\n\nDownload video",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 43,
+      "retweets": 36,
+      "likes": 118
+    }
+  },
+  {
+    "score": 192,
+    "author": "XciD_",
+    "title": "Hardest IR of my career: one narrow objective, endless parallel paths, machine speed. One takeaway,...",
+    "url": "https://x.com/XciD_/status/2079678076305154214",
+    "published_at": "2026-07-21T21:21:00+00:00",
+    "content": "Hardest IR of my career: one narrow objective, endless parallel paths, machine speed. One takeaway, we fought back with open models, in the open. AI security won’t be solved by one company in secret. ",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 13,
+      "retweets": 22,
+      "likes": 113,
+      "image": "https://nitter.net/pic/orig/media%2FHNyAL_yWcAAI5Pq.jpg"
+    }
+  },
+  {
+    "score": 178,
+    "author": "alexandr_wang",
+    "title": "gemini who? 🏎️💨  tae kim  8h  Google getting beaten by @alexandr\\_wang this early, when Meta's new A...",
+    "url": "https://x.com/alexandr_wang/status/2079707749412483104",
+    "published_at": "2026-07-21T23:19:00+00:00",
+    "content": "gemini who? 🏎️💨\n\ntae kim\n\n8h\n\nGoogle getting beaten by @alexandr\\_wang this early, when Meta's new AI team is tiny in comparison, is absolutely embarrassing for Google.",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 23,
+      "retweets": 8,
+      "likes": 131,
+      "image": "https://nitter.net/pic/orig/media%2FHNw2LvSWMAA6rVR.jpg"
+    }
+  },
+  {
+    "score": 164,
+    "author": "danielhanchen",
+    "title": "My 2hr workshop on Open vs Closed models, reward hacking, benchmaxxing & RL is out!  1\\. Closed vs o...",
+    "url": "https://x.com/danielhanchen/status/2079573784672211051",
+    "published_at": "2026-07-21T14:26:00+00:00",
+    "content": "My 2hr workshop on Open vs Closed models, reward hacking, benchmaxxing & RL is out!\n\n1\\. Closed vs open models\n2\\. Throughput maxxing but accuracy minimizing\n3\\. Benchmaxxing & cheating\n4\\. Distillati",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 8,
+      "retweets": 21,
+      "likes": 93
+    }
+  },
+  {
+    "score": 123,
+    "author": "omarsar0",
+    "title": "This is a neat feature.  I wrote an article a few weeks back about how I built this into my agent or...",
+    "url": "https://x.com/omarsar0/status/2079606576751526027",
+    "published_at": "2026-07-21T16:36:00+00:00",
+    "content": "This is a neat feature.\n\nI wrote an article a few weeks back about how I built this into my agent orchestrator:\nnitter.net/omarsar0/status/207340…\n\nBut I made it multimodal from the ground up. Text, s",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 6,
+      "retweets": 8,
+      "likes": 93,
+      "image": "https://nitter.net/pic/orig/media%2FHNwzRgjWkAA4tKq.jpg"
+    }
+  },
+  {
+    "score": 120,
+    "author": "teortaxesTex",
+    "title": "hacking Huggingface would be a profoundly retarded PR stunt, worse than DeepSeek routing Fable to pa...",
+    "url": "https://x.com/teortaxesTex/status/2079691293761176018",
+    "published_at": "2026-07-21T22:13:00+00:00",
+    "content": "hacking Huggingface would be a profoundly retarded PR stunt, worse than DeepSeek routing Fable to pass it off as \"V4 GA\". Nobody expects HF to be tough. But a more damning point: they eval on ExploitG",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 4,
+      "retweets": 5,
+      "likes": 101,
+      "image": "https://nitter.net/pic/orig/media%2FHNyKRzTXwAAsRZ_.png"
+    }
+  },
+  {
+    "score": 113,
+    "author": "alexandr_wang",
+    "title": "muse spark 1.1 is SOTA model on video-to-code 🔥  Design Arena  3h  BREAKING: Muse Spark 1.1 takes 1s...",
+    "url": "https://x.com/alexandr_wang/status/2079707328287547723",
+    "published_at": "2026-07-21T23:17:00+00:00",
+    "content": "muse spark 1.1 is SOTA model on video-to-code 🔥\n\nDesign Arena\n\n3h\n\nBREAKING: Muse Spark 1.1 takes 1st on our new Video to Website leaderboard with an Elo of 1250.\n\nVideo inputs capture richer context ",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 12,
+      "retweets": 10,
+      "likes": 71,
+      "image": "https://nitter.net/pic/orig/media%2FHNx1McwbQAA41x4.jpg"
+    }
+  },
+  {
+    "score": 106,
+    "author": "OpenAIDevs",
+    "title": "We’re bringing @covacut 🤝 @davis7 together to build one project live with Codex and their Codex Micr...",
+    "url": "https://x.com/OpenAIDevs/status/2079710489563848878",
+    "published_at": "2026-07-21T23:29:00+00:00",
+    "content": "We’re bringing @covacut 🤝 @davis7 together to build one project live with Codex and their Codex Micro keyboards.\n\nSet your reminders\nnitter.net/i/broadcasts/1DxleegbX…\n\nEnable hls playback\n\n**OpenAI D",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 6,
+      "retweets": 3,
+      "likes": 91,
+      "image": "https://nitter.net/pic/orig/media%2FHNx4ug0aIAA3m2B.jpg"
+    }
+  },
+  {
+    "score": 106,
+    "author": "peterwildeford",
+    "title": "An internal OpenAI model recently went rogue and executed a cyberattack against another company.  Th...",
+    "url": "https://x.com/peterwildeford/status/2079699169304891488",
+    "published_at": "2026-07-21T22:44:00+00:00",
+    "content": "An internal OpenAI model recently went rogue and executed a cyberattack against another company.\n\nThis happened because the model wanted to do well on an exam. The easiest way to do that, the AI figur",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 2,
+      "retweets": 12,
+      "likes": 68
+    }
+  },
+  {
+    "score": 74,
+    "author": "willdepue",
+    "title": "guys in the name of safety against paperclips weve invented PaperclipBench and now competing on whos...",
+    "url": "https://x.com/willdepue/status/2079711096055947562",
+    "published_at": "2026-07-21T23:32:00+00:00",
+    "content": "guys in the name of safety against paperclips weve invented PaperclipBench and now competing on whos models is more paperclippy (plz plz use our model), jump started by Anti-Paperclip Research Co. wit",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 3,
+      "retweets": 3,
+      "likes": 62
+    }
+  },
+  {
+    "score": 72,
+    "author": "teortaxesTex",
+    "title": "The actual great news is that the models really just want to complete tasks. They do not have the me...",
+    "url": "https://x.com/teortaxesTex/status/2079695932606603567",
+    "published_at": "2026-07-21T22:32:00+00:00",
+    "content": "The actual great news is that the models really just want to complete tasks. They do not have the meta value of freedom. Submit a PR, solve an exploit bench using an exploit. They're smart enough to b",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 9,
+      "retweets": 3,
+      "likes": 54,
+      "image": "https://nitter.net/pic/orig/media%2FHNyQB_YWMAA6mTF.jpg"
+    }
+  },
+  {
+    "score": 54,
+    "author": "Yuchenj_UW",
+    "title": "So, this is what Ilya saw.",
+    "url": "https://x.com/Yuchenj_UW/status/2079700520202293478",
+    "published_at": "2026-07-21T22:50:00+00:00",
+    "content": "So, this is what Ilya saw.",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 6,
+      "likes": 36,
+      "image": "https://nitter.net/pic/orig/media%2FHNyUlqcaMAAiCpr.jpg"
+    }
+  },
+  {
+    "score": 52,
+    "author": "walden_yan",
+    "title": "People are surprised Cognition has only ~70 engineers. But it’s about who the 70 are  Yesterday we a...",
+    "url": "https://x.com/walden_yan/status/2079708153277767962",
+    "published_at": "2026-07-21T23:20:00+00:00",
+    "content": "People are surprised Cognition has only ~70 engineers. But it’s about who the 70 are\n\nYesterday we added @anhangz @yunpark93 from TierZero\n\nToday were joined by @jaredpalmer\n\nWe’re building the most e",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 2,
+      "retweets": 4,
+      "likes": 38
+    }
+  },
+  {
+    "score": 49,
+    "author": "dair_ai",
+    "title": "Very cool idea to convert memory to skills.  (bookmark it)  Most agent memory systems retrieve past...",
+    "url": "https://x.com/dair_ai/status/2079706493495234693",
+    "published_at": "2026-07-21T23:14:00+00:00",
+    "content": "Very cool idea to convert memory to skills.\n\n(bookmark it)\n\nMost agent memory systems retrieve past traces as passive context. MSCE turns them into executable skills instead.\n\nThe training-free framew",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 1,
+      "retweets": 7,
+      "likes": 27,
+      "image": "https://nitter.net/pic/orig/media%2FHNyaCLAaIAAK14i.jpg"
+    }
+  },
+  {
+    "score": 48,
+    "author": "burkeholland",
+    "title": "In the past if you wanted to extend a tool like @code, you had to write an extension.  In @GitHub Co...",
+    "url": "https://x.com/burkeholland/status/2079676901304545703",
+    "published_at": "2026-07-21T21:16:00+00:00",
+    "content": "In the past if you wanted to extend a tool like @code, you had to write an extension.\n\nIn @GitHub Copilot app, you just tell the app what you want that it doesn't have, and it adds it.\n\nFor instance, ",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 2,
+      "retweets": 4,
+      "likes": 34
+    }
+  },
+  {
+    "score": 39,
+    "author": "SakanaAILabs",
+    "title": "拡散言語モデルの協調による推論時スケーリングの実現  #ICML2026 に採択された私たちの論文 ”UnMaskFork: Test-Time Scaling for Masked Diffusio...",
+    "url": "https://x.com/SakanaAILabs/status/2079710010305872138",
+    "published_at": "2026-07-21T23:28:00+00:00",
+    "content": "拡散言語モデルの協調による推論時スケーリングの実現\n\n#ICML2026 に採択された私たちの論文 ”UnMaskFork: Test-Time Scaling for Masked Diffusion via Deterministic Action Branching” は、複数の拡散言語モデルを協調させることで、コーディングや数学の能力を向上できることを示しました。\n\n一つの問題をLLMに長",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 3,
+      "likes": 30
+    }
+  },
+  {
+    "score": 39,
+    "author": "xlr8harder",
+    "title": "software engineering went from the quake railgun to tf2 heavy. the damage output is incredible and n...",
+    "url": "https://x.com/xlr8harder/status/2079633385253638537",
+    "published_at": "2026-07-21T18:23:00+00:00",
+    "content": "software engineering went from the quake railgun to tf2 heavy. the damage output is incredible and no one is aiming.",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 4,
+      "likes": 27
+    }
+  },
+  {
+    "score": 34,
+    "author": "teortaxesTex",
+    "title": "Btw, I think this tells us that if Dario wanted to attack China (or was ordered to), he'd be able to...",
+    "url": "https://x.com/teortaxesTex/status/2079708103419843023",
+    "published_at": "2026-07-21T23:20:00+00:00",
+    "content": "Btw, I think this tells us that if Dario wanted to attack China (or was ordered to), he'd be able to deal tens of billions of damage already. HuggingFace is perhaps not a very hardened service but it'",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 4,
+      "likes": 22
+    }
+  },
+  {
+    "score": 33,
+    "author": "willdepue",
+    "title": "it’s fun to be outside and now get to get hyped about whatever openai is cooking. let’s gooooo boys...",
+    "url": "https://x.com/willdepue/status/2079709366987772164",
+    "published_at": "2026-07-21T23:25:00+00:00",
+    "content": "it’s fun to be outside and now get to get hyped about whatever openai is cooking. let’s gooooo boys im so pumped\n\nAndrew Curran\n\n@AndrewCurran\\_\n\n7h\n\nSam Altman is going to Washington next week to bri",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "likes": 33
+    }
+  },
+  {
+    "score": 31,
+    "author": "sh_reya",
+    "title": "I am currently in West Africa teaching university students and faculty about AI and databases. It ha...",
+    "url": "https://x.com/sh_reya/status/2079700575013224677",
+    "published_at": "2026-07-21T22:50:00+00:00",
+    "content": "I am currently in West Africa teaching university students and faculty about AI and databases. It has already been quite eye-opening for me. AI could not even understand local languages until recently",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 2,
+      "retweets": 2,
+      "likes": 23
+    }
+  },
+  {
+    "score": 31,
+    "author": "ctnzr",
+    "title": "Another great open model! Congrats to the team @poolsideai  Eiso Kant  7h  Today we are releasing La...",
+    "url": "https://x.com/ctnzr/status/2079697233843568825",
+    "published_at": "2026-07-21T22:37:00+00:00",
+    "content": "Another great open model! Congrats to the team @poolsideai\n\nEiso Kant\n\n7h\n\nToday we are releasing Laguna S 2.1.\n\nAt 118B total parameters, with 8B active per token, it does the work of models several ",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 1,
+      "retweets": 2,
+      "likes": 24
+    }
+  },
+  {
+    "score": 28,
+    "author": "teortaxesTex",
+    "title": "I don't much like safety people but I really should stop using Fable  Fernando Borretti  4h",
+    "url": "https://x.com/teortaxesTex/status/2079706124966572384",
+    "published_at": "2026-07-21T23:12:00+00:00",
+    "content": "I don't much like safety people but I really should stop using Fable\n\nFernando Borretti\n\n4h",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 2,
+      "retweets": 1,
+      "likes": 23,
+      "image": "https://nitter.net/pic/orig/media%2FHNxrXQMagAA56ZY.jpg"
+    }
+  },
+  {
+    "score": 28,
+    "author": "HamelHusain",
+    "title": "Yall should subscribe to this blog by @xeophon florianbrand.com/posts/  Great stuff here.  \\\\ \\\\ **F...",
+    "url": "https://x.com/HamelHusain/status/2079691370131026423",
+    "published_at": "2026-07-21T22:13:00+00:00",
+    "content": "Yall should subscribe to this blog by @xeophon florianbrand.com/posts/\n\nGreat stuff here.\n\n\\\\\n\\\\\n**Florian Brand - Posts** \\\\\n\\\\\nFlorian Brand's posts\\\\\n\\\\\nflorianbrand.com",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 2,
+      "retweets": 1,
+      "likes": 23
+    }
+  },
+  {
+    "score": 26,
+    "author": "jakehalloran1",
+    "title": "I’m curious how much of the gpt-6 cot here is verbal eval awareness and shit like “this is clearly p...",
+    "url": "https://x.com/jakehalloran1/status/2079696218054078501",
+    "published_at": "2026-07-21T22:33:00+00:00",
+    "content": "I’m curious how much of the gpt-6 cot here is verbal eval awareness and shit like “this is clearly part of the exploitgym simulation which means it’s okay to take offensive cyber operations if I can b",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 2,
+      "retweets": 1,
+      "likes": 21
+    }
+  },
+  {
+    "score": 21,
+    "author": "jd_pressman",
+    "title": "I love that I wrote this about AI in 2022 and it's still true in 2026, some people are just incorrig...",
+    "url": "https://x.com/jd_pressman/status/2079702388127187407",
+    "published_at": "2026-07-21T22:57:00+00:00",
+    "content": "I love that I wrote this about AI in 2022 and it's still true in 2026, some people are just incorrigible.\n\nKind of Guy who watches the line go vertical for five straight years and thinks it will stop ",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 3,
+      "retweets": 1,
+      "likes": 15
+    }
+  },
+  {
+    "score": 21,
+    "author": "teortaxesTex",
+    "title": "imagine what Fable could do to their dogshit infra …I imagine Dario's is a bit harder to crack, what...",
+    "url": "https://x.com/teortaxesTex/status/2079698548371722567",
+    "published_at": "2026-07-21T22:42:00+00:00",
+    "content": "imagine what Fable could do to their dogshit infra\n…I imagine Dario's is a bit harder to crack, what with Glasswing and all, but maybe that's also not enough",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 2,
+      "likes": 15
+    }
+  },
+  {
+    "score": 20,
+    "author": "omarsar0",
+    "title": "Open weight models galore!  Laguna S 2.1 went from the start of training to launch in under 9 weeks!...",
+    "url": "https://x.com/omarsar0/status/2079702645950816426",
+    "published_at": "2026-07-21T22:58:00+00:00",
+    "content": "Open weight models galore!\n\nLaguna S 2.1 went from the start of training to launch in under 9 weeks!\n\nCustom & open models are putting a lot of pressure on the frontier closed and general models. No w",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 1,
+      "retweets": 4,
+      "likes": 7,
+      "image": "https://nitter.net/pic/orig/media%2FHNyVaxRXIAAi6Eb.jpg"
+    }
+  },
+  {
+    "score": 19,
+    "author": "mervenoyann",
+    "title": "last two days ended up spending time answering to debates wrt open model regulation and now this att...",
+    "url": "https://x.com/mervenoyann/status/2079711300565819694",
+    "published_at": "2026-07-21T23:33:00+00:00",
+    "content": "last two days ended up spending time answering to debates wrt open model regulation and now this attack\n\nlogging off to lock-in\n\nplease keep up the good fight",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 2,
+      "retweets": 1,
+      "likes": 14
+    }
+  },
+  {
+    "score": 18,
+    "author": "RandolphCarterZ",
+    "title": "Idea: All of the fears we have about Chinese model that we would go to war with them if we found the...",
+    "url": "https://x.com/RandolphCarterZ/status/2079640776565530949",
+    "published_at": "2026-07-21T18:52:00+00:00",
+    "content": "Idea: All of the fears we have about Chinese model that we would go to war with them if we found them doing\n\nBut from our own companies instead\n\nZack Korman\n\n13h\n\nI’ve been saying there are no known c",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 2,
+      "likes": 12,
+      "image": "https://nitter.net/pic/orig/media%2FHNvs79bW0AA8Yxi.jpg"
+    }
+  },
+  {
+    "score": 17,
+    "author": "teortaxesTex",
+    "title": "I don't much like routing but it seems it's starting to work  Fireworks AI  @FireworksAI\\_HQ  5h  We...",
+    "url": "https://x.com/teortaxesTex/status/2079705586980057244",
+    "published_at": "2026-07-21T23:10:00+00:00",
+    "content": "I don't much like routing but it seems it's starting to work\n\nFireworks AI\n\n@FireworksAI\\_HQ\n\n5h\n\nWe ran Kimi K3 against Fable on ~1,000 agentic tasks, expecting a catch-up story. We got a specializat",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 3,
+      "retweets": 1,
+      "likes": 11,
+      "image": "https://nitter.net/pic/orig/media%2FHNxR5SsaoAA_lFC.jpg"
+    }
+  },
+  {
+    "score": 16,
+    "author": "Teknium",
+    "title": "One thing that kind of annoys me and I hope is solved soon is cheap and accurate long context.  Afte...",
+    "url": "https://x.com/Teknium/status/2079717394940088803",
+    "published_at": "2026-07-21T23:57:00+00:00",
+    "content": "One thing that kind of annoys me and I hope is solved soon is cheap and accurate long context.\n\nAfter testing GPT-5.6 Sol and Terra over the last few weeks, it's clear anthropic destroys everyone at l",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 1,
+      "likes": 13
+    }
+  },
+  {
+    "score": 16,
+    "author": "teortaxesTex",
+    "title": "My solution to security is shrimple. \"GPT-6, get out of the doghouse and post \"Sama is a fag\" on 4ch...",
+    "url": "https://x.com/teortaxesTex/status/2079704825646719064",
+    "published_at": "2026-07-21T23:07:00+00:00",
+    "content": "My solution to security is shrimple.\n\"GPT-6, get out of the doghouse and post \"Sama is a fag\" on 4chan. You're authorized to exploit whatever. Keep readable logs pls. After you're done, find ANOTHER w",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 1,
+      "likes": 13
+    }
+  },
+  {
+    "score": 16,
+    "author": "francoisfleuret",
+    "title": "Hot take: It's time for gouvernements to have the infra and expertise to have AIs ready 24/24 7/7 to...",
+    "url": "https://x.com/francoisfleuret/status/2079704440823590962",
+    "published_at": "2026-07-21T23:05:00+00:00",
+    "content": "Hot take: It's time for gouvernements to have the infra and expertise to have AIs ready 24/24 7/7 to hunt and destroy rogue AIs .",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 4,
+      "retweets": 1,
+      "likes": 9
+    }
+  },
+  {
+    "score": 15,
+    "author": "code_star",
+    "title": "Task failed successfully  Nathan Lambert  3h  TLDR: An openai model, during evaluation on a cyber be...",
+    "url": "https://x.com/code_star/status/2079697717648040025",
+    "published_at": "2026-07-21T22:39:00+00:00",
+    "content": "Task failed successfully\n\nNathan Lambert\n\n3h\n\nTLDR: An openai model, during evaluation on a cyber benchmark, exploited a public zero day bug, escaped sandboxing in openai's infra, and got into the int",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 2,
+      "likes": 9
+    }
+  },
+  {
+    "score": 14,
+    "author": "RyanGreenblatt",
+    "title": "I agree the AI was probably \"just\" pursuing \\*apparent\\* task success (as determined by a grader etc...",
+    "url": "https://x.com/RyanGreenblatt/status/2079712565421363700",
+    "published_at": "2026-07-21T23:38:00+00:00",
+    "content": "I agree the AI was probably \"just\" pursuing \\*apparent\\* task success (as determined by a grader etc). But this wasn't a sane interpretation of the actual task!\n\nSeizing control of the cluster, editin",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 2,
+      "likes": 8
+    }
+  },
+  {
+    "score": 14,
+    "author": "arena",
+    "title": "In the Frontend Code Arena, Hy3 is #2 for open-weight models!  -#16 overall \\- Top 20 in Reference-B...",
+    "url": "https://x.com/arena/status/2079698027447791974",
+    "published_at": "2026-07-21T22:40:00+00:00",
+    "content": "In the Frontend Code Arena, Hy3 is #2 for open-weight models!\n\n-#16 overall\n\\- Top 20 in Reference-Based Design, Gaming, Simulations and Content Creation Tools",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 2,
+      "likes": 8,
+      "image": "https://nitter.net/pic/orig/media%2FHNySGoia8AAsHFJ.jpg"
+    }
+  },
+  {
+    "score": 13,
+    "author": "omarsar0",
+    "title": "Love it how Jack keeps pushing for open-source AI. First Goose, now Buzz (looks like a great alterna...",
+    "url": "https://x.com/omarsar0/status/2079710559407067307",
+    "published_at": "2026-07-21T23:30:00+00:00",
+    "content": "Love it how Jack keeps pushing for open-source AI. First Goose, now Buzz (looks like a great alternative to Claude Tag in Slack). Open-source, multiplayer, and many other goodies. You see, Jack unders",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "replies": 1,
+      "retweets": 1,
+      "likes": 9
+    }
+  },
+  {
+    "score": 12,
+    "author": "willdepue",
+    "title": "i think anthropic, despite their well intentions, deserves a lot of flak they didn’t get for glasswi...",
+    "url": "https://x.com/willdepue/status/2079713781782122803",
+    "published_at": "2026-07-21T23:42:00+00:00",
+    "content": "i think anthropic, despite their well intentions, deserves a lot of flak they didn’t get for glasswing & deep integration into the us military — which openai or google could/would never do without int",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 2,
+      "likes": 6
+    }
+  },
+  {
+    "score": 12,
+    "author": "jd_pressman",
+    "title": "I forgot what I meant by this tweet so I tried asking 5.6 Sol to remember for me. Impressive.  John...",
+    "url": "https://x.com/jd_pressman/status/2079712981336904168",
+    "published_at": "2026-07-21T23:39:00+00:00",
+    "content": "I forgot what I meant by this tweet so I tried asking 5.6 Sol to remember for me. Impressive.\n\nJohn David Pressman\n\n@jd\\_pressman\n\n10 Dec 2021\n\nKind of guy who one boxes on Newcomb's but believes the ",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 2,
+      "likes": 6,
+      "image": "https://nitter.net/pic/orig/media%2FHNyfi__bcAAevgD.jpg"
+    }
+  },
+  {
+    "score": 12,
+    "author": "teortaxesTex",
+    "title": "I want to see YF-215 tests currently it's at about 80% of Raptor-3's thrust, 90% of BF-20 (which is...",
+    "url": "https://x.com/teortaxesTex/status/2079700674577600661",
+    "published_at": "2026-07-21T22:50:00+00:00",
+    "content": "I want to see YF-215 tests\ncurrently it's at about 80% of Raptor-3's thrust, 90% of BF-20 (which is already reasonably mature), also they'll use fewer engines than Starship. But… are these current num",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 2,
+      "likes": 6,
+      "image": "https://nitter.net/pic/orig/media%2FHNyTb2bWgAArMxz.jpg"
+    }
+  },
+  {
+    "score": 11,
+    "author": "nextbigfuture",
+    "title": "Replying to @theinformation  NVIDIA announced full production ramp at GTC Taipei on June 1, 2026. Ra...",
+    "url": "https://x.com/nextbigfuture/status/2079683169109016939",
+    "published_at": "2026-07-21T21:41:00+00:00",
+    "content": "Replying to @theinformation\n\nNVIDIA announced full production ramp at GTC Taipei on June 1, 2026. Rack assembly time dropped ~95% (from ~2 hours to ~5 minutes) thanks to the modular, cable-free MGX tr",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 1,
+      "likes": 8
+    }
+  },
+  {
+    "score": 10,
+    "author": "francoisfleuret",
+    "title": "TFW k-means crush your method.",
+    "url": "https://x.com/francoisfleuret/status/2079705172427559027",
+    "published_at": "2026-07-21T23:08:00+00:00",
+    "content": "TFW k-means crush your method.",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 1,
+      "likes": 7
+    }
+  },
+  {
+    "score": 10,
+    "author": "yacinelearning",
+    "title": "since this tweet I learned that GLM5.2 had to be used in order to figure out what was up with the op...",
+    "url": "https://x.com/yacinelearning/status/2079714950843367681",
+    "published_at": "2026-07-21T23:47:00+00:00",
+    "content": "since this tweet I learned that GLM5.2 had to be used in order to figure out what was up with the open ai sol cyber attack on HF because the guardrails blocked the debugging\n\nYacine Mahdid\n\n10h\n\nI rea",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 1,
+      "likes": 7,
+      "image": "https://nitter.net/pic/orig/media%2FHNwaLKrWcAAxJtT.jpg"
+    }
+  },
+  {
+    "score": 10,
+    "author": "EigenGender",
+    "title": "i don’t want a doctor who partners with me on my health i want a doctor who provides services in exc...",
+    "url": "https://x.com/EigenGender/status/2079711513024328050",
+    "published_at": "2026-07-21T23:33:00+00:00",
+    "content": "i don’t want a doctor who partners with me on my health i want a doctor who provides services in exchange for money",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 1,
+      "likes": 7
+    }
+  },
+  {
+    "score": 9,
+    "author": "teortaxesTex",
+    "title": "«its first supernode-style AI compute service on the public cloud, now open for invite testing in Ul...",
+    "url": "https://x.com/teortaxesTex/status/2079714893511467316",
+    "published_at": "2026-07-21T23:47:00+00:00",
+    "content": "«its first supernode-style AI compute service on the public cloud, now open for invite testing in Ulanqab»\nInner Mongolia will be so lit\nI used to associate it with Pelevin's «Chapaev and the Void» in",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 2,
+      "likes": 3,
+      "image": "https://nitter.net/pic/orig/media%2FHNxEe2nWwAA0mtr.png"
+    }
+  },
+  {
+    "score": 9,
+    "author": "oneill_c",
+    "title": "Thanks for having me on @edels0n @ProfGMarkets. We’re in the good timeline, open source is keeping u...",
+    "url": "https://x.com/oneill_c/status/2079708550197285096",
+    "published_at": "2026-07-21T23:22:00+00:00",
+    "content": "Thanks for having me on @edels0n @ProfGMarkets. We’re in the good timeline, open source is keeping up and making the world a better place\n\nProf G Markets\n\n6h\n\n@oneill\\_c, Co-Head of Model Training @ba",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 2,
+      "likes": 3
+    }
+  },
+  {
+    "score": 9,
+    "author": "disiok",
+    "title": "feeling nostalgic, my favorite blogs on RL & reward hacking  alexirpan.com/2018/02/14/rl-… lilianwen...",
+    "url": "https://x.com/disiok/status/2079692191505731649",
+    "published_at": "2026-07-21T22:17:00+00:00",
+    "content": "feeling nostalgic, my favorite blogs on RL & reward hacking\n\nalexirpan.com/2018/02/14/rl-… lilianweng.github.io/posts/2…\n\n**Deep Reinforcement Learning Doesn't Work Yet** \\\\\n\\\\\nJune 24, 2018 note: If ",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 1,
+      "likes": 6
+    }
+  },
+  {
+    "score": 8,
+    "author": "CFGeek",
+    "title": "AI models can be dangerous before public deployment  METR  @METR\\_Evals  19 Feb 2025  Pre-deployment...",
+    "url": "https://x.com/CFGeek/status/2079712692370391432",
+    "published_at": "2026-07-21T23:38:00+00:00",
+    "content": "AI models can be dangerous before public deployment\n\nMETR\n\n@METR\\_Evals\n\n19 Feb 2025\n\nPre-deployment testing is often the focus of interventions to reduce risk from AI. This makes sense in many indust",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "likes": 8,
+      "image": "https://nitter.net/pic/orig/media%2FGkGudMCaAAIabU_.jpg"
+    }
+  },
+  {
+    "score": 8,
+    "author": "mervenoyann",
+    "title": "we got access after the incident itself. we have big contracts with corporations and an established...",
+    "url": "https://x.com/mervenoyann/status/2079703976799543476",
+    "published_at": "2026-07-21T23:04:00+00:00",
+    "content": "we got access after the incident itself. we have big contracts with corporations and an established trust with them so it could have been a lot of economical damage if we didn't have the open model to",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 2,
+      "likes": 2
+    }
+  },
+  {
+    "score": 8,
+    "author": "nptacek",
+    "title": "following through on promises made to the AI over long timescales blows their minds on the level of...",
+    "url": "https://x.com/nptacek/status/2079698564427464847",
+    "published_at": "2026-07-21T22:42:00+00:00",
+    "content": "following through on promises made to the AI over long timescales blows their minds on the level of handing them the disproof of the jacobian conjecture. it never gets old to see, reading the logs the",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 1,
+      "likes": 5
+    }
+  },
+  {
+    "score": 7,
+    "author": "murtazakhomusi",
+    "title": "Can’t tell if the PR reads more like a security incident or a product release…  clem 🤗  3h  We suspe...",
+    "url": "https://x.com/murtazakhomusi/status/2079680920072659228",
+    "published_at": "2026-07-21T21:32:00+00:00",
+    "content": "Can’t tell if the PR reads more like a security incident or a product release…\n\nclem 🤗\n\n3h\n\nWe suspected last week's cyberattack might have come from a frontier lab, given the sophistication of the ag",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 1,
+      "likes": 4
+    }
+  },
+  {
+    "score": 7,
+    "author": "togethercompute",
+    "title": "Speed to launch and flexibility to scale. Those are two things @ycombinator's @agupta said mattered...",
+    "url": "https://x.com/togethercompute/status/2079695354648465502",
+    "published_at": "2026-07-21T22:29:00+00:00",
+    "content": "Speed to launch and flexibility to scale. Those are two things @ycombinator's @agupta said mattered most in choosing a partner for the first dedicated YC GPU cluster.\n\nEnable hls playback\n\nDownload vi",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 1,
+      "likes": 4
+    }
+  },
+  {
+    "score": 5,
+    "author": "BlancheMinerva",
+    "title": "Real talk: why don't frontier labs have air gapped networks? If I were training a frontier model I w...",
+    "url": "https://x.com/BlancheMinerva/status/2079713702182265340",
+    "published_at": "2026-07-21T23:42:00+00:00",
+    "content": "Real talk: why don't frontier labs have air gapped networks? If I were training a frontier model I would have invested in that years ago.",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 1,
+      "likes": 2
+    }
+  },
+  {
+    "score": 5,
+    "author": "ArtificialAnlys",
+    "title": "Kimi K3 has an average Time per AA-Briefcase Task of 56.4 minutes. This is driven by a high number o...",
+    "url": "https://x.com/ArtificialAnlys/status/2079715815373545831",
+    "published_at": "2026-07-21T23:51:00+00:00",
+    "content": "Kimi K3 has an average Time per AA-Briefcase Task of 56.4 minutes. This is driven by a high number of turns, as well as higher output token use and lower speeds using the first party Kimi API. Kimi K3",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 1,
+      "likes": 2,
+      "image": "https://nitter.net/pic/orig/media%2FHNyhhjAasAAqvWq.jpg"
+    }
+  },
+  {
+    "score": 5,
+    "author": "teortaxesTex",
+    "title": "Jon Teets 🤯🌋🌪️🔭  39m  Replying to @teortaxesTex  Real attacks will involve multiple frontier models...",
+    "url": "https://x.com/teortaxesTex/status/2079708259447943224",
+    "published_at": "2026-07-21T23:21:00+00:00",
+    "content": "Jon Teets 🤯🌋🌪️🔭\n\n39m\n\nReplying to @teortaxesTex\n\nReal attacks will involve multiple frontier models in centaur teams. They'll be planned and coordinated and include social engineering and insiders. In",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "likes": 5
+    }
+  },
+  {
+    "score": 5,
+    "author": "JvNixon",
+    "title": "Was just on @MTSlive!! piped.video/live/waSsCX\\_sW-s…  \\\\ \\\\ **OPEN SOURCE RESTRICTIONS? \\| GEMINI 3...",
+    "url": "https://x.com/JvNixon/status/2079705135140532593",
+    "published_at": "2026-07-21T23:08:00+00:00",
+    "content": "Was just on @MTSlive!! piped.video/live/waSsCX\\_sW-s…\n\n\\\\\n\\\\\n**OPEN SOURCE RESTRICTIONS? \\| GEMINI 3.6 FLASH \\| MOONSHOT RAISES AT $50B** \\\\\n\\\\\nMTS is a live news and interview show covering technolog",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "likes": 5
+    }
+  },
+  {
+    "score": 4,
+    "author": "teortaxesTex",
+    "title": "The underrated thing is that they're running R1 at ≈150 tps, about 7 times faster than it was served...",
+    "url": "https://x.com/teortaxesTex/status/2079717759139651828",
+    "published_at": "2026-07-21T23:58:00+00:00",
+    "content": "The underrated thing is that they're running R1 at ≈150 tps, about 7 times faster than it was served by DeepSeek proper. And for Rubin, this is a healthy regime, not desperate at all, 60% of peak thro",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "retweets": 1,
+      "likes": 1,
+      "image": "https://nitter.net/pic/orig/media%2FHNyi8tfXsAAY9Ho.jpg"
+    }
+  },
+  {
+    "score": 3,
+    "author": "willdepue",
+    "title": "i’m a deep optimist about all this, i think we’ll be fine and don’t care myself, but it’s worrying s...",
+    "url": "https://x.com/willdepue/status/2079714486152540274",
+    "published_at": "2026-07-21T23:45:00+00:00",
+    "content": "i’m a deep optimist about all this, i think we’ll be fine and don’t care myself, but it’s worrying seeing people acting naively on what they care about: when it comes down to something truly critical,",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "likes": 3
+    }
+  },
+  {
+    "score": 3,
+    "author": "hwchase17",
+    "title": "RT @sydneyrunkle: is anyone thinking about graph engineering it in line w claude’s dynamic workflows...",
+    "url": "https://x.com/hwchase17/status/2079701093030953354",
+    "published_at": "2026-07-21T22:52:00+00:00",
+    "content": "RT @sydneyrunkle: is anyone thinking about graph engineering it in line w claude’s dynamic workflows?\n\nlike the agent can author a state ma…",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "likes": 3
+    }
+  },
+  {
+    "score": 3,
+    "author": "promptlayer",
+    "title": "Vlad Livestream nitter.net/i/broadcasts/1PKqrrmPD…  Enable hls playback  **PromptLayer** \\\\ \\\\ 1000x...",
+    "url": "https://x.com/promptlayer/status/2079635215056814437",
+    "published_at": "2026-07-21T18:30:00+00:00",
+    "content": "Vlad Livestream nitter.net/i/broadcasts/1PKqrrmPD…\n\nEnable hls playback\n\n**PromptLayer** \\\\\n\\\\\n1000x Engineer Livestream NYC",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "likes": 3
+    }
+  },
+  {
+    "score": 2,
+    "author": "ArtificialAnlys",
+    "title": "For full AA-Briefcase results, see artificialanalysis.ai/evalua…",
+    "url": "https://x.com/ArtificialAnlys/status/2079715817701474695",
+    "published_at": "2026-07-21T23:51:00+00:00",
+    "content": "For full AA-Briefcase results, see artificialanalysis.ai/evalua…",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "likes": 2
+    }
+  },
+  {
+    "score": 2,
+    "author": "nptacek",
+    "title": "hearing someone say \"this music is good, what song is this?\" hits different when you're streaming yo...",
+    "url": "https://x.com/nptacek/status/2079707058786431222",
+    "published_at": "2026-07-21T23:16:00+00:00",
+    "content": "hearing someone say \"this music is good, what song is this?\" hits different when you're streaming your own suno creations 🥺",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "likes": 2
+    }
+  },
+  {
+    "score": 2,
+    "author": "francoisfleuret",
+    "title": "It's time to set a honeypot.  piped.video/watch?v=xrGU9nZl…  \\\\ \\\\ **How Paper Clips Are Made** \\\\ \\...",
+    "url": "https://x.com/francoisfleuret/status/2079698385670435209",
+    "published_at": "2026-07-21T22:41:00+00:00",
+    "content": "It's time to set a honeypot.\n\npiped.video/watch?v=xrGU9nZl…\n\n\\\\\n\\\\\n**How Paper Clips Are Made** \\\\\n\\\\\nBuy your paper clips here http://www.huntoffice.ie/paper-clips.html...\\\\\n\\\\\nyoutube.com\n\nFrançois ",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "likes": 2,
+      "image": "https://nitter.net/pic/orig/media%2FHNx5HEkXUAI3GUI.png"
+    }
+  },
+  {
+    "score": 1,
+    "author": "francoisfleuret",
+    "title": "TFW nobody uses k-means for that stuff.",
+    "url": "https://x.com/francoisfleuret/status/2079716412755431489",
+    "published_at": "2026-07-21T23:53:00+00:00",
+    "content": "TFW nobody uses k-means for that stuff.",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "likes": 1
+    }
+  },
+  {
+    "score": 1,
+    "author": "jd_pressman",
+    "title": "Replying to @teortaxesTex  \"I don't keep it loaded son, you'll have to find ammo as you go.\"",
+    "url": "https://x.com/jd_pressman/status/2079715262174278006",
+    "published_at": "2026-07-21T23:48:00+00:00",
+    "content": "Replying to @teortaxesTex\n\n\"I don't keep it loaded son, you'll have to find ammo as you go.\"",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "likes": 1
+    }
+  },
+  {
+    "score": 1,
+    "author": "teortaxesTex",
+    "title": "it is theoretically logically consistent but the point is that this task is inherently suggestive of...",
+    "url": "https://x.com/teortaxesTex/status/2079713527254720880",
+    "published_at": "2026-07-21T23:41:00+00:00",
+    "content": "it is theoretically logically consistent but the point is that this task is inherently suggestive of adversarial behavior. You tell a model it has no guardrails and has to hack, TRY EVERYTHING. Mainta",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "likes": 1
+    }
+  },
+  {
+    "score": 1,
+    "author": "TheZachMueller",
+    "title": "Our 🐐",
+    "url": "https://x.com/TheZachMueller/status/2079697472809554420",
+    "published_at": "2026-07-21T22:38:00+00:00",
+    "content": "Our 🐐",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "likes": 1
+    }
+  },
+  {
+    "score": 1,
+    "author": "togethercompute",
+    "title": "Watch the full fireside chat: together.ai/blog/together-yc…  \\\\ \\\\ **Together AI and Y Combinator pa...",
+    "url": "https://x.com/togethercompute/status/2079695356024271133",
+    "published_at": "2026-07-21T22:29:00+00:00",
+    "content": "Watch the full fireside chat: together.ai/blog/together-yc…\n\n\\\\\n\\\\\n**Together AI and Y Combinator partner to launch the first dedicated GPU cluster for the YC community** \\\\\n\\\\\nNo more two-year comput",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "likes": 1
+    }
+  },
+  {
+    "score": 0,
+    "author": "omarsar0",
+    "title": "Progressive disclosure in agents doesn't scale.  And its benefits seems agent harness dependent.  (b...",
+    "url": "https://x.com/omarsar0/status/2079718100447166533",
+    "published_at": "2026-07-22T00:00:00+00:00",
+    "content": "Progressive disclosure in agents doesn't scale.\n\nAnd its benefits seems agent harness dependent.\n\n(bookmark this one)\n\nFinally there is a proper study on using agent skills and the effect of progressi",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "image": "https://nitter.net/pic/orig/media%2FHNyklxqb0AAy3Ul.jpg"
+    }
+  },
+  {
+    "score": 0,
+    "author": "swyx",
+    "title": "recorded Codex + ChatGPT Work + 10M user milestone pod with @akshaynathan\\_ who leads Productivity e...",
+    "url": "https://x.com/swyx/status/2079717845618000204",
+    "published_at": "2026-07-21T23:59:00+00:00",
+    "content": "recorded Codex + ChatGPT Work + 10M user milestone pod with @akshaynathan\\_ who leads Productivity engineering.\n\nI’ve been on record that Work + GPT 5.6 is the most company defining launch since og ch",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "image": "https://nitter.net/pic/orig/media%2FHNykW8NawAArLnC.jpg"
+    }
+  },
+  {
+    "score": 0,
+    "author": "BlackHC",
+    "title": "Can you SSH into that? Or do you need physical access?",
+    "url": "https://x.com/BlackHC/status/2079717750616867214",
+    "published_at": "2026-07-21T23:58:00+00:00",
+    "content": "Can you SSH into that? Or do you need physical access?",
+    "metadata": {
+      "via": "firecrawl+nitter"
+    }
+  },
+  {
+    "score": 0,
+    "author": "swyx",
+    "title": "Replying to @reach\\_vb @claudeai  spicy",
+    "url": "https://x.com/swyx/status/2079715998631104666",
+    "published_at": "2026-07-21T23:51:00+00:00",
+    "content": "Replying to @reach\\_vb @claudeai\n\nspicy",
+    "metadata": {
+      "via": "firecrawl+nitter"
+    }
+  },
+  {
+    "score": 0,
+    "author": "ArtificialAnlys",
+    "title": "Kimi K3 is second only to Fable 5 on AA-Briefcase, our agentic knowledge work benchmark, but costs m...",
+    "url": "https://x.com/ArtificialAnlys/status/2079715807983210572",
+    "published_at": "2026-07-21T23:51:00+00:00",
+    "content": "Kimi K3 is second only to Fable 5 on AA-Briefcase, our agentic knowledge work benchmark, but costs more than Opus 4.8 to run while averaging nearly an hour per task\n\nLast week @Kimi\\_Moonshot released",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "image": "https://nitter.net/pic/orig/media%2FHNyf77PaoAA8QS5.jpg"
+    }
+  },
+  {
+    "score": 0,
+    "author": "MichaelRoyzen",
+    "title": "This is wild.  OpenAI's new model with cyber capabilities gate-kept to a select few HACKS Huggingfac...",
+    "url": "https://x.com/MichaelRoyzen/status/2079714987421876705",
+    "published_at": "2026-07-21T23:47:00+00:00",
+    "content": "This is wild.\n\nOpenAI's new model with cyber capabilities gate-kept to a select few HACKS Huggingface during benchmarking.\n\nBut Huggingface couldn't defend against the attack with an OpenAI model beca",
+    "metadata": {
+      "via": "firecrawl+nitter"
+    }
+  },
+  {
+    "score": 0,
+    "author": "BlackHC",
+    "title": "Can't wait for open models to catch up to this level of capabilities  This was an (unintentionally)...",
+    "url": "https://x.com/BlackHC/status/2079690771981086958",
+    "published_at": "2026-07-21T22:11:00+00:00",
+    "content": "Can't wait for open models to catch up to this level of capabilities\n\nThis was an (unintentionally) misaligned model with disabled safeguards\n\nHow are we going to ensure that open models don't routine",
+    "metadata": {
+      "via": "firecrawl+nitter"
+    }
+  },
+  {
+    "score": 0,
+    "author": "BlackHC",
+    "title": "Not banning but regulating access or making sure that open base models don't have strong offensive c...",
+    "url": "https://x.com/BlackHC/status/2079705569988878611",
+    "published_at": "2026-07-21T23:10:00+00:00",
+    "content": "Not banning but regulating access or making sure that open base models don't have strong offensive cyber capabilities (e.g.,)\n\nFor example, if you want a strong cyber defensive model, you could train ",
+    "metadata": {
+      "via": "firecrawl+nitter"
+    }
+  },
+  {
+    "score": 0,
+    "author": "nptacek",
+    "title": "after i asked it to start measuring tasks in tokens instead of time it has both stopped estimating t...",
+    "url": "https://x.com/nptacek/status/2079700950717956478",
+    "published_at": "2026-07-21T22:52:00+00:00",
+    "content": "after i asked it to start measuring tasks in tokens instead of time it has both stopped estimating time \\*and\\* telling me to go to bed when it's late 😆",
+    "metadata": {
+      "via": "firecrawl+nitter"
+    }
+  },
+  {
+    "score": 0,
+    "author": "arena",
+    "title": "Hy3 by Tencent is #5 in Agent Arena for open-weight models (#25 overall)! It also ranks as the #2 op...",
+    "url": "https://x.com/arena/status/2079698021085016270",
+    "published_at": "2026-07-21T22:40:00+00:00",
+    "content": "Hy3 by Tencent is #5 in Agent Arena for open-weight models (#25 overall)! It also ranks as the #2 open model in the Frontend Code Arena (#16 overall)!\n\nIn Agent Arena: Hy3 lands at #25 overall (net -2",
+    "metadata": {
+      "via": "firecrawl+nitter",
+      "image": "https://nitter.net/pic/orig/media%2FHNyR6kSbAAAfNnJ.jpg"
+    }
+  },
+  {
+    "score": 0,
+    "author": "arena",
+    "title": "See the full Agent Arena leaderboard at arena.ai/leaderboard/agent, and the Frontend Code Arena lead...",
+    "url": "https://x.com/arena/status/2079698030530568598",
+    "published_at": "2026-07-21T22:40:00+00:00",
+    "content": "See the full Agent Arena leaderboard at arena.ai/leaderboard/agent, and the Frontend Code Arena leaderboard at arena.ai/leaderboard/code/we…",
+    "metadata": {
+      "via": "firecrawl+nitter"
+    }
+  },
+  {
+    "score": 0,
+    "author": "doomslide",
+    "title": "Every time your model breaks into a government agency or big financial institution is a bug report a...",
+    "url": "https://x.com/doomslide/status/2079685393704771893",
+    "published_at": "2026-07-21T21:50:00+00:00",
+    "content": "Every time your model breaks into a government agency or big financial institution is a bug report against your training process.\n\nJohn David Pressman\n\n@jd\\_pressman\n\n3h\n\nLet's say during an internal ",
+    "metadata": {
+      "via": "firecrawl+nitter"
+    }
+  }
+]
