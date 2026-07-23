@@ -1,14 +1,4 @@
 {
-  "2026-07-19": [
-    "HenryNdubuaku/maths-cs-ai-compendium",
-    "Nutlope/hallmark",
-    "github/copilot-sdk",
-    "anthropics/cwc-workshops",
-    "PrismML-Eng/Bonsai-demo",
-    "openinterpreter/openinterpreter",
-    "RyanCodrai/turbovec",
-    "HKUDS/DeepTutor"
-  ],
   "2026-07-20": [
     "Robbyant/lingbot-map",
     "rohitg00/ai-engineering-from-scratch",
@@ -43,5 +33,16 @@
     "KnockOutEZ/wigolo",
     "handy-computer/transcribe.cpp",
     "moonshine-ai/moonshine"
+  ],
+  "2026-07-23": [
+    "koala73/worldmonitor",
+    "ayghri/i-have-adhd",
+    "jamiepine/voicebox",
+    "diegosouzapw/OmniRoute",
+    "shiyu-coder/Kronos",
+    "ComposioHQ/awesome-claude-skills",
+    "agegr/pi-web",
+    "rohitg00/ai-engineering-from-scratch",
+    "dottxt-ai/outlines"
   ]
 }
