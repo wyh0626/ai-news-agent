@@ -1,12 +1,4 @@
 {
-  "2026-07-20": [
-    "Robbyant/lingbot-map",
-    "rohitg00/ai-engineering-from-scratch",
-    "elder-plinius/G0DM0D3",
-    "lyogavin/airllm",
-    "KnockOutEZ/wigolo",
-    "MoonshotAI/kimi-cli"
-  ],
   "2026-07-21": [
     "kvcache-ai/ktransformers",
     "rohitg00/ai-engineering-from-scratch",
@@ -42,6 +34,15 @@
     "shiyu-coder/Kronos",
     "ComposioHQ/awesome-claude-skills",
     "agegr/pi-web",
+    "rohitg00/ai-engineering-from-scratch",
+    "dottxt-ai/outlines"
+  ],
+  "2026-07-24": [
+    "koala73/worldmonitor",
+    "jamiepine/voicebox",
+    "diegosouzapw/OmniRoute",
+    "shiyu-coder/Kronos",
+    "ComposioHQ/awesome-claude-skills",
     "rohitg00/ai-engineering-from-scratch",
     "dottxt-ai/outlines"
   ]
