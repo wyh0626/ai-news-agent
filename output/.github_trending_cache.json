@@ -1,16 +1,4 @@
 {
-  "2026-07-21": [
-    "kvcache-ai/ktransformers",
-    "rohitg00/ai-engineering-from-scratch",
-    "jamiepine/voicebox",
-    "KnockOutEZ/wigolo",
-    "github/copilot-sdk",
-    "AstrBotDevs/AstrBot",
-    "1jehuang/jcode",
-    "MoonshotAI/kimi-cli",
-    "lyogavin/airllm",
-    "Canner/WrenAI"
-  ],
   "2026-07-22": [
     "1jehuang/jcode",
     "diegosouzapw/OmniRoute",
@@ -45,5 +33,15 @@
     "ComposioHQ/awesome-claude-skills",
     "rohitg00/ai-engineering-from-scratch",
     "dottxt-ai/outlines"
+  ],
+  "2026-07-25": [
+    "koala73/worldmonitor",
+    "shiyu-coder/Kronos",
+    "citrolabs/ego-lite",
+    "diegosouzapw/OmniRoute",
+    "ComposioHQ/awesome-claude-skills",
+    "earthtojake/text-to-cad",
+    "agegr/pi-web",
+    "Automattic/harper"
   ]
 }
