@@ -1,19 +1,4 @@
 {
-  "2026-07-22": [
-    "1jehuang/jcode",
-    "diegosouzapw/OmniRoute",
-    "rohitg00/ai-engineering-from-scratch",
-    "msitarzewski/agency-agents",
-    "kvcache-ai/ktransformers",
-    "jamiepine/voicebox",
-    "topoteretes/cognee",
-    "Robbyant/lingbot-map",
-    "MoonshotAI/kimi-cli",
-    "AstrBotDevs/AstrBot",
-    "KnockOutEZ/wigolo",
-    "handy-computer/transcribe.cpp",
-    "moonshine-ai/moonshine"
-  ],
   "2026-07-23": [
     "koala73/worldmonitor",
     "ayghri/i-have-adhd",
@@ -43,5 +28,14 @@
     "earthtojake/text-to-cad",
     "agegr/pi-web",
     "Automattic/harper"
+  ],
+  "2026-07-26": [
+    "koala73/worldmonitor",
+    "ComposioHQ/awesome-claude-skills",
+    "shiyu-coder/Kronos",
+    "citrolabs/ego-lite",
+    "Lordog/dive-into-llms",
+    "diegosouzapw/OmniRoute",
+    "OtterMind/Chat2DB"
   ]
 }
