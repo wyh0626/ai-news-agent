@@ -1,15 +1,4 @@
 {
-  "2026-07-23": [
-    "koala73/worldmonitor",
-    "ayghri/i-have-adhd",
-    "jamiepine/voicebox",
-    "diegosouzapw/OmniRoute",
-    "shiyu-coder/Kronos",
-    "ComposioHQ/awesome-claude-skills",
-    "agegr/pi-web",
-    "rohitg00/ai-engineering-from-scratch",
-    "dottxt-ai/outlines"
-  ],
   "2026-07-24": [
     "koala73/worldmonitor",
     "jamiepine/voicebox",
@@ -37,5 +26,19 @@
     "Lordog/dive-into-llms",
     "diegosouzapw/OmniRoute",
     "OtterMind/Chat2DB"
+  ],
+  "2026-07-27": [
+    "citrolabs/ego-lite",
+    "ComposioHQ/awesome-claude-skills",
+    "anthropics/claude-cookbooks",
+    "shiyu-coder/Kronos",
+    "obra/superpowers",
+    "mattpocock/skills",
+    "palmier-io/palmier-pro",
+    "Lordog/dive-into-llms",
+    "RyanCodrai/turbovec",
+    "OtterMind/Chat2DB",
+    "andrewyng/aisuite",
+    "affaan-m/ECC"
   ]
 }
