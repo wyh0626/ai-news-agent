@@ -1,13 +1,4 @@
 {
-  "2026-07-24": [
-    "koala73/worldmonitor",
-    "jamiepine/voicebox",
-    "diegosouzapw/OmniRoute",
-    "shiyu-coder/Kronos",
-    "ComposioHQ/awesome-claude-skills",
-    "rohitg00/ai-engineering-from-scratch",
-    "dottxt-ai/outlines"
-  ],
   "2026-07-25": [
     "koala73/worldmonitor",
     "shiyu-coder/Kronos",
@@ -40,5 +31,14 @@
     "OtterMind/Chat2DB",
     "andrewyng/aisuite",
     "affaan-m/ECC"
+  ],
+  "2026-07-28": [
+    "citrolabs/ego-lite",
+    "pingdotgg/t3code",
+    "OtterMind/Chat2DB",
+    "pbakaus/impeccable",
+    "shiyu-coder/Kronos",
+    "andrewyng/aisuite",
+    "anthropics/claude-cookbooks"
   ]
 }
