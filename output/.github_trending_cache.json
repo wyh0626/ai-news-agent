@@ -1,14 +1,4 @@
 {
-  "2026-07-25": [
-    "koala73/worldmonitor",
-    "shiyu-coder/Kronos",
-    "citrolabs/ego-lite",
-    "diegosouzapw/OmniRoute",
-    "ComposioHQ/awesome-claude-skills",
-    "earthtojake/text-to-cad",
-    "agegr/pi-web",
-    "Automattic/harper"
-  ],
   "2026-07-26": [
     "koala73/worldmonitor",
     "ComposioHQ/awesome-claude-skills",
@@ -40,5 +30,12 @@
     "shiyu-coder/Kronos",
     "andrewyng/aisuite",
     "anthropics/claude-cookbooks"
+  ],
+  "2026-07-29": [
+    "moeru-ai/airi",
+    "pbakaus/impeccable",
+    "shiyu-coder/Kronos",
+    "bradautomates/claude-video",
+    "mvanhorn/last30days-skill"
   ]
 }
