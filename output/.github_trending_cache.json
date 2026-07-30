@@ -1,13 +1,4 @@
 {
-  "2026-07-26": [
-    "koala73/worldmonitor",
-    "ComposioHQ/awesome-claude-skills",
-    "shiyu-coder/Kronos",
-    "citrolabs/ego-lite",
-    "Lordog/dive-into-llms",
-    "diegosouzapw/OmniRoute",
-    "OtterMind/Chat2DB"
-  ],
   "2026-07-27": [
     "citrolabs/ego-lite",
     "ComposioHQ/awesome-claude-skills",
@@ -37,5 +28,14 @@
     "shiyu-coder/Kronos",
     "bradautomates/claude-video",
     "mvanhorn/last30days-skill"
+  ],
+  "2026-07-30": [
+    "moeru-ai/airi",
+    "andrewyng/aisuite",
+    "affaan-m/ECC",
+    "huggingface/speech-to-speech",
+    "virgiliojr94/book-to-skill",
+    "microsoft/agent-governance-toolkit",
+    "bradautomates/claude-video"
   ]
 }
