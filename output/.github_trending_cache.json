@@ -1,18 +1,4 @@
 {
-  "2026-07-27": [
-    "citrolabs/ego-lite",
-    "ComposioHQ/awesome-claude-skills",
-    "anthropics/claude-cookbooks",
-    "shiyu-coder/Kronos",
-    "obra/superpowers",
-    "mattpocock/skills",
-    "palmier-io/palmier-pro",
-    "Lordog/dive-into-llms",
-    "RyanCodrai/turbovec",
-    "OtterMind/Chat2DB",
-    "andrewyng/aisuite",
-    "affaan-m/ECC"
-  ],
   "2026-07-28": [
     "citrolabs/ego-lite",
     "pingdotgg/t3code",
@@ -37,5 +23,17 @@
     "virgiliojr94/book-to-skill",
     "microsoft/agent-governance-toolkit",
     "bradautomates/claude-video"
+  ],
+  "2026-07-31": [
+    "moeru-ai/airi",
+    "affaan-m/ECC",
+    "huggingface/speech-to-speech",
+    "deepfakes/faceswap",
+    "microsoft/VibeVoice",
+    "different-ai/openwork",
+    "obra/superpowers",
+    "MoonshotAI/FlashKDA",
+    "maderix/ANE",
+    "virgiliojr94/book-to-skill"
   ]
 }
