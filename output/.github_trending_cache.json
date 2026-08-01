@@ -1,13 +1,4 @@
 {
-  "2026-07-28": [
-    "citrolabs/ego-lite",
-    "pingdotgg/t3code",
-    "OtterMind/Chat2DB",
-    "pbakaus/impeccable",
-    "shiyu-coder/Kronos",
-    "andrewyng/aisuite",
-    "anthropics/claude-cookbooks"
-  ],
   "2026-07-29": [
     "moeru-ai/airi",
     "pbakaus/impeccable",
@@ -35,5 +26,12 @@
     "MoonshotAI/FlashKDA",
     "maderix/ANE",
     "virgiliojr94/book-to-skill"
+  ],
+  "2026-08-01": [
+    "huggingface/speech-to-speech",
+    "microsoft/AI-For-Beginners",
+    "different-ai/openwork",
+    "mvanhorn/last30days-skill",
+    "affaan-m/ECC"
   ]
 }
