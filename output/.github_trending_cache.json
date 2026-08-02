@@ -1,11 +1,4 @@
 {
-  "2026-07-29": [
-    "moeru-ai/airi",
-    "pbakaus/impeccable",
-    "shiyu-coder/Kronos",
-    "bradautomates/claude-video",
-    "mvanhorn/last30days-skill"
-  ],
   "2026-07-30": [
     "moeru-ai/airi",
     "andrewyng/aisuite",
@@ -33,5 +26,12 @@
     "different-ai/openwork",
     "mvanhorn/last30days-skill",
     "affaan-m/ECC"
+  ],
+  "2026-08-02": [
+    "different-ai/openwork",
+    "mvanhorn/last30days-skill",
+    "microsoft/AI-For-Beginners",
+    "github/copilot-sdk",
+    "deepfakes/faceswap"
   ]
 }
