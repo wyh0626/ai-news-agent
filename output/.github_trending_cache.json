@@ -1,13 +1,4 @@
 {
-  "2026-07-30": [
-    "moeru-ai/airi",
-    "andrewyng/aisuite",
-    "affaan-m/ECC",
-    "huggingface/speech-to-speech",
-    "virgiliojr94/book-to-skill",
-    "microsoft/agent-governance-toolkit",
-    "bradautomates/claude-video"
-  ],
   "2026-07-31": [
     "moeru-ai/airi",
     "affaan-m/ECC",
@@ -33,5 +24,15 @@
     "microsoft/AI-For-Beginners",
     "github/copilot-sdk",
     "deepfakes/faceswap"
+  ],
+  "2026-08-03": [
+    "microsoft/AI-For-Beginners",
+    "microsoft/generative-ai-for-beginners",
+    "github/copilot-sdk",
+    "huggingface/speech-to-speech",
+    "abus-aikorea/voice-pro",
+    "microsoft/TRELLIS.2",
+    "TencentCloud/TencentDB-Agent-Memory",
+    "bytedance/deer-flow"
   ]
 }
