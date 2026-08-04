@@ -1,16 +1,4 @@
 {
-  "2026-07-31": [
-    "moeru-ai/airi",
-    "affaan-m/ECC",
-    "huggingface/speech-to-speech",
-    "deepfakes/faceswap",
-    "microsoft/VibeVoice",
-    "different-ai/openwork",
-    "obra/superpowers",
-    "MoonshotAI/FlashKDA",
-    "maderix/ANE",
-    "virgiliojr94/book-to-skill"
-  ],
   "2026-08-01": [
     "huggingface/speech-to-speech",
     "microsoft/AI-For-Beginners",
@@ -34,5 +22,16 @@
     "microsoft/TRELLIS.2",
     "TencentCloud/TencentDB-Agent-Memory",
     "bytedance/deer-flow"
+  ],
+  "2026-08-04": [
+    "microsoft/AI-For-Beginners",
+    "lyogavin/airllm",
+    "different-ai/openwork",
+    "microsoft/generative-ai-for-beginners",
+    "Panniantong/Agent-Reach",
+    "TencentCloud/TencentDB-Agent-Memory",
+    "mvanhorn/last30days-skill",
+    "antirez/ds4",
+    "esengine/DeepSeek-Reasonix"
   ]
 }
