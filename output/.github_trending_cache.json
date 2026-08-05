@@ -1,11 +1,4 @@
 {
-  "2026-08-01": [
-    "huggingface/speech-to-speech",
-    "microsoft/AI-For-Beginners",
-    "different-ai/openwork",
-    "mvanhorn/last30days-skill",
-    "affaan-m/ECC"
-  ],
   "2026-08-02": [
     "different-ai/openwork",
     "mvanhorn/last30days-skill",
@@ -33,5 +26,10 @@
     "mvanhorn/last30days-skill",
     "antirez/ds4",
     "esengine/DeepSeek-Reasonix"
+  ],
+  "2026-08-05": [
+    "lyogavin/airllm",
+    "microsoft/AI-For-Beginners",
+    "microsoft/generative-ai-for-beginners"
   ]
 }
