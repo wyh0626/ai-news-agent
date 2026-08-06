@@ -1,11 +1,4 @@
 {
-  "2026-08-02": [
-    "different-ai/openwork",
-    "mvanhorn/last30days-skill",
-    "microsoft/AI-For-Beginners",
-    "github/copilot-sdk",
-    "deepfakes/faceswap"
-  ],
   "2026-08-03": [
     "microsoft/AI-For-Beginners",
     "microsoft/generative-ai-for-beginners",
@@ -31,5 +24,9 @@
     "lyogavin/airllm",
     "microsoft/AI-For-Beginners",
     "microsoft/generative-ai-for-beginners"
+  ],
+  "2026-08-06": [
+    "tailwindlabs/tailwindcss",
+    "lyogavin/airllm"
   ]
 }
