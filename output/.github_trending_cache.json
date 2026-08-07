@@ -1,14 +1,4 @@
 {
-  "2026-08-03": [
-    "microsoft/AI-For-Beginners",
-    "microsoft/generative-ai-for-beginners",
-    "github/copilot-sdk",
-    "huggingface/speech-to-speech",
-    "abus-aikorea/voice-pro",
-    "microsoft/TRELLIS.2",
-    "TencentCloud/TencentDB-Agent-Memory",
-    "bytedance/deer-flow"
-  ],
   "2026-08-04": [
     "microsoft/AI-For-Beginners",
     "lyogavin/airllm",
@@ -26,6 +16,10 @@
     "microsoft/generative-ai-for-beginners"
   ],
   "2026-08-06": [
+    "tailwindlabs/tailwindcss",
+    "lyogavin/airllm"
+  ],
+  "2026-08-07": [
     "tailwindlabs/tailwindcss",
     "lyogavin/airllm"
   ]
