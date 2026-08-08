@@ -1,15 +1,4 @@
 {
-  "2026-08-04": [
-    "microsoft/AI-For-Beginners",
-    "lyogavin/airllm",
-    "different-ai/openwork",
-    "microsoft/generative-ai-for-beginners",
-    "Panniantong/Agent-Reach",
-    "TencentCloud/TencentDB-Agent-Memory",
-    "mvanhorn/last30days-skill",
-    "antirez/ds4",
-    "esengine/DeepSeek-Reasonix"
-  ],
   "2026-08-05": [
     "lyogavin/airllm",
     "microsoft/AI-For-Beginners",
@@ -22,5 +11,8 @@
   "2026-08-07": [
     "tailwindlabs/tailwindcss",
     "lyogavin/airllm"
+  ],
+  "2026-08-08": [
+    "Significant-Gravitas/AutoGPT"
   ]
 }
