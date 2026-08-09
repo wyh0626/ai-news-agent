@@ -1,9 +1,4 @@
 {
-  "2026-08-05": [
-    "lyogavin/airllm",
-    "microsoft/AI-For-Beginners",
-    "microsoft/generative-ai-for-beginners"
-  ],
   "2026-08-06": [
     "tailwindlabs/tailwindcss",
     "lyogavin/airllm"
@@ -13,6 +8,10 @@
     "lyogavin/airllm"
   ],
   "2026-08-08": [
+    "Significant-Gravitas/AutoGPT"
+  ],
+  "2026-08-09": [
+    "PrimeIntellect-ai/prime-agent",
     "Significant-Gravitas/AutoGPT"
   ]
 }
