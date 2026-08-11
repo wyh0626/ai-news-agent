@@ -1,8 +1,4 @@
 {
-  "2026-08-07": [
-    "tailwindlabs/tailwindcss",
-    "lyogavin/airllm"
-  ],
   "2026-08-08": [
     "Significant-Gravitas/AutoGPT"
   ],
@@ -11,6 +7,11 @@
     "Significant-Gravitas/AutoGPT"
   ],
   "2026-08-10": [
+    "PrimeIntellect-ai/prime-agent",
+    "ZhuLinsen/daily_stock_analysis",
+    "harveyai/harvey-labs"
+  ],
+  "2026-08-11": [
     "PrimeIntellect-ai/prime-agent",
     "ZhuLinsen/daily_stock_analysis",
     "harveyai/harvey-labs"
