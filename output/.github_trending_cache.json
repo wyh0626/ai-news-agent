@@ -1,9 +1,4 @@
 {
-  "2026-08-10": [
-    "PrimeIntellect-ai/prime-agent",
-    "ZhuLinsen/daily_stock_analysis",
-    "harveyai/harvey-labs"
-  ],
   "2026-08-11": [
     "PrimeIntellect-ai/prime-agent",
     "ZhuLinsen/daily_stock_analysis",
@@ -24,5 +19,9 @@
     "huggingface/transformers",
     "harveyai/harvey-labs",
     "PrimeIntellect-ai/prime-agent"
+  ],
+  "2026-08-14": [
+    "stablyai/orca",
+    "paperclipai/paperclip"
   ]
 }
