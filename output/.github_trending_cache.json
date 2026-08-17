@@ -1,12 +1,4 @@
 {
-  "2026-08-13": [
-    "ZhuLinsen/daily_stock_analysis",
-    "stablyai/orca",
-    "paperclipai/paperclip",
-    "huggingface/transformers",
-    "harveyai/harvey-labs",
-    "PrimeIntellect-ai/prime-agent"
-  ],
   "2026-08-14": [
     "stablyai/orca",
     "paperclipai/paperclip"
@@ -18,6 +10,9 @@
   "2026-08-16": [
     "holaboss-ai/holaOS",
     "deepseek-ai/awesome-deepseek-agent",
+    "unslothai/unsloth"
+  ],
+  "2026-08-17": [
     "unslothai/unsloth"
   ]
 }
