@@ -37,19 +37,25 @@ if (files.length === 0) {
 function extractMeta(content, fileName) {
   const lines = content.split('\n');
 
+  // 记录原始 frontmatter 的结束行。元数据从原文读取，生成正文时再排除，
+  // 避免先删除 frontmatter 后导致 description 永远无法被提取。
+  let frontmatterEndLineIdx = -1;
+  if (lines[0]?.trim() === '---') {
+    frontmatterEndLineIdx = lines.findIndex(
+      (line, index) => index > 0 && line.trim() === '---',
+    );
+  }
+
   // 日期
   const dateMatch = fileName.match(/(\d{4}-\d{2}-\d{2})/);
   const date = dateMatch ? dateMatch[1] : new Date().toISOString().slice(0, 10);
 
   // ── 优先读取 frontmatter 里的 description（pipeline 写入的高质量摘要）──
   let frontmatterDescription = '';
-  if (content.startsWith('---')) {
-    const endIdx = content.indexOf('---', 3);
-    if (endIdx > 0) {
-      const fm = content.slice(3, endIdx);
-      const descMatch = fm.match(/^description:\s*["']?(.+?)["']?\s*$/m);
-      if (descMatch) frontmatterDescription = descMatch[1].trim();
-    }
+  if (frontmatterEndLineIdx > 0) {
+    const fm = lines.slice(1, frontmatterEndLineIdx).join('\n');
+    const descMatch = fm.match(/^description:\s*["']?(.+?)["']?\s*$/m);
+    if (descMatch) frontmatterDescription = descMatch[1].trim();
   }
 
   // ── 降级：从 Top Stories / 今日焦点 提取编号标题作为摘要 ──
@@ -109,9 +115,16 @@ function extractMeta(content, fileName) {
     if (imgMatch) { cover = imgMatch[1]; coverLineIdx = i; break; }
   }
 
-  // 去掉原始 H1 和封面图行（避免在 body 里重复显示）
+  // 去掉原始 frontmatter、H1 和封面图行（避免在 body 里重复显示）
   const h1Idx = lines.findIndex(l => l.startsWith('# '));
-  const skipIdx = new Set([h1Idx, coverLineIdx].filter(i => i >= 0));
+  const frontmatterLines = frontmatterEndLineIdx >= 0
+    ? Array.from({ length: frontmatterEndLineIdx + 1 }, (_, index) => index)
+    : [];
+  const skipIdx = new Set([
+    ...frontmatterLines,
+    h1Idx,
+    coverLineIdx,
+  ].filter(i => i >= 0));
   const bodyLines = lines.filter((_, i) => !skipIdx.has(i));
   const body = bodyLines.join('\n').replace(/^\n+/, '');
 
@@ -136,15 +149,8 @@ for (const zhFile of zhFiles) {
 for (const file of files) {
   const raw = readFileSync(join(sourceDir, file), 'utf-8');
 
-  // 去掉旧 frontmatter（总是重新生成）
-  let content = raw;
-  if (raw.startsWith('---')) {
-    const endIdx = raw.indexOf('---', 3);
-    if (endIdx > 0) content = raw.slice(endIdx + 3).trim();
-  }
-
   const isZh = file.endsWith('-zh.md');
-  const meta = extractMeta(content, file);
+  const meta = extractMeta(raw, file);
 
   // 计算配对 slug
   let pairSlug = '';
