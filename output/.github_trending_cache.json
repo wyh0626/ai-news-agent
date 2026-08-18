@@ -1,8 +1,4 @@
 {
-  "2026-08-14": [
-    "stablyai/orca",
-    "paperclipai/paperclip"
-  ],
   "2026-08-15": [
     "unslothai/unsloth",
     "holaboss-ai/holaOS"
@@ -14,5 +10,10 @@
   ],
   "2026-08-17": [
     "unslothai/unsloth"
+  ],
+  "2026-08-18": [
+    "unslothai/unsloth",
+    "ToolJet/ToolJet",
+    "cactus-compute/needle"
   ]
 }
