@@ -1,8 +1,4 @@
 {
-  "2026-08-15": [
-    "unslothai/unsloth",
-    "holaboss-ai/holaOS"
-  ],
   "2026-08-16": [
     "holaboss-ai/holaOS",
     "deepseek-ai/awesome-deepseek-agent",
@@ -15,5 +11,14 @@
     "unslothai/unsloth",
     "ToolJet/ToolJet",
     "cactus-compute/needle"
+  ],
+  "2026-08-19": [
+    "harry0703/MoneyPrinterTurbo",
+    "usestrix/strix",
+    "akitaonrails/ai-memory",
+    "mukul975/Anthropic-Cybersecurity-Skills",
+    "AlexsJones/llmfit",
+    "santifer/career-ops",
+    "jundot/omlx"
   ]
 }
