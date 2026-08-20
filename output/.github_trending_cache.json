@@ -1,9 +1,4 @@
 {
-  "2026-08-16": [
-    "holaboss-ai/holaOS",
-    "deepseek-ai/awesome-deepseek-agent",
-    "unslothai/unsloth"
-  ],
   "2026-08-17": [
     "unslothai/unsloth"
   ],
@@ -20,5 +15,14 @@
     "AlexsJones/llmfit",
     "santifer/career-ops",
     "jundot/omlx"
+  ],
+  "2026-08-20": [
+    "harry0703/MoneyPrinterTurbo",
+    "chaitanyagiri/munder-difflin",
+    "akitaonrails/ai-memory",
+    "volcengine/OpenViking",
+    "mukul975/Anthropic-Cybersecurity-Skills",
+    "jundot/omlx",
+    "genlayerlabs/genlayer-project-boilerplate"
   ]
 }
