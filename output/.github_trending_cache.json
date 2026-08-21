@@ -1,7 +1,4 @@
 {
-  "2026-08-17": [
-    "unslothai/unsloth"
-  ],
   "2026-08-18": [
     "unslothai/unsloth",
     "ToolJet/ToolJet",
@@ -24,5 +21,15 @@
     "mukul975/Anthropic-Cybersecurity-Skills",
     "jundot/omlx",
     "genlayerlabs/genlayer-project-boilerplate"
+  ],
+  "2026-08-21": [
+    "harry0703/MoneyPrinterTurbo",
+    "volcengine/OpenViking",
+    "chaitanyagiri/munder-difflin",
+    "mukul975/Anthropic-Cybersecurity-Skills",
+    "mattpocock/skills",
+    "obra/superpowers",
+    "jundot/omlx",
+    "santifer/career-ops"
   ]
 }
