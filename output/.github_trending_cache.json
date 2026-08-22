@@ -1,9 +1,4 @@
 {
-  "2026-08-18": [
-    "unslothai/unsloth",
-    "ToolJet/ToolJet",
-    "cactus-compute/needle"
-  ],
   "2026-08-19": [
     "harry0703/MoneyPrinterTurbo",
     "usestrix/strix",
@@ -31,5 +26,20 @@
     "obra/superpowers",
     "jundot/omlx",
     "santifer/career-ops"
+  ],
+  "2026-08-22": [
+    "modular/modular",
+    "mattpocock/skills",
+    "obra/superpowers",
+    "cursor/plugins",
+    "santifer/career-ops",
+    "akitaonrails/ai-memory",
+    "harry0703/MoneyPrinterTurbo",
+    "agent-substrate/substrate",
+    "chaitanyagiri/munder-difflin",
+    "volcengine/OpenViking",
+    "JuliusBrussee/caveman",
+    "Tencent/AI-Infra-Guard",
+    "RyanCodrai/turbovec"
   ]
 }
