@@ -1,13 +1,4 @@
 {
-  "2026-08-19": [
-    "harry0703/MoneyPrinterTurbo",
-    "usestrix/strix",
-    "akitaonrails/ai-memory",
-    "mukul975/Anthropic-Cybersecurity-Skills",
-    "AlexsJones/llmfit",
-    "santifer/career-ops",
-    "jundot/omlx"
-  ],
   "2026-08-20": [
     "harry0703/MoneyPrinterTurbo",
     "chaitanyagiri/munder-difflin",
@@ -41,5 +32,18 @@
     "JuliusBrussee/caveman",
     "Tencent/AI-Infra-Guard",
     "RyanCodrai/turbovec"
+  ],
+  "2026-08-23": [
+    "mattpocock/skills",
+    "harry0703/MoneyPrinterTurbo",
+    "obra/superpowers",
+    "santifer/career-ops",
+    "cursor/plugins",
+    "modular/modular",
+    "affaan-m/ECC",
+    "ruvnet/ruflo",
+    "apache/maka",
+    "elder-plinius/OBLITERATUS",
+    "microsoft/onnxruntime"
   ]
 }
