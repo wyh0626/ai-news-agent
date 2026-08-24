@@ -1,13 +1,4 @@
 {
-  "2026-08-20": [
-    "harry0703/MoneyPrinterTurbo",
-    "chaitanyagiri/munder-difflin",
-    "akitaonrails/ai-memory",
-    "volcengine/OpenViking",
-    "mukul975/Anthropic-Cybersecurity-Skills",
-    "jundot/omlx",
-    "genlayerlabs/genlayer-project-boilerplate"
-  ],
   "2026-08-21": [
     "harry0703/MoneyPrinterTurbo",
     "volcengine/OpenViking",
@@ -45,5 +36,18 @@
     "apache/maka",
     "elder-plinius/OBLITERATUS",
     "microsoft/onnxruntime"
+  ],
+  "2026-08-24": [
+    "openai/codex",
+    "mattpocock/skills",
+    "affaan-m/ECC",
+    "obra/superpowers",
+    "Wei-Shaw/sub2api",
+    "n8n-io/n8n",
+    "anthropics/claude-code",
+    "modular/modular",
+    "multica-ai/andrej-karpathy-skills",
+    "cursor/plugins",
+    "Tencent/AI-Infra-Guard"
   ]
 }
