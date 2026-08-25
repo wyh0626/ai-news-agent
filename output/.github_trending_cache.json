@@ -1,14 +1,4 @@
 {
-  "2026-08-21": [
-    "harry0703/MoneyPrinterTurbo",
-    "volcengine/OpenViking",
-    "chaitanyagiri/munder-difflin",
-    "mukul975/Anthropic-Cybersecurity-Skills",
-    "mattpocock/skills",
-    "obra/superpowers",
-    "jundot/omlx",
-    "santifer/career-ops"
-  ],
   "2026-08-22": [
     "modular/modular",
     "mattpocock/skills",
@@ -49,5 +39,20 @@
     "multica-ai/andrej-karpathy-skills",
     "cursor/plugins",
     "Tencent/AI-Infra-Guard"
+  ],
+  "2026-08-25": [
+    "openai/codex",
+    "freestylefly/awesome-gpt-image-2",
+    "mattpocock/skills",
+    "apache/maka",
+    "Alishahryar1/free-claude-code",
+    "tinyhumansai/openhuman",
+    "affaan-m/ECC",
+    "ruvnet/ruflo",
+    "VoltAgent/awesome-agent-skills",
+    "virgiliojr94/book-to-skill",
+    "anthropics/claude-plugins-community",
+    "Comfy-Org/ComfyUI",
+    "NousResearch/hermes-agent"
   ]
 }
