@@ -1,19 +1,4 @@
 {
-  "2026-08-22": [
-    "modular/modular",
-    "mattpocock/skills",
-    "obra/superpowers",
-    "cursor/plugins",
-    "santifer/career-ops",
-    "akitaonrails/ai-memory",
-    "harry0703/MoneyPrinterTurbo",
-    "agent-substrate/substrate",
-    "chaitanyagiri/munder-difflin",
-    "volcengine/OpenViking",
-    "JuliusBrussee/caveman",
-    "Tencent/AI-Infra-Guard",
-    "RyanCodrai/turbovec"
-  ],
   "2026-08-23": [
     "mattpocock/skills",
     "harry0703/MoneyPrinterTurbo",
@@ -54,5 +39,21 @@
     "anthropics/claude-plugins-community",
     "Comfy-Org/ComfyUI",
     "NousResearch/hermes-agent"
+  ],
+  "2026-08-26": [
+    "Alishahryar1/free-claude-code",
+    "openai/codex",
+    "MadsLorentzen/ai-job-search",
+    "multica-ai/andrej-karpathy-skills",
+    "NousResearch/hermes-agent",
+    "anthropics/claude-plugins-community",
+    "apache/maka",
+    "openclaw/openclaw",
+    "AgriciDaniel/claude-obsidian",
+    "rohitg00/ai-engineering-from-scratch",
+    "tashfeenahmed/freellmapi",
+    "freestylefly/awesome-gpt-image-2",
+    "VoltAgent/awesome-agent-skills",
+    "tinyhumansai/openhuman"
   ]
 }
