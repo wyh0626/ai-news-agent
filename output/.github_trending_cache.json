@@ -1,17 +1,4 @@
 {
-  "2026-08-23": [
-    "mattpocock/skills",
-    "harry0703/MoneyPrinterTurbo",
-    "obra/superpowers",
-    "santifer/career-ops",
-    "cursor/plugins",
-    "modular/modular",
-    "affaan-m/ECC",
-    "ruvnet/ruflo",
-    "apache/maka",
-    "elder-plinius/OBLITERATUS",
-    "microsoft/onnxruntime"
-  ],
   "2026-08-24": [
     "openai/codex",
     "mattpocock/skills",
@@ -55,5 +42,20 @@
     "freestylefly/awesome-gpt-image-2",
     "VoltAgent/awesome-agent-skills",
     "tinyhumansai/openhuman"
+  ],
+  "2026-08-27": [
+    "freestylefly/awesome-gpt-image-2",
+    "anthropics/claude-plugins-community",
+    "MadsLorentzen/ai-job-search",
+    "apache/maka",
+    "TauricResearch/TradingAgents",
+    "AgriciDaniel/claude-obsidian",
+    "rohitg00/ai-engineering-from-scratch",
+    "tinyhumansai/openhuman",
+    "Shubhamsaboo/awesome-llm-apps",
+    "multica-ai/andrej-karpathy-skills",
+    "openai/codex",
+    "DietrichGebert/ponytail",
+    "anthropics/claude-plugins-official"
   ]
 }
