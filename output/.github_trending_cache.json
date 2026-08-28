@@ -1,17 +1,4 @@
 {
-  "2026-08-24": [
-    "openai/codex",
-    "mattpocock/skills",
-    "affaan-m/ECC",
-    "obra/superpowers",
-    "Wei-Shaw/sub2api",
-    "n8n-io/n8n",
-    "anthropics/claude-code",
-    "modular/modular",
-    "multica-ai/andrej-karpathy-skills",
-    "cursor/plugins",
-    "Tencent/AI-Infra-Guard"
-  ],
   "2026-08-25": [
     "openai/codex",
     "freestylefly/awesome-gpt-image-2",
@@ -57,5 +44,22 @@
     "openai/codex",
     "DietrichGebert/ponytail",
     "anthropics/claude-plugins-official"
+  ],
+  "2026-08-28": [
+    "tt-a1i/archify",
+    "freestylefly/awesome-gpt-image-2",
+    "anthropics/claude-plugins-official",
+    "Alishahryar1/free-claude-code",
+    "MadsLorentzen/ai-job-search",
+    "AgriciDaniel/claude-obsidian",
+    "rohitg00/ai-engineering-from-scratch",
+    "tinyhumansai/openhuman",
+    "DietrichGebert/ponytail",
+    "anthropics/claude-plugins-community",
+    "ConardLi/garden-skills",
+    "browser-use/browser-use",
+    "K-Dense-AI/scientific-agent-skills",
+    "marin-community/marin",
+    "VoltAgent/awesome-agent-skills"
   ]
 }
