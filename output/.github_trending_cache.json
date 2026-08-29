@@ -1,19 +1,4 @@
 {
-  "2026-08-25": [
-    "openai/codex",
-    "freestylefly/awesome-gpt-image-2",
-    "mattpocock/skills",
-    "apache/maka",
-    "Alishahryar1/free-claude-code",
-    "tinyhumansai/openhuman",
-    "affaan-m/ECC",
-    "ruvnet/ruflo",
-    "VoltAgent/awesome-agent-skills",
-    "virgiliojr94/book-to-skill",
-    "anthropics/claude-plugins-community",
-    "Comfy-Org/ComfyUI",
-    "NousResearch/hermes-agent"
-  ],
   "2026-08-26": [
     "Alishahryar1/free-claude-code",
     "openai/codex",
@@ -61,5 +46,20 @@
     "K-Dense-AI/scientific-agent-skills",
     "marin-community/marin",
     "VoltAgent/awesome-agent-skills"
+  ],
+  "2026-08-29": [
+    "tt-a1i/archify",
+    "K-Dense-AI/scientific-agent-skills",
+    "anthropics/claude-plugins-official",
+    "JetBrains/go-modern-guidelines",
+    "calesthio/OpenMontage",
+    "abi/screenshot-to-code",
+    "cursor/plugins",
+    "freestylefly/awesome-gpt-image-2",
+    "tashfeenahmed/freellmapi",
+    "ChromeDevTools/chrome-devtools-mcp",
+    "rohitg00/ai-engineering-from-scratch",
+    "DietrichGebert/ponytail",
+    "livekit/agents"
   ]
 }
