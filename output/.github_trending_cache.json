@@ -1,20 +1,4 @@
 {
-  "2026-08-26": [
-    "Alishahryar1/free-claude-code",
-    "openai/codex",
-    "MadsLorentzen/ai-job-search",
-    "multica-ai/andrej-karpathy-skills",
-    "NousResearch/hermes-agent",
-    "anthropics/claude-plugins-community",
-    "apache/maka",
-    "openclaw/openclaw",
-    "AgriciDaniel/claude-obsidian",
-    "rohitg00/ai-engineering-from-scratch",
-    "tashfeenahmed/freellmapi",
-    "freestylefly/awesome-gpt-image-2",
-    "VoltAgent/awesome-agent-skills",
-    "tinyhumansai/openhuman"
-  ],
   "2026-08-27": [
     "freestylefly/awesome-gpt-image-2",
     "anthropics/claude-plugins-community",
@@ -48,6 +32,21 @@
     "VoltAgent/awesome-agent-skills"
   ],
   "2026-08-29": [
+    "tt-a1i/archify",
+    "K-Dense-AI/scientific-agent-skills",
+    "anthropics/claude-plugins-official",
+    "JetBrains/go-modern-guidelines",
+    "calesthio/OpenMontage",
+    "abi/screenshot-to-code",
+    "cursor/plugins",
+    "freestylefly/awesome-gpt-image-2",
+    "tashfeenahmed/freellmapi",
+    "ChromeDevTools/chrome-devtools-mcp",
+    "rohitg00/ai-engineering-from-scratch",
+    "DietrichGebert/ponytail",
+    "livekit/agents"
+  ],
+  "2026-08-30": [
     "tt-a1i/archify",
     "K-Dense-AI/scientific-agent-skills",
     "anthropics/claude-plugins-official",
