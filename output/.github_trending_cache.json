@@ -1,19 +1,4 @@
 {
-  "2026-08-27": [
-    "freestylefly/awesome-gpt-image-2",
-    "anthropics/claude-plugins-community",
-    "MadsLorentzen/ai-job-search",
-    "apache/maka",
-    "TauricResearch/TradingAgents",
-    "AgriciDaniel/claude-obsidian",
-    "rohitg00/ai-engineering-from-scratch",
-    "tinyhumansai/openhuman",
-    "Shubhamsaboo/awesome-llm-apps",
-    "multica-ai/andrej-karpathy-skills",
-    "openai/codex",
-    "DietrichGebert/ponytail",
-    "anthropics/claude-plugins-official"
-  ],
   "2026-08-28": [
     "tt-a1i/archify",
     "freestylefly/awesome-gpt-image-2",
@@ -60,5 +45,19 @@
     "rohitg00/ai-engineering-from-scratch",
     "DietrichGebert/ponytail",
     "livekit/agents"
+  ],
+  "2026-08-31": [
+    "tt-a1i/archify",
+    "K-Dense-AI/scientific-agent-skills",
+    "THU-MAIC/OpenMAIC",
+    "p-e-w/heretic",
+    "JetBrains/go-modern-guidelines",
+    "ComposioHQ/awesome-claude-skills",
+    "calesthio/OpenMontage",
+    "Osmantic/ODS",
+    "abi/screenshot-to-code",
+    "anthropics/claude-plugins-official",
+    "addyosmani/agent-skills",
+    "workweave/router"
   ]
 }
