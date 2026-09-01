@@ -1,21 +1,4 @@
 {
-  "2026-08-28": [
-    "tt-a1i/archify",
-    "freestylefly/awesome-gpt-image-2",
-    "anthropics/claude-plugins-official",
-    "Alishahryar1/free-claude-code",
-    "MadsLorentzen/ai-job-search",
-    "AgriciDaniel/claude-obsidian",
-    "rohitg00/ai-engineering-from-scratch",
-    "tinyhumansai/openhuman",
-    "DietrichGebert/ponytail",
-    "anthropics/claude-plugins-community",
-    "ConardLi/garden-skills",
-    "browser-use/browser-use",
-    "K-Dense-AI/scientific-agent-skills",
-    "marin-community/marin",
-    "VoltAgent/awesome-agent-skills"
-  ],
   "2026-08-29": [
     "tt-a1i/archify",
     "K-Dense-AI/scientific-agent-skills",
@@ -59,5 +42,19 @@
     "anthropics/claude-plugins-official",
     "addyosmani/agent-skills",
     "workweave/router"
+  ],
+  "2026-09-01": [
+    "THU-MAIC/OpenMAIC",
+    "K-Dense-AI/scientific-agent-skills",
+    "tt-a1i/archify",
+    "p-e-w/heretic",
+    "unclecode/crawl4ai",
+    "mvanhorn/last30days-skill",
+    "punkpeye/awesome-mcp-servers",
+    "pollen-robotics/microduck_rl",
+    "handsomestWei/patent-disclosure-skill",
+    "tashfeenahmed/freellmapi",
+    "livekit/agents",
+    "abhigyanpatwari/GitNexus"
   ]
 }
