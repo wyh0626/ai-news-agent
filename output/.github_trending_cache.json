@@ -1,19 +1,4 @@
 {
-  "2026-08-29": [
-    "tt-a1i/archify",
-    "K-Dense-AI/scientific-agent-skills",
-    "anthropics/claude-plugins-official",
-    "JetBrains/go-modern-guidelines",
-    "calesthio/OpenMontage",
-    "abi/screenshot-to-code",
-    "cursor/plugins",
-    "freestylefly/awesome-gpt-image-2",
-    "tashfeenahmed/freellmapi",
-    "ChromeDevTools/chrome-devtools-mcp",
-    "rohitg00/ai-engineering-from-scratch",
-    "DietrichGebert/ponytail",
-    "livekit/agents"
-  ],
   "2026-08-30": [
     "tt-a1i/archify",
     "K-Dense-AI/scientific-agent-skills",
@@ -56,5 +41,16 @@
     "tashfeenahmed/freellmapi",
     "livekit/agents",
     "abhigyanpatwari/GitNexus"
+  ],
+  "2026-09-02": [
+    "THU-MAIC/OpenMAIC",
+    "tt-a1i/archify",
+    "K-Dense-AI/scientific-agent-skills",
+    "jingyaogong/minimind",
+    "Osmantic/ODS",
+    "affaan-m/ECC",
+    "p-e-w/heretic",
+    "handsomestWei/patent-disclosure-skill",
+    "pollen-robotics/microduck_rl"
   ]
 }
