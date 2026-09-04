@@ -1,18 +1,4 @@
 {
-  "2026-08-31": [
-    "tt-a1i/archify",
-    "K-Dense-AI/scientific-agent-skills",
-    "THU-MAIC/OpenMAIC",
-    "p-e-w/heretic",
-    "JetBrains/go-modern-guidelines",
-    "ComposioHQ/awesome-claude-skills",
-    "calesthio/OpenMontage",
-    "Osmantic/ODS",
-    "abi/screenshot-to-code",
-    "anthropics/claude-plugins-official",
-    "addyosmani/agent-skills",
-    "workweave/router"
-  ],
   "2026-09-01": [
     "THU-MAIC/OpenMAIC",
     "K-Dense-AI/scientific-agent-skills",
@@ -46,5 +32,20 @@
     "K-Dense-AI/scientific-agent-skills",
     "affaan-m/ECC",
     "unclecode/crawl4ai"
+  ],
+  "2026-09-04": [
+    "google-research/timesfm",
+    "DietrichGebert/ponytail",
+    "debpalash/VoiceStudio",
+    "ChromeDevTools/chrome-devtools-mcp",
+    "NousResearch/hermes-agent",
+    "superlinked/sie",
+    "pacifio/atlas",
+    "Imbad0202/academic-research-skills",
+    "affaan-m/ECC",
+    "blader/humanizer",
+    "JuliusBrussee/caveman",
+    "mattpocock/skills",
+    "Gitlawb/openclaude"
   ]
 }
