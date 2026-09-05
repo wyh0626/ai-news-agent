@@ -1,18 +1,4 @@
 {
-  "2026-09-01": [
-    "THU-MAIC/OpenMAIC",
-    "K-Dense-AI/scientific-agent-skills",
-    "tt-a1i/archify",
-    "p-e-w/heretic",
-    "unclecode/crawl4ai",
-    "mvanhorn/last30days-skill",
-    "punkpeye/awesome-mcp-servers",
-    "pollen-robotics/microduck_rl",
-    "handsomestWei/patent-disclosure-skill",
-    "tashfeenahmed/freellmapi",
-    "livekit/agents",
-    "abhigyanpatwari/GitNexus"
-  ],
   "2026-09-02": [
     "THU-MAIC/OpenMAIC",
     "tt-a1i/archify",
@@ -47,5 +33,21 @@
     "JuliusBrussee/caveman",
     "mattpocock/skills",
     "Gitlawb/openclaude"
+  ],
+  "2026-09-05": [
+    "mattpocock/skills",
+    "NousResearch/hermes-agent",
+    "DietrichGebert/ponytail",
+    "anthropics/skills",
+    "affaan-m/ECC",
+    "JuliusBrussee/caveman",
+    "blader/humanizer",
+    "google-research/timesfm",
+    "addyosmani/agent-skills",
+    "magnitudedev/magnitude",
+    "Imbad0202/academic-research-skills",
+    "debpalash/VoiceStudio",
+    "f/prompts.chat",
+    "obra/superpowers"
   ]
 }
