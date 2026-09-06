@@ -1,15 +1,4 @@
 {
-  "2026-09-02": [
-    "THU-MAIC/OpenMAIC",
-    "tt-a1i/archify",
-    "K-Dense-AI/scientific-agent-skills",
-    "jingyaogong/minimind",
-    "Osmantic/ODS",
-    "affaan-m/ECC",
-    "p-e-w/heretic",
-    "handsomestWei/patent-disclosure-skill",
-    "pollen-robotics/microduck_rl"
-  ],
   "2026-09-03": [
     "Imbad0202/academic-research-skills",
     "THU-MAIC/OpenMAIC",
@@ -49,5 +38,20 @@
     "debpalash/VoiceStudio",
     "f/prompts.chat",
     "obra/superpowers"
+  ],
+  "2026-09-06": [
+    "mattpocock/skills",
+    "DietrichGebert/ponytail",
+    "affaan-m/ECC",
+    "anthropics/skills",
+    "blader/humanizer",
+    "NousResearch/hermes-agent",
+    "JuliusBrussee/caveman",
+    "magnitudedev/magnitude",
+    "debpalash/VoiceStudio",
+    "google-research/timesfm",
+    "radixark/miles",
+    "anomalyco/opencode",
+    "cathrynlavery/diagram-design"
   ]
 }
