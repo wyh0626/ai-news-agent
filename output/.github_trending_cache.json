@@ -1,20 +1,4 @@
 {
-  "2026-09-05": [
-    "mattpocock/skills",
-    "NousResearch/hermes-agent",
-    "DietrichGebert/ponytail",
-    "anthropics/skills",
-    "affaan-m/ECC",
-    "JuliusBrussee/caveman",
-    "blader/humanizer",
-    "google-research/timesfm",
-    "addyosmani/agent-skills",
-    "magnitudedev/magnitude",
-    "Imbad0202/academic-research-skills",
-    "debpalash/VoiceStudio",
-    "f/prompts.chat",
-    "obra/superpowers"
-  ],
   "2026-09-06": [
     "mattpocock/skills",
     "DietrichGebert/ponytail",
@@ -60,5 +44,16 @@
     "OpenWhispr/openwhispr",
     "humanlayer/skills",
     "The-Swarm-Corporation/AutoHedge"
+  ],
+  "2026-09-09": [
+    "heygen-com/hyperframes",
+    "mksglu/context-mode",
+    "jo-inc/camofox-browser",
+    "affaan-m/ECC",
+    "coreyhaines31/marketingskills",
+    "bytedance/deer-flow",
+    "openai/skills",
+    "lightpanda-io/browser",
+    "ruvnet/ruflo"
   ]
 }
