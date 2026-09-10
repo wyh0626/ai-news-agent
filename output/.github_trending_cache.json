@@ -1,19 +1,4 @@
 {
-  "2026-09-06": [
-    "mattpocock/skills",
-    "DietrichGebert/ponytail",
-    "affaan-m/ECC",
-    "anthropics/skills",
-    "blader/humanizer",
-    "NousResearch/hermes-agent",
-    "JuliusBrussee/caveman",
-    "magnitudedev/magnitude",
-    "debpalash/VoiceStudio",
-    "google-research/timesfm",
-    "radixark/miles",
-    "anomalyco/opencode",
-    "cathrynlavery/diagram-design"
-  ],
   "2026-09-07": [
     "mattpocock/skills",
     "affaan-m/ECC",
@@ -55,5 +40,20 @@
     "openai/skills",
     "lightpanda-io/browser",
     "ruvnet/ruflo"
+  ],
+  "2026-09-10": [
+    "ayghri/i-have-adhd",
+    "cathrynlavery/diagram-design",
+    "openai/skills",
+    "affaan-m/ECC",
+    "heygen-com/hyperframes",
+    "coreyhaines31/marketingskills",
+    "obra/superpowers",
+    "multica-ai/andrej-karpathy-skills",
+    "jo-inc/camofox-browser",
+    "browser-use/browser-use",
+    "mksglu/context-mode",
+    "The-Swarm-Corporation/AutoHedge",
+    "openai/plugins"
   ]
 }
