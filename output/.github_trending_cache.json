@@ -1,18 +1,4 @@
 {
-  "2026-09-07": [
-    "mattpocock/skills",
-    "affaan-m/ECC",
-    "DietrichGebert/ponytail",
-    "NousResearch/hermes-agent",
-    "anthropics/skills",
-    "cathrynlavery/diagram-design",
-    "anomalyco/opencode",
-    "ruvnet/ruflo",
-    "humanlayer/skills",
-    "blader/humanizer",
-    "WorldFlowAI/everything-claude-code",
-    "magnitudedev/magnitude"
-  ],
   "2026-09-08": [
     "affaan-m/ECC",
     "mattpocock/skills",
@@ -55,5 +41,19 @@
     "mksglu/context-mode",
     "The-Swarm-Corporation/AutoHedge",
     "openai/plugins"
+  ],
+  "2026-09-11": [
+    "ayghri/i-have-adhd",
+    "Tencent/teamai-cli",
+    "obra/superpowers",
+    "pascalorg/editor",
+    "earthtojake/text-to-cad",
+    "cathrynlavery/diagram-design",
+    "TauricResearch/TradingAgents",
+    "openai/plugins",
+    "freestylefly/awesome-gpt-image-2",
+    "rohitg00/ai-engineering-from-scratch",
+    "vastsa/PI-Desktop",
+    "affaan-m/ECC"
   ]
 }
