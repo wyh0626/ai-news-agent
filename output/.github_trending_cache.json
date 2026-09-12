@@ -1,21 +1,4 @@
 {
-  "2026-09-08": [
-    "affaan-m/ECC",
-    "mattpocock/skills",
-    "cathrynlavery/diagram-design",
-    "NousResearch/hermes-agent",
-    "openai/skills",
-    "anomalyco/opencode",
-    "blader/humanizer",
-    "DietrichGebert/ponytail",
-    "ruvnet/ruflo",
-    "magnitudedev/magnitude",
-    "coreyhaines31/marketingskills",
-    "aipoch/open-science",
-    "OpenWhispr/openwhispr",
-    "humanlayer/skills",
-    "The-Swarm-Corporation/AutoHedge"
-  ],
   "2026-09-09": [
     "heygen-com/hyperframes",
     "mksglu/context-mode",
@@ -55,5 +38,20 @@
     "rohitg00/ai-engineering-from-scratch",
     "vastsa/PI-Desktop",
     "affaan-m/ECC"
+  ],
+  "2026-09-12": [
+    "ayghri/i-have-adhd",
+    "obra/superpowers",
+    "alsk1992/CloddsBot",
+    "Tencent/teamai-cli",
+    "AlexsJones/llmfit",
+    "cathrynlavery/diagram-design",
+    "freestylefly/awesome-gpt-image-2",
+    "diegosouzapw/OmniRoute",
+    "JustVugg/colibri",
+    "THU-MAIC/OpenMAIC",
+    "nashsu/llm_wiki",
+    "vercel-labs/skills",
+    "vastsa/PI-Desktop"
   ]
 }
