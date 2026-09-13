@@ -1,15 +1,4 @@
 {
-  "2026-09-09": [
-    "heygen-com/hyperframes",
-    "mksglu/context-mode",
-    "jo-inc/camofox-browser",
-    "affaan-m/ECC",
-    "coreyhaines31/marketingskills",
-    "bytedance/deer-flow",
-    "openai/skills",
-    "lightpanda-io/browser",
-    "ruvnet/ruflo"
-  ],
   "2026-09-10": [
     "ayghri/i-have-adhd",
     "cathrynlavery/diagram-design",
@@ -53,5 +42,17 @@
     "nashsu/llm_wiki",
     "vercel-labs/skills",
     "vastsa/PI-Desktop"
+  ],
+  "2026-09-13": [
+    "ayghri/i-have-adhd",
+    "melgarafael/DeskcommCRM",
+    "vastsa/PI-Desktop",
+    "alsk1992/CloddsBot",
+    "nashsu/llm_wiki",
+    "obra/superpowers",
+    "jihe520/MathModelAgent",
+    "jordan-gibbs/hyperresearch",
+    "alphaXiv/OpenResearch",
+    "pascalorg/editor"
   ]
 }
