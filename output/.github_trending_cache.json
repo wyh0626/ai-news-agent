@@ -1,19 +1,4 @@
 {
-  "2026-09-10": [
-    "ayghri/i-have-adhd",
-    "cathrynlavery/diagram-design",
-    "openai/skills",
-    "affaan-m/ECC",
-    "heygen-com/hyperframes",
-    "coreyhaines31/marketingskills",
-    "obra/superpowers",
-    "multica-ai/andrej-karpathy-skills",
-    "jo-inc/camofox-browser",
-    "browser-use/browser-use",
-    "mksglu/context-mode",
-    "The-Swarm-Corporation/AutoHedge",
-    "openai/plugins"
-  ],
   "2026-09-11": [
     "ayghri/i-have-adhd",
     "Tencent/teamai-cli",
@@ -54,5 +39,15 @@
     "jordan-gibbs/hyperresearch",
     "alphaXiv/OpenResearch",
     "pascalorg/editor"
+  ],
+  "2026-09-14": [
+    "melgarafael/DeskcommCRM",
+    "asgeirtj/system_prompts_leaks",
+    "jihe520/MathModelAgent",
+    "alsk1992/CloddsBot",
+    "Shubhamsaboo/awesome-llm-apps",
+    "SnailSploit/Claude-Red",
+    "multimodal-art-projection/YuE",
+    "vxcontrol/pentagi"
   ]
 }
