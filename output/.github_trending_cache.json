@@ -1,16 +1,4 @@
 {
-  "2026-09-13": [
-    "ayghri/i-have-adhd",
-    "melgarafael/DeskcommCRM",
-    "vastsa/PI-Desktop",
-    "alsk1992/CloddsBot",
-    "nashsu/llm_wiki",
-    "obra/superpowers",
-    "jihe520/MathModelAgent",
-    "jordan-gibbs/hyperresearch",
-    "alphaXiv/OpenResearch",
-    "pascalorg/editor"
-  ],
   "2026-09-14": [
     "melgarafael/DeskcommCRM",
     "asgeirtj/system_prompts_leaks",
@@ -50,5 +38,16 @@
     "OpenBMB/VoxCPM",
     "huggingface/transformers",
     "SnailSploit/Claude-Red"
+  ],
+  "2026-09-17": [
+    "alibaba/open-code-review",
+    "JustVugg/colibri",
+    "debpalash/VoiceStudio",
+    "melgarafael/DeskcommCRM",
+    "alphaXiv/OpenResearch",
+    "danny-avila/LibreChat",
+    "pacifio/atlas",
+    "addyosmani/agent-skills",
+    "earendil-works/pi"
   ]
 }
