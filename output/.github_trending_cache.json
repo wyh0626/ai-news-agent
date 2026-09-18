@@ -1,14 +1,4 @@
 {
-  "2026-09-14": [
-    "melgarafael/DeskcommCRM",
-    "asgeirtj/system_prompts_leaks",
-    "jihe520/MathModelAgent",
-    "alsk1992/CloddsBot",
-    "Shubhamsaboo/awesome-llm-apps",
-    "SnailSploit/Claude-Red",
-    "multimodal-art-projection/YuE",
-    "vxcontrol/pentagi"
-  ],
   "2026-09-15": [
     "JustVugg/colibri",
     "tech-leads-club/agent-skills",
@@ -49,5 +39,22 @@
     "pacifio/atlas",
     "addyosmani/agent-skills",
     "earendil-works/pi"
+  ],
+  "2026-09-18": [
+    "alibaba/open-code-review",
+    "cloudflare/security-audit-skill",
+    "JustVugg/colibri",
+    "jamiepine/voicebox",
+    "anthropics/knowledge-work-plugins",
+    "anthropics/claude-code",
+    "roboflow/supervision",
+    "alphaXiv/OpenResearch",
+    "rlaope/oh-my-hermes",
+    "Tencent/WeKnora",
+    "SnailSploit/Claude-Red",
+    "multimodal-art-projection/YuE",
+    "addyosmani/agent-skills",
+    "cline/cline",
+    "affaan-m/ECC"
   ]
 }
