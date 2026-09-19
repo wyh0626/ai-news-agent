@@ -1,18 +1,4 @@
 {
-  "2026-09-15": [
-    "JustVugg/colibri",
-    "tech-leads-club/agent-skills",
-    "melgarafael/DeskcommCRM",
-    "calesthio/OpenMontage",
-    "asgeirtj/system_prompts_leaks",
-    "vxcontrol/pentagi",
-    "multimodal-art-projection/YuE",
-    "alphaXiv/OpenResearch",
-    "debpalash/VoiceStudio",
-    "SnailSploit/Claude-Red",
-    "jihe520/MathModelAgent",
-    "huggingface/transformers"
-  ],
   "2026-09-16": [
     "JustVugg/colibri",
     "alibaba/open-code-review",
@@ -56,5 +42,22 @@
     "addyosmani/agent-skills",
     "cline/cline",
     "affaan-m/ECC"
+  ],
+  "2026-09-19": [
+    "alibaba/open-code-review",
+    "cloudflare/security-audit-skill",
+    "addyosmani/agent-skills",
+    "Tencent/BrowserSkill",
+    "alphaXiv/OpenResearch",
+    "anthropics/claude-code",
+    "anthropics/knowledge-work-plugins",
+    "Tencent/WeKnora",
+    "jamiepine/voicebox",
+    "affaan-m/ECC",
+    "roboflow/supervision",
+    "JustVugg/colibri",
+    "TencentCloud/Octop",
+    "cline/cline",
+    "n8n-io/n8n"
   ]
 }
