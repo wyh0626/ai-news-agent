@@ -1,15 +1,4 @@
 {
-  "2026-09-17": [
-    "alibaba/open-code-review",
-    "JustVugg/colibri",
-    "debpalash/VoiceStudio",
-    "melgarafael/DeskcommCRM",
-    "alphaXiv/OpenResearch",
-    "danny-avila/LibreChat",
-    "pacifio/atlas",
-    "addyosmani/agent-skills",
-    "earendil-works/pi"
-  ],
   "2026-09-18": [
     "alibaba/open-code-review",
     "cloudflare/security-audit-skill",
@@ -57,5 +46,15 @@
     "supermemoryai/supermemory",
     "tradesdontlie/tradingview-mcp",
     "coder/coder"
+  ],
+  "2026-09-21": [
+    "cloudflare/security-audit-skill",
+    "trycua/cua",
+    "addyosmani/agent-skills",
+    "anthropics/claude-code",
+    "higgsfield-ai/higgsfield",
+    "docling-project/docling",
+    "cactus-compute/needle",
+    "yynxxxxx/Codex-X"
   ]
 }
