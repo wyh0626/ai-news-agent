@@ -1,21 +1,4 @@
 {
-  "2026-09-18": [
-    "alibaba/open-code-review",
-    "cloudflare/security-audit-skill",
-    "JustVugg/colibri",
-    "jamiepine/voicebox",
-    "anthropics/knowledge-work-plugins",
-    "anthropics/claude-code",
-    "roboflow/supervision",
-    "alphaXiv/OpenResearch",
-    "rlaope/oh-my-hermes",
-    "Tencent/WeKnora",
-    "SnailSploit/Claude-Red",
-    "multimodal-art-projection/YuE",
-    "addyosmani/agent-skills",
-    "cline/cline",
-    "affaan-m/ECC"
-  ],
   "2026-09-19": [
     "alibaba/open-code-review",
     "cloudflare/security-audit-skill",
@@ -56,5 +39,17 @@
     "docling-project/docling",
     "cactus-compute/needle",
     "yynxxxxx/Codex-X"
+  ],
+  "2026-09-22": [
+    "affaan-m/ECC",
+    "BuilderIO/agent-native",
+    "cloudflare/security-audit-skill",
+    "trycua/cua",
+    "anthropics/financial-services",
+    "anthropics/claude-code",
+    "higgsfield-ai/higgsfield",
+    "coder/coder",
+    "vercel-labs/json-render",
+    "addyosmani/agent-skills"
   ]
 }
