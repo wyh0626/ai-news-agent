@@ -1,18 +1,4 @@
 {
-  "2026-09-20": [
-    "cloudflare/security-audit-skill",
-    "anthropics/claude-code",
-    "alibaba/open-code-review",
-    "affaan-m/ECC",
-    "Tencent/BrowserSkill",
-    "addyosmani/agent-skills",
-    "TencentCloud/Octop",
-    "Fission-AI/OpenSpec",
-    "anthropics/knowledge-work-plugins",
-    "supermemoryai/supermemory",
-    "tradesdontlie/tradingview-mcp",
-    "coder/coder"
-  ],
   "2026-09-21": [
     "cloudflare/security-audit-skill",
     "trycua/cua",
@@ -43,5 +29,14 @@
     "anthropics/financial-services",
     "zhouxiaoka/autoclip",
     "yynxxxxx/Codex-X"
+  ],
+  "2026-09-24": [
+    "anthropics/financial-services",
+    "agent-substrate/substrate",
+    "dream-num/univer",
+    "davila7/claude-code-templates",
+    "google/ax",
+    "superdesigndev/treg",
+    "browser-use/video-use"
   ]
 }
