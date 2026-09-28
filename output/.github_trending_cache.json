@@ -1,13 +1,4 @@
 {
-  "2026-09-24": [
-    "anthropics/financial-services",
-    "agent-substrate/substrate",
-    "dream-num/univer",
-    "davila7/claude-code-templates",
-    "google/ax",
-    "superdesigndev/treg",
-    "browser-use/video-use"
-  ],
   "2026-09-25": [
     "anthropics/financial-services",
     "google/ax",
@@ -52,5 +43,15 @@
     "google/ax",
     "NVIDIA/Model-Optimizer",
     "pbakaus/impeccable"
+  ],
+  "2026-09-28": [
+    "paperclipai/paperclip",
+    "vectorize-io/hindsight",
+    "NVIDIA/Model-Optimizer",
+    "dream-num/univer",
+    "tensorflow/tensorflow",
+    "rohitg00/ai-engineering-from-scratch",
+    "anthropics/claude-code-action",
+    "mobile-next/mobile-mcp"
   ]
 }
