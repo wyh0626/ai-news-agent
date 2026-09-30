@@ -1,17 +1,4 @@
 {
-  "2026-09-26": [
-    "rohitg00/ai-engineering-from-scratch",
-    "vectorize-io/hindsight",
-    "dream-num/univer",
-    "google/ax",
-    "NVIDIA/Model-Optimizer",
-    "anthropics/financial-services",
-    "HKUDS/CLI-Anything",
-    "obra/superpowers",
-    "strands-agents/harness-sdk",
-    "superdesigndev/treg",
-    "leejet/stable-diffusion.cpp"
-  ],
   "2026-09-27": [
     "paperclipai/paperclip",
     "anthropics/claude-plugins-official",
@@ -42,6 +29,13 @@
     "vectorize-io/hindsight",
     "debpalash/VoiceStudio",
     "rohitg00/ai-engineering-from-scratch",
+    "mvschwarz/openrig",
+    "dream-num/univer"
+  ],
+  "2026-09-30": [
+    "debpalash/VoiceStudio",
+    "paperclipai/paperclip",
+    "vectorize-io/hindsight",
     "mvschwarz/openrig",
     "dream-num/univer"
   ]
