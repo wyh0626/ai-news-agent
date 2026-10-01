@@ -1,19 +1,4 @@
 {
-  "2026-09-27": [
-    "paperclipai/paperclip",
-    "anthropics/claude-plugins-official",
-    "vectorize-io/hindsight",
-    "obra/superpowers",
-    "mattpocock/skills",
-    "dream-num/univer",
-    "anthropics/skills",
-    "androoAGI/starnet",
-    "rohitg00/ai-engineering-from-scratch",
-    "shy3130/tick-stock-panel",
-    "google/ax",
-    "NVIDIA/Model-Optimizer",
-    "pbakaus/impeccable"
-  ],
   "2026-09-28": [
     "paperclipai/paperclip",
     "vectorize-io/hindsight",
@@ -37,6 +22,16 @@
     "paperclipai/paperclip",
     "vectorize-io/hindsight",
     "mvschwarz/openrig",
+    "dream-num/univer"
+  ],
+  "2026-10-01": [
+    "debpalash/VoiceStudio",
+    "NVIDIA/OpenShell",
+    "vectorize-io/hindsight",
+    "paperclipai/paperclip",
+    "mvschwarz/openrig",
+    "rohitg00/ai-engineering-from-scratch",
+    "VectifyAI/PageIndex",
     "dream-num/univer"
   ]
 }
