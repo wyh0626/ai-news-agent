@@ -1,14 +1,4 @@
 {
-  "2026-09-28": [
-    "paperclipai/paperclip",
-    "vectorize-io/hindsight",
-    "NVIDIA/Model-Optimizer",
-    "dream-num/univer",
-    "tensorflow/tensorflow",
-    "rohitg00/ai-engineering-from-scratch",
-    "anthropics/claude-code-action",
-    "mobile-next/mobile-mcp"
-  ],
   "2026-09-29": [
     "paperclipai/paperclip",
     "vectorize-io/hindsight",
@@ -33,5 +23,19 @@
     "rohitg00/ai-engineering-from-scratch",
     "VectifyAI/PageIndex",
     "dream-num/univer"
+  ],
+  "2026-10-02": [
+    "NVIDIA/OpenShell",
+    "debpalash/VoiceStudio",
+    "mvschwarz/openrig",
+    "mksglu/context-mode",
+    "DietrichGebert/ponytail",
+    "harry0703/MoneyPrinterTurbo",
+    "openclaw/openclaw",
+    "ComposioHQ/awesome-claude-skills",
+    "mattpocock/skills",
+    "heygen-com/hyperframes",
+    "modelcontextprotocol/servers",
+    "VectifyAI/PageIndex"
   ]
 }
