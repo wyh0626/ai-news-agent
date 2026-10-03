@@ -1,12 +1,4 @@
 {
-  "2026-09-29": [
-    "paperclipai/paperclip",
-    "vectorize-io/hindsight",
-    "debpalash/VoiceStudio",
-    "rohitg00/ai-engineering-from-scratch",
-    "mvschwarz/openrig",
-    "dream-num/univer"
-  ],
   "2026-09-30": [
     "debpalash/VoiceStudio",
     "paperclipai/paperclip",
@@ -25,6 +17,20 @@
     "dream-num/univer"
   ],
   "2026-10-02": [
+    "NVIDIA/OpenShell",
+    "debpalash/VoiceStudio",
+    "mvschwarz/openrig",
+    "mksglu/context-mode",
+    "DietrichGebert/ponytail",
+    "harry0703/MoneyPrinterTurbo",
+    "openclaw/openclaw",
+    "ComposioHQ/awesome-claude-skills",
+    "mattpocock/skills",
+    "heygen-com/hyperframes",
+    "modelcontextprotocol/servers",
+    "VectifyAI/PageIndex"
+  ],
+  "2026-10-03": [
     "NVIDIA/OpenShell",
     "debpalash/VoiceStudio",
     "mvschwarz/openrig",
