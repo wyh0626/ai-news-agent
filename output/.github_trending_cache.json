@@ -1,11 +1,4 @@
 {
-  "2026-09-30": [
-    "debpalash/VoiceStudio",
-    "paperclipai/paperclip",
-    "vectorize-io/hindsight",
-    "mvschwarz/openrig",
-    "dream-num/univer"
-  ],
   "2026-10-01": [
     "debpalash/VoiceStudio",
     "NVIDIA/OpenShell",
@@ -43,5 +36,20 @@
     "heygen-com/hyperframes",
     "modelcontextprotocol/servers",
     "VectifyAI/PageIndex"
+  ],
+  "2026-10-04": [
+    "Panniantong/Agent-Reach",
+    "JuliusBrussee/caveman",
+    "obra/superpowers",
+    "DietrichGebert/ponytail",
+    "pbakaus/impeccable",
+    "mattpocock/skills",
+    "NVIDIA/OpenShell",
+    "coreyhaines31/marketingskills",
+    "heygen-com/hyperframes",
+    "mksglu/context-mode",
+    "google/skills",
+    "cursor/plugins",
+    "mvschwarz/openrig"
   ]
 }
