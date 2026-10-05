@@ -1,14 +1,4 @@
 {
-  "2026-10-01": [
-    "debpalash/VoiceStudio",
-    "NVIDIA/OpenShell",
-    "vectorize-io/hindsight",
-    "paperclipai/paperclip",
-    "mvschwarz/openrig",
-    "rohitg00/ai-engineering-from-scratch",
-    "VectifyAI/PageIndex",
-    "dream-num/univer"
-  ],
   "2026-10-02": [
     "NVIDIA/OpenShell",
     "debpalash/VoiceStudio",
@@ -51,5 +41,22 @@
     "google/skills",
     "cursor/plugins",
     "mvschwarz/openrig"
+  ],
+  "2026-10-05": [
+    "DietrichGebert/ponytail",
+    "pbakaus/impeccable",
+    "affaan-m/ECC",
+    "JuliusBrussee/caveman",
+    "Panniantong/Agent-Reach",
+    "thedotmack/claude-mem",
+    "cloudflare/cloudflare-os",
+    "addyosmani/agent-skills",
+    "obra/superpowers",
+    "mattpocock/skills",
+    "mksglu/context-mode",
+    "earendil-works/pi",
+    "anthropics/claude-code",
+    "jamwithai/production-agentic-rag-course",
+    "meituan-longcat/LongCat-Video"
   ]
 }
