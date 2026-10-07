@@ -1,18 +1,4 @@
 {
-  "2026-10-03": [
-    "NVIDIA/OpenShell",
-    "debpalash/VoiceStudio",
-    "mvschwarz/openrig",
-    "mksglu/context-mode",
-    "DietrichGebert/ponytail",
-    "harry0703/MoneyPrinterTurbo",
-    "openclaw/openclaw",
-    "ComposioHQ/awesome-claude-skills",
-    "mattpocock/skills",
-    "heygen-com/hyperframes",
-    "modelcontextprotocol/servers",
-    "VectifyAI/PageIndex"
-  ],
   "2026-10-04": [
     "Panniantong/Agent-Reach",
     "JuliusBrussee/caveman",
@@ -57,5 +43,14 @@
     "thedotmack/claude-mem",
     "garrytan/gstack",
     "antirez/ds4"
+  ],
+  "2026-10-07": [
+    "thedotmack/claude-mem",
+    "earthtojake/text-to-cad",
+    "pingdotgg/t3code",
+    "Panniantong/Agent-Reach",
+    "calesthio/OpenMontage",
+    "cloudflare/cloudflare-os",
+    "msitarzewski/agency-agents"
   ]
 }
