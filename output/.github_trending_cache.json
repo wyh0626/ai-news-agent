@@ -1,19 +1,4 @@
 {
-  "2026-10-04": [
-    "Panniantong/Agent-Reach",
-    "JuliusBrussee/caveman",
-    "obra/superpowers",
-    "DietrichGebert/ponytail",
-    "pbakaus/impeccable",
-    "mattpocock/skills",
-    "NVIDIA/OpenShell",
-    "coreyhaines31/marketingskills",
-    "heygen-com/hyperframes",
-    "mksglu/context-mode",
-    "google/skills",
-    "cursor/plugins",
-    "mvschwarz/openrig"
-  ],
   "2026-10-05": [
     "DietrichGebert/ponytail",
     "pbakaus/impeccable",
@@ -52,5 +37,16 @@
     "calesthio/OpenMontage",
     "cloudflare/cloudflare-os",
     "msitarzewski/agency-agents"
+  ],
+  "2026-10-08": [
+    "mattpocock/skills",
+    "earthtojake/text-to-cad",
+    "pbakaus/impeccable",
+    "thedotmack/claude-mem",
+    "ayghri/i-have-adhd",
+    "morluto/rea",
+    "deepseek-ai/DeepGEMM",
+    "msitarzewski/agency-agents",
+    "cathrynlavery/diagram-design"
   ]
 }
