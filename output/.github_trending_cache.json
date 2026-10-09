@@ -1,21 +1,4 @@
 {
-  "2026-10-05": [
-    "DietrichGebert/ponytail",
-    "pbakaus/impeccable",
-    "affaan-m/ECC",
-    "JuliusBrussee/caveman",
-    "Panniantong/Agent-Reach",
-    "thedotmack/claude-mem",
-    "cloudflare/cloudflare-os",
-    "addyosmani/agent-skills",
-    "obra/superpowers",
-    "mattpocock/skills",
-    "mksglu/context-mode",
-    "earendil-works/pi",
-    "anthropics/claude-code",
-    "jamwithai/production-agentic-rag-course",
-    "meituan-longcat/LongCat-Video"
-  ],
   "2026-10-06": [
     "pbakaus/impeccable",
     "coreyhaines31/marketingskills",
@@ -48,5 +31,15 @@
     "deepseek-ai/DeepGEMM",
     "msitarzewski/agency-agents",
     "cathrynlavery/diagram-design"
+  ],
+  "2026-10-09": [
+    "morluto/rea",
+    "mattpocock/skills",
+    "ayghri/i-have-adhd",
+    "cathrynlavery/diagram-design",
+    "addyosmani/agent-skills",
+    "thedotmack/claude-mem",
+    "trycua/cua",
+    "cloudflare/security-audit-skill"
   ]
 }
