@@ -1,17 +1,4 @@
 {
-  "2026-10-06": [
-    "pbakaus/impeccable",
-    "coreyhaines31/marketingskills",
-    "DietrichGebert/ponytail",
-    "earthtojake/text-to-cad",
-    "Panniantong/Agent-Reach",
-    "calesthio/OpenMontage",
-    "michael-denyer/pstack-claude",
-    "addyosmani/agent-skills",
-    "thedotmack/claude-mem",
-    "garrytan/gstack",
-    "antirez/ds4"
-  ],
   "2026-10-07": [
     "thedotmack/claude-mem",
     "earthtojake/text-to-cad",
@@ -41,5 +28,12 @@
     "thedotmack/claude-mem",
     "trycua/cua",
     "cloudflare/security-audit-skill"
+  ],
+  "2026-10-10": [
+    "cathrynlavery/diagram-design",
+    "morluto/rea",
+    "mattpocock/skills",
+    "thedotmack/claude-mem",
+    "anthropics/knowledge-work-plugins"
   ]
 }
