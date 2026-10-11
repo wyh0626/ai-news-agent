@@ -1,13 +1,4 @@
 {
-  "2026-10-07": [
-    "thedotmack/claude-mem",
-    "earthtojake/text-to-cad",
-    "pingdotgg/t3code",
-    "Panniantong/Agent-Reach",
-    "calesthio/OpenMontage",
-    "cloudflare/cloudflare-os",
-    "msitarzewski/agency-agents"
-  ],
   "2026-10-08": [
     "mattpocock/skills",
     "earthtojake/text-to-cad",
@@ -35,5 +26,15 @@
     "mattpocock/skills",
     "thedotmack/claude-mem",
     "anthropics/knowledge-work-plugins"
+  ],
+  "2026-10-11": [
+    "morluto/rea",
+    "mattpocock/skills",
+    "cathrynlavery/diagram-design",
+    "anthropics/knowledge-work-plugins",
+    "BerriAI/litellm",
+    "addyosmani/agent-skills",
+    "Robbyant/lingbot-map",
+    "twostraws/SwiftUI-Agent-Skill"
   ]
 }
