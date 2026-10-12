@@ -1,15 +1,4 @@
 {
-  "2026-10-08": [
-    "mattpocock/skills",
-    "earthtojake/text-to-cad",
-    "pbakaus/impeccable",
-    "thedotmack/claude-mem",
-    "ayghri/i-have-adhd",
-    "morluto/rea",
-    "deepseek-ai/DeepGEMM",
-    "msitarzewski/agency-agents",
-    "cathrynlavery/diagram-design"
-  ],
   "2026-10-09": [
     "morluto/rea",
     "mattpocock/skills",
@@ -36,5 +25,17 @@
     "addyosmani/agent-skills",
     "Robbyant/lingbot-map",
     "twostraws/SwiftUI-Agent-Skill"
+  ],
+  "2026-10-12": [
+    "morluto/rea",
+    "cathrynlavery/diagram-design",
+    "mksglu/context-mode",
+    "mattpocock/skills",
+    "tensorflow/tensorflow",
+    "hugohe3/ppt-master",
+    "pytorch/pytorch",
+    "huggingface/transformers",
+    "anthropics/knowledge-work-plugins",
+    "multica-ai/andrej-karpathy-skills"
   ]
 }
