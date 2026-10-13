@@ -1,14 +1,4 @@
 {
-  "2026-10-09": [
-    "morluto/rea",
-    "mattpocock/skills",
-    "ayghri/i-have-adhd",
-    "cathrynlavery/diagram-design",
-    "addyosmani/agent-skills",
-    "thedotmack/claude-mem",
-    "trycua/cua",
-    "cloudflare/security-audit-skill"
-  ],
   "2026-10-10": [
     "cathrynlavery/diagram-design",
     "morluto/rea",
@@ -37,5 +27,11 @@
     "huggingface/transformers",
     "anthropics/knowledge-work-plugins",
     "multica-ai/andrej-karpathy-skills"
+  ],
+  "2026-10-13": [
+    "morluto/rea",
+    "cathrynlavery/diagram-design",
+    "pytorch/pytorch",
+    "lyogavin/airllm"
   ]
 }
