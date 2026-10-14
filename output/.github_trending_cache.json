@@ -1,11 +1,4 @@
 {
-  "2026-10-10": [
-    "cathrynlavery/diagram-design",
-    "morluto/rea",
-    "mattpocock/skills",
-    "thedotmack/claude-mem",
-    "anthropics/knowledge-work-plugins"
-  ],
   "2026-10-11": [
     "morluto/rea",
     "mattpocock/skills",
@@ -33,5 +26,14 @@
     "cathrynlavery/diagram-design",
     "pytorch/pytorch",
     "lyogavin/airllm"
+  ],
+  "2026-10-14": [
+    "morluto/rea",
+    "mksglu/context-mode",
+    "open-webui/open-webui",
+    "cathrynlavery/diagram-design",
+    "lyogavin/airllm",
+    "microsoft/BitNet",
+    "Alishahryar1/free-claude-code"
   ]
 }
