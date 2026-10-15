@@ -1,14 +1,4 @@
 {
-  "2026-10-11": [
-    "morluto/rea",
-    "mattpocock/skills",
-    "cathrynlavery/diagram-design",
-    "anthropics/knowledge-work-plugins",
-    "BerriAI/litellm",
-    "addyosmani/agent-skills",
-    "Robbyant/lingbot-map",
-    "twostraws/SwiftUI-Agent-Skill"
-  ],
   "2026-10-12": [
     "morluto/rea",
     "cathrynlavery/diagram-design",
@@ -35,5 +25,13 @@
     "lyogavin/airllm",
     "microsoft/BitNet",
     "Alishahryar1/free-claude-code"
+  ],
+  "2026-10-15": [
+    "morluto/rea",
+    "debpalash/VoiceStudio",
+    "mksglu/context-mode",
+    "cathrynlavery/diagram-design",
+    "vercel-labs/skills",
+    "lyogavin/airllm"
   ]
 }
