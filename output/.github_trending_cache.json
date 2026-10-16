@@ -1,16 +1,4 @@
 {
-  "2026-10-12": [
-    "morluto/rea",
-    "cathrynlavery/diagram-design",
-    "mksglu/context-mode",
-    "mattpocock/skills",
-    "tensorflow/tensorflow",
-    "hugohe3/ppt-master",
-    "pytorch/pytorch",
-    "huggingface/transformers",
-    "anthropics/knowledge-work-plugins",
-    "multica-ai/andrej-karpathy-skills"
-  ],
   "2026-10-13": [
     "morluto/rea",
     "cathrynlavery/diagram-design",
@@ -33,5 +21,14 @@
     "cathrynlavery/diagram-design",
     "vercel-labs/skills",
     "lyogavin/airllm"
+  ],
+  "2026-10-16": [
+    "morluto/rea",
+    "debpalash/VoiceStudio",
+    "mksglu/context-mode",
+    "K-Dense-AI/scientific-agent-skills",
+    "HKUDS/CLI-Anything",
+    "ifixai-ai/iFixAi",
+    "vxcontrol/pentagi"
   ]
 }
