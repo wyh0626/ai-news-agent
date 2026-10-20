@@ -1,13 +1,4 @@
 {
-  "2026-10-16": [
-    "morluto/rea",
-    "debpalash/VoiceStudio",
-    "mksglu/context-mode",
-    "K-Dense-AI/scientific-agent-skills",
-    "HKUDS/CLI-Anything",
-    "ifixai-ai/iFixAi",
-    "vxcontrol/pentagi"
-  ],
   "2026-10-17": [
     "morluto/rea",
     "anthropics/claude-plugins-official",
@@ -47,5 +38,18 @@
     "anomalyco/opencode",
     "ruvnet/ruflo",
     "xerj-org/xerj"
+  ],
+  "2026-10-20": [
+    "MadsLorentzen/ai-job-search",
+    "anthropics/claude-plugins-official",
+    "anomalyco/opencode",
+    "cursor/plugins",
+    "ruvnet/ruflo",
+    "akitaonrails/ai-memory",
+    "stablyai/orca",
+    "HKUDS/CLI-Anything",
+    "debpalash/VoiceStudio",
+    "mlabonne/llm-course",
+    "Comfy-Org/ComfyUI"
   ]
 }
