@@ -1,17 +1,4 @@
 {
-  "2026-10-18": [
-    "anthropics/claude-plugins-official",
-    "K-Dense-AI/scientific-agent-skills",
-    "affaan-m/ECC",
-    "HKUDS/CLI-Anything",
-    "mksglu/context-mode",
-    "ruvnet/ruflo",
-    "obra/superpowers",
-    "cursor/plugins",
-    "debpalash/VoiceStudio",
-    "MadsLorentzen/ai-job-search",
-    "xerj-org/xerj"
-  ],
   "2026-10-19": [
     "anthropics/claude-plugins-official",
     "MadsLorentzen/ai-job-search",
@@ -50,5 +37,21 @@
     "HKUDS/CLI-Anything",
     "anthropics/claude-code",
     "shiyu-coder/Kronos"
+  ],
+  "2026-10-22": [
+    "MadsLorentzen/ai-job-search",
+    "cloudflare/security-audit-skill",
+    "stablyai/orca",
+    "DietrichGebert/ponytail",
+    "Comfy-Org/ComfyUI",
+    "ruvnet/ruflo",
+    "anomalyco/opencode",
+    "msitarzewski/agency-agents",
+    "headroomlabs-ai/headroom",
+    "anthropics/knowledge-work-plugins",
+    "wshobson/agents",
+    "sickn33/agentic-awesome-skills",
+    "shiyu-coder/Kronos",
+    "vllm-project/vllm"
   ]
 }
