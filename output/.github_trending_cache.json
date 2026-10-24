@@ -1,17 +1,4 @@
 {
-  "2026-10-20": [
-    "MadsLorentzen/ai-job-search",
-    "anthropics/claude-plugins-official",
-    "anomalyco/opencode",
-    "cursor/plugins",
-    "ruvnet/ruflo",
-    "akitaonrails/ai-memory",
-    "stablyai/orca",
-    "HKUDS/CLI-Anything",
-    "debpalash/VoiceStudio",
-    "mlabonne/llm-course",
-    "Comfy-Org/ComfyUI"
-  ],
   "2026-10-21": [
     "MadsLorentzen/ai-job-search",
     "anomalyco/opencode",
@@ -49,5 +36,11 @@
     "Comfy-Org/ComfyUI",
     "shiyu-coder/Kronos",
     "akitaonrails/ai-memory"
+  ],
+  "2026-10-24": [
+    "anthropics/knowledge-work-plugins",
+    "DietrichGebert/ponytail",
+    "cloudflare/security-audit-skill",
+    "luongnv89/claude-howto"
   ]
 }
