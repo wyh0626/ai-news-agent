@@ -1,20 +1,4 @@
 {
-  "2026-10-22": [
-    "MadsLorentzen/ai-job-search",
-    "cloudflare/security-audit-skill",
-    "stablyai/orca",
-    "DietrichGebert/ponytail",
-    "Comfy-Org/ComfyUI",
-    "ruvnet/ruflo",
-    "anomalyco/opencode",
-    "msitarzewski/agency-agents",
-    "headroomlabs-ai/headroom",
-    "anthropics/knowledge-work-plugins",
-    "wshobson/agents",
-    "sickn33/agentic-awesome-skills",
-    "shiyu-coder/Kronos",
-    "vllm-project/vllm"
-  ],
   "2026-10-23": [
     "cloudflare/security-audit-skill",
     "vllm-project/vllm",
@@ -37,5 +21,15 @@
     "NVIDIA/OpenShell",
     "SnailSploit/Claude-Red",
     "OpenBMB/VoxCPM"
+  ],
+  "2026-10-26": [
+    "cloudflare/security-audit-skill",
+    "NVIDIA/OpenShell",
+    "aws/agent-toolkit-for-aws",
+    "Nutlope/hallmark",
+    "luongnv89/claude-howto",
+    "pbakaus/impeccable",
+    "google-gemini/gemini-cli",
+    "makecindy/cindy"
   ]
 }
