@@ -1,10 +1,4 @@
 {
-  "2026-10-24": [
-    "anthropics/knowledge-work-plugins",
-    "DietrichGebert/ponytail",
-    "cloudflare/security-audit-skill",
-    "luongnv89/claude-howto"
-  ],
   "2026-10-25": [
     "cloudflare/security-audit-skill",
     "anthropics/knowledge-work-plugins",
@@ -31,5 +25,20 @@
     "JetBrains/thinkrail",
     "cloudflare/security-audit-skill",
     "AgriciDaniel/claude-seo"
+  ],
+  "2026-10-28": [
+    "Nutlope/hallmark",
+    "TauricResearch/TradingAgents",
+    "JetBrains/thinkrail",
+    "makecindy/cindy",
+    "affaan-m/ECC",
+    "pbakaus/impeccable",
+    "NVIDIA/SkillSpector",
+    "nightly-labs/openbot",
+    "Panniantong/Agent-Reach",
+    "debpalash/VoiceStudio",
+    "gitroomhq/postiz-app",
+    "alchaincyf/huashu-design",
+    "multica-ai/andrej-karpathy-skills"
   ]
 }
