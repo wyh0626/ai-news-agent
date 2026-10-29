@@ -1,11 +1,4 @@
 {
-  "2026-10-25": [
-    "cloudflare/security-audit-skill",
-    "anthropics/knowledge-work-plugins",
-    "NVIDIA/OpenShell",
-    "SnailSploit/Claude-Red",
-    "OpenBMB/VoxCPM"
-  ],
   "2026-10-26": [
     "cloudflare/security-audit-skill",
     "NVIDIA/OpenShell",
@@ -40,5 +33,18 @@
     "gitroomhq/postiz-app",
     "alchaincyf/huashu-design",
     "multica-ai/andrej-karpathy-skills"
+  ],
+  "2026-10-29": [
+    "elayadesign/ai-design-skills",
+    "Nutlope/hallmark",
+    "nightly-labs/openbot",
+    "obra/superpowers",
+    "pbakaus/impeccable",
+    "makecindy/cindy",
+    "gitroomhq/postiz-app",
+    "affaan-m/ECC",
+    "HKUDS/DeepTutor",
+    "JetBrains/thinkrail",
+    "togg53192-cmd/jailbreaks"
   ]
 }
