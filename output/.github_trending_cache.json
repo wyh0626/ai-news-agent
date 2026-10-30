@@ -1,14 +1,4 @@
 {
-  "2026-10-26": [
-    "cloudflare/security-audit-skill",
-    "NVIDIA/OpenShell",
-    "aws/agent-toolkit-for-aws",
-    "Nutlope/hallmark",
-    "luongnv89/claude-howto",
-    "pbakaus/impeccable",
-    "google-gemini/gemini-cli",
-    "makecindy/cindy"
-  ],
   "2026-10-27": [
     "makecindy/cindy",
     "Nutlope/hallmark",
@@ -46,5 +36,17 @@
     "HKUDS/DeepTutor",
     "JetBrains/thinkrail",
     "togg53192-cmd/jailbreaks"
+  ],
+  "2026-10-30": [
+    "JetBrains/thinkrail",
+    "elayadesign/ai-design-skills",
+    "obra/superpowers",
+    "HKUDS/DeepTutor",
+    "Nutlope/hallmark",
+    "pbakaus/impeccable",
+    "makecindy/cindy",
+    "nightly-labs/openbot",
+    "togg53192-cmd/jailbreaks",
+    "expo/skills"
   ]
 }
