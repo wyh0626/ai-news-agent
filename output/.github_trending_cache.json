@@ -1,14 +1,4 @@
 {
-  "2026-10-27": [
-    "makecindy/cindy",
-    "Nutlope/hallmark",
-    "debpalash/VoiceStudio",
-    "pbakaus/impeccable",
-    "TauricResearch/TradingAgents",
-    "JetBrains/thinkrail",
-    "cloudflare/security-audit-skill",
-    "AgriciDaniel/claude-seo"
-  ],
   "2026-10-28": [
     "Nutlope/hallmark",
     "TauricResearch/TradingAgents",
@@ -48,5 +38,17 @@
     "nightly-labs/openbot",
     "togg53192-cmd/jailbreaks",
     "expo/skills"
+  ],
+  "2026-10-31": [
+    "obra/superpowers",
+    "pbakaus/impeccable",
+    "JetBrains/thinkrail",
+    "milind-soni/OpenMausBot",
+    "nightly-labs/openbot",
+    "elayadesign/ai-design-skills",
+    "thedotmack/claude-mem",
+    "CopilotKit/OpenBot",
+    "togg53192-cmd/jailbreaks",
+    "Donchitos/Claude-Code-Game-Studios"
   ]
 }
