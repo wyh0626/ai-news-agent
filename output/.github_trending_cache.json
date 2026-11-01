@@ -1,19 +1,4 @@
 {
-  "2026-10-28": [
-    "Nutlope/hallmark",
-    "TauricResearch/TradingAgents",
-    "JetBrains/thinkrail",
-    "makecindy/cindy",
-    "affaan-m/ECC",
-    "pbakaus/impeccable",
-    "NVIDIA/SkillSpector",
-    "nightly-labs/openbot",
-    "Panniantong/Agent-Reach",
-    "debpalash/VoiceStudio",
-    "gitroomhq/postiz-app",
-    "alchaincyf/huashu-design",
-    "multica-ai/andrej-karpathy-skills"
-  ],
   "2026-10-29": [
     "elayadesign/ai-design-skills",
     "Nutlope/hallmark",
@@ -50,5 +35,18 @@
     "CopilotKit/OpenBot",
     "togg53192-cmd/jailbreaks",
     "Donchitos/Claude-Code-Game-Studios"
+  ],
+  "2026-11-01": [
+    "thedotmack/claude-mem",
+    "milind-soni/OpenMausBot",
+    "pbakaus/impeccable",
+    "CopilotKit/OpenBot",
+    "expo/skills",
+    "mattpocock/skills",
+    "HKUDS/DeepTutor",
+    "anthropics/skills",
+    "JetBrains/thinkrail",
+    "obra/superpowers",
+    "lightpanda-io/browser"
   ]
 }
