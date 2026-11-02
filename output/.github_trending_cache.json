@@ -1,17 +1,4 @@
 {
-  "2026-10-29": [
-    "elayadesign/ai-design-skills",
-    "Nutlope/hallmark",
-    "nightly-labs/openbot",
-    "obra/superpowers",
-    "pbakaus/impeccable",
-    "makecindy/cindy",
-    "gitroomhq/postiz-app",
-    "affaan-m/ECC",
-    "HKUDS/DeepTutor",
-    "JetBrains/thinkrail",
-    "togg53192-cmd/jailbreaks"
-  ],
   "2026-10-30": [
     "JetBrains/thinkrail",
     "elayadesign/ai-design-skills",
@@ -48,5 +35,17 @@
     "JetBrains/thinkrail",
     "obra/superpowers",
     "lightpanda-io/browser"
+  ],
+  "2026-11-02": [
+    "thedotmack/claude-mem",
+    "mattpocock/skills",
+    "Donchitos/Claude-Code-Game-Studios",
+    "milind-soni/OpenMausBot",
+    "pbakaus/impeccable",
+    "obra/superpowers",
+    "lightpanda-io/browser",
+    "HKUDS/DeepTutor",
+    "Orkas-AI/Orkas",
+    "THU-MAIC/OpenMAIC"
   ]
 }
