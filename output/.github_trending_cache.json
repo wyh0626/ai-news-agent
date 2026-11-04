@@ -1,16 +1,4 @@
 {
-  "2026-10-31": [
-    "obra/superpowers",
-    "pbakaus/impeccable",
-    "JetBrains/thinkrail",
-    "milind-soni/OpenMausBot",
-    "nightly-labs/openbot",
-    "elayadesign/ai-design-skills",
-    "thedotmack/claude-mem",
-    "CopilotKit/OpenBot",
-    "togg53192-cmd/jailbreaks",
-    "Donchitos/Claude-Code-Game-Studios"
-  ],
   "2026-11-01": [
     "thedotmack/claude-mem",
     "milind-soni/OpenMausBot",
@@ -49,5 +37,18 @@
     "CopilotKit/OpenBot",
     "patchy631/ai-engineering-hub",
     "FlashML-org/FreeToken"
+  ],
+  "2026-11-04": [
+    "vercel-labs/agent-desktop",
+    "thedotmack/claude-mem",
+    "Donchitos/Claude-Code-Game-Studios",
+    "FlashML-org/FreeToken",
+    "shiyu-coder/Kronos",
+    "kornia/kornia",
+    "JustVugg/colibri",
+    "mattpocock/skills",
+    "paperclipai/paperclip",
+    "karpathy/nanochat",
+    "p-e-w/heretic"
   ]
 }
