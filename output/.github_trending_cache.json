@@ -1,17 +1,4 @@
 {
-  "2026-11-01": [
-    "thedotmack/claude-mem",
-    "milind-soni/OpenMausBot",
-    "pbakaus/impeccable",
-    "CopilotKit/OpenBot",
-    "expo/skills",
-    "mattpocock/skills",
-    "HKUDS/DeepTutor",
-    "anthropics/skills",
-    "JetBrains/thinkrail",
-    "obra/superpowers",
-    "lightpanda-io/browser"
-  ],
   "2026-11-02": [
     "thedotmack/claude-mem",
     "mattpocock/skills",
@@ -50,5 +37,17 @@
     "paperclipai/paperclip",
     "karpathy/nanochat",
     "p-e-w/heretic"
+  ],
+  "2026-11-05": [
+    "thedotmack/claude-mem",
+    "vercel-labs/agent-desktop",
+    "JustVugg/colibri",
+    "mattpocock/skills",
+    "p-e-w/heretic",
+    "spotify/portal-ai-plugins",
+    "Usagi-org/ai-goofish-monitor",
+    "anomalyco/hex",
+    "shiyu-coder/Kronos",
+    "Donchitos/Claude-Code-Game-Studios"
   ]
 }
