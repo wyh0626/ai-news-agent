@@ -1,16 +1,4 @@
 {
-  "2026-11-02": [
-    "thedotmack/claude-mem",
-    "mattpocock/skills",
-    "Donchitos/Claude-Code-Game-Studios",
-    "milind-soni/OpenMausBot",
-    "pbakaus/impeccable",
-    "obra/superpowers",
-    "lightpanda-io/browser",
-    "HKUDS/DeepTutor",
-    "Orkas-AI/Orkas",
-    "THU-MAIC/OpenMAIC"
-  ],
   "2026-11-03": [
     "thedotmack/claude-mem",
     "lightpanda-io/browser",
@@ -49,5 +37,16 @@
     "anomalyco/hex",
     "shiyu-coder/Kronos",
     "Donchitos/Claude-Code-Game-Studios"
+  ],
+  "2026-11-06": [
+    "mattpocock/skills",
+    "thedotmack/claude-mem",
+    "vercel-labs/agent-desktop",
+    "The-PR-Agent/pr-agent",
+    "harry0703/MoneyPrinterTurbo",
+    "garrytan/gstack",
+    "FareedKhan-dev/kimi-k3-in-c",
+    "Thysrael/Horizon",
+    "scenario-labs/skills"
   ]
 }
