@@ -1,18 +1,4 @@
 {
-  "2026-11-03": [
-    "thedotmack/claude-mem",
-    "lightpanda-io/browser",
-    "shiyu-coder/Kronos",
-    "milind-soni/OpenMausBot",
-    "cjpais/Handy",
-    "Donchitos/Claude-Code-Game-Studios",
-    "kornia/kornia",
-    "beenuar/AiSOC",
-    "anomalyco/hex",
-    "CopilotKit/OpenBot",
-    "patchy631/ai-engineering-hub",
-    "FlashML-org/FreeToken"
-  ],
   "2026-11-04": [
     "vercel-labs/agent-desktop",
     "thedotmack/claude-mem",
@@ -48,5 +34,15 @@
     "FareedKhan-dev/kimi-k3-in-c",
     "Thysrael/Horizon",
     "scenario-labs/skills"
+  ],
+  "2026-11-07": [
+    "mattpocock/skills",
+    "garrytan/gstack",
+    "Usagi-org/ai-goofish-monitor",
+    "vercel-labs/agent-desktop",
+    "google/skills",
+    "vercel-labs/agent-browser",
+    "scenario-labs/skills",
+    "microsoft/VibeVoice"
   ]
 }
