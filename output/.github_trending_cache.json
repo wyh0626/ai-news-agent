@@ -1,17 +1,4 @@
 {
-  "2026-11-04": [
-    "vercel-labs/agent-desktop",
-    "thedotmack/claude-mem",
-    "Donchitos/Claude-Code-Game-Studios",
-    "FlashML-org/FreeToken",
-    "shiyu-coder/Kronos",
-    "kornia/kornia",
-    "JustVugg/colibri",
-    "mattpocock/skills",
-    "paperclipai/paperclip",
-    "karpathy/nanochat",
-    "p-e-w/heretic"
-  ],
   "2026-11-05": [
     "thedotmack/claude-mem",
     "vercel-labs/agent-desktop",
@@ -44,5 +31,11 @@
     "vercel-labs/agent-browser",
     "scenario-labs/skills",
     "microsoft/VibeVoice"
+  ],
+  "2026-11-08": [
+    "NVIDIA/auto-ontology",
+    "google/skills",
+    "mattpocock/skills",
+    "cloudflare/security-audit-skill"
   ]
 }
