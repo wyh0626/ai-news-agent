@@ -1,16 +1,4 @@
 {
-  "2026-11-05": [
-    "thedotmack/claude-mem",
-    "vercel-labs/agent-desktop",
-    "JustVugg/colibri",
-    "mattpocock/skills",
-    "p-e-w/heretic",
-    "spotify/portal-ai-plugins",
-    "Usagi-org/ai-goofish-monitor",
-    "anomalyco/hex",
-    "shiyu-coder/Kronos",
-    "Donchitos/Claude-Code-Game-Studios"
-  ],
   "2026-11-06": [
     "mattpocock/skills",
     "thedotmack/claude-mem",
@@ -37,5 +25,15 @@
     "google/skills",
     "mattpocock/skills",
     "cloudflare/security-audit-skill"
+  ],
+  "2026-11-09": [
+    "vercel-labs/agent-browser",
+    "cloudflare/security-audit-skill",
+    "google/skills",
+    "mattpocock/skills",
+    "anthropics/skills",
+    "milind-soni/OpenMausBot",
+    "ranxianglei/billion-context",
+    "dsx-ai-factory/nvke"
   ]
 }
