@@ -1,0 +1,25 @@
+{
+  "run_id": "local-demo-20261107-001",
+  "generated_at": "2026-11-07T10:00:00+08:00",
+  "items": [
+    {
+      "event_key": "demo-first-tweet-20060321",
+      "title_zh": "【联调样例】测试公开推文截图",
+      "body_zh": "这是 webhook 和截图流程的联调样例，不是真实 AI 新闻。使用一条历史公开推文测试页面定位、翻译状态和图片保存。请勿发布到正式频道。",
+      "tweet_url": "https://x.com/jack/status/20",
+      "tweet_text_zh": "刚刚设置好我的 twttr。",
+      "author": "jack",
+      "published_at": "2006-03-21T20:50:14Z",
+      "sources": [{"label": "历史推文（仅用于联调）", "url": "https://x.com/jack/status/20"}],
+      "uncertainties": ["本条为联调数据，不应公开发布"]
+    },
+    {
+      "event_key": "demo-web-source-20261107",
+      "title_zh": "【联调样例】测试只有网页信源的新闻",
+      "body_zh": "这是第二条流程样例，用于确认没有推文链接的新闻也能进入信息流、保留信源并导出到本地日报，不触发浏览器截图。",
+      "published_at": "2026-11-07T09:00:00+08:00",
+      "sources": [{"label": "x-shot 项目", "url": "https://github.com/Eyeseas/x-shot-skill", "dedup": false}],
+      "uncertainties": ["本条为联调数据，不应公开发布"]
+    }
+  ]
+}

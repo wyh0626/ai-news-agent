@@ -1,0 +1,26 @@
+[Unit]
+Description=AI Daily bilingual Grok intake
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ai-daily
+Group=ai-daily
+WorkingDirectory=/opt/ai-news-agent
+EnvironmentFile=/etc/ai-daily.env
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/opt/ai-news-agent/.venv-intake/bin/python -m src.intake serve --data-dir /var/lib/ai-daily
+# Add --telegram to ExecStart only after configuring a real bot/channel and reviewing pending jobs.
+Restart=on-failure
+RestartSec=5
+StateDirectory=ai-daily
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/ai-daily
+
+[Install]
+WantedBy=multi-user.target

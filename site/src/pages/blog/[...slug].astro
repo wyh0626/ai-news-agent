@@ -48,7 +48,7 @@ const digestItems = post.data.digestItems;
 const issue = digestItems ? null : parseIssue(post.body);
 const legacyOk = issue ? issueHasContent(issue) : false;
 const { Content } = await post.render();
-const total = digestItems?.length ?? (issue ? issueTotal(issue) : null);
+const total = digestItems ? digestItems.length + (post.data.githubProjects?.length ?? 0) : (issue ? issueTotal(issue) : null);
 const nav = issue
 	? ([
 			issue.focus.length ? { href: '#focus', label: t.focus } : null,
@@ -59,7 +59,7 @@ const nav = issue
 ---
 <BlogPostLayout post={post} recent={recent} prev={prev} next={next} total={total} focusCount={issue?.focus.length} nav={nav}>
 	{digestItems ? (
-		<DailyDigest items={digestItems} lang={lang} />
+		<DailyDigest items={digestItems} lang={lang} projects={post.data.githubProjects} windowStart={post.data.receiptWindowStart} windowEnd={post.data.receiptWindowEnd} />
 	) : legacyOk && issue ? (
 		<IssueFeed issue={issue} lang={lang} expanded />
 	) : (

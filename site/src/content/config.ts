@@ -9,6 +9,11 @@ const blog = defineCollection({
     lang: z.string().default("zh"),
     pairSlug: z.string().optional(),
     receiptTimezone: z.string().optional(),
+    receiptWindowStart: z.string().optional(),
+    receiptWindowEnd: z.string().optional(),
+    githubProjects: z.array(z.object({
+      name: z.string(), url: z.string().url(), description: z.string(),
+    })).optional(),
     digestItems: z.array(z.object({
       id: z.string(),
       title: z.string(),

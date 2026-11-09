@@ -1,0 +1,11 @@
+[Unit]
+Description=AI Daily digest at 08:00 Beijing time
+
+[Timer]
+OnCalendar=*-*-* 08:00:00 Asia/Shanghai
+Persistent=true
+AccuracySec=1s
+Unit=ai-daily-digest.service
+
+[Install]
+WantedBy=timers.target

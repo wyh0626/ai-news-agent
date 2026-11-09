@@ -1,5 +1,16 @@
 # 🤖 AI News Agent
 
+## 当前生产流程（2026-11-10）
+
+- AI 新闻：Grok 每天北京时间 07:00、19:00 检索，经鉴权接口提交中英双语新闻和可选原帖 PNG。
+- GitHub 项目：保留原来的 GitHub Trending RSS，独立按 AI 关键词筛选、按仓库链接去重；不调用 LLM 或 Embedding。
+- 每天 08:00：汇总前一天 08:00（含）至当天 08:00（不含）**入库**的 Grok 来稿，并附 GitHub 项目栏目；日报日期为发布当天。
+- 中英文正文与 WebP 截图提交到 GitHub，现有 Pages workflow 构建发布。失败可重试，漏跑按窗口补发；同一窗口不重复新增文章。
+- 旧 `scripts/run_and_push.sh` 保留供历史参考，但不再作为生产定时任务。Telegram 仍须单独配置，网站发布不会启动频道发送。
+
+完整配置见 [部署说明](deploy/production.md)。Grok 正式任务请用 [每天两次的提示词](prompts/grok-twice-daily-v3.txt)。下方保留旧采集系统文档。
+
+
 [中文文档](./README.zh-CN.md)
 
 A multi-agent AI news aggregation system built on LangGraph. Automatically collects, cleans, deduplicates, extracts structured information via LLM, and generates bilingual (Chinese & English) AI news briefings (daily / weekly) with multi-channel publishing.

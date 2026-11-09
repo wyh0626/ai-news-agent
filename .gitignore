@@ -25,3 +25,14 @@ env/
 # IDE
 .idea/
 .vscode/
+
+# Local Grok webhook runtime
+data/grok*/
+output/grok*/
+.runtime/
+.venv-intake/
+
+# Astro local build
+site/node_modules/
+site/.astro/
+site/dist/

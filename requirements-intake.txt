@@ -1,0 +1,6 @@
+# Standalone webhook runtime; legacy collectors are not required.
+fastapi==0.162.1
+uvicorn==0.54.0
+pydantic==2.14.3
+Pillow>=12,<13
+httpx>=0.27,<1

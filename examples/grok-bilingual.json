@@ -1,0 +1,55 @@
+{
+  "schema_version": "2",
+  "run_id": "demo-20261109-1500",
+  "generated_at": "2026-11-09T15:00:00+08:00",
+  "items": [
+    {
+      "event_key": "demo-original-post-20261109",
+      "story_type": "x",
+      "title_zh": "演示：一条原生推文如何进入 AI 日报",
+      "summary_zh": "这是一条流程演示，不是真实新闻。Grok 提供中英文标题、短摘要和正文；能在一张图中完整显示的原生推文，可以另传截图。频道展示中文摘要和信源，网站保留完整双语报道。",
+      "body_zh": "这是一条流程演示，不是真实新闻，也不代表所链接推文的实际内容。\n\n接收服务将中英文内容作为同一个事件保存。截图单独上传，返回图片 ID 后再放进这条新闻。遇到过长推文或截图失败，保留原帖链接即可。\n\n此处展示完整报道在网页中的折叠效果。实际发布时，Grok 应仅填写已核验的事实，数字和归因保留原文限定条件，不把内部检索报告放入正文。",
+      "title_en": "Demo: From an original post to the daily digest",
+      "summary_en": "This is a workflow demonstration, not a real news report. Grok supplies both languages in one submission. An original post can include one complete screenshot. Telegram receives the Chinese summary; the website keeps the full bilingual report.",
+      "body_en": "This is a workflow demonstration, not real news. It does not describe the actual content of the linked post.\n\nBoth languages are stored as one event. Upload an optional screenshot first, then reference its asset ID in the news submission. For a post too long to capture in one legible image, retain the source link alone.\n\nThis text demonstrates the expandable report on the website. Real submissions should preserve factual qualifications and attribution; internal search logs must stay out of the published body.",
+      "tweet_url": "https://x.com/jack/status/20",
+      "author": "Demo",
+      "published_at": null,
+      "published_date": null,
+      "occurred_at": null,
+      "screenshot_asset_id": null,
+      "sources": [
+        {
+          "label": "演示原帖链接 / Example post URL",
+          "url": "https://x.com/jack/status/20",
+          "dedup": true
+        }
+      ],
+      "uncertainties": [],
+      "uncertainties_en": []
+    },
+    {
+      "event_key": "demo-external-report-20261109",
+      "story_type": "external",
+      "title_zh": "演示：外部报告保留信源，长正文收进详情",
+      "summary_zh": "这是一条外部报告的排版演示，不是真实新闻。读者先看到短摘要，再按需展开全文；外部报告只附来源链接。每天按北京时间汇总前一天接收的新闻，中英文页面共用同一组事件。",
+      "body_zh": "这是排版测试，不是真实新闻。\n\n当 X 帖子只是转发论文、报告或官方公告时，直接引用对应的外部原始页面，无须为转发推文附图。\n\n新闻正文保留具体数字、出处、研究条件和不确定性。网页默认折叠长正文，使一天二三十条资讯仍可快速浏览；需要了解细节时再展开阅读。",
+      "title_en": "Demo: Linked reports with expandable full coverage",
+      "summary_en": "This is a layout demonstration, not real news. A short summary comes first, with the full report available on demand. External reports use source links without screenshots. Each daily edition groups the previous Beijing calendar day’s received events in Chinese and English.",
+      "body_en": "This is a layout test, not real news.\n\nWhen an X post only links to a paper, report or official announcement, cite the original external page directly. No screenshot of the repost is needed.\n\nKeep figures, attribution, research conditions and uncertainties in the report. Longer coverage is collapsed by default so readers can scan twenty or thirty stories and expand the ones they need.",
+      "tweet_url": null,
+      "published_at": null,
+      "published_date": "2026-11-09",
+      "screenshot_asset_id": null,
+      "sources": [
+        {
+          "label": "示例信源 / Example source",
+          "url": "https://example.org/ai-report-demo",
+          "dedup": true
+        }
+      ],
+      "uncertainties": [],
+      "uncertainties_en": []
+    }
+  ]
+}

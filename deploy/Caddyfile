@@ -1,0 +1,9 @@
+# Current bootstrap HTTPS hostname; switch to api.ainewslog.com after its A record is ready.
+# No credentials in this file. FastAPI checks the fixed Bearer token.
+grok.43-133-59-36.sslip.io {
+    request_body {
+        max_size 9MB
+    }
+    encode zstd gzip
+    reverse_proxy 127.0.0.1:8787
+}

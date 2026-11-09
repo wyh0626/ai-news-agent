@@ -1,0 +1,25 @@
+[Unit]
+Description=Publish 08:00 Grok digest with GitHub Trending projects
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=ai-daily
+Group=ai-daily
+WorkingDirectory=/opt/ai-news-agent
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=GIT_TERMINAL_PROMPT=0
+Environment=GIT_ASKPASS=/opt/ai-news-agent/deploy/git-askpass.sh
+EnvironmentFile=/etc/ai-daily-publish.env
+ExecStart=/opt/ai-news-agent/.venv-intake/bin/python scripts/publish_grok_digest.py --data-dir /var/lib/ai-daily --repo-dir /var/lib/ai-daily/publish-repo --start-date 2026-11-10 --github --push
+TimeoutStartSec=15min
+Restart=on-failure
+RestartSec=5min
+StateDirectory=ai-daily
+UMask=0027
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/ai-daily
