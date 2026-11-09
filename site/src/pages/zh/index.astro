@@ -1,91 +1,20 @@
 ---
+import Home from "@/components/home.astro";
 import MainLayout from "@/layouts/main-layout.astro";
-import { getZhPosts, getPosts } from "@/lib/fetchers";
+import { getPosts, getZhPosts } from "@/lib/fetchers";
+import { ui } from "@/lib/issue";
 
 const zhPosts = await getZhPosts();
-const enPosts = await getPosts();
+// 没有中文版时退回英文
+const posts = zhPosts.length > 0 ? zhPosts : await getPosts();
 const base = import.meta.env.BASE_URL;
-
-// 优先展示中文文章，没有中文版的降级展示英文
-const posts = zhPosts.length > 0 ? zhPosts : enPosts;
-
-// 按月分组
-const grouped = new Map<string, typeof posts>();
-for (const post of posts) {
-  const key = post.data.pubDate.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long' });
-  if (!grouped.has(key)) grouped.set(key, []);
-  grouped.get(key)!.push(post);
-}
+const t = ui("zh");
 ---
 
-<MainLayout title="AI Daily — 每日 AI 资讯">
+<MainLayout title="" description={t.tagline} lang="zh" switchHref={base}>
   {/* 语言偏好记录：用户访问中文页即视为选择了中文 */}
   <script is:inline>
-    localStorage.setItem('ai-daily-lang', 'zh');
+    try { localStorage.setItem('ai-daily-lang', 'zh'); } catch (e) {}
   </script>
-
-  <section class="container max-w-screen-xl py-10">
-    {/* Header */}
-    <div class="mb-10 flex items-start justify-between">
-      <div>
-        <h1 class="font-heading text-3xl md:text-4xl font-bold">AI Daily</h1>
-        <p class="mt-2 text-muted-foreground">每日精选 AI 资讯、研究论文、开源项目与行业动态</p>
-      </div>
-      <a
-        href={base}
-        onclick="localStorage.setItem('ai-daily-lang', 'en')"
-        class="mt-1 px-3 py-1 rounded text-xs font-medium bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors whitespace-nowrap"
-      >
-        English
-      </a>
-    </div>
-
-    {/* Timeline */}
-    {posts.length === 0 ? (
-      <div class="text-center py-20">
-        <p class="text-muted-foreground">暂无文章，请先运行 pipeline 生成第一期日报。</p>
-      </div>
-    ) : (
-      <div class="space-y-8">
-        {[...grouped.entries()].map(([month, monthPosts]) => (
-          <div>
-            <h2 class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-4">{month}</h2>
-            <div class="border-l-2 border-border pl-0 space-y-0">
-              {monthPosts.map((post) => {
-                const day = post.data.pubDate.getDate();
-                const weekday = post.data.pubDate.toLocaleDateString('zh-CN', { weekday: 'short' });
-                return (
-                  <a
-                    href={`${base}blog/${post.slug}/`}
-                    class="group flex items-start gap-4 py-4 px-4 -ml-px border-l-2 border-transparent hover:border-primary hover:bg-muted/50 transition-all rounded-r-lg"
-                  >
-                    {/* 日期 */}
-                    <div class="flex-shrink-0 w-14 text-right pt-0.5">
-                      <span class="text-2xl font-heading font-bold leading-none text-foreground">{String(day).padStart(2, '0')}</span>
-                      <span class="block text-[10px] text-muted-foreground mt-0.5">{weekday}</span>
-                    </div>
-
-                    {/* 内容 */}
-                    <div class="flex-1 min-w-0">
-                      <h3 class="font-heading text-base md:text-lg font-semibold text-foreground group-hover:text-primary transition-colors leading-snug">
-                        {post.data.title}
-                      </h3>
-                      {post.data.description && (
-                        <p class="mt-1 text-sm text-muted-foreground line-clamp-2 leading-relaxed">{post.data.description}</p>
-                      )}
-                    </div>
-
-                    {/* 箭头 */}
-                    <div class="flex-shrink-0 pt-1 opacity-0 group-hover:opacity-100 transition-opacity text-muted-foreground">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        ))}
-      </div>
-    )}
-  </section>
+  <Home posts={posts} lang="zh" />
 </MainLayout>

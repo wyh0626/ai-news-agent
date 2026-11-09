@@ -1,0 +1,22 @@
+---
+import type { Source } from "@/lib/issue";
+import SourceMark from "./source-mark.astro";
+
+type Props = { sources: Source[]; max?: number; size?: number };
+const { sources, max = 3, size = 16 } = Astro.props;
+const shown = sources.slice(0, max);
+---
+{shown.length > 0 && (
+  <span class="sources">
+    {shown.map((s) => (
+      <a href={s.url} target="_blank" rel="noopener noreferrer" title={s.url}><SourceMark label={s.label} size={size} />{s.label}</a>
+    ))}
+    {sources.length > max && <span class="more">+{sources.length - max}</span>}
+  </span>
+)}
+<style>
+  .sources { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 1rem; font-size: 0.78rem; color: hsl(var(--muted-foreground)); }
+  .sources a { display: inline-flex; align-items: center; gap: 0.4rem; color: inherit; text-decoration: none; white-space: nowrap; }
+  .sources a:hover { color: hsl(var(--foreground)); }
+  .more { font-size: 0.72rem; }
+</style>

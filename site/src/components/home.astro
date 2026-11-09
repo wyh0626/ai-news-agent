@@ -1,0 +1,43 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Archive from "@/components/issue/archive.astro";
+import DailyDigest from "@/components/daily-digest.astro";
+import IssueFeed from "@/components/issue/issue-feed.astro";
+import IssueShell from "@/components/issue/issue-shell.astro";
+import { issueHasContent, issueTotal, parseIssue, ui, type Lang } from "@/lib/issue";
+
+type Post = CollectionEntry<"blog">;
+type Props = { posts: Post[]; lang: Lang };
+const { posts, lang } = Astro.props;
+const t = ui(lang);
+
+const latest = posts[0];
+const issue = latest && !latest.data.digestItems ? parseIssue(latest.body) : null;
+const legacyOk = issue ? issueHasContent(issue) : false;
+const Content = latest && !latest.data.digestItems && !legacyOk ? (await latest.render()).Content : null;
+const total = latest?.data.digestItems?.length ?? (issue ? issueTotal(issue) : null);
+const nav = issue
+  ? [
+      issue.focus.length ? { href: "#focus", label: t.focus } : null,
+      issue.sections.length ? { href: "#featured", label: t.featured } : null,
+      issue.briefs.length ? { href: "#briefs", label: t.briefs } : null,
+    ].filter(Boolean) as { href: string; label: string }[]
+  : [{ href: "#top", label: t.home }];
+---
+{latest ? (
+  <IssueShell lang={lang} date={latest.data.pubDate} total={total} focusCount={issue?.focus.length} recent={posts} currentSlug={latest.slug} nav={nav} kicker={t.latest}>
+    {latest.data.digestItems ? (
+      <DailyDigest items={latest.data.digestItems} lang={lang} />
+    ) : legacyOk && issue ? (
+      <IssueFeed issue={issue} lang={lang} />
+    ) : (
+      <article class="prose dark:prose-invert max-w-none">{Content && <Content />}</article>
+    )}
+    <Archive posts={posts} lang={lang} currentSlug={latest.slug} />
+  </IssueShell>
+) : (
+  <p class="empty">{t.empty}</p>
+)}
+<style>
+  .empty { max-width: var(--measure); margin: 4rem auto; padding: 0 var(--gutter); text-align: center; color: hsl(var(--muted-foreground)); }
+</style>

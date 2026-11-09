@@ -1,0 +1,25 @@
+---
+/** 信源的小字母徽标：不依赖外部图标，也能让列表有一点识别度 */
+type Props = { label: string; size?: number };
+const { label, size = 16 } = Astro.props;
+const palette: Record<string, { bg: string; fg: string; ch?: string }> = {
+  GitHub: { bg: "#24292f", fg: "#fff", ch: "G" },
+  Reddit: { bg: "#ff4500", fg: "#fff", ch: "r" },
+  X: { bg: "#000", fg: "#fff", ch: "X" },
+  "Hugging Face": { bg: "#ffd21e", fg: "#3b2a00", ch: "H" },
+  arXiv: { bg: "#b31b1b", fg: "#fff", ch: "a" },
+  "Hacker News": { bg: "#ff6600", fg: "#fff", ch: "Y" },
+  OpenAI: { bg: "#10a37f", fg: "#fff", ch: "O" },
+  Anthropic: { bg: "#d4a27f", fg: "#1f1f1f", ch: "A" },
+  Google: { bg: "#4285f4", fg: "#fff", ch: "G" },
+  DeepMind: { bg: "#1a73e8", fg: "#fff", ch: "D" },
+  "Product Hunt": { bg: "#da552f", fg: "#fff", ch: "P" },
+};
+function hashHue(s: string) { let h = 0; for (const c of s) h = (h * 31 + c.charCodeAt(0)) % 360; return h; }
+const p = palette[label] ?? { bg: `hsl(${hashHue(label)} 28% 42%)`, fg: "#fff" };
+const ch = p.ch ?? [...label.replace(/^www\./, "")][0]?.toUpperCase() ?? "·";
+---
+<span class="mark" style={`--s:${size}px;background:${p.bg};color:${p.fg}`} aria-hidden="true">{ch}</span>
+<style>
+  .mark { display: inline-flex; align-items: center; justify-content: center; width: var(--s); height: var(--s); border-radius: 30%; font: 600 calc(var(--s) * 0.6)/1 var(--font-sans); flex: none; vertical-align: -0.2em; }
+</style>

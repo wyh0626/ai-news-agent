@@ -1,28 +1,68 @@
 ---
+import DailyDigest from '@/components/daily-digest.astro';
+import IssueFeed from '@/components/issue/issue-feed.astro';
 import BlogPostLayout from '@/layouts/blog-post.astro';
+import { issueHasContent, issueTotal, parseIssue, ui } from '@/lib/issue';
 import { getCollection, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+	// 同语言内按日期排序，用来算上一期 / 下一期和右侧的往期列表
+	const byLang = new Map<string, CollectionEntry<'blog'>[]>();
+	for (const post of posts) {
+		const lang = post.data.lang === 'zh' ? 'zh' : 'en';
+		if (!byLang.has(lang)) byLang.set(lang, []);
+		byLang.get(lang)!.push(post);
+	}
+	for (const list of byLang.values()) list.sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+
+	return posts.map((post) => {
+		const list = byLang.get(post.data.lang === 'zh' ? 'zh' : 'en')!;
+		const index = list.indexOf(post);
+		const prev = list[index - 1];
+		const next = list[index + 1];
+		const recent = [...list].reverse().slice(0, 8);
+		return {
+			params: { slug: post.slug },
+			props: {
+				post,
+				recent,
+				prev: prev ? { slug: prev.slug, date: prev.data.pubDate } : null,
+				next: next ? { slug: next.slug, date: next.data.pubDate } : null,
+			},
+		};
+	});
 }
 
-type Props = CollectionEntry<'blog'>;
+type Props = {
+	post: CollectionEntry<'blog'>;
+	recent: CollectionEntry<'blog'>[];
+	prev: { slug: string; date: Date } | null;
+	next: { slug: string; date: Date } | null;
+};
 
-const post = Astro.props;
-const slug = Astro.params.slug;
+const { post, recent, prev, next } = Astro.props;
+const lang = post.data.lang === 'zh' ? 'zh' : 'en';
+const t = ui(lang);
+const digestItems = post.data.digestItems;
+const issue = digestItems ? null : parseIssue(post.body);
+const legacyOk = issue ? issueHasContent(issue) : false;
 const { Content } = await post.render();
-
-if (!slug || !post) {
-  return new Response(null, {
-    status: 404,
-    statusText: 'Not found'
-  });
-}
+const total = digestItems?.length ?? (issue ? issueTotal(issue) : null);
+const nav = issue
+	? ([
+			issue.focus.length ? { href: '#focus', label: t.focus } : null,
+			issue.sections.length ? { href: '#featured', label: t.featured } : null,
+			issue.briefs.length ? { href: '#briefs', label: t.briefs } : null,
+		].filter(Boolean) as { href: string; label: string }[])
+	: [{ href: '#top', label: t.contents }];
 ---
-<BlogPostLayout {...post}>
-	<Content />
+<BlogPostLayout post={post} recent={recent} prev={prev} next={next} total={total} focusCount={issue?.focus.length} nav={nav}>
+	{digestItems ? (
+		<DailyDigest items={digestItems} lang={lang} />
+	) : legacyOk && issue ? (
+		<IssueFeed issue={issue} lang={lang} expanded />
+	) : (
+		<article class="prose dark:prose-invert max-w-none"><Content /></article>
+	)}
 </BlogPostLayout>

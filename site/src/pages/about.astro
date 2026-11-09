@@ -1,36 +1,58 @@
 ---
 import MainLayout from "@/layouts/main-layout.astro";
-import { Icon } from "astro-icon/components";
+import { siteConfig } from "@/config/site";
+import { ui } from "@/lib/issue";
+
+const t = ui("zh");
+const base = import.meta.env.BASE_URL;
 ---
 
-<MainLayout title="关于" description="关于 AI Daily">
-  <section class="container max-w-screen-md py-16 sm:py-20 lg:py-28">
-    <h1 class="text-4xl font-heading text-foreground mb-4">AI Daily</h1>
-    <p class="text-lg text-muted-foreground mb-8">
-      每日精选 AI 领域最新动态、研究论文、开源项目与行业趋势
+<MainLayout title={t.about} description="关于 AI 日报：它是什么、怎么做的、怎么读。" lang="zh" switchHref={base}>
+  <section class="about" id="top">
+    <p class="kicker">{t.about}</p>
+    <h1>一天一期，<br />把 AI 领域值得知道的事讲清楚。</h1>
+    <p class="lede">
+      AI 行业每天都有太多消息。AI 日报每天早上整理前一天的动态，
+      挑出真正值得花时间的几件事，用平实的中文写清楚，每条都附上原始出处。
     </p>
 
-    <div class="prose dark:prose-invert max-w-none">
-      <h2>数据来源</h2>
-      <ul>
-        <li><strong>Hacker News</strong> — AI 相关热帖与讨论</li>
-        <li><strong>Reddit</strong> — r/LocalLLaMA、r/MachineLearning 等社区</li>
-        <li><strong>ArXiv</strong> — cs.AI / cs.LG / cs.CL 最新论文</li>
-        <li><strong>GitHub Trending</strong> — AI 开源项目趋势</li>
-      </ul>
-
-      <h2>工作原理</h2>
+    <div class="body">
+      <h2>怎么读</h2>
       <p>
-        Pipeline 自动聚合多个来源的内容，通过 LLM 进行智能分类过滤，
-        筛选出与 AI 密切相关的高质量条目，最终由 LLM 生成结构化的中文日报。
+        每期分成三层：<strong>今日焦点</strong>是当天最重要的两三件事，有完整的来龙去脉；
+        <strong>重点报道</strong>按主题归类，每条一两句话说清楚发生了什么；
+        <strong>快讯</strong>只保留标题和一句说明，扫一眼就够。
+        点击标题或末尾的信源，可以直接去看原文。
       </p>
 
-      <h2>技术栈</h2>
-      <ul>
-        <li><strong>后端</strong> — Python + LangChain + OpenAI API</li>
-        <li><strong>前端</strong> — Astro + shadcn/ui + Tailwind CSS</li>
-        <li><strong>部署</strong> — GitHub Pages</li>
-      </ul>
+      <h2>内容从哪来</h2>
+      <p>
+        信息主要来自 X 上的一手发布、Hugging Face 的论文页、GitHub 的开源项目，
+        以及 Reddit、Hacker News 等社区讨论。整理过程由自动化流程完成：
+        抓取、去重、筛选和成稿，再翻译成中英两个版本。
+      </p>
+      <p>
+        自动化意味着快，也意味着可能出错。我们把每条资讯的原始链接都留在页面上，
+        数字和结论请以原始出处为准；对尚未确认的信息，正文会明确标注。
+      </p>
+
+      <h2>订阅</h2>
+      <p>
+        可以用 <a href={`${base}rss.xml`}>RSS</a> 订阅每天的更新。
+        代码和内容生成流程都在 <a href={siteConfig.links.github} target="_blank" rel="noreferrer">GitHub</a> 上公开。
+      </p>
     </div>
   </section>
 </MainLayout>
+
+<style>
+  .about { max-width: var(--measure, 42rem); margin: 0 auto; padding: 3.5rem var(--gutter, 1rem) 0; }
+  .kicker { margin: 0 0 0.75rem; font-size: 0.76rem; letter-spacing: 0.06em; color: hsl(var(--accent-ink)); font-weight: 700; }
+  h1 { margin: 0 0 1.5rem; font-weight: 800; font-size: clamp(1.8rem, 4.5vw, 2.4rem); line-height: 1.3; letter-spacing: -0.02em; }
+  .lede { margin: 0 0 2.5rem; font-size: 1.1rem; line-height: 1.85; color: hsl(var(--foreground) / 0.85); }
+  .body h2 { margin: 2.25rem 0 0.75rem; font-size: 1.15rem; font-weight: 800; display: flex; align-items: center; gap: 0.5rem; }
+  .body h2::before { content: ""; width: 4px; height: 1em; border-radius: 2px; background: hsl(var(--accent-ink)); }
+  .body p { margin: 0 0 1rem; line-height: 1.9; color: hsl(var(--foreground) / 0.85); }
+  .body a { color: hsl(var(--accent-ink)); text-decoration: none; border-bottom: 1px solid hsl(var(--accent-ink) / 0.4); }
+  .body a:hover { border-bottom-color: currentColor; }
+</style>

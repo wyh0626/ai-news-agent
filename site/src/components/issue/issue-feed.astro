@@ -1,0 +1,93 @@
+---
+/** 一期日报的中间信息流：焦点卡片 → 分主题的重点 → 快讯 */
+import type { Issue } from "@/lib/issue";
+import { firstSentence, paragraphs, ui, type Lang } from "@/lib/issue";
+import SourceLinks from "./source-links.astro";
+import SourceMark from "./source-mark.astro";
+
+type Props = { issue: Issue; lang: Lang; expanded?: boolean };
+const { issue, lang, expanded = false } = Astro.props;
+const t = ui(lang);
+const hasFocus = issue.focus.length > 0;
+const hasFeatured = issue.sections.length > 0;
+const hasBriefs = issue.briefs.length > 0;
+---
+{hasFocus && (
+  <section id="focus" class="focus" aria-label={t.focus}>
+    {issue.focus.map((s, i) => (
+      <article class="focus-card">
+        <span class="tag">{t.focusTag(i + 1)}</span>
+        <h2>{s.sources[0] ? <a href={s.sources[0].url} target="_blank" rel="noopener noreferrer">{s.title}</a> : s.title}</h2>
+        {expanded
+          ? paragraphs(s.text).map((p) => <p>{p}</p>)
+          : <p>{firstSentence(paragraphs(s.text).join(" "), 160)}</p>}
+        <SourceLinks sources={s.sources} />
+      </article>
+    ))}
+  </section>
+)}
+
+{hasFeatured && (
+  <section id="featured" class="section">
+    <h3 class="section-title">{t.featured}</h3>
+    {issue.sections.map((sec) => (
+      <div class="topic">
+        {sec.name && <h4>{sec.name}</h4>}
+        {sec.items.map((it) => (
+          <article class="row">
+            <h2>{it.sources[0] ? <a href={it.sources[0].url} target="_blank" rel="noopener noreferrer">{it.title || firstSentence(it.text, 40)}</a> : it.title}</h2>
+            {it.text && <p>{expanded ? it.text : firstSentence(it.text, 120)}</p>}
+            <SourceLinks sources={it.sources} max={2} />
+          </article>
+        ))}
+      </div>
+    ))}
+  </section>
+)}
+
+{hasBriefs && (
+  <section id="briefs" class="section">
+    <h3 class="section-title">{t.briefs}</h3>
+    <ul class="briefs">
+      {issue.briefs.map((b) => (
+        <li>
+          <a href={b.sources[0]?.url} target="_blank" rel="noopener noreferrer">
+            <SourceMark label={b.sources[0]?.label ?? "·"} size={20} />
+            <span class="brief-text"><strong>{b.title}</strong>{b.text && <span> — {b.text}</span>}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
+
+<style>
+  .focus { display: grid; gap: 1rem; margin-bottom: 2.5rem; }
+  .focus-card { padding: 1.4rem 1.5rem; background: hsl(var(--muted)); border-radius: 18px; }
+  .tag { display: inline-block; font-size: 0.72rem; font-weight: 700; color: hsl(var(--accent-ink)); letter-spacing: 0.04em; margin-bottom: 0.6rem; }
+  .focus-card h2 { margin: 0 0 0.6rem; font-size: 1.35rem; font-weight: 700; line-height: 1.4; letter-spacing: -0.01em; }
+  .focus-card h2 a, .row h2 a { color: inherit; text-decoration: none; }
+  .focus-card h2 a:hover, .row h2 a:hover { color: hsl(var(--accent-ink)); }
+  .focus-card p { margin: 0 0 0.9rem; font-size: 0.95rem; line-height: 1.8; color: hsl(var(--foreground) / 0.8); }
+
+  .section { margin-bottom: 2.5rem; }
+  .section-title { margin: 0 0 1rem; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 0.5rem; }
+  .section-title::before { content: ""; width: 4px; height: 1em; border-radius: 2px; background: hsl(var(--accent-ink)); }
+  .topic + .topic { margin-top: 1.25rem; }
+  .topic h4 { margin: 0 0 0.25rem; font-size: 0.8rem; font-weight: 600; color: hsl(var(--muted-foreground)); letter-spacing: 0.04em; }
+  .row { padding: 1.1rem 0.9rem; margin: 0 -0.9rem; border-radius: 14px; transition: background 0.15s ease; }
+  .row:hover { background: hsl(var(--muted)); }
+  .row + .row { border-top: 1px solid hsl(var(--border)); }
+  .row:hover + .row { border-top-color: transparent; }
+  .row h2 { margin: 0 0 0.4rem; font-size: 1.08rem; font-weight: 700; line-height: 1.45; }
+  .row p { margin: 0 0 0.6rem; font-size: 0.92rem; line-height: 1.75; color: hsl(var(--muted-foreground)); }
+
+  .briefs { list-style: none; margin: 0; padding: 0; }
+  .briefs li + li { border-top: 1px solid hsl(var(--border)); }
+  .briefs a { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.85rem 0.9rem; margin: 0 -0.9rem; border-radius: 12px; text-decoration: none; color: inherit; font-size: 0.92rem; line-height: 1.65; }
+  .briefs a:hover { background: hsl(var(--muted)); }
+  .brief-text strong { font-weight: 600; }
+  .brief-text span { color: hsl(var(--muted-foreground)); }
+
+  @media (max-width: 640px) { .focus-card { padding: 1.2rem 1.25rem; } .focus-card h2 { font-size: 1.2rem; } }
+</style>

@@ -1,91 +1,48 @@
 ---
-import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
-import { cn, formatDate } from "@/lib/utils";
-import { Icon } from "astro-icon/components";
+import IssueShell from "@/components/issue/issue-shell.astro";
+import { issueDate, type Lang } from "@/lib/issue";
 import type { CollectionEntry } from "astro:content";
 import MainLayout from "./main-layout.astro";
 
-type Props = CollectionEntry<"blog">;
+type Post = CollectionEntry<"blog">;
+type Neighbor = { slug: string; date: Date } | null;
+type Props = {
+  post: Post;
+  recent: Post[];
+  total?: number | null;
+  focusCount?: number;
+  nav: { href: string; label: string }[];
+  prev?: Neighbor;
+  next?: Neighbor;
+};
 
-const slug = Astro.props.slug;
-const { title, description, pubDate, updatedDate, cover, category } =
-  Astro.props.data;
-const lang = (Astro.props.data as any).lang || "en";
-const pairSlug = (Astro.props.data as any).pairSlug;
+const { post, recent, total, focusCount, nav, prev = null, next = null } = Astro.props;
+const { description, pubDate } = post.data;
+const lang = (post.data.lang === "zh" ? "zh" : "en") as Lang;
+const pairSlug = post.data.pairSlug;
 const base = import.meta.env.BASE_URL;
+const d = issueDate(pubDate, lang);
+const pageTitle = lang === "zh" ? `${d.year} ${d.day}` : `${d.day}, ${d.year}`;
+const switchHref = pairSlug ? `${base}blog/${pairSlug}/` : lang === "zh" ? base : `${base}zh/`;
 ---
 
-<MainLayout title={title} description={description}>
+<MainLayout title={pageTitle} description={description} lang={lang} switchHref={switchHref}>
   {/* 浏览器语言自动检测：首次访问自动跳转，手动切换后记住偏好 */}
   {pairSlug && (
     <script is:inline define:vars={{ lang, pairSlug, base }}>
       (function() {
-        const userChoice = localStorage.getItem('ai-daily-lang');
-        if (userChoice) return; // 用户已手动选择过，不自动跳
+        let userChoice = null;
+        try { userChoice = localStorage.getItem('ai-daily-lang'); } catch (e) {}
+        if (userChoice) return;
         const browserLang = navigator.language || navigator.userLanguage || '';
         const isChinese = /^zh/i.test(browserLang);
-        if (lang === 'zh' && !isChinese) {
-          window.location.replace(base + 'blog/' + pairSlug + '/');
-        } else if (lang === 'en' && isChinese) {
+        if ((lang === 'zh' && !isChinese) || (lang === 'en' && isChinese)) {
           window.location.replace(base + 'blog/' + pairSlug + '/');
         }
       })();
     </script>
   )}
-  <div class="relative container max-w-screen-md py-10">
-    <button
-      onclick="history.back()"
-      class={cn(
-        buttonVariants({ variant: "ghost" }),
-        "absolute left-[-200px] top-10 hidden xl:inline-flex text-muted-foreground"
-      )}
-      transition:animate="slide"
-    >
-      <Icon name="lucide:chevron-left" class="mr-2 size-4" />
-      {" "}Back
-    </button>
-
-    <article class="prose dark:prose-invert max-w-none">
-      <Badge radius="md" className="capitalize">
-        {category}
-      </Badge>
-      <div class="flex items-center justify-between">
-        <span
-          class="font-medium text-muted-foreground"
-          transition:name={`date-${slug}`}
-        >
-          {formatDate(pubDate)}
-          {
-            updatedDate && (
-              <span>- Last updated on {formatDate(updatedDate)}</span>
-            )
-          }
-        </span>
-      </div>
-      <h1 class="font-heading text-4xl my-4" transition:name={`title-${slug}`}>
-        {title}
-      </h1>
-      {cover && (
-        <img src={cover} alt={title} class="w-full rounded-lg my-4 object-cover max-h-96" />
-      )}
-      {pairSlug && (
-        <div class="flex items-center gap-2 my-3 not-prose">
-          <span class={cn("px-2 py-0.5 rounded text-xs font-medium", lang === "zh" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground")}>
-            {lang === "zh" ? "中文" : "English"}
-          </span>
-          <a
-            href={`${base}blog/${pairSlug}/`}
-            class="px-2 py-0.5 rounded text-xs font-medium bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-            onclick="localStorage.setItem('ai-daily-lang', this.textContent.trim() === 'English' ? 'en' : 'zh')"
-          >
-            {lang === "zh" ? "English" : "中文"}
-          </a>
-        </div>
-      )}
-      <p>{description}</p>
-      <hr class="my-6" />
-      <slot />
-    </article>
-  </div>
+  <IssueShell lang={lang} date={pubDate} total={total ?? null} focusCount={focusCount} recent={recent} currentSlug={post.slug} nav={nav} prev={prev} next={next}>
+    <slot />
+  </IssueShell>
 </MainLayout>

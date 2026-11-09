@@ -1,79 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    /* 少数派式：纯白底、浅灰卡片、一点红做品牌色 */
     --background: 0 0% 100%;
-    --background-200: 0 0% 98%;
+    --background-200: 240 5% 98%;
 
-    --foreground: 0 0% 9%;
+    --foreground: 0 0% 7%;
 
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 2% 50%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover-foreground: 0 0% 7%;
 
-    --border: 0 0% 92%;
-    --input: 0 0% 92%;
+    --border: 240 4% 92%;
+    --input: 240 4% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card: 240 5% 96%;
+    --card-foreground: 0 0% 7%;
 
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 0 0% 7%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 92%;
-    --secondary-foreground: 0 0% 9%;
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 0 0% 7%;
 
-    --accent: 0, 0%, 0%, 0.06;
-    --accent-foreground: 0 0% 9%;
+    --accent: 0, 0%, 0%, 0.05;
+    --accent-foreground: 0 0% 7%;
+
+    --accent-ink: 357 72% 49%;
 
     --destructive: 0 100% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --ring: 215 20.2% 65.1%;
+    --ring: 357 72% 49%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     --ds-shadow-border: 0 0 0 1px rgba(0, 0, 0, .08);
+
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+    --font-serif: var(--font-sans);
+
+    --page-width: 1200px;
+    --measure: 42rem;
+    --gutter: 1rem;
   }
 
   .dark {
-    --background: 0 0% 4%;
-    --background-200: 0 170% 0%;
+    --background: 240 3% 6%;
+    --background-200: 240 3% 9%;
 
-    --foreground: 0 0% 93%;
+    --foreground: 0 0% 95%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 80%;
+    --muted: 240 3% 11%;
+    --muted-foreground: 240 2% 62%;
 
-    --accent: 0, 0%, 100%, .09;
-    --accent-foreground: 0 0% 93%;
+    --accent: 0, 0%, 100%, .08;
+    --accent-foreground: 0 0% 95%;
 
-    --popover: 0 0% 4%;
-    --popover-foreground: 0 0% 93%;
+    --accent-ink: 357 80% 62%;
 
-    --border: 0 0% 12%;
-    --input: 0 0% 12%;
+    --popover: 240 3% 6%;
+    --popover-foreground: 0 0% 95%;
 
-    --card: 0 0% 4%;
-    --card-foreground: 0 0% 93%;
+    --border: 240 3% 15%;
+    --input: 240 3% 15%;
 
-    --primary: 0 0% 93%;
-    --primary-foreground: 222.2 47.4% 1.2%;
+    --card: 240 3% 11%;
+    --card-foreground: 0 0% 95%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 93%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 240 3% 6%;
+
+    --secondary: 240 3% 11%;
+    --secondary-foreground: 0 0% 95%;
 
     --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 93%;
+    --destructive-foreground: 0 0% 95%;
 
-    --ring: 0 0% 12%;
+    --ring: 357 80% 62%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     --ds-shadow-border: 0 0 0 1px hsla(0, 0%, 100%, .145);
   }
 }
@@ -120,9 +130,30 @@
     @apply scroll-pt-16 lg:scroll-pt-0;
   }
 
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
   body {
     @apply bg-background text-foreground font-sans;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings: "rlig" 1, "calt" 1, "kern" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  ::selection {
+    background: hsl(var(--accent-ink) / 0.18);
+  }
+
+  @media (min-width: 640px) {
+    :root { --gutter: 1.5rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
   }
 
   /* Documentation part */

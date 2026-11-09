@@ -14,8 +14,21 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", ...fontFamily.sans],
-        heading: ["CalSans Semibold", ...fontFamily.sans],
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "PingFang SC",
+          "Hiragino Sans GB",
+          "Microsoft YaHei",
+          "Noto Sans SC",
+          "Helvetica Neue",
+          "Arial",
+          ...fontFamily.sans,
+        ],
+        serif: ["var(--font-sans)"],
+        heading: ["var(--font-sans)"],
       },
       height: {
         18: "4.5rem",
@@ -51,6 +64,7 @@ module.exports = {
         accent: {
           DEFAULT: "hsla(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          ink: "hsl(var(--accent-ink))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",

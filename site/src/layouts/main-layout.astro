@@ -1,64 +1,26 @@
 ---
-import Footer from "@/components/layout/footer.astro";
-import Header from "@/components/layout/header.astro";
-import { MainNavigationMenu } from "@/components/main-navigation-menu";
+import SiteFooter from "@/components/layout/site-footer.astro";
+import SiteHeader from "@/components/layout/site-header.astro";
+import { ui, type Lang } from "@/lib/issue";
 import { cn } from "@/lib/utils";
 import BaseLayout from "./base-layout.astro";
-import { SheetMobileNav } from "@/components/layout/sheet-mobile-nav";
-import { navMenuConfig } from "@/config/nav-menu";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { siteConfig } from "@/config/site";
-import { Icon } from "astro-icon/components";
-// import { marketingConfig } from "@/config/marketing";
-// import MainNav from "@/components/layout/main-nav.astro";
 
 type Props = {
   title: string;
   description?: string;
   mainClass?: string;
+  lang?: Lang;
+  /** 切换到另一种语言时去哪里；不传就不显示切换按钮 */
+  switchHref?: string;
 };
 
-const { title, description, mainClass } = Astro.props;
+const { title, description, mainClass, lang = "en", switchHref } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
-  <Header className="border-b">
-    <!-- if using only normals links  -->
-    <!-- <MainNav items={marketingConfig.mainNav} slot="left-header" />
-    <SheetMobileNav
-      mainNavItems={marketingConfig.mainNav}
-      slot="mobile-nav-header"
-      client:load
-    /> -->
-
-    <!-- if use Navigation Menu on desktop -->
-    <MainNavigationMenu slot="left-header" client:load />
-    <SheetMobileNav
-      mainNavItems={[...navMenuConfig.links]}
-      sidebarNavItems={[
-        ...navMenuConfig.pagesNav,
-        ...navMenuConfig.examplesNav,
-      ]}
-      slot="mobile-nav-header"
-      client:load
-    />
-
-    <div class="flex items-center gap-x-4" slot="right-header">
-      <a
-        href={siteConfig.links.github}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="github"
-      >
-        <Icon name="github" class="size-[22px]" />
-      </a>
-      <ThemeToggle client:load />
-    </div>
-  </Header>
-
-  <main class={cn(mainClass)}>
+<BaseLayout title={title} description={description} lang={lang} siteName={ui(lang).siteName}>
+  <SiteHeader lang={lang} switchHref={switchHref} />
+  <main class={cn("flex-1", mainClass)}>
     <slot />
   </main>
-
-  <Footer />
+  <SiteFooter lang={lang} />
 </BaseLayout>

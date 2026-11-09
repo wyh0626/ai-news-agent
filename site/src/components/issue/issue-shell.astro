@@ -1,0 +1,125 @@
+---
+/**
+ * 三栏壳：左侧栏目导航、中间内容、右侧日期卡和往期。
+ * 首页和日报详情页共用。
+ */
+import type { CollectionEntry } from "astro:content";
+import { issueDate, ui, type Lang } from "@/lib/issue";
+
+type Post = CollectionEntry<"blog">;
+type NavItem = { href: string; label: string };
+type Neighbor = { slug: string; date: Date } | null;
+type Props = {
+  lang: Lang;
+  date: Date;
+  total: number | null;
+  focusCount?: number;
+  recent: Post[];
+  currentSlug?: string;
+  nav: NavItem[];
+  kicker?: string;
+  prev?: Neighbor;
+  next?: Neighbor;
+};
+const { lang, date, total, focusCount, recent, currentSlug, nav, kicker, prev = null, next = null } = Astro.props;
+const t = ui(lang);
+const base = import.meta.env.BASE_URL;
+const d = issueDate(date, lang);
+const home = lang === "zh" ? `${base}zh/` : base;
+const recentList = recent.filter((p) => p.slug !== currentSlug).slice(0, 7);
+---
+<div class="shell" id="top">
+  <aside class="left">
+    <nav class="side-nav" aria-label={t.contents}>
+      {nav.map((item, i) => <a href={item.href} class:list={{ on: i === 0 }}><i></i>{item.label}</a>)}
+      <a href={`${home}#archive`}><i></i>{t.recentIssues}</a>
+    </nav>
+    <p class="side-foot">{t.updatedDaily}<br />{t.withSources}</p>
+  </aside>
+
+  <main class="center">
+    <header class="head">
+      {kicker && <p class="kicker">{kicker}</p>}
+      <h1>{d.day}<span class="weekday">{d.weekday}</span></h1>
+      <p class="meta">
+        {total ? t.stories(total) : ""}{total && focusCount ? " · " : ""}{focusCount ? t.focusCount(focusCount) : ""}
+      </p>
+    </header>
+    <slot />
+    {(prev || next) && (
+      <nav class="pager" aria-label={lang === "zh" ? "相邻日报" : "Adjacent issues"}>
+        {prev ? <a href={`${base}blog/${prev.slug}/`} rel="prev"><span class="label">{t.prev}</span><span class="value">← {issueDate(prev.date, lang).day}</span></a> : <span />}
+        {next ? <a href={`${base}blog/${next.slug}/`} rel="next" class="right"><span class="label">{t.next}</span><span class="value">{issueDate(next.date, lang).day} →</span></a> : <span />}
+      </nav>
+    )}
+  </main>
+
+  <aside class="right">
+    <div class="date-card">
+      <span class="date-num">{date.getUTCDate()}</span>
+      <span class="date-rest">{d.month} · {d.weekday}</span>
+      {total ? <span class="date-count">{t.stories(total)}</span> : null}
+    </div>
+    {recentList.length > 0 && (
+      <div class="box">
+        <h2>{t.recentIssues}</h2>
+        <ul>
+          {recentList.map((p) => {
+            const rd = issueDate(p.data.pubDate, lang);
+            return <li><a href={`${base}blog/${p.slug}/`}><span class="rd">{rd.short}</span><span class="rt">{p.data.description}</span></a></li>;
+          })}
+        </ul>
+        <a class="more" href={`${home}#archive`}>{t.allIssues}</a>
+      </div>
+    )}
+    <div class="box about">
+      <h2>{t.about}</h2>
+      <p>{t.tagline}</p>
+      <p class="links"><a href={`${base}about/`}>{lang === "zh" ? "了解更多" : "Learn more"}</a> · <a href={`${base}rss.xml`}>RSS</a></p>
+    </div>
+  </aside>
+</div>
+
+<style>
+  .shell { max-width: var(--page-width); margin: 0 auto; padding: 2rem var(--gutter) 0; display: grid; grid-template-columns: 180px minmax(0, 1fr) 300px; gap: 2.5rem; align-items: start; }
+  .left, .right { position: sticky; top: 84px; }
+  .side-nav { display: flex; flex-direction: column; gap: 0.2rem; }
+  .side-nav a { display: flex; align-items: center; gap: 0.6rem; padding: 0.6rem 0.75rem; border-radius: 10px; color: hsl(var(--muted-foreground)); text-decoration: none; font-weight: 500; font-size: 0.92rem; }
+  .side-nav a i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.5; }
+  .side-nav a.on, .side-nav a:hover { background: hsl(var(--muted)); color: hsl(var(--foreground)); }
+  .side-foot { margin: 2rem 0.75rem 0; font-size: 0.75rem; line-height: 1.7; color: hsl(var(--muted-foreground)); }
+
+  .head { margin-bottom: 1.5rem; }
+  .kicker { margin: 0 0 0.35rem; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.06em; color: hsl(var(--accent-ink)); }
+  .head h1 { margin: 0; font-size: 1.75rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.2; }
+  .weekday { font-size: 1rem; font-weight: 500; color: hsl(var(--muted-foreground)); margin-left: 0.6rem; }
+  .meta { margin: 0.35rem 0 0; color: hsl(var(--muted-foreground)); font-size: 0.9rem; }
+
+  .pager { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid hsl(var(--border)); display: flex; justify-content: space-between; gap: 1rem; }
+  .pager a { display: flex; flex-direction: column; gap: 0.15rem; text-decoration: none; color: inherit; }
+  .pager .right { text-align: right; position: static; }
+  .label { font-size: 0.7rem; letter-spacing: 0.08em; color: hsl(var(--muted-foreground)); }
+  .value { font-weight: 700; font-size: 1rem; }
+  .pager a:hover .value { color: hsl(var(--accent-ink)); }
+
+  .right { display: grid; gap: 1rem; }
+  .date-card { background: hsl(var(--muted)); border-radius: 18px; padding: 1.25rem 1.4rem; display: grid; }
+  .date-num { font-size: 3rem; font-weight: 800; line-height: 1; letter-spacing: -0.04em; }
+  .date-rest { margin-top: 0.4rem; font-size: 0.85rem; color: hsl(var(--muted-foreground)); }
+  .date-count { margin-top: 0.75rem; font-size: 0.8rem; font-weight: 600; color: hsl(var(--accent-ink)); }
+  .box { padding: 1.25rem 1.4rem; border-radius: 18px; border: 1px solid hsl(var(--border)); }
+  .box h2 { margin: 0 0 0.6rem; font-size: 0.95rem; font-weight: 700; }
+  .box ul { list-style: none; margin: 0; padding: 0; }
+  .box li + li { border-top: 1px solid hsl(var(--border)); }
+  .box li a { display: grid; grid-template-columns: 3.2rem 1fr; gap: 0.5rem; padding: 0.6rem 0; text-decoration: none; color: inherit; font-size: 0.82rem; line-height: 1.5; }
+  .box li a:hover .rt { color: hsl(var(--foreground)); }
+  .rd { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .rt { color: hsl(var(--muted-foreground)); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .more { display: block; margin-top: 0.75rem; font-size: 0.82rem; color: hsl(var(--accent-ink)); text-decoration: none; font-weight: 600; }
+  .about p { margin: 0; font-size: 0.84rem; line-height: 1.7; color: hsl(var(--muted-foreground)); }
+  .about .links { margin-top: 0.6rem; }
+  .about .links a { color: hsl(var(--foreground)); text-decoration: none; font-weight: 500; }
+
+  @media (max-width: 1100px) { .shell { grid-template-columns: minmax(0, 1fr) 280px; } .left { display: none; } }
+  @media (max-width: 780px) { .shell { grid-template-columns: 1fr; padding-top: 1.25rem; gap: 2rem; } .right { position: static; } .head h1 { font-size: 1.6rem; } }
+</style>
