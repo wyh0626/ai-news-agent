@@ -328,7 +328,6 @@ export function ui(lang: Lang) {
     sources: zh ? "信源" : "Sources",
     original: zh ? "原帖" : "Original post",
     readFull: zh ? "展开完整报道" : "Read the full report",
-    caveats: zh ? "尚待核实" : "Still unverified",
     screenshot: zh ? "原帖截图" : "Screenshot of the original post",
     viewShot: zh ? "查看大图" : "View full size",
     published: zh ? "信源发布于" : "Source published",

@@ -47,12 +47,6 @@ const sourcesOf = (item: Props["items"][number]) => {
             <div class="report-body">{paragraphs(item.body).map((p) => <p>{p}</p>)}</div>
           </details>
         )}
-        {item.uncertainties?.length > 0 && (
-          <aside class="caveats">
-            <p class="caveats-title">{t.caveats}</p>
-            <ul>{item.uncertainties.map((u) => <li>{u}</li>)}</ul>
-          </aside>
-        )}
         <footer class="meta">
           <SourceLinks sources={sourcesOf(item)} max={4} />
           <span class="published">{t.published} {item.publishedAt || item.publishedDate || t.unknownTime}</span>
@@ -104,10 +98,6 @@ const sourcesOf = (item: Props["items"][number]) => {
   .report-body { margin-top: 0.75rem; padding: 0.9rem 1rem; background: hsl(var(--background)); border-radius: 12px; }
   .report-body p { margin: 0 0 0.9rem; font-size: 0.93rem; line-height: 1.8; color: hsl(var(--foreground) / 0.85); overflow-wrap: anywhere; }
   .report-body p:last-child { margin-bottom: 0; }
-
-  .caveats { margin: 0 0 1rem; padding: 0.75rem 1rem; border-left: 3px solid hsl(var(--accent-ink) / 0.5); font-size: 0.85rem; line-height: 1.7; }
-  .caveats-title { margin: 0 0 0.2rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; color: hsl(var(--muted-foreground)); }
-  .caveats ul { margin: 0; padding-left: 1.1rem; color: hsl(var(--foreground) / 0.8); }
 
   .meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; align-items: baseline; }
   .published { font-size: 0.72rem; color: hsl(var(--muted-foreground)); overflow-wrap: anywhere; }
