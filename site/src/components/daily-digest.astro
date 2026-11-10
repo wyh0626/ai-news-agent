@@ -9,8 +9,8 @@ import { hostLabel, paragraphs, ui, type Lang } from "@/lib/issue";
 
 type Data = CollectionEntry<"blog">["data"];
 type Props = { items: NonNullable<Data["digestItems"]>; lang: Lang;
-  projects?: Data["githubProjects"]; windowStart?: string; windowEnd?: string };
-const { items, lang, projects = [], windowStart, windowEnd } = Astro.props;
+  projects?: Data["githubProjects"]; windowStart?: string; windowEnd?: string; supplementCount?: number };
+const { items, lang, projects = [], windowStart, windowEnd, supplementCount = 0 } = Astro.props;
 const t = ui(lang);
 const windowLabel = windowStart && windowEnd
   ? `${windowStart.slice(0, 10)} 08:00 — ${windowEnd.slice(0, 10)} 08:00 (UTC+8)`
@@ -25,6 +25,7 @@ const sourcesOf = (item: Props["items"][number]) => {
 ---
 <section class="digest" aria-label={lang === "zh" ? "每日资讯" : "Daily news"}>
   <p class="note">{windowLabel}</p>
+  {supplementCount > 0 && <p class="note">{lang === "zh" ? `本期另补入 ${supplementCount} 条资讯。` : `This issue includes ${supplementCount} supplemental stories.`}</p>}
   {items.length === 0 && <p class="note">{lang === "zh" ? "本期没有新增新闻来稿。" : "No new news submissions in this issue."}</p>}
   <ol class="stories">
     {items.map((item, i) => (

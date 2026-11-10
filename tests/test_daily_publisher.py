@@ -122,7 +122,9 @@ def test_publish_recovers_commit_after_failed_push(tmp_path, monkeypatch):
     stage = data / "publish-stage/2026-11-10" / name
     stage.parent.mkdir(parents=True)
     stage.write_text("test generated content")
-    (data / "publish-pending.json").write_text(json.dumps({"date": "2026-11-10", "files": [name]}))
+    (data / "publish-pending.json").write_text(
+        json.dumps({"date": "2026-11-10", "files": [name], "supplement_ids": ["news-one"]})
+    )
     original = pub.git
 
     def fail_push(repo, *args, **kwargs):
@@ -134,6 +136,7 @@ def test_publish_recovers_commit_after_failed_push(tmp_path, monkeypatch):
     with pytest.raises(RuntimeError, match="simulated"):
         pub.finish_pending(repo, data)
     assert not (data / "publish-state.json").exists()
+    assert not (data / "publication-overrides.json").exists()
     assert (data / "publish-pending.json").exists()
     first_head = original(repo, "rev-parse", "HEAD").stdout
     monkeypatch.setattr(pub, "git", original)
@@ -142,6 +145,9 @@ def test_publish_recovers_commit_after_failed_push(tmp_path, monkeypatch):
     assert original(repo, "rev-parse", "origin/main").stdout == first_head
     assert json.loads((data / "publish-state.json").read_text())["last_date"] == "2026-11-10"
     assert not (data / "publish-pending.json").exists()
+    assert json.loads((data / "publication-overrides.json").read_text()) == {
+        "news-one": "2026-11-10"
+    }
 
 
 def test_publish_refuses_future_window(tmp_path, monkeypatch):

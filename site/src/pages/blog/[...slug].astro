@@ -59,7 +59,7 @@ const nav = issue
 ---
 <BlogPostLayout post={post} recent={recent} prev={prev} next={next} total={total} focusCount={issue?.focus.length} nav={nav}>
 	{digestItems ? (
-		<DailyDigest items={digestItems} lang={lang} projects={post.data.githubProjects} windowStart={post.data.receiptWindowStart} windowEnd={post.data.receiptWindowEnd} />
+		<DailyDigest items={digestItems} lang={lang} projects={post.data.githubProjects} windowStart={post.data.receiptWindowStart} windowEnd={post.data.receiptWindowEnd} supplementCount={post.data.supplementCount} />
 	) : legacyOk && issue ? (
 		<IssueFeed issue={issue} lang={lang} expanded />
 	) : (

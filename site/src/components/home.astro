@@ -27,7 +27,7 @@ const nav = issue
 {latest ? (
   <IssueShell lang={lang} date={latest.data.pubDate} total={total} focusCount={issue?.focus.length} recent={posts} currentSlug={latest.slug} nav={nav} kicker={t.latest}>
     {latest.data.digestItems ? (
-      <DailyDigest items={latest.data.digestItems} lang={lang} projects={latest.data.githubProjects} windowStart={latest.data.receiptWindowStart} windowEnd={latest.data.receiptWindowEnd} />
+      <DailyDigest items={latest.data.digestItems} lang={lang} projects={latest.data.githubProjects} windowStart={latest.data.receiptWindowStart} windowEnd={latest.data.receiptWindowEnd} supplementCount={latest.data.supplementCount} />
     ) : legacyOk && issue ? (
       <IssueFeed issue={issue} lang={lang} />
     ) : (

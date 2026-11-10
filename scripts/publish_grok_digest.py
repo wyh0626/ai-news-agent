@@ -88,6 +88,16 @@ def finish_pending(repo, directory):
     if git(repo, "diff", "--cached", "--quiet", check=False).returncode == 1:
         git(repo, "commit", "-m", f"AI Daily {pending['date']}: Grok news and GitHub projects")
     sync_repo(repo)
+    # Record issue assignment only after successful Git publication. A failed push keeps
+    # the pending manifest, so retry can finish before the next scheduled issue.
+    if pending.get("supplement_ids"):
+        override_file = directory / "publication-overrides.json"
+        overrides = json.loads(override_file.read_text()) if override_file.exists() else {}
+        for news_id in pending["supplement_ids"]:
+            if overrides.get(news_id, pending["date"]) != pending["date"]:
+                raise ValueError("A supplement is already assigned to a different issue")
+            overrides[news_id] = pending["date"]
+        atomic_write(override_file, json.dumps(overrides, sort_keys=True))
     state = directory / "publish-state.json"
     previous = json.loads(state.read_text()).get("last_date") if state.exists() else None
     atomic_write(
@@ -138,14 +148,24 @@ def publish(args):
                 else {"items": [], "status": "disabled"}
             )
             stage = directory / "publish-stage" / day
-            result = build_digest(store, directory, stage / "site", day, projects=github["items"])
+            result = build_digest(
+                store,
+                directory,
+                stage / "site",
+                day,
+                projects=github["items"],
+                supplement_ids=args.include_news_id,
+            )
             result["github_status"] = github["status"]
             if args.push and result["files"]:
                 files = [
                     str(Path(p).relative_to(stage)) for p in result["files"] + result["asset_files"]
                 ]
                 atomic_write(
-                    directory / "publish-pending.json", json.dumps({"date": day, "files": files})
+                    directory / "publish-pending.json",
+                    json.dumps(
+                        {"date": day, "files": files, "supplement_ids": args.include_news_id}
+                    ),
                 )
                 finish_pending(args.repo_dir, directory)
             elif args.push:
@@ -161,6 +181,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--date", help="Publication date YYYY-MM-DD, ending at 08:00 Beijing")
     parser.add_argument(
+        "--include-news-id",
+        action="append",
+        default=[],
+        help="One-off supplement by exact news ID; requires --date; excluded from later issues",
+    )
+    parser.add_argument(
         "--start-date", help="First publication date; missed closed windows are recovered"
     )
     parser.add_argument("--data-dir", type=Path, default=ROOT / "data/grok-intake")
@@ -172,6 +198,8 @@ def main():
         "--push", action="store_true", help="Commit generated content and push main"
     )
     args = parser.parse_args()
+    if args.include_news_id and not args.date:
+        parser.error("--include-news-id requires an explicit --date")
     for value in [args.date, args.start_date]:
         if value:
             date.fromisoformat(value)

@@ -44,6 +44,10 @@ python scripts/publish_grok_digest.py --date 2026-11-10 --data-dir /path/to/copi
 
 预览输出在数据目录的 `publish-stage/日期/site/`。使用生产数据目录预览会创建 GitHub 快照，应优先用独立数据副本。
 
+## 单次补刊
+
+指定已入库消息补到某一期：在正常发布命令中加 `--date YYYY-MM-DD --include-news-id ID`，每个 ID 重复一次该选项。只影响明确指定的消息，不改变 08:00 timer 或原始入库时间。推送成功后在数据目录 `publication-overrides.json` 记录归期，后续日报不再重复刊登；推送失败保留 pending 清单，重试成功后才写归期。页面会注明本期补入的数量。预览不加 `--push`，不会写归期。
+
 ## 回滚
 
 切换前保存原 root crontab、服务文件、后端代码与 SQLite 快照。要回滚调度，先 disable --now 新 timer，确认发布 service 已结束，再恢复保存的旧 crontab；不要覆盖已有来稿库或删除图片。GitHub 页面回滚以普通 revert 提交完成，不强推。

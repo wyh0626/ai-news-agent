@@ -323,6 +323,35 @@ def test_publication_day_uses_last_closed_window_across_months():
     assert publication_day(datetime.fromisoformat("2026-12-01T00:00:00+00:00")) == "2026-12-01"
 
 
+def test_supplement_keeps_receipt_time_and_is_not_republished_tomorrow(client, payload, tmp_path):
+    ids = client.post("/api/v2/news", json=payload).json()["accepted"]
+    store = client.app.state.store
+    _, cutoff = day_window("2026-11-10")
+    with store.connect() as db:
+        db.execute("UPDATE news SET created=? WHERE id=?", (cutoff - 60, ids[0]))
+        db.execute("UPDATE news SET created=? WHERE id=?", (cutoff + 3600, ids[1]))
+    assert build_digest(store, tmp_path, tmp_path / "site", "2026-11-10")["count"] == 1
+    preview = build_digest(
+        store, tmp_path, tmp_path / "site", "2026-11-10", supplement_ids=[ids[1]]
+    )
+    assert preview["count"] == 2
+    assert frontmatter(preview["files"][0])["supplementCount"] == 1
+    # Preview alone must not suppress a story from its normal receipt window.
+    assert build_digest(store, tmp_path, tmp_path / "site", "2026-11-11")["count"] == 1
+    (tmp_path / "publication-overrides.json").write_text(json.dumps({ids[1]: "2026-11-10"}))
+    assert build_digest(store, tmp_path, tmp_path / "site", "2026-11-10")["count"] == 2
+    assert build_digest(store, tmp_path, tmp_path / "site", "2026-11-11")["count"] == 0
+    with store.connect() as db:
+        assert (
+            db.execute("SELECT created FROM news WHERE id=?", (ids[1],)).fetchone()[0]
+            == cutoff + 3600
+        )
+    with pytest.raises(ValueError, match="different issue"):
+        build_digest(store, tmp_path, tmp_path / "site", "2026-11-11", supplement_ids=[ids[1]])
+    with pytest.raises(ValueError, match="not an accepted"):
+        build_digest(store, tmp_path, tmp_path / "site", "2026-11-10", supplement_ids=["unknown"])
+
+
 def test_legacy_route_not_in_v2_digest(client, payload, tmp_path):
     payload.pop("schema_version")
     assert client.post("/webhooks/grok", json=payload).status_code == 202

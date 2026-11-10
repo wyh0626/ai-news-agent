@@ -11,6 +11,7 @@ const blog = defineCollection({
     receiptTimezone: z.string().optional(),
     receiptWindowStart: z.string().optional(),
     receiptWindowEnd: z.string().optional(),
+    supplementCount: z.number().int().nonnegative().optional(),
     githubProjects: z.array(z.object({
       name: z.string(), url: z.string().url(), description: z.string(),
     })).optional(),

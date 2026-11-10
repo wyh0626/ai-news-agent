@@ -70,21 +70,40 @@ def web_image(source, destination):
     return target.name
 
 
-def build_digest(store, data_dir: Path, site: Path, day=None, *, projects=None):
+def build_digest(store, data_dir: Path, site: Path, day=None, *, projects=None, supplement_ids=()):
     day = day or publication_day()
     projects = projects or []
+    override_file = data_dir / "publication-overrides.json"
+    overrides = json.loads(override_file.read_text()) if override_file.exists() else {}
+    supplement_ids = set(supplement_ids)
+    if any(overrides.get(n, day) != day for n in supplement_ids):
+        raise ValueError("A supplement is already assigned to a different issue")
+    assigned_ids = {n for n, issue in overrides.items() if issue == day} | supplement_ids
     start, end = day_window(day)
+    params = [start, end]
+    condition = "(news.created>=? AND news.created<?)"
+    if assigned_ids:
+        condition += " OR news.id IN (" + ",".join("?" for _ in assigned_ids) + ")"
+        params.extend(sorted(assigned_ids))
     with store.connect() as db:
         rows = [
             store.decode(r)
             for r in db.execute(
                 "SELECT news.* FROM news JOIN telegram_outbox ON news.id=telegram_outbox.news_id "
-                "WHERE news.created>=? AND news.created<? ORDER BY news.created,news.id",
-                (start, end),
+                "WHERE " + condition + " ORDER BY news.created,news.id",
+                params,
             )
         ]
     # The v2 route is the publishable feed; old local prototype samples remain out of digests.
-    rows = [r for r in rows if r["news"].get("title_en") and r["news"].get("body_en")]
+    rows = [
+        r
+        for r in rows
+        if r["news"].get("title_en")
+        and r["news"].get("body_en")
+        and overrides.get(r["id"], day) == day
+    ]
+    if supplement_ids - {r["id"] for r in rows}:
+        raise ValueError("A requested supplement is not an accepted bilingual news item")
     if not rows and not projects:
         return {"date": day, "count": 0, "projects": 0, "files": [], "asset_files": [], "images": 0}
     images = {}
@@ -133,6 +152,7 @@ def build_digest(store, data_dir: Path, site: Path, day=None, *, projects=None):
             "receiptWindowStart": datetime.fromtimestamp(start, BJT).isoformat(),
             "receiptWindowEnd": datetime.fromtimestamp(end, BJT).isoformat(),
             "githubProjects": projects,
+            "supplementCount": sum(r["id"] in assigned_ids for r in rows),
         }
         document = (
             "---\n"
