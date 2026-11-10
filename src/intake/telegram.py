@@ -1,9 +1,11 @@
-"""One Chinese summary + optional original screenshot per accepted bilingual event."""
+"""Chinese news reports with source previews or an uploaded original screenshot."""
 
 import asyncio
 import html
+import json
 import logging
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import httpx
 from PIL import Image
@@ -11,35 +13,67 @@ from PIL import Image
 from . import outbox
 
 
+def text_units(text):
+    return len(text.encode("utf-16-le")) // 2
+
+
 def clip(text, units):
+    if text_units(text) <= units:
+        return text
     result = []
     used = 0
     for char in text:
-        cost = len(char.encode("utf-16-le")) // 2
-        if used + cost > units:
-            return "".join(result).rstrip() + "…"
+        cost = text_units(char)
+        if used + cost > units - 1:
+            break
         result.append(char)
         used += cost
-    return "".join(result)
+    return "".join(result).rstrip() + ("…" if units > 0 else "")
 
 
-def caption(news):
-    parts = [
-        "<b>" + html.escape(clip(news["title_zh"], 120)) + "</b>",
-        html.escape(clip(news.get("summary_zh") or news["body_zh"], 280)),
-    ]
+def display_sources(news):
     sources = list(news["sources"])[:3]
     if news.get("tweet_url") and news["tweet_url"] not in [s["url"] for s in sources]:
         sources.append({"label": "原推文", "url": news["tweet_url"]})
-    parts.append(
-        "信源："
-        + " · ".join(
-            f'<a href="{html.escape(s["url"], quote=True)}">{html.escape(clip(s["label"], 48))}</a>'
-            for s in sources
-        )
+    return sources
+
+
+def caption(news, limit=4096):
+    title = clip(news["title_zh"], 200)
+    sources = display_sources(news)
+    labels = [clip(s["label"], 48) for s in sources]
+    links = "信源：" + " · ".join(
+        f'<a href="{html.escape(s["url"], quote=True)}">{html.escape(label)}</a>'
+        for s, label in zip(sources, labels)
     )
-    # Visible text is bounded well below sendPhoto's 1024 UTF-16 units.
-    return "\n\n".join(parts)
+    reserved = text_units(title + "\n\n\n\n信源：" + " · ".join(labels))
+    # Preserve the supplied report and paragraphs; only trim at Telegram's actual limit.
+    body = clip(
+        news.get("body_zh") or news.get("summary_zh", ""), max(0, limit - reserved)
+    )
+    return "\n\n".join(["<b>" + html.escape(title) + "</b>", html.escape(body), links])
+
+
+def link_preview_options(news):
+    sources = display_sources(news)
+    url = news.get("tweet_url") if news.get("story_type") == "x" else None
+    if not url:
+        url = next(
+            (
+                s["url"]
+                for s in sources
+                if s.get("dedup", True)
+                and urlsplit(s["url"]).hostname
+                not in {"x.com", "twitter.com", "www.x.com", "www.twitter.com"}
+            ),
+            sources[0]["url"],
+        )
+    return {
+        "is_disabled": False,
+        "url": url,
+        "prefer_large_media": True,
+        "show_above_text": True,
+    }
 
 
 class Telegram:
@@ -52,7 +86,7 @@ class Telegram:
 
     async def send(self, item, data_dir):
         data = {"chat_id": self.chat_id, "parse_mode": "HTML"}
-        text = caption(item["news"])
+        text = caption(item["news"], limit=1024 if item["image"] else 4096)
         method = "sendMessage"
         files = None
         if item["image"]:
@@ -66,7 +100,7 @@ class Telegram:
             data["caption"] = text
         else:
             data["text"] = text
-            data["link_preview_options"] = '{"is_disabled":true}'
+            data["link_preview_options"] = json.dumps(link_preview_options(item["news"]))
         # Bot tokens are part of Telegram URLs; never log HTTP request URLs or exceptions.
         logging.getLogger("httpx").setLevel(logging.WARNING)
         logging.getLogger("httpcore").setLevel(logging.WARNING)

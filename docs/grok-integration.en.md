@@ -1,6 +1,6 @@
 # Grok → AI Daily v2 integration
 
-The service receives news prepared by Grok. It does not call a local LLM, OpenAI embeddings or legacy collectors. Telegram receives Chinese summaries; the website publishes paired Chinese/English daily digests with expandable full reports.
+The service receives news prepared by Grok. It does not call a local LLM, OpenAI embeddings or legacy collectors. Telegram receives Chinese reports with paragraphs; the website publishes paired Chinese/English daily digests with expandable full reports.
 
 ## Submit one bilingual event, not two language-specific events
 
@@ -44,7 +44,7 @@ All `/api/*` routes require authentication outside loopback-only demo mode:
 | `GET /api/items/{id}/telegram-preview` | Chinese caption preview; sends nothing |
 | `GET /api/telegram/outbox` | Durable delivery states |
 
-Telegram is disabled by default. Enable `serve --telegram` only after configuring `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHANNEL_ID`, and granting the bot posting permission in the channel. This drains existing pending jobs: use a fresh production database, not the demo database. Posts use Chinese title, summary, source links and an optional uploaded image. Extreme image aspect ratios fall back to a document attachment. Full reports stay on the website.
+Telegram is disabled by default. Enable `serve --telegram` only after configuring `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHANNEL_ID`, and granting the bot posting permission in the channel. This drains existing pending jobs: use a fresh production database, not the demo database. Posts use the Chinese title, full `body_zh` report with paragraphs, source links and an optional uploaded image. Aim for 300–700 Chinese characters in 3–5 paragraphs without padding or inventing facts. `summary_zh` is for list summaries. Text messages allow 4096 UTF-16 units; image captions allow 1024. Only overlong reports are trimmed, and the website retains the full text. Messages without uploaded images enable a preview of the original source; preview images depend on the source and Telegram and are not screenshots. Extreme image aspect ratios fall back to a document attachment.
 
 Successful sends store the Telegram message ID. Known 429 responses retry after the indicated delay (five attempts maximum). Definitive rejections fail. Network timeouts or interrupted deliveries become `uncertain` and require checking the actual channel before a manual resend; they never retry blindly.
 
@@ -64,7 +64,7 @@ Daily exports group accepted v2 events by the **previous Beijing receipt date**,
 
 `scripts/publish_grok_digest.py --date YYYY-MM-DD` generates locally. Only explicit `--push`, on a clean dedicated main checkout, commits the day's generated files and pushes main to trigger the existing site workflow. It never force-pushes or rebases. Preview-generated uncommitted files must be reviewed and handled before enabling push. Do not run the legacy publishing cron alongside the new one.
 
-As of 2026-11-09, the intake service and Caddy HTTPS are deployed on ai-daily (43.133.59.36); see [deployment status](../deploy/production.md). Public HTTPS, authenticated PNG/news submission, retry deduplication and screenshot retrieval were verified with test fixtures, which were removed afterward. Actual Grok tool calls still require a live trial. Telegram and daily publishing are disabled. The optional timer template targets 08:10 Asia/Shanghai; it is not installed and defaults to local generation. Add `--push` only when ready for publishing.
+As of 2026-11-10, intake, Caddy HTTPS, daily publishing and Telegram delivery are enabled on ai-daily (43.133.59.36); see [deployment status](../deploy/production.md). Real Grok intake and PNG upload have been verified. The channel is @ainewslog_ai; the eight supplemental stories were delivered, while the earlier Nominal test story is held.
 
 
 Production cutover: the daily timer runs at 08:00 Asia/Shanghai. `--date` is the publication date: 2026-11-10 includes receipts in [2026-11-09 08:00, 2026-11-10 08:00). GitHub Trending is retained separately without model calls. Use a dedicated main checkout with --github --push; see deploy/production.md.

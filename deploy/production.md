@@ -18,9 +18,10 @@
 - 发布：`ai-daily-digest.timer` → `ai-daily-digest.service`，08:00 Asia/Shanghai，首次日期 2026-11-10。
 - 发布检出：`/var/lib/ai-daily/publish-repo`，独立干净 `main`，不与旧 `/ai-news-agent` 工作区混用。
 - 发布凭据：`/etc/ai-daily-publish.env`，root:root 0600；复用原仓库的 Git Token，通过 `GIT_ASKPASS` 传给 Git，不嵌入 remote URL。
-- 接收凭据：`/etc/ai-daily.env`，root:root 0600，保持不变。
+- 接收与 Telegram 凭据：`/etc/ai-daily.env`，root:root 0600；接收 Token 保持不变。
 - 旧 root cron 中的 `0 8 * * * ... scripts/run_and_push.sh` 应在新服务校验后移除；保留云厂商维护任务。不要同时启用两条日报任务。
-- Telegram 仍关闭；接收服务不增加 `--telegram`。
+- Telegram 已于 2026-11-10 启用，频道 `@ainewslog_ai`。`ai-daily-intake.service.d/telegram.conf` 给 ExecStart 增加 `--telegram`；新稿入库后自动处理。八条补采稿已发送，先前 Nominal 测试稿为 `held`，不自动补发。
+- 频道使用中文正文和信源，保留段落；有上传截图则配图，没有则开启信源链接预览，预览封面取决于原站与 Telegram。不要把链接预览称为原推文截图。
 
 ## 重试和补跑
 

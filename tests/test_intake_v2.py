@@ -19,7 +19,7 @@ from src.intake.app import create_app
 from src.intake.digest import build_digest, day_window, previous_day, publication_day
 from src.intake.models import BilingualBatch
 from src.intake.store import Store
-from src.intake.telegram import Telegram, caption, deliver_one
+from src.intake.telegram import Telegram, caption, deliver_one, link_preview_options
 
 
 @pytest.fixture
@@ -73,8 +73,8 @@ def test_bilingual_flow_with_optional_screenshot(client, payload):
     assert all(j["attempts"] == 0 and j["status"] == "pending" for j in jobs["items"])
     preview = client.get(f"/api/items/{ids[0]}/telegram-preview").json()
     assert preview["sent"] is False and preview["has_image"]
-    assert payload["items"][0]["summary_zh"] in preview["caption_html"]
-    assert payload["items"][0]["body_zh"] not in preview["caption_html"]
+    assert payload["items"][0]["body_zh"] in preview["caption_html"]
+    assert payload["items"][0]["summary_zh"] not in preview["caption_html"]
 
 
 def test_retry_dedup_and_changed_translation_no_double_queue(client, payload):
@@ -158,18 +158,39 @@ def test_v2_endpoints_require_token(tmp_path, payload):
         assert client.get("/api/telegram/outbox").status_code == 401
 
 
-def test_caption_safe_and_bounded(payload):
+@pytest.mark.parametrize("limit", [1024, 4096])
+def test_caption_safe_and_bounded(payload, limit):
     news = payload["items"][0]
     news.update(
-        title_zh="<script>" + "😀" * 200, summary_zh="😀" * 240, uncertainties=["未核实" * 150]
+        title_zh="<script>" + "😀" * 200, body_zh="😀" * 5000, uncertainties=["未核实" * 150]
     )
     news["sources"] = [{"label": "<来源>" * 40, "url": 'https://example.org/?a=1&b="test"'}] * 12
-    text = caption(news)
+    text = caption(news, limit=limit)
     assert "<script>" not in text and "&lt;script&gt;" in text
     assert "&quot;test&quot;" in text
     plain = html.unescape(re.sub("<[^>]*>", "", text))
-    assert len(plain.encode("utf-16-le")) // 2 <= 1024
+    assert len(plain.encode("utf-16-le")) // 2 <= limit
     assert "待核实" not in plain
+
+
+def test_channel_keeps_full_report_and_paragraphs(payload):
+    news = payload["items"][0]
+    news["body_zh"] = "第一段事实。" * 40 + "\n\n" + "第二段背景与限定条件。" * 25
+    text = caption(news, limit=1024)
+    assert news["body_zh"] in text
+    assert news["summary_zh"] not in text
+
+
+def test_external_preview_uses_article_not_repost_or_homepage(payload):
+    news = payload["items"][1]
+    news["sources"] = [
+        {"url": "https://x.com/example/status/123", "label": "转发"},
+        {"url": "https://example.org/", "label": "首页", "dedup": False},
+        {"url": "https://example.org/announcement", "label": "公告"},
+    ]
+    options = link_preview_options(news)
+    assert options["url"] == "https://example.org/announcement"
+    assert not options["is_disabled"] and options["prefer_large_media"]
 
 
 def run_sender(store, directory, handler):
@@ -204,11 +225,14 @@ def test_telegram_payload_and_persisted_sent_state(
         assert request.url.path.endswith("/" + method)
         if field:
             assert f'name="{field}"'.encode() in request.content
-            assert payload["items"][0]["summary_zh"].encode() in request.content
+            assert payload["items"][0]["body_zh"].encode() in request.content
         else:
             fields = parse_qs(request.content.decode())
-            assert payload["items"][0]["summary_zh"] in fields["text"][0]
+            assert payload["items"][0]["body_zh"] in fields["text"][0]
             assert fields["chat_id"] == ["@demo"]
+            preview = json.loads(fields["link_preview_options"][0])
+            assert preview["url"] == payload["items"][0]["tweet_url"]
+            assert not preview["is_disabled"]
         return httpx.Response(200, json={"ok": True, "result": {"message_id": 42}})
 
     store = client.app.state.store

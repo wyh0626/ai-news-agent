@@ -32,7 +32,7 @@ const sources=[...n.sources];if(n.tweet_url&&!sources.some(s=>s.url===n.tweet_ur
 for(const source of sources){const line=el('div',undefined,'source'),a=el('a',source.label);a.href=source.url;a.target='_blank';a.rel='noopener noreferrer';line.append(a);card.append(line);}
 const job=jobs[item.id];card.append(el('p','信源发布时间 '+(n.published_at||n.published_date||'未确认')+(job?' · Telegram '+(deliveryStates[job.status]||job.status):''),'stamp'));
 const actions=el('div',undefined,'actions');const copy=el('button','复制中文完整稿');copy.onclick=async()=>{try{const text=await(await api('/api/items/'+item.id+'/markdown')).text();await navigator.clipboard.writeText(text);copy.textContent='已复制';}catch(e){$('notice').textContent=e.message;}};actions.append(copy);
-if(job){const preview=el('button','查看频道短文');preview.onclick=async()=>{try{const p=await(await api('/api/items/'+item.id+'/telegram-preview')).json();$('notice').textContent='频道文本预览（未发送）：\n'+p.caption_html;}catch(e){$('notice').textContent=e.message;}};actions.append(preview);}
+if(job){const preview=el('button','查看频道正文');preview.onclick=async()=>{try{const p=await(await api('/api/items/'+item.id+'/telegram-preview')).json();$('notice').textContent='频道文本预览（未发送）：\n'+p.caption_html;}catch(e){$('notice').textContent=e.message;}};actions.append(preview);}
 card.append(actions);$('feed').append(card);
 }
 $('notice').textContent='最近 '+data.items.length+' 条来稿；入库不代表事实已核验或网站已发布。';

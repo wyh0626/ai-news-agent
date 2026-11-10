@@ -232,7 +232,7 @@ def create_app(
     def telegram_preview(news_id: str):
         item = get_item(news_id)
         return {
-            "caption_html": caption(item["news"]),
+            "caption_html": caption(item["news"], limit=1024 if item["image"] else 4096),
             "has_image": bool(item["image"]),
             "sent": False,
         }
