@@ -169,7 +169,7 @@ def test_caption_safe_and_bounded(payload):
     assert "&quot;test&quot;" in text
     plain = html.unescape(re.sub("<[^>]*>", "", text))
     assert len(plain.encode("utf-16-le")) // 2 <= 1024
-    assert "待核实" in plain
+    assert "待核实" not in plain
 
 
 def run_sender(store, directory, handler):

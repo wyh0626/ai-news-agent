@@ -28,8 +28,6 @@ def caption(news):
         "<b>" + html.escape(clip(news["title_zh"], 120)) + "</b>",
         html.escape(clip(news.get("summary_zh") or news["body_zh"], 280)),
     ]
-    if news.get("uncertainties"):
-        parts.append("待核实：" + html.escape(clip("；".join(news["uncertainties"]), 120)))
     sources = list(news["sources"])[:3]
     if news.get("tweet_url") and news["tweet_url"] not in [s["url"] for s in sources]:
         sources.append({"label": "原推文", "url": news["tweet_url"]})
