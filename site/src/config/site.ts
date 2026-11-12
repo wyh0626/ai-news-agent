@@ -1,10 +1,10 @@
 import type { SidebarNavItem, SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
-  name: "AI Daily",
+  name: "AI News Log",
   description:
     "Daily curated AI news, research papers, open-source projects and industry trends",
-  url: "https://ainewslog.com",
+  url: "https://www.ainewslog.com",
   ogImage: "",
   links: {
     twitter: "",

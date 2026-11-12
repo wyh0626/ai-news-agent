@@ -1,6 +1,7 @@
 ---
 import IssueShell from "@/components/issue/issue-shell.astro";
-import { issueDate, type Lang } from "@/lib/issue";
+import type { Lang } from "@/lib/issue";
+import { issueMetadata } from "@/lib/seo";
 import type { CollectionEntry } from "astro:content";
 import MainLayout from "./main-layout.astro";
 
@@ -14,34 +15,19 @@ type Props = {
   nav: { href: string; label: string }[];
   prev?: Neighbor;
   next?: Neighbor;
+  pairSlug?: string;
 };
 
-const { post, recent, total, focusCount, nav, prev = null, next = null } = Astro.props;
-const { description, pubDate } = post.data;
+const { post, recent, total, focusCount, nav, prev = null, next = null, pairSlug } = Astro.props;
+const { pubDate } = post.data;
 const lang = (post.data.lang === "zh" ? "zh" : "en") as Lang;
-const pairSlug = post.data.pairSlug;
 const base = import.meta.env.BASE_URL;
-const d = issueDate(pubDate, lang);
-const pageTitle = lang === "zh" ? `${d.year} ${d.day}` : `${d.day}, ${d.year}`;
+const { title: pageTitle, description } = issueMetadata(post);
+const alternateHref = pairSlug ? `${base}blog/${pairSlug}/` : undefined;
 const switchHref = pairSlug ? `${base}blog/${pairSlug}/` : lang === "zh" ? base : `${base}zh/`;
 ---
 
-<MainLayout title={pageTitle} description={description} lang={lang} switchHref={switchHref}>
-  {/* 浏览器语言自动检测：首次访问自动跳转，手动切换后记住偏好 */}
-  {pairSlug && (
-    <script is:inline define:vars={{ lang, pairSlug, base }}>
-      (function() {
-        let userChoice = null;
-        try { userChoice = localStorage.getItem('ai-daily-lang'); } catch (e) {}
-        if (userChoice) return;
-        const browserLang = navigator.language || navigator.userLanguage || '';
-        const isChinese = /^zh/i.test(browserLang);
-        if ((lang === 'zh' && !isChinese) || (lang === 'en' && isChinese)) {
-          window.location.replace(base + 'blog/' + pairSlug + '/');
-        }
-      })();
-    </script>
-  )}
+<MainLayout title={pageTitle} description={description} lang={lang} switchHref={switchHref} alternateHref={alternateHref}>
   <IssueShell lang={lang} date={pubDate} total={total ?? null} focusCount={focusCount} recent={recent} currentSlug={post.slug} nav={nav} prev={prev} next={next}>
     <slot />
   </IssueShell>

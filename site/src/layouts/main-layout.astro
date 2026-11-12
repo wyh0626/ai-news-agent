@@ -1,7 +1,9 @@
 ---
 import SiteFooter from "@/components/layout/site-footer.astro";
 import SiteHeader from "@/components/layout/site-header.astro";
-import { ui, type Lang } from "@/lib/issue";
+import { siteConfig } from "@/config/site";
+import type { Lang } from "@/lib/issue";
+import type { LanguageAlternate } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 import BaseLayout from "./base-layout.astro";
 
@@ -12,12 +14,19 @@ type Props = {
   lang?: Lang;
   /** 切换到另一种语言时去哪里；不传就不显示切换按钮 */
   switchHref?: string;
+  /** Only a real translation, not the fallback link to the other homepage. */
+  alternateHref?: string;
 };
 
-const { title, description, mainClass, lang = "en", switchHref } = Astro.props;
+const { title, description, mainClass, lang = "en", switchHref, alternateHref } = Astro.props;
+const alternates: LanguageAlternate[] = alternateHref ? [
+  { hreflang: lang === "zh" ? "zh-CN" : "en", href: Astro.url.pathname },
+  { hreflang: lang === "zh" ? "en" : "zh-CN", href: alternateHref },
+  { hreflang: "x-default", href: lang === "en" ? Astro.url.pathname : alternateHref },
+] : [];
 ---
 
-<BaseLayout title={title} description={description} lang={lang} siteName={ui(lang).siteName}>
+<BaseLayout title={title} description={description} lang={lang} siteName={siteConfig.name} alternates={alternates}>
   <SiteHeader lang={lang} switchHref={switchHref} />
   <main class={cn("flex-1", mainClass)}>
     <slot />

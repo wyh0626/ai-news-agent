@@ -1,5 +1,6 @@
 ---
 import BaseHead from "@/components/layout/base-head.astro";
+import type { LanguageAlternate } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -8,15 +9,16 @@ type Props = {
   bodyClass?: string;
   lang?: string;
   siteName?: string;
+  alternates?: LanguageAlternate[];
 };
 
-const { title, description, bodyClass, lang = "en", siteName } = Astro.props;
+const { title, description, bodyClass, lang = "en", siteName, alternates } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={lang === "zh" ? "zh-CN" : lang} class="scroll-smooth">
   <head>
-    <BaseHead title={title} description={description} siteName={siteName} />
+    <BaseHead title={title} description={description} siteName={siteName} alternates={alternates} lang={lang} />
   </head>
   <body class={cn("flex flex-col min-h-screen", bodyClass)}>
     <slot />

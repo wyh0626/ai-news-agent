@@ -2,24 +2,15 @@
 import Home from "@/components/home.astro";
 import MainLayout from "@/layouts/main-layout.astro";
 import { getPosts } from "@/lib/fetchers";
-import { ui } from "@/lib/issue";
 
 const posts = await getPosts();
 const base = import.meta.env.BASE_URL;
-const t = ui("en");
 ---
 
-<MainLayout title="" description={t.tagline} lang="en" switchHref={`${base}zh/`}>
-  {/* 浏览器语言检测：中文用户自动跳转到 /zh/，手动切换后记住偏好 */}
-  <script is:inline define:vars={{ base }}>
-    (function() {
-      let userChoice = null;
-      try { userChoice = localStorage.getItem('ai-daily-lang'); } catch (e) {}
-      if (userChoice === 'en') return;
-      if (userChoice === 'zh' || /^zh/i.test(navigator.language || '')) {
-        window.location.replace(base + 'zh/');
-      }
-    })();
-  </script>
+<MainLayout
+  title="AI News, Model Releases & Open-Source Projects"
+  description="Daily AI news covering model releases, coding tools, AI agents, research and GitHub projects. Read clear summaries and full reports with original sources."
+  lang="en" switchHref={`${base}zh/`} alternateHref={`${base}zh/`}
+>
   <Home posts={posts} lang="en" />
 </MainLayout>

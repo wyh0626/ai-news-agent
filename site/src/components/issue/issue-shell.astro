@@ -40,7 +40,7 @@ const recentList = recent.filter((p) => p.slug !== currentSlug).slice(0, 7);
   <main class="center">
     <header class="head">
       {kicker && <p class="kicker">{kicker}</p>}
-      <h1>{d.day}<span class="weekday">{d.weekday}</span></h1>
+      <h1><span class="sr-only">{t.siteName} · </span>{d.day}{" "}<span class="weekday">{d.weekday}</span></h1>
       <p class="meta">
         {total ? t.stories(total) : ""}{total && focusCount ? " · " : ""}{focusCount ? t.focusCount(focusCount) : ""}
       </p>

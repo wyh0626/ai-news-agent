@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from "@/config/site";
+import type { LanguageAlternate } from "@/lib/seo";
 import "@/styles/globals.css";
 import { ViewTransitions } from "astro:transitions";
 
@@ -8,6 +9,8 @@ interface Props {
   description?: string;
   image?: string;
   siteName?: string;
+  alternates?: LanguageAlternate[];
+  lang?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -17,6 +20,8 @@ const {
   description = siteConfig.description,
   image = "/og.jpg",
   siteName = siteConfig.name,
+  alternates = [],
+  lang = "en",
 } = Astro.props;
 const fullTitle = title ? `${title} · ${siteName}` : siteName;
 ---
@@ -33,7 +38,11 @@ const fullTitle = title ? `${title} · ${siteName}` : siteName;
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
-<link rel="alternate" type="application/rss+xml" title={siteName} href={`${import.meta.env.BASE_URL}rss.xml`} />
+{alternates.map(({ hreflang, href }) => (
+  <link rel="alternate" hreflang={hreflang} href={new URL(href, Astro.site)} />
+))}
+<link rel="sitemap" href={new URL("sitemap-index.xml", Astro.site)} />
+<link rel="alternate" type="application/rss+xml" title={siteName} href={new URL("rss.xml", Astro.site)} />
 
 <!-- Primary Meta Tags -->
 <title>{fullTitle}</title>
@@ -43,17 +52,18 @@ const fullTitle = title ? `${title} · ${siteName}` : siteName;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content={siteName} />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:locale" content={lang === "zh" || lang === "zh-CN" ? "zh_CN" : "en_US"} />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={new URL(image, Astro.site)} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={fullTitle} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={new URL(image, Astro.site)} />
 
 <!-- Google Analytics (只在有 GA_ID 时加载) -->
 {import.meta.env.PUBLIC_GA_ID && (

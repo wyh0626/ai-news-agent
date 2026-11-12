@@ -29,8 +29,6 @@ const isHome = path === home;
         <a
           href={switchHref}
           class="lang"
-          data-lang={otherLang}
-          onclick="try{localStorage.setItem('ai-daily-lang', this.dataset.lang)}catch(e){}"
           lang={otherLang === "zh" ? "zh-CN" : "en"}
         >{t.switchLang}</a>
       )}

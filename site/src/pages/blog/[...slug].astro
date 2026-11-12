@@ -7,6 +7,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
+	const bySlug = new Map(posts.map((post) => [post.slug, post]));
 	// 同语言内按日期排序，用来算上一期 / 下一期和右侧的往期列表
 	const byLang = new Map<string, CollectionEntry<'blog'>[]>();
 	for (const post of posts) {
@@ -17,6 +18,9 @@ export async function getStaticPaths() {
 	for (const list of byLang.values()) list.sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 
 	return posts.map((post) => {
+		const pair = post.data.pairSlug ? bySlug.get(post.data.pairSlug) : undefined;
+		const pairSlug = pair && pair.data.lang !== post.data.lang && pair.data.pairSlug === post.slug
+			? pair.slug : undefined;
 		const list = byLang.get(post.data.lang === 'zh' ? 'zh' : 'en')!;
 		const index = list.indexOf(post);
 		const prev = list[index - 1];
@@ -26,6 +30,7 @@ export async function getStaticPaths() {
 			params: { slug: post.slug },
 			props: {
 				post,
+				pairSlug,
 				recent,
 				prev: prev ? { slug: prev.slug, date: prev.data.pubDate } : null,
 				next: next ? { slug: next.slug, date: next.data.pubDate } : null,
@@ -39,9 +44,10 @@ type Props = {
 	recent: CollectionEntry<'blog'>[];
 	prev: { slug: string; date: Date } | null;
 	next: { slug: string; date: Date } | null;
+	pairSlug?: string;
 };
 
-const { post, recent, prev, next } = Astro.props;
+const { post, recent, prev, next, pairSlug } = Astro.props;
 const lang = post.data.lang === 'zh' ? 'zh' : 'en';
 const t = ui(lang);
 const digestItems = post.data.digestItems;
@@ -57,7 +63,7 @@ const nav = issue
 		].filter(Boolean) as { href: string; label: string }[])
 	: [{ href: '#top', label: t.contents }];
 ---
-<BlogPostLayout post={post} recent={recent} prev={prev} next={next} total={total} focusCount={issue?.focus.length} nav={nav}>
+<BlogPostLayout post={post} recent={recent} prev={prev} next={next} total={total} focusCount={issue?.focus.length} nav={nav} pairSlug={pairSlug}>
 	{digestItems ? (
 		<DailyDigest items={digestItems} lang={lang} projects={post.data.githubProjects} windowStart={post.data.receiptWindowStart} windowEnd={post.data.receiptWindowEnd} supplementCount={post.data.supplementCount} />
 	) : legacyOk && issue ? (

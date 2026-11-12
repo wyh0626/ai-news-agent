@@ -2,19 +2,17 @@
 import Home from "@/components/home.astro";
 import MainLayout from "@/layouts/main-layout.astro";
 import { getPosts, getZhPosts } from "@/lib/fetchers";
-import { ui } from "@/lib/issue";
 
 const zhPosts = await getZhPosts();
 // 没有中文版时退回英文
 const posts = zhPosts.length > 0 ? zhPosts : await getPosts();
 const base = import.meta.env.BASE_URL;
-const t = ui("zh");
 ---
 
-<MainLayout title="" description={t.tagline} lang="zh" switchHref={base}>
-  {/* 语言偏好记录：用户访问中文页即视为选择了中文 */}
-  <script is:inline>
-    try { localStorage.setItem('ai-daily-lang', 'zh'); } catch (e) {}
-  </script>
+<MainLayout
+  title="AI 新闻、模型更新与开源项目日报"
+  description="每天汇总值得关注的 AI 新闻，覆盖大模型发布、AI 编程工具、智能体、研究论文与 GitHub 开源项目。提供中文完整报道、中英切换与原始信源。"
+  lang="zh" switchHref={base} alternateHref={base}
+>
   <Home posts={posts} lang="zh" />
 </MainLayout>
