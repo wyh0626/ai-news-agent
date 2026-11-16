@@ -75,7 +75,7 @@ const recentList = recent.filter((p) => p.slug !== currentSlug).slice(0, 7);
     <div class="box about">
       <h2>{t.about}</h2>
       <p>{t.tagline}</p>
-      <p class="links"><a href={`${base}about/`}>{lang === "zh" ? "了解更多" : "Learn more"}</a> · <a href={`${base}rss.xml`}>RSS</a></p>
+      <p class="links"><a href={`${base}${lang === "zh" ? "about/" : "en/about/"}`}>{lang === "zh" ? "了解更多" : "Learn more"}</a> · <a href={`${base}rss.xml`}>RSS</a></p>
     </div>
   </aside>
 </div>

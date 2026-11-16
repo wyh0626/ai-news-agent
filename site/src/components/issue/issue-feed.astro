@@ -1,7 +1,7 @@
 ---
 /** 一期日报的中间信息流：焦点卡片 → 分主题的重点 → 快讯 */
 import type { Issue } from "@/lib/issue";
-import { firstSentence, paragraphs, ui, type Lang } from "@/lib/issue";
+import { firstSentence, paragraphs, localizedSourceLabel, ui, type Lang } from "@/lib/issue";
 import SourceLinks from "./source-links.astro";
 import SourceMark from "./source-mark.astro";
 
@@ -21,7 +21,7 @@ const hasBriefs = issue.briefs.length > 0;
         {expanded
           ? paragraphs(s.text).map((p) => <p>{p}</p>)
           : <p>{firstSentence(paragraphs(s.text).join(" "), 160)}</p>}
-        <SourceLinks sources={s.sources} />
+        <SourceLinks lang={lang} sources={s.sources} />
       </article>
     ))}
   </section>
@@ -37,7 +37,7 @@ const hasBriefs = issue.briefs.length > 0;
           <article class="row">
             <h2>{it.sources[0] ? <a href={it.sources[0].url} target="_blank" rel="noopener noreferrer">{it.title || firstSentence(it.text, 40)}</a> : it.title}</h2>
             {it.text && <p>{expanded ? it.text : firstSentence(it.text, 120)}</p>}
-            <SourceLinks sources={it.sources} max={2} />
+            <SourceLinks lang={lang} sources={it.sources} max={2} />
           </article>
         ))}
       </div>
@@ -52,7 +52,7 @@ const hasBriefs = issue.briefs.length > 0;
       {issue.briefs.map((b) => (
         <li>
           <a href={b.sources[0]?.url} target="_blank" rel="noopener noreferrer">
-            <SourceMark label={b.sources[0]?.label ?? "·"} size={20} />
+            <SourceMark label={b.sources[0] ? localizedSourceLabel(b.sources[0], lang) : "·"} size={20} />
             <span class="brief-text"><strong>{b.title}</strong>{b.text && <span> — {b.text}</span>}</span>
           </a>
         </li>

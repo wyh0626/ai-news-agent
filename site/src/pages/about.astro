@@ -7,7 +7,7 @@ const t = ui("zh");
 const base = import.meta.env.BASE_URL;
 ---
 
-<MainLayout title={t.about} description="关于 AI 日报：它是什么、怎么做的、怎么读。" lang="zh" switchHref={base}>
+<MainLayout title={t.about} description="关于 AI 日报：它是什么、怎么做的、怎么读。" lang="zh" switchHref={`${base}en/about/`} alternateHref={`${base}en/about/`}>
   <section class="about" id="top">
     <p class="kicker">{t.about}</p>
     <h1>一天一期，<br />把 AI 领域值得知道的事讲清楚。</h1>

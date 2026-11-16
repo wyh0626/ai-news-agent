@@ -1,10 +1,10 @@
 ---
-import type { Source } from "@/lib/issue";
+import { localizedSourceLabel, type Lang, type Source } from "@/lib/issue";
 import SourceMark from "./source-mark.astro";
 
-type Props = { sources: Source[]; max?: number; size?: number };
-const { sources, max = 3, size = 16 } = Astro.props;
-const shown = sources.slice(0, max);
+type Props = { sources: Source[]; lang: Lang; max?: number; size?: number };
+const { sources, lang, max = 3, size = 16 } = Astro.props;
+const shown = sources.slice(0, max).map((source) => ({ ...source, label: localizedSourceLabel(source, lang) }));
 ---
 {shown.length > 0 && (
   <span class="sources">

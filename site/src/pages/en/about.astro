@@ -1,0 +1,33 @@
+---
+import MainLayout from "@/layouts/main-layout.astro";
+import { siteConfig } from "@/config/site";
+const base = import.meta.env.BASE_URL;
+---
+<MainLayout title="About" description="About AI News Log: daily AI news, original sources, bilingual reports and open-source projects." lang="en" switchHref={`${base}about/`} alternateHref={`${base}about/`}>
+  <section class="about" id="top">
+    <p class="kicker">About AI News Log</p>
+    <h1>A daily guide to what matters in AI.</h1>
+    <p class="lede">AI News Log brings together model releases, developer tools, research, industry news and open-source projects, with links to the original sources.</p>
+    <div class="body">
+      <h2>How to read</h2>
+      <p>Start with the summaries, then expand a full report for more detail. Source links take you to the original posts, announcements and reporting. Use the language switch to read the corresponding Chinese edition.</p>
+      <h2>Where the news comes from</h2>
+      <p>Grok gathers and checks news from X and linked source material. An automated workflow receives the reports, checks for duplicates and compiles the English and Chinese editions. The site also includes projects from GitHub Trending.</p>
+      <p>The daily edition is published at 08:00 (UTC+8), covering submissions received since 08:00 the previous day. Source publication times are shown separately.</p>
+      <p>Automated reporting can contain mistakes. Follow the original sources to check important details; claims and limitations should remain attributed in the report.</p>
+      <h2>Subscribe and contribute</h2>
+      <p>Follow the updates through <a href={`${base}rss.xml`}>RSS</a>. The source code is available on <a href={siteConfig.links.github} target="_blank" rel="noopener noreferrer">GitHub</a>, where you can also report an issue.</p>
+    </div>
+  </section>
+</MainLayout>
+<style>
+  .about { max-width: var(--measure, 42rem); margin: 0 auto; padding: 3.5rem var(--gutter, 1rem) 0; }
+  .kicker { margin: 0 0 0.75rem; font-size: 0.76rem; letter-spacing: 0.06em; color: hsl(var(--accent-ink)); font-weight: 700; }
+  h1 { margin: 0 0 1.5rem; font-weight: 800; font-size: clamp(1.8rem, 4.5vw, 2.4rem); line-height: 1.3; letter-spacing: -0.02em; }
+  .lede { margin: 0 0 2.5rem; font-size: 1.1rem; line-height: 1.85; color: hsl(var(--foreground) / 0.85); }
+  .body h2 { margin: 2.25rem 0 0.75rem; font-size: 1.15rem; font-weight: 800; display: flex; align-items: center; gap: 0.5rem; }
+  .body h2::before { content: ""; width: 4px; height: 1em; border-radius: 2px; background: hsl(var(--accent-ink)); }
+  .body p { margin: 0 0 1rem; line-height: 1.9; color: hsl(var(--foreground) / 0.85); }
+  .body a { color: hsl(var(--accent-ink)); text-decoration: none; border-bottom: 1px solid hsl(var(--accent-ink) / 0.4); }
+  .body a:hover { border-bottom-color: currentColor; }
+</style>

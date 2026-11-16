@@ -9,7 +9,7 @@ const base = import.meta.env.BASE_URL;
 const home = lang === "zh" ? `${base}zh/` : base;
 const otherLang = lang === "zh" ? "en" : "zh";
 const path = Astro.url.pathname;
-const isAbout = path.startsWith(`${base}about`);
+const isAbout = path === `${base}${lang === "zh" ? "about/" : "en/about/"}`;
 const isHome = path === home;
 ---
 <header class="site-header">
@@ -21,7 +21,7 @@ const isHome = path === home;
     <nav class="nav" aria-label="Primary">
       <a href={home} aria-current={isHome ? "page" : undefined}>{t.home}</a>
       <a href={`${home}#archive`}>{t.archive}</a>
-      <a href={`${base}about/`} aria-current={isAbout ? "page" : undefined}>{t.about}</a>
+      <a href={`${base}${lang === "zh" ? "about/" : "en/about/"}`} aria-current={isAbout ? "page" : undefined}>{t.about}</a>
       <a href={`${base}rss.xml`} class="rss">RSS</a>
     </nav>
     <div class="tools">

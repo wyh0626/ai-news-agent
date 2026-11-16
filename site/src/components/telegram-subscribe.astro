@@ -1,0 +1,18 @@
+---
+import { telegramChannels } from "@/config/telegram";
+import type { Lang } from "@/lib/issue";
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const url = telegramChannels[lang];
+---
+{url && (
+  <aside class="subscribe" aria-label={lang === "zh" ? "订阅新闻" : "Subscribe to news"}>
+    <p>{lang === "zh" ? "在 Telegram 阅读中文 AI 快讯，持续关注重要更新。" : "Follow AI news in English on Telegram."}</p>
+    <a href={url} target="_blank" rel="noopener noreferrer">{lang === "zh" ? "订阅中文频道 →" : "Join the English channel →"}</a>
+  </aside>
+)}
+<style>
+  .subscribe { max-width: 64rem; margin: 2rem auto 0; padding: 1.25rem var(--gutter, 1rem); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.75rem 1.5rem; }
+  p { margin: 0; color: hsl(var(--muted-foreground)); }
+  a { color: hsl(var(--accent-ink)); font-weight: 600; }
+</style>

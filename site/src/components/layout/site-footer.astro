@@ -18,7 +18,7 @@ const home = lang === "zh" ? `${base}zh/` : base;
     <nav class="links" aria-label="Footer">
       <a href={home}>{t.home}</a>
       <a href={`${home}#archive`}>{t.archive}</a>
-      <a href={`${base}about/`}>{t.about}</a>
+      <a href={`${base}${lang === "zh" ? "about/" : "en/about/"}`}>{t.about}</a>
       <a href={`${base}rss.xml`}>RSS</a>
       <a href={siteConfig.links.github} target="_blank" rel="noreferrer">GitHub</a>
     </nav>

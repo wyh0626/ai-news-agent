@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "@/components/layout/site-footer.astro";
 import SiteHeader from "@/components/layout/site-header.astro";
+import TelegramSubscribe from "@/components/telegram-subscribe.astro";
 import { siteConfig } from "@/config/site";
 import type { Lang } from "@/lib/issue";
 import type { LanguageAlternate } from "@/lib/seo";
@@ -31,5 +32,6 @@ const alternates: LanguageAlternate[] = alternateHref ? [
   <main class={cn("flex-1", mainClass)}>
     <slot />
   </main>
+  <TelegramSubscribe lang={lang} />
   <SiteFooter lang={lang} />
 </BaseLayout>

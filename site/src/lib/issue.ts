@@ -332,8 +332,8 @@ export function ui(lang: Lang) {
     viewShot: zh ? "查看大图" : "View full size",
     published: zh ? "信源发布于" : "Source published",
     unknownTime: zh ? "时间未确认" : "time unconfirmed",
-    switchLang: zh ? "English" : "中文",
-    switchLangShort: zh ? "EN" : "中",
+    switchLang: zh ? "English" : "Chinese",
+    switchLangShort: zh ? "EN" : "ZH",
     empty: zh ? "还没有日报。运行一次 pipeline 就会生成第一期。" : "No issues yet. Run the pipeline once to generate the first one.",
     permalink: zh ? "本期固定链接" : "Permanent link to this issue",
     colophon: zh
@@ -351,4 +351,33 @@ export function ui(lang: Lang) {
     moreIssues: zh ? "更早的日报" : "Earlier issues",
     receipt: zh ? "按北京时间接收日汇总" : "Grouped by receipt date (UTC+8)",
   };
+}
+
+/** Source labels are shared by bilingual submissions; localize at render time. */
+export function localizedSourceLabel(source: Source, lang: Lang): string {
+  if (lang === "zh" || !/\p{Script=Han}/u.test(source.label)) return source.label;
+  try {
+    const url = new URL(source.url);
+    const host = url.hostname.replace(/^www\./, "");
+    const publishers: Record<string, string> = {
+      "ithome.com": "IT Home", "sina.com.cn": "Sina", "xinhuanet.com": "Xinhua",
+      "news.cn": "Xinhua", "36kr.com": "36Kr", "zhihu.com": "Zhihu",
+      "mp.weixin.qq.com": "WeChat", "caixin.com": "Caixin",
+    };
+    const publisher = Object.entries(publishers).find(([domain]) => host === domain || host.endsWith("." + domain))?.[1];
+    const known = publisher || hostLabel(source.url);
+    const name = /\p{Script=Han}/u.test(known) ? host : known;
+    if (host === "x.com" || host === "twitter.com") {
+      const author = url.pathname.split("/")[1];
+      return /^[A-Za-z0-9_]+$/.test(author) && !["i", "search", "home"].includes(author) ? `X · @${author}` : "X";
+    }
+    return name || "Source";
+  } catch { return "Source"; }
+}
+
+export function localizedProjectDescription(description: string, lang: Lang): string {
+  if (lang === "zh" || !/\p{Script=Han}/u.test(description)) return description;
+  // Some repositories provide Chinese followed by a complete English description.
+  const english = description.match(/(?:^|[。！？]\s*)([A-Za-z][^\p{Script=Han}]+)$/u)?.[1];
+  return english?.trim() || "See the project README on GitHub for its description.";
 }

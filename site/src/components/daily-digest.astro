@@ -5,7 +5,7 @@
  */
 import type { CollectionEntry } from "astro:content";
 import SourceLinks from "@/components/issue/source-links.astro";
-import { hostLabel, paragraphs, ui, type Lang } from "@/lib/issue";
+import { hostLabel, localizedProjectDescription, paragraphs, ui, type Lang } from "@/lib/issue";
 
 type Data = CollectionEntry<"blog">["data"];
 type Props = { items: NonNullable<Data["digestItems"]>; lang: Lang;
@@ -48,7 +48,7 @@ const sourcesOf = (item: Props["items"][number]) => {
           </details>
         )}
         <footer class="meta">
-          <SourceLinks sources={sourcesOf(item)} max={4} />
+          <SourceLinks lang={lang} sources={sourcesOf(item)} max={4} />
           <span class="published">{t.published} {item.publishedAt || item.publishedDate || t.unknownTime}</span>
         </footer>
       </li>
@@ -57,12 +57,12 @@ const sourcesOf = (item: Props["items"][number]) => {
   {projects.length > 0 && (
     <section class="projects" id="github-projects">
       <h2>{lang === "zh" ? "GitHub 开源项目" : "GitHub projects"}</h2>
-      <p class="note">{lang === "zh" ? "来自 GitHub Trending，保留项目原文简介。上榜不代表项目当天发布。" : "From GitHub Trending, with original project descriptions. Trending does not imply a new release."}</p>
+      <p class="note">{lang === "zh" ? "来自 GitHub Trending，保留项目原文简介。上榜不代表项目当天发布。" : "From GitHub Trending, with English descriptions where available. See each project for details. Trending does not imply a new release."}</p>
       <ul class="stories">
         {projects.map((project) => (
           <li class="card">
             <h3><a href={project.url} target="_blank" rel="noopener noreferrer">{project.name} ↗</a></h3>
-            <p class="summary">{project.description}</p>
+            <p class="summary">{localizedProjectDescription(project.description, lang)}</p>
           </li>
         ))}
       </ul>
