@@ -1,10 +1,14 @@
 ---
 import { ui, type Lang } from "@/lib/issue";
+import { telegramChannels } from "@/config/telegram";
+import { Icon } from "astro-icon/components";
 import ThemeButton from "./theme-button.astro";
 
 type Props = { lang: Lang; switchHref?: string };
 const { lang, switchHref } = Astro.props;
 const t = ui(lang);
+const telegramUrl = telegramChannels[lang];
+const telegramLabel = lang === "zh" ? "订阅 Telegram 中文频道" : "Join our English Telegram channel";
 const base = import.meta.env.BASE_URL;
 const home = lang === "zh" ? `${base}zh/` : base;
 const otherLang = lang === "zh" ? "en" : "zh";
@@ -25,6 +29,11 @@ const isHome = path === home;
       <a href={`${base}rss.xml`} class="rss">RSS</a>
     </nav>
     <div class="tools">
+      {telegramUrl && (
+        <a href={telegramUrl} class="telegram" target="_blank" rel="noopener noreferrer" aria-label={telegramLabel} title={telegramLabel}>
+          <Icon name="mdi:telegram" size={22} aria-hidden="true" />
+        </a>
+      )}
       {switchHref && (
         <a
           href={switchHref}
@@ -46,7 +55,10 @@ const isHome = path === home;
   .nav a { color: hsl(var(--muted-foreground)); text-decoration: none; font-weight: 500; white-space: nowrap; transition: color 0.15s ease; }
   .nav a:hover, .nav a[aria-current="page"] { color: hsl(var(--foreground)); }
   .nav a[aria-current="page"] { font-weight: 700; }
-  .tools { display: flex; align-items: center; gap: 0.5rem; }
+  .tools { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+  .telegram { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; color: #229ed9; text-decoration: none; transition: background 0.15s ease; }
+  .telegram:hover { background: hsl(var(--muted)); }
+  .telegram:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
   .lang { font-size: 0.8rem; font-weight: 500; color: hsl(var(--foreground)); background: hsl(var(--muted)); text-decoration: none; padding: 0.4rem 0.8rem; border-radius: 999px; white-space: nowrap; transition: background 0.15s ease; }
   .lang:hover { background: hsl(var(--border)); }
   @media (max-width: 640px) {
@@ -54,5 +66,11 @@ const isHome = path === home;
     .brand-name { display: none; }
     .nav { gap: 0.9rem; font-size: 0.88rem; }
     .rss { display: none; }
+  }
+  @media (max-width: 420px) {
+    .wrap { gap: 0.5rem; }
+    .nav { gap: 0.65rem; }
+    .tools { gap: 0.2rem; }
+    .lang { padding-inline: 0.6rem; }
   }
 </style>
