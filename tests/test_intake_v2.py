@@ -193,6 +193,36 @@ def test_external_preview_uses_article_not_repost_or_homepage(payload):
     assert not options["is_disabled"] and options["prefer_large_media"]
 
 
+def test_english_delivery_uses_its_own_queue_and_text(client, payload, tmp_path):
+    payload["items"] = payload["items"][:1]
+    news = payload["items"][0]
+    news["sources"][0]["label"] = "官方公告"
+    assert client.post("/api/v2/news", json=payload).status_code == 202
+    store = client.app.state.store
+    assert outbox.enqueue_english(store, since=10**12) == 0
+    assert outbox.enqueue_english(store, since=0) == 1
+    assert outbox.enqueue_english(store, since=0) == 0
+
+    def handler(request):
+        fields = parse_qs(request.content.decode())
+        assert fields["chat_id"] == ["@english_demo"]
+        text = fields["text"][0]
+        assert news["body_en"] in text and news["body_zh"] not in text
+        assert "Sources: " in text and "官方公告" not in text
+        return httpx.Response(200, json={"ok": True, "result": {"message_id": 17}})
+
+    async def run():
+        async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as transport:
+            sender = Telegram("TEST_ONLY", "@english_demo", transport, lang="en")
+            return await deliver_one(store, tmp_path, sender, lang="en")
+
+    assert asyncio.run(run())
+    assert outbox.list_jobs(store)[0]["status"] == "pending"
+    english_job = outbox.list_jobs(store, lang="en")[0]
+    assert english_job["status"] == "sent" and english_job["message_id"] == 17
+    assert not asyncio.run(run())
+
+
 def run_sender(store, directory, handler):
     async def run():
         async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:

@@ -1,0 +1,24 @@
+[Unit]
+Description=AI Daily English Telegram delivery
+After=network-online.target ai-daily-intake.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ai-daily
+Group=ai-daily
+WorkingDirectory=/opt/ai-daily-telegram-en
+EnvironmentFile=/etc/ai-daily-telegram-en.env
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/opt/ai-news-agent/.venv-intake/bin/python -m src.intake.telegram_english --data-dir /var/lib/ai-daily
+Restart=on-failure
+RestartSec=5
+StateDirectory=ai-daily
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

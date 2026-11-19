@@ -1,9 +1,10 @@
-"""Chinese news reports with source previews or an uploaded original screenshot."""
+"""Telegram news reports with source previews or an uploaded original screenshot."""
 
 import asyncio
 import html
 import json
 import logging
+import unicodedata
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -31,25 +32,47 @@ def clip(text, units):
     return "".join(result).rstrip() + ("…" if units > 0 else "")
 
 
-def display_sources(news):
+def english_source_label(source):
+    label = source.get("label_en") or source["label"]
+    if not any(unicodedata.name(char, "").startswith(("CJK", "IDEOGRAPHIC")) for char in label):
+        return label
+    url = urlsplit(source["url"])
+    host = (url.hostname or "").removeprefix("www.")
+    if host in {"x.com", "twitter.com"}:
+        author = url.path.lstrip("/").split("/", 1)[0]
+        return f"X · @{author}" if author and author != "i" else "X"
+    return {
+        "github.com": "GitHub",
+        "huggingface.co": "Hugging Face",
+        "ithome.com": "IT Home",
+        "the-decoder.com": "The Decoder",
+        "thenextweb.com": "TNW",
+    }.get(host, host or "Source")
+
+
+def display_sources(news, lang="zh"):
     sources = list(news["sources"])[:3]
+    if lang == "en":
+        sources = [{**source, "label": english_source_label(source)} for source in sources]
     if news.get("tweet_url") and news["tweet_url"] not in [s["url"] for s in sources]:
-        sources.append({"label": "原推文", "url": news["tweet_url"]})
+        label = "Original post" if lang == "en" else "原推文"
+        sources.append({"label": label, "url": news["tweet_url"]})
     return sources
 
 
-def caption(news, limit=4096):
-    title = clip(news["title_zh"], 200)
-    sources = display_sources(news)
+def caption(news, limit=4096, *, lang="zh"):
+    title = clip(news[f"title_{lang}"], 200)
+    sources = display_sources(news, lang)
     labels = [clip(s["label"], 48) for s in sources]
-    links = "信源：" + " · ".join(
+    prefix = "Sources: " if lang == "en" else "信源："
+    links = prefix + " · ".join(
         f'<a href="{html.escape(s["url"], quote=True)}">{html.escape(label)}</a>'
         for s, label in zip(sources, labels)
     )
-    reserved = text_units(title + "\n\n\n\n信源：" + " · ".join(labels))
+    reserved = text_units(title + "\n\n\n\n" + prefix + " · ".join(labels))
     # Preserve the supplied report and paragraphs; only trim at Telegram's actual limit.
     body = clip(
-        news.get("body_zh") or news.get("summary_zh", ""), max(0, limit - reserved)
+        news.get(f"body_{lang}") or news.get(f"summary_{lang}", ""), max(0, limit - reserved)
     )
     return "\n\n".join(["<b>" + html.escape(title) + "</b>", html.escape(body), links])
 
@@ -77,16 +100,17 @@ def link_preview_options(news):
 
 
 class Telegram:
-    def __init__(self, token, chat_id, client=None):
+    def __init__(self, token, chat_id, client=None, *, lang="zh"):
         if not token or not chat_id:
             raise ValueError("Telegram requires bot token and channel ID in process configuration")
         self.token = token
         self.chat_id = chat_id
         self.client = client
+        self.lang = lang
 
     async def send(self, item, data_dir):
         data = {"chat_id": self.chat_id, "parse_mode": "HTML"}
-        text = caption(item["news"], limit=1024 if item["image"] else 4096)
+        text = caption(item["news"], limit=1024 if item["image"] else 4096, lang=self.lang)
         method = "sendMessage"
         files = None
         if item["image"]:
@@ -136,8 +160,8 @@ class Telegram:
         return {"status": "uncertain", "error": "telegram_outcome_unknown"}
 
 
-async def deliver_one(store, data_dir, sender):
-    job = outbox.claim(store)
+async def deliver_one(store, data_dir, sender, *, lang="zh"):
+    job = outbox.claim(store, lang)
     if not job:
         return False
     try:
@@ -148,16 +172,19 @@ async def deliver_one(store, data_dir, sender):
         result = {"status": "uncertain", "error": "delivery_exception"}
     if result["status"] == "pending" and job["attempts"] >= 5:
         result = {"status": "failed", "error": "retry_limit_reached"}
-    outbox.finish(store, job, **result)
+    outbox.finish(store, job, lang=lang, **result)
     return True
 
 
-async def run_delivery(store, data_dir, sender):
+async def run_delivery(store, data_dir, sender, *, english_since=None):
     while True:
         try:
-            await deliver_one(store, data_dir, sender)
+            if english_since is not None:
+                outbox.enqueue_english(store, english_since)
+            worked = await deliver_one(store, data_dir, sender, lang=sender.lang)
         except asyncio.CancelledError:
             raise
         except Exception:
             logging.getLogger(__name__).error("Telegram queue iteration failed")
-        await asyncio.sleep(2)
+            worked = False
+        await asyncio.sleep(5 if sender.lang == "en" and not worked else 2)

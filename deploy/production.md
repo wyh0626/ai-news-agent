@@ -25,6 +25,22 @@
 
 ## 重试和补跑
 
+### 英文 Telegram
+
+`ai-daily-telegram-en.service` 从同一份 SQLite 来稿库读取英文稿件。服务源码部署到
+`/opt/ai-daily-telegram-en`，复用接收服务的 Python 环境。为英文服务单独设置
+`/etc/ai-daily-telegram-en.env`（root:root、0600），包含三个变量：
+
+```ini
+TELEGRAM_EN_BOT_TOKEN=
+TELEGRAM_EN_CHANNEL_ID=@ainewslog_en
+TELEGRAM_EN_SINCE=2026-11-18T16:00:00+08:00
+```
+
+`TELEGRAM_EN_SINCE` 是按来稿入库时间计算的补发起点。发送结果和 Telegram
+消息 ID 保存在 `telegram_outbox_en`。重启会继续处理待发送项。
+发送结果不明确时，先核对频道上的实际消息，再决定是否重试。
+
 `publish-state.json` 仅在推送成功后记录最后处理日期；Persistent timer 会在停机后恢复，脚本逐个处理遗漏的已截止窗口。历史 GitHub 快照若不存在就略过，不能用今天榜单冒充历史榜单。
 
 发布前生成到 `publish-stage/日期/`，保存待发布清单，再提交指定的日报和图片。推送失败保留本地提交；重试可恢复，不重写来稿、换 event_key 或强推。与远程发生内容冲突时停止并保留待处理文件。网络失败每 5 分钟重试，锁防止并发运行。

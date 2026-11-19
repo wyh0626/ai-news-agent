@@ -39,6 +39,12 @@ class Store:
                     attempts INTEGER NOT NULL DEFAULT 0, next_try REAL NOT NULL DEFAULT 0,
                     lease_until REAL NOT NULL DEFAULT 0, owner TEXT, message_id INTEGER,
                     error TEXT, created REAL NOT NULL);
+                CREATE TABLE IF NOT EXISTS telegram_outbox_en (
+                    news_id TEXT PRIMARY KEY REFERENCES news(id),
+                    status TEXT NOT NULL DEFAULT 'pending',
+                    attempts INTEGER NOT NULL DEFAULT 0, next_try REAL NOT NULL DEFAULT 0,
+                    lease_until REAL NOT NULL DEFAULT 0, owner TEXT, message_id INTEGER,
+                    error TEXT, created REAL NOT NULL);
                 CREATE INDEX IF NOT EXISTS news_created ON news(created);
                 CREATE TABLE IF NOT EXISTS aliases (
                     key TEXT PRIMARY KEY, news_id TEXT NOT NULL REFERENCES news(id));
